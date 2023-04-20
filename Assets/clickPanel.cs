@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-public class click : MonoBehaviour
+
+public class clickPanel : MonoBehaviour
 {
-     public GameObject obj;
+    public GameObject obj;
+     public GameObject panel;
     // Update is called once per frame
+    
+    private void Awake()
+    {
+         panel.SetActive(true);
+    }
     void Update()
     {
         
@@ -30,19 +36,18 @@ public class click : MonoBehaviour
         }
         
     }
-    //找點到的物件名字
-    void checkclick(){
- Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Input.GetMouseButton(0))
-        {
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 10, -1); ;
-            if (hit.collider)
-            {
-                Debug.DrawLine(ray.origin, hit.transform.position, Color.red, 0.1f, true);
-                Debug.Log(hit.transform.name);
-            }
-        }
-    }
+//     void checkclick(){
+//  Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+//         if (Input.GetMouseButton(0))
+//         {
+//             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 10, -1); ;
+//             if (hit.collider)
+//             {
+//                 Debug.DrawLine(ray.origin, hit.transform.position, Color.red, 0.1f, true);
+//                 Debug.Log(hit.transform.name);
+//             }
+//         }
+//     }
 //點擊的程式
    void check2DObjectClicked()
 {
@@ -72,25 +77,11 @@ public class click : MonoBehaviour
         //Check if we hit anything
         if (hit)
         {
-            if(hit.collider.name=="樹枝畫"){
-                OnBtnShowClick1();
-                Debug.Log("We hit " + hit.collider.name);
-            }
-            else if(hit.collider.name=="back"){
-                OnBtnShowClick2();
-                Debug.Log("We hit " + hit.collider.name);
-            }
-            else if(hit.collider.name=="paint"){
-                OnBtnShowClick3();
-                Debug.Log("We hit " + hit.collider.name);
-            }
-            // else if(hit.collider.name=="glowobj"){
-            //     OnBtnShowClick3();
-            //     Debug.Log("We hit " + hit.collider.name);
-            // }
-            else if(hit.collider.name=="Bagicon"){
+            
+            if(hit.collider.name=="Bagicon"){
              
                 Debug.Log("We hit " + hit.collider.name);
+                panel.SetActive(true);
             }
               
 
@@ -98,17 +89,5 @@ public class click : MonoBehaviour
     } 
     
 }
-public void OnBtnShowClick1(){
-     Application.LoadLevel(2);
-    Debug.Log("切換場景 " );
-   } 
-   public void OnBtnShowClick2(){
-     Application.LoadLevel(1);
-    Debug.Log("切換場景 " );
-   } 
-    public void OnBtnShowClick3(){
-     Application.LoadLevel(2);
-    Debug.Log("切換場景 " );
-   } 
-   
+
 }

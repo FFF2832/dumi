@@ -10,12 +10,16 @@ public class Playermovement : MonoBehaviour
 
     public float speed;
     Vector2 movement;
-
+    private Inventory inventory;
+    [SerializeField] private UI_Inventory uiInventory;
+      //public GameObject uiInventory;   
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
+        inventory  =new Inventory();
+        uiInventory.SetInventory(inventory);
     }
 
     private void Update()

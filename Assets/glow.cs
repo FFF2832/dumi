@@ -18,8 +18,8 @@ public class glow : MonoBehaviour
     void Awake(){
         light_glow=this.transform.Find("light_glow").GetComponent<SpriteRenderer>();
         light_glow.DOFade(0f,0.01f);
-        canvasGroup=this.transform.Find("Canvas").GetComponent<CanvasGroup>();
-        canvasGroup.DOFade(0f,0.01f);
+        //canvasGroup=this.transform.Find("Canvas").GetComponent<CanvasGroup>();
+        //canvasGroup.DOFade(0f,0.01f);
     }
     void OnTriggerEnter2D(Collider2D other)
     {        
