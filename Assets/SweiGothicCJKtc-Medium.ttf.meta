@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: fe07a539e5cc4f149af69e2eb91cb7a0
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Swei Gothic CJK TC
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 568200d0fdc86e24aa9193f71bb33af5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

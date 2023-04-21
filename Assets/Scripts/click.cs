@@ -92,6 +92,11 @@ public class click : MonoBehaviour
              
                 Debug.Log("We hit " + hit.collider.name);
             }
+            
+            else if(hit.collider.name=="Password"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+            }
               
 
         }
