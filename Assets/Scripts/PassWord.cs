@@ -77,11 +77,11 @@ private void btn_login()
 {
 if (_password=="1234")
 {
-_Text.text = "登录成功";
+_Text.text = "啟動成功";
 }
 else
 {
-_Text.text = "密码错误";
+_Text.text = "啟動碼錯誤";
  _password = "";
 
 }
