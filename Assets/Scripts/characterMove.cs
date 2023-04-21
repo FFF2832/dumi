@@ -19,7 +19,7 @@ public class characterMove : MonoBehaviour
     private Animator animskill;
 	 private Vector2 target;
 	private enum MovementState{ idle ,running};
-     private Inventory inventory;
+     //private Inventory inventory;
     //[SerializeField] private UI_Inventory uiInventory;
      public GameObject myBag; 
      bool isOpen;  

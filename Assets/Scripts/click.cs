@@ -84,10 +84,10 @@ public class click : MonoBehaviour
                 OnBtnShowClick3();
                 Debug.Log("We hit " + hit.collider.name);
             }
-            // else if(hit.collider.name=="glowobj"){
-            //     OnBtnShowClick3();
-            //     Debug.Log("We hit " + hit.collider.name);
-            // }
+            else if(hit.collider.name=="glowobj"){
+                OnBtnShowClick3();
+                Debug.Log("We hit " + hit.collider.name);
+            }
             else if(hit.collider.name=="Bagicon"){
              
                 Debug.Log("We hit " + hit.collider.name);
