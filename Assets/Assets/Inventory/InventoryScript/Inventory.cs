@@ -27,11 +27,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName="New Inventory",menuName="Inventory/New Inventory")]
 public class Inventory : ScriptableObject
 {
-    public List<Item> itemList = new List<Item>();
-    public string itemName;
-     public Sprite itemImage;
-     public int itemHeild;
-     [TextArea]
-     public string itemInfo;
-     public bool equip;
+    public List<item> itemList = new List<item>();
+ 
 }

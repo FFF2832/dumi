@@ -22,6 +22,7 @@ public class characterMove : MonoBehaviour
      //private Inventory inventory;
     //[SerializeField] private UI_Inventory uiInventory;
      public GameObject myBag; 
+     public GameObject password; 
      bool isOpen;  
 	 private void Start()
     {
@@ -32,6 +33,7 @@ public class characterMove : MonoBehaviour
         animskill =GetComponent<Animator>();
 		target=transform.position;
         myBag.SetActive(false);
+        password.SetActive(false);
         // inventory  =new Inventory();
         // uiInventory.SetInventory(inventory);
     }
@@ -116,6 +118,12 @@ private void OnCollisionEnter(Collision other)
     }
 
 }
+ void OpenPasswordUI(){
+    if(Input.GetMouseButtonDown(0)){
+        isOpen= !isOpen;
+        password.SetActive(isOpen);
+    }
+}
  void check2DObjectClicked()
 {
     if (Input.GetMouseButtonDown(0))
@@ -150,7 +158,13 @@ private void OnCollisionEnter(Collision other)
                 Debug.Log("We hit " + hit.collider.name);
                 OpenMybag();
             }
-              
+
+            if(hit.collider.name=="Password"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+                 OpenPasswordUI();
+            }
+             
 
         }
     } 
