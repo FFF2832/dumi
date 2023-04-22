@@ -14,11 +14,12 @@ public class itemOnworld : MonoBehaviour
         AddNewItem();
         Destroy(gameObject);
         Debug.Log("touch");
-    }
+    }  
    } 
    public void AddNewItem(){
     if(!playerInventory.itemList.Contains(thisItem)){
          playerInventory.itemList.Add(thisItem);
+         InventoryManager.CreateNewItem(thisItem);
     }
     else {
         thisItem.itemHeild += 1;
