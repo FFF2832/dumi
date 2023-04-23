@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class characterMove : MonoBehaviour
 {
     public float speed = 0.01f;
@@ -40,30 +40,56 @@ public class characterMove : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetMouseButtonDown(0))
-		{
-            //取得在鏡頭中的滑鼠位置
-			lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			moving = true;
-		}
-	    else if (lastClickedPos.y>transform.position.y)
-		{
-			moving = false;
-		}
+    //     //原本的程式碼
+	// 	if (Input.GetMouseButtonDown(0))
+	// 	{
+    //         //取得在鏡頭中的滑鼠位置
+	// 		lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+	// 		moving = true;
+	// 	}
+	//     else if (lastClickedPos.y>transform.position.y)
+	// 	{
+	// 		moving = false;
+	// 	}
         
-	    else if (moving && (Vector2)transform.position != lastClickedPos)
-		{
-			float step = speed * Time.deltaTime;
-			transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, step);
-		}
-        else if (transform.position.y== lastClickedPos.y)
-		{
-			moving = false;
-		}
-	    else
-		{
-			moving = false;
-		}
+	//     else if (moving && (Vector2)transform.position != lastClickedPos)
+	// 	{
+	// 		float step = speed * Time.deltaTime;
+	// 		transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, step);
+	// 	}
+    //     else if (transform.position.y== lastClickedPos.y)
+	// 	{
+	// 		moving = false;
+	// 	}
+	//     else
+	// 	{
+	// 		moving = false;
+	// 	}
+    //     UpdateAnimationState();
+    //     check2DObjectClicked();
+    // }
+
+    
+        if (Input.GetMouseButtonDown(0))
+    {
+        // 取得在鏡頭中的滑鼠位置
+        Vector2 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // 只保留 X 軸座標，不要上下移動
+        lastClickedPos = new Vector2(clickPos.x, transform.position.y);
+
+        moving = true;
+    }
+    else if (moving && (Vector2)transform.position != lastClickedPos)
+    {
+        float step = speed * Time.deltaTime;
+        transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, step);
+    }
+    else
+    {
+        moving = false;
+    }
+
 		UpdateAnimationState();
         check2DObjectClicked();
         
@@ -128,7 +154,6 @@ private void OnCollisionEnter(Collision other)
 {
     if (Input.GetMouseButtonDown(0))
     {
-       
         Debug.Log("Mouse is pressed down");
         Camera cam = Camera.main;
 
