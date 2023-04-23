@@ -16,6 +16,7 @@ public class Look : MonoBehaviour
 
         // 隐藏图像
         spriteRenderer.enabled = false;
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
