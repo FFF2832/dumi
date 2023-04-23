@@ -24,5 +24,6 @@ public class itemOnworld : MonoBehaviour
     else {
         thisItem.itemHeild += 1;
     }
+    InventoryManager.RefreshItem(); 
    }
 }
