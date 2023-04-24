@@ -8,8 +8,11 @@ public class InventoryManager : MonoBehaviour
     static InventoryManager instance;
     public Inventory myBag;
     public GameObject slotGrid;
-    public slot slotPrefab;
+    //未刪
+    //public slot slotPrefab;
     public Text itemInformation;
+    public List<GameObject> slots= new  List<GameObject>();
+    public GameObject emptySlot;
     void Awake(){
         if(instance !=null)Destroy(this);
             instance=this;
@@ -20,18 +23,23 @@ public class InventoryManager : MonoBehaviour
     private void OnEnable()
     {
         RefreshItem();
+        instance.itemInformation.text="";
     }
+    public static void UpdateItemInfo(string itemDescription){
+        instance.itemInformation.text=itemDescription;
+    }
+     //未刪
     //將item 的資料傳送到 slot
-    public static void  CreateNewItem(item item){
-        slot newItem=Instantiate(instance.slotPrefab,instance.slotGrid.transform.position,Quaternion.identity);
-        //子集
+    // public static void  CreateNewItem(item item){
+    //     slot newItem=Instantiate(instance.slotPrefab,instance.slotGrid.transform.position,Quaternion.identity);
+    //     //子集
       
-        newItem.gameObject.transform.SetParent(instance.slotGrid.transform);
-        newItem.slotItem=item;
-        newItem.slotImage.sprite=item.itemImage;
+    //     newItem.gameObject.transform.SetParent(instance.slotGrid.transform);
+    //     newItem.slotItem=item;
+    //     newItem.slotImage.sprite=item.itemImage;
         
-    }
-    //  用來計算數量
+    // }
+     //用來計算數量
     public static void RefreshItem()
     {
         for (int i = 0; i < instance.slotGrid.transform.childCount; i++)
@@ -41,7 +49,11 @@ public class InventoryManager : MonoBehaviour
         }
         for (int i = 0; i < instance.myBag.itemList.Count ; i++)
         {
-            CreateNewItem(instance.myBag.itemList[i]);
+             //未刪
+            //CreateNewItem(instance.myBag.itemList[i]);
+            instance.slots.Add(Instantiate(instance.emptySlot));
+            instance.slots[i].transform.SetParent(instance.slotGrid.transform);
+            instance.slots[i].GetComponent<slot>().SetupSlot(instance.myBag.itemList[i]);
         }
         
     }
