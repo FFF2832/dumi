@@ -6,6 +6,7 @@ TagManager:
   tags:
   - item
   - npc
+  - Target
   layers:
   - Default
   - TransparentFX

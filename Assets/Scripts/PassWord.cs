@@ -75,7 +75,7 @@ _password = "";
 }
 private void btn_login()
 {
-if (_password=="1234")
+if (_password=="6192")
 {
 _Text.text = "啟動成功";
 }
