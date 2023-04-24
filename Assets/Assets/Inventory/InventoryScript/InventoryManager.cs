@@ -46,6 +46,7 @@ public class InventoryManager : MonoBehaviour
         {
             if(instance.slotGrid.transform.childCount==0)break;
             Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
+            instance.slots.Clear();
         }
         for (int i = 0; i < instance.myBag.itemList.Count ; i++)
         {

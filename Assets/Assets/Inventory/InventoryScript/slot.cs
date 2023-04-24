@@ -8,9 +8,10 @@ public class slot : MonoBehaviour
    public item slotItem;
     public Image slotImage;
     public GameObject itemInSlot;
+    public string slotInfo;
     //public int slotNum;
     public void ItemOnclicked(){
-        InventoryManager.UpdateItemInfo(slotItem.itemInfo);
+        InventoryManager.UpdateItemInfo(slotInfo);
     }
     public void SetupSlot(item item){
         if(item ==null){
@@ -18,6 +19,6 @@ public class slot : MonoBehaviour
                 return;
         }
         slotImage.sprite =item.itemImage;
-        
+        slotInfo=item.itemInfo;
     }
 }

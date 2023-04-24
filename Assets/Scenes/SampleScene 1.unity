@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 2298ebff4779bab4c8ab0a9a731ed9fe, type: 3}
+    - target: {fileID: 687967626825990353, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5037363361519643329, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -234,6 +238,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6620364056130114421, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6b19fed6ad8781a49bc52da348f9daf8, type: 3}
     - target: {fileID: 7555828874282933643, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -354,7 +362,8 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1820601569371268048, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
 --- !u!1 &18868403
 GameObject:
@@ -733,8 +742,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myBag: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
   slotGrid: {fileID: 111232504}
-  slotPrefab: {fileID: -7700004707928023737, guid: a04ce3c2f2ced414da8f65e92b998dd6, type: 3}
   itemInformation: {fileID: 922825900}
+  slots: []
+  emptySlot: {fileID: 6845525433114419320, guid: a04ce3c2f2ced414da8f65e92b998dd6, type: 3}
 --- !u!1 &111232504 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 70654098646451080, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
@@ -755,13 +765,13 @@ MonoBehaviour:
   m_Padding:
     m_Left: 28
     m_Right: 0
-    m_Top: 0
+    m_Top: 48
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 0, y: 20}
+  m_Spacing: {x: 0, y: 30}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &118167675
@@ -7379,20 +7389,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1760315997818295454, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
   m_PrefabInstance: {fileID: 13919667}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1384576746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384576744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 533f0ad8c2b20e547b47f9dd96a29b8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotItem: {fileID: 0}
-  slotImage: {fileID: 1384576747}
 --- !u!114 &1384576747 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6620364056130114421, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
