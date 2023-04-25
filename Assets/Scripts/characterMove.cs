@@ -86,6 +86,10 @@ public class characterMove : MonoBehaviour
         float step = speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, step);
     }
+        else if (lastClickedPos.y>transform.position.y)
+		{
+			moving = false;
+		}
     else
     {
         moving = false;
