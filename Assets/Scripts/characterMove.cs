@@ -151,7 +151,7 @@ private void OnCollisionEnter(Collision other)
 }
  void OpenPasswordUI(){
     if(Input.GetMouseButtonDown(0)){
-        isOpen= !isOpen;
+        isOpen= true;
         password.SetActive(isOpen);
     }
 }
