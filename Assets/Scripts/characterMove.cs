@@ -24,7 +24,10 @@ public class characterMove : MonoBehaviour
      public GameObject myBag; 
      public GameObject password; 
      bool isOpen;  
-    //private itemOnworld itemOnworldInstance;
+    public item thisItem;
+    public Inventory playerInventory;
+   
+    public itemOnworld itemOnworldInstance;
 	 private void Start()
     {
         rb=GetComponent<Rigidbody2D>();
@@ -194,13 +197,13 @@ private void OnCollisionEnter(Collision other)
                 Debug.Log("We hit " + hit.collider.name);
                  OpenPasswordUI();
             }
-            // if(hit.collider.name=="樹枝本人"){
+            if(hit.collider.name=="樹枝本人"){
              
-            //     Debug.Log("We hit " + hit.collider.name);
-            //     itemOnworldInstance.AddNewItem();
-            //     Destroy(hit.collider);
-            //     Debug.Log("touch");
-            // }
+                Debug.Log("We hit " + hit.collider.name);
+                itemOnworldInstance.AddNewItem();
+                Destroy(hit.collider);
+                Debug.Log("touch");
+            }
              
 
         }

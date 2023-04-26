@@ -20,7 +20,7 @@ public class InventoryManager : MonoBehaviour
 
     }
    
-    private void OnEnable()
+    public void OnEnable()
     {
         RefreshItem();
         instance.itemInformation.text="";
