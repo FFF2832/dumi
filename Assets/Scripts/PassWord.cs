@@ -81,7 +81,7 @@ _Text.text = "啟動成功";
 }
 else
 {
-_Text.text = "啟動碼錯誤";
+_Text.text = "密碼錯誤";
  _password = "";
 
 }
