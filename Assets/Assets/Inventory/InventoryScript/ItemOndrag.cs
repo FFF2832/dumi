@@ -17,4 +17,6 @@ public class ItemOndrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
    {
 
    }
+
+
 }

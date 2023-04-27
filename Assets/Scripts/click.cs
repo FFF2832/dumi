@@ -80,6 +80,10 @@ public class click : MonoBehaviour
                 OnBtnShowClick2();
                 Debug.Log("We hit " + hit.collider.name);
             }
+             else if(hit.collider.name=="球"){
+                OnBtnShowClick2();
+                Debug.Log("We hit " + hit.collider.name);
+            }
             else if(hit.collider.name=="paint"){
                 OnBtnShowClick3();
                 Debug.Log("We hit " + hit.collider.name);
