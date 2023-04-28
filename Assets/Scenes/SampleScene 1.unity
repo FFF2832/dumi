@@ -1559,6 +1559,32 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3798736071757118491, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
   m_PrefabInstance: {fileID: 6659803505437570176}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &419882704
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419882699}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &447058259
 GameObject:
   m_ObjectHideFlags: 0
@@ -8224,6 +8250,7 @@ GameObject:
   - component: {fileID: 1922059532}
   - component: {fileID: 1922059533}
   - component: {fileID: 1922059534}
+  - component: {fileID: 1922059535}
   m_Layer: 3
   m_Name: "\u561F\u7C73"
   m_TagString: Player
@@ -8383,6 +8410,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.312631, y: 8.864538}
   m_EdgeRadius: 0
+--- !u!114 &1922059535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922059527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc16abbf1abfe71408c1f7d6ff7058f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 0}
 --- !u!1 &1979445338
 GameObject:
   m_ObjectHideFlags: 0
@@ -9102,6 +9142,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2082470792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5161918324179348703, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
+  m_PrefabInstance: {fileID: 6659803505437570176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &2082470797
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082470792}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2086646355
 GameObject:
   m_ObjectHideFlags: 0

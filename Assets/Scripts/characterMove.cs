@@ -189,6 +189,7 @@ private void OnCollisionEnter(Collision other)
             if(hit.collider.name=="Bagicon"){
              
                 Debug.Log("We hit " + hit.collider.name);
+                moving=false;
                 OpenMybag();
             }
 
