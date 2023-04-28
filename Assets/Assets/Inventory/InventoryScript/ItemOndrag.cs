@@ -24,10 +24,17 @@ public class ItemOndrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
    }
    public void OnEndDrag(PointerEventData eventData)
    {
+     //判斷是否有物品
      if(eventData.pointerCurrentRaycast.gameObject.name=="Item Image"){
           transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent);
-          //transform.position=eventData.pointerCurrentRaycast.gameObject.transform.parent.parent;
+          transform.position=eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.position;
+          eventData.pointerCurrentRaycast.gameObject.transform.parent.position=originalParent.position;
+          eventData.pointerCurrentRaycast.gameObject.transform.SetParent(originalParent);
+           GetComponent<CanvasGroup>().blocksRaycasts=true;
+           return;
      }
+      transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
+      transform.position=eventData.pointerCurrentRaycast.gameObject.transform.position;
           GetComponent<CanvasGroup>().blocksRaycasts=false;
    }
 
