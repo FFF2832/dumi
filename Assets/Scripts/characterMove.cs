@@ -74,7 +74,7 @@ public class characterMove : MonoBehaviour
     // }
 
     
-        if (Input.GetMouseButtonDown(0))
+        if (!isOpen&&Input.GetMouseButtonDown(0))
     {
         // 取得在鏡頭中的滑鼠位置
         Vector2 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -196,6 +196,7 @@ private void OnCollisionEnter(Collision other)
             if(hit.collider.name=="Password"){
              
                 Debug.Log("We hit " + hit.collider.name);
+                moving=false;
                  OpenPasswordUI();
             }
             if(hit.collider.name=="樹枝本人"){

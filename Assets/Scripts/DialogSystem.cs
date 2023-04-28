@@ -26,6 +26,7 @@ public class DialogSystem : MonoBehaviour
     public Sprite dialogPlayer;
     public Sprite dialogNpc;
     public Sprite dialogIllustrate1;
+    public Sprite dialogIllustrate2;
     bool textFinished;  //文本是否显示完毕
     bool isTyping;  //是否在逐字显示
 
@@ -106,7 +107,12 @@ public class DialogSystem : MonoBehaviour
                 headImage.sprite = headNPC;
                 dialogImage.sprite = dialogIllustrate1;
                 index++;
-                break;    
+                break;
+            case "I2":
+                headImage.sprite = headNPC;
+                dialogImage.sprite = dialogIllustrate2;
+                index++;
+                break;         
             case "...":
                 textFinished = true; 
                 break;
