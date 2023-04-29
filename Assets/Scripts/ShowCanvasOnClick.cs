@@ -31,28 +31,31 @@ public class ShowCanvasOnClick : MonoBehaviour
     //         }
     //     }
     // }
-     public GameObject canvasToShow;
+ public GameObject canvasToToggle;
+
+    private bool canvasIsActive = false;
 
     void Start()
     {
-        // 隐藏要显示的 Canvas
-        canvasToShow.SetActive(false);
+        canvasToToggle.SetActive(canvasIsActive);
     }
 
     void Update()
     {
-        // 如果点击了鼠标左键
         if (Input.GetMouseButtonDown(0))
         {
-            // 获取鼠标的位置
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            // 如果鼠标点击了当前 Canvas
             if (RectTransformUtility.RectangleContainsScreenPoint(
                 GetComponent<RectTransform>(), mousePos, null))
             {
-                // 显示要显示的 Canvas
-                canvasToShow.SetActive(true);
+                canvasIsActive = !canvasIsActive;
+                canvasToToggle.SetActive(canvasIsActive);
+            }
+            else if (canvasIsActive && !RectTransformUtility.RectangleContainsScreenPoint(
+                canvasToToggle.GetComponent<RectTransform>(), mousePos, null))
+            {
+                canvasIsActive = false;
+                canvasToToggle.SetActive(false);
             }
         }
     }

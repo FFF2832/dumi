@@ -74,7 +74,7 @@ public class characterMove : MonoBehaviour
     // }
 
     
-        if (!isOpen&&Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
     {
         // 取得在鏡頭中的滑鼠位置
         Vector2 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -206,6 +206,15 @@ private void OnCollisionEnter(Collision other)
                 Destroy(hit.collider);
                 Debug.Log("touch");
             }
+//             if (hit.collider.CompareTag("UI"))
+//             {
+//              // 點擊到 UI 物件，不做任何事情
+//             }
+//         else
+// {
+//     // 點擊到非 UI 物件，將 moving 設定為 false
+//     moving = false;
+// }
              
 
         }
