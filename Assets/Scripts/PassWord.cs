@@ -8,8 +8,10 @@ public class PassWord : MonoBehaviour
 private string _password;
 public Text _Text;
 public InputField _Field;
+public static bool Check;
 private void Start()
 {
+    Check=false;
 btn[0].onClick.AddListener(btn_00);
 btn[1].onClick.AddListener(btn_01);
 btn[2].onClick.AddListener(btn_02);
@@ -22,6 +24,7 @@ btn[8].onClick.AddListener(btn_08);
 btn[9].onClick.AddListener(btn_09);
 btn[10].onClick.AddListener(btn_clear);
 btn[11].onClick.AddListener(btn_login);
+
 }
 
 private void Update()
@@ -78,12 +81,19 @@ private void btn_login()
 if (_password=="6192")
 {
 _Text.text = "啟動成功";
+Check=true;
+
 }
 else
 {
 _Text.text = "密碼錯誤";
  _password = "";
-
+Check=false;
 }
 } 
+public static bool checkInput() // 宣告為靜態方法，回傳靜態變數 Check
+    {
+        return Check;
+    }
 }
+

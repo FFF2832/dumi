@@ -28,6 +28,7 @@ public class characterMove : MonoBehaviour
     public Inventory playerInventory;
    
     public itemOnworld itemOnworldInstance;
+  
 	 private void Start()
     {
         rb=GetComponent<Rigidbody2D>();
@@ -206,6 +207,14 @@ private void OnCollisionEnter(Collision other)
                 Destroy(hit.collider);
                 Debug.Log("touch");
             }
+             if(hit.collider.name=="Password"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+               if(CheckInput.ChangeScene){
+                    CheckInput.ChangeTonight();
+                 }
+                
+            }
 //             if (hit.collider.CompareTag("UI"))
 //             {
 //              // 點擊到 UI 物件，不做任何事情
@@ -221,5 +230,6 @@ private void OnCollisionEnter(Collision other)
     } 
     
 }
+
 
 }
