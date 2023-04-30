@@ -173,6 +173,16 @@ private void OnCollisionEnter(Collision other)
                 moving=false;
                 OpenMybag();
             }
+            if(hit.collider.name=="Guideicon"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+                moving=false;
+            }
+            if(hit.collider.name=="STOP"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+                moving=false;
+            }//點UI不移動偷吃步
 
             if(hit.collider.name=="Password"){
              
