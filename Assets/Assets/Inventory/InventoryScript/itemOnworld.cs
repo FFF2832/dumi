@@ -77,6 +77,7 @@ public class itemOnworld : MonoBehaviour
              
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem();
+                Destroy(gameObject);
                 Destroy(hit.collider);
                 Debug.Log("touch零件");
             }

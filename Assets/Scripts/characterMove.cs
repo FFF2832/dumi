@@ -25,6 +25,7 @@ public class characterMove : MonoBehaviour
      public GameObject password; 
      bool isOpen;  
     public item thisItem;
+  
     public Inventory playerInventory;
    
     public itemOnworld itemOnworldInstance;
@@ -45,36 +46,9 @@ public class characterMove : MonoBehaviour
 
 	private void Update()
 	{
-    //     //原本的程式碼
-	// 	if (Input.GetMouseButtonDown(0))
-	// 	{
-    //         //取得在鏡頭中的滑鼠位置
-	// 		lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-	// 		moving = true;
-	// 	}
-	//     else if (lastClickedPos.y>transform.position.y)
-	// 	{
-	// 		moving = false;
-	// 	}
-        
-	//     else if (moving && (Vector2)transform.position != lastClickedPos)
-	// 	{
-	// 		float step = speed * Time.deltaTime;
-	// 		transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, step);
-	// 	}
-    //     else if (transform.position.y== lastClickedPos.y)
-	// 	{
-	// 		moving = false;
-	// 	}
-	//     else
-	// 	{
-	// 		moving = false;
-	// 	}
-    //     UpdateAnimationState();
-    //     check2DObjectClicked();
-    // }
-
     
+
+   
         if (Input.GetMouseButtonDown(0))
     {
         // 取得在鏡頭中的滑鼠位置
@@ -148,9 +122,15 @@ private void OnCollisionEnter(Collision other)
 }
  void OpenMybag(){
     if(Input.GetMouseButtonDown(0)){
+
         isOpen= !isOpen;
         myBag.SetActive(isOpen);
+         if(isOpen)moving=false;
+
+        
+        
     }
+    
 
 }
  void OpenPasswordUI(){
@@ -198,6 +178,7 @@ private void OnCollisionEnter(Collision other)
              
                 Debug.Log("We hit " + hit.collider.name);
                 moving=false;
+                this.enabled = false;
                  OpenPasswordUI();
             }
             if(hit.collider.name=="樹枝本人"){
@@ -215,15 +196,16 @@ private void OnCollisionEnter(Collision other)
                  }
                 
             }
-//             if (hit.collider.CompareTag("UI"))
-//             {
-//              // 點擊到 UI 物件，不做任何事情
-//             }
-//         else
-// {
-//     // 點擊到非 UI 物件，將 moving 設定為 false
-//     moving = false;
-// }
+            if (hit.collider.CompareTag("UI"))
+            {
+               this.enabled = false;
+                moving = false;
+            }
+            else
+            {
+            // 點擊到非 UI 物件，將 moving 設定為 false
+            
+            }       
              
 
         }
