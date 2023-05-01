@@ -187,8 +187,8 @@ private void OnCollisionEnter(Collision other)
             if(hit.collider.name=="Password"){
              
                 Debug.Log("We hit " + hit.collider.name);
-                moving=false;
-                this.enabled = false;
+                //moving=false;
+                //this.enabled = false;
                  OpenPasswordUI();
             }
             if(hit.collider.name=="樹枝本人"){
@@ -206,16 +206,16 @@ private void OnCollisionEnter(Collision other)
                  }
                 
             }
-            if (hit.collider.CompareTag("UI"))
-            {
-               this.enabled = false;
-                moving = false;
-            }
-            else
-            {
-            // 點擊到非 UI 物件，將 moving 設定為 false
+            // if (hit.collider.CompareTag("UI"))
+            // {
+            //    this.enabled = false;
+            //     moving = false;
+            // }
+            // else
+            // {
+            // // 點擊到非 UI 物件，將 moving 設定為 false
             
-            }       
+            // }       
              
 
         }
