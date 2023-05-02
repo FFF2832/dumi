@@ -90,23 +90,32 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private Transform targetTransform;
     public float snapDistance = 0.5f; // 物品被吸附的距離
     private bool isSnapped = false;
-
+    private RectTransform _rectTransform;
+     private CanvasGroup _canvasGroup;
+     private Vector2 originPosition;
+    private void Awake()
+    {
+        _rectTransform=GetComponent<RectTransform>();
+        originPosition=_rectTransform.position;
+         _canvasGroup=GetComponent<CanvasGroup>();
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         originalParent = transform.parent;
         transform.SetParent(transform.parent.parent);
         //跟隨鼠標
         transform.position = eventData.position;
-       // GetComponent<CanvasGroup>().blocksRaycasts = false;
+       _canvasGroup.blocksRaycasts = false;
         Debug.Log("startmove");
-        //GetComponent<characterMove>().enabled = false;
+     
     }
 
     public void OnDrag(PointerEventData eventData)
     {
          //跟隨鼠標
-        transform.position = eventData.position;
-        Debug.Log(eventData.pointerCurrentRaycast.gameObject.name);
+        //transform.position = eventData.position;
+        _rectTransform.position=eventData.position;
+        //Debug.Log(eventData.pointerCurrentRaycast.gameObject.name);
         Debug.Log("moving");
     }
 
@@ -116,7 +125,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         {
             transform.position = targetTransform.position;
             transform.SetParent(targetTransform);
-            //GetComponent<CanvasGroup>().blocksRaycasts = true;
+           _canvasGroup.blocksRaycasts = true;
             isSnapped = true;
             
         }
@@ -126,24 +135,42 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
            
             transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
             transform.position = eventData.pointerCurrentRaycast.gameObject.transform.position;
-           //GetComponent<CanvasGroup>().blocksRaycasts = false;
+           
             Debug.Log("endmoving");
         }
-        
-
+        // _rectTransform.position=originPosition;
+        // _canvasGroup.blocksRaycasts = true;
+        //  Debug.Log("endmoving");
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if (collision.tag == "Target")
+    //     {
+    //         targetTransform = collision.transform;
+    //         Debug.Log("inside");
+    //     }
+    // }
+
+    // private void OnTriggerExit2D(Collider2D collision)
+    // {
+    //     if (collision.tag == "Target")
+    //     {
+    //         targetTransform = null;
+    //         isSnapped = false;
+    //     }
+    // }
+      public void OnPointerEnter(PointerEventData eventData)
     {
-        if (collision.tag == "Target")
+        if (eventData.pointerCurrentRaycast.gameObject.tag == "Target")
         {
-            targetTransform = collision.transform;
+            targetTransform = eventData.pointerCurrentRaycast.gameObject.transform;
             Debug.Log("inside");
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void OnPointerExit(PointerEventData eventData)
     {
-        if (collision.tag == "Target")
+        if (eventData.pointerCurrentRaycast.gameObject.tag == "Target")
         {
             targetTransform = null;
             isSnapped = false;
