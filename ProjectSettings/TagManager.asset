@@ -9,6 +9,8 @@ TagManager:
   - Target
   - TargetObject
   - UI
+  - Grid
+  - Good
   layers:
   - Default
   - TransparentFX
