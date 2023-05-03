@@ -110,6 +110,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 // public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 // {
 //     public Transform originalParent;
@@ -170,13 +171,83 @@ using UnityEngine.EventSystems;
 // }
 
 //版本四
+// public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+// {
+//     public Transform originalParent;
+//     public Transform correctParent;
+//     private bool isDragging = false;
+//     private Vector2 offset;
+//     private Transform targetTransform;
+    
+
+//     public void OnBeginDrag(PointerEventData eventData)
+//     {
+//         this.transform.SetAsLastSibling();
+//         originalParent = transform.parent;
+//         transform.SetParent(transform.parent.parent);
+//         //跟隨鼠標
+//         transform.position = eventData.position;
+//     }
+
+//     public void OnDrag(PointerEventData eventData)
+//     {
+//         //跟隨鼠標
+//         transform.position = eventData.position;
+//     }
+
+//     public void OnEndDrag(PointerEventData eventData)
+//     {
+//         // 判斷是否碰撞到目標
+//         Vector2 localPoint;
+//         RectTransform targetRectTransform = targetTransform as RectTransform;
+//         if (targetRectTransform != null &&
+//             RectTransformUtility.ScreenPointToLocalPointInRectangle(
+//                 targetRectTransform,
+//                 eventData.position,
+//                 eventData.pressEventCamera,
+//                 out localPoint))
+//         {
+//             // 如果碰撞到了目標，將物體吸附到目標上
+//             transform.SetParent(correctParent);
+//             transform.localPosition = localPoint;
+//             Debug.Log("on target");
+//         }
+//         else
+//         {
+//             // 如果沒有碰撞到目標，將物體放回原來的位置
+//             transform.SetParent(originalParent);
+//             transform.position = originalParent.position;
+//             Debug.Log("not on target");
+//         }
+//     }
+
+//     private void OnTriggerEnter2D(Collider2D collision)
+//     {
+//         if (collision.tag == "Target")
+//         {
+//             targetTransform = collision.transform;
+//         }
+//     }
+
+//     private void OnTriggerExit2D(Collider2D collision)
+//     {
+//         if (collision.tag == "Target")
+//         {
+//             targetTransform = null;
+//         }
+//     }
+// }
+
+//好像也沒用的何小姐版本
 public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public Transform originalParent;
+      public Transform originalParent;
     public Transform correctParent;
     private bool isDragging = false;
     private Vector2 offset;
     private Transform targetTransform;
+    private Transform anchor;
+    // public Sprite newSprite;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -199,17 +270,18 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         Vector2 localPoint;
         RectTransform targetRectTransform = targetTransform as RectTransform;
         if (targetRectTransform != null &&
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                targetRectTransform,
-                eventData.position,
-                eventData.pressEventCamera,
-                out localPoint))
-        {
-            // 如果碰撞到了目標，將物體吸附到目標上
-            transform.SetParent(correctParent);
-            transform.localPosition = localPoint;
-            Debug.Log("on target");
-        }
+    RectTransformUtility.ScreenPointToLocalPointInRectangle(
+        targetRectTransform,
+        eventData.position,
+        eventData.pressEventCamera,
+        out localPoint))
+{
+    // 如果碰撞到了目標，將物體吸附到目標上
+    transform.SetParent(correctParent);
+    transform.localPosition = targetTransform.localPosition; // 将拖曳物体设置到目标物体的位置上
+    // GetComponent<Image>().sprite = newSprite;
+    Debug.Log("on target");
+}
         else
         {
             // 如果沒有碰撞到目標，將物體放回原來的位置
@@ -221,17 +293,20 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Target")
-        {
-            targetTransform = collision.transform;
-        }
+       if (collision.tag == "Target")
+    {
+        targetTransform = collision.transform;
+        anchor = targetTransform.Find("Anchor");
+        Debug.Log("Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
+    }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Target")
-        {
-            targetTransform = null;
-        }
+    {
+        targetTransform = null;
+        anchor = null;
+    }
     }
 }

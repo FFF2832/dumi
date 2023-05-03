@@ -118,9 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalParent: {fileID: 0}
-  newSprite: {fileID: 0}
-  target: {fileID: 0}
-  snapDistance: 0.5
+  correctParent: {fileID: 5956777215781265009, guid: 49d6e984fd342a747a4e56d0be061351, type: 3}
 --- !u!61 &3567632172143834911
 BoxCollider2D:
   m_ObjectHideFlags: 0
