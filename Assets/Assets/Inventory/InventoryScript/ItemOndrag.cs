@@ -241,14 +241,18 @@ using UnityEngine.UI;
 //好像也沒用的何小姐版本
 public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-      public Transform originalParent;
+    //
+    public Transform originalParent;
     public Transform correctParent;
     private bool isDragging = false;
-    private Vector2 offset;
+    //偏移量
+    private Vector3 offset;
     private Transform targetTransform;
     private Transform anchor;
-    // public Sprite newSprite;
-
+    // private Image changeImage;
+     
+  
+    public static bool correct;
     public void OnBeginDrag(PointerEventData eventData)
     {
         this.transform.SetAsLastSibling();
@@ -266,6 +270,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        correct = false;
         // 判斷是否碰撞到目標
         Vector2 localPoint;
         RectTransform targetRectTransform = targetTransform as RectTransform;
@@ -275,19 +280,30 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         eventData.position,
         eventData.pressEventCamera,
         out localPoint))
+   
 {
+     // 计算偏移量
+    //offset = transform.localPosition - anchor.localPosition;
     // 如果碰撞到了目標，將物體吸附到目標上
+    // transform.SetParent(correctParent);
+    // transform.localPosition = anchor.localPosition + offset;
     transform.SetParent(correctParent);
     transform.localPosition = targetTransform.localPosition; // 将拖曳物体设置到目标物体的位置上
-    // GetComponent<Image>().sprite = newSprite;
-    Debug.Log("on target");
+     //GetComponent<Image>().sprite = newSprite;
+      Debug.Log("on target");
+    Debug.Log("correct"+correct);
+     correct=true;
+   Destroy(gameObject);
 }
         else
         {
+              
+              correct=false;
             // 如果沒有碰撞到目標，將物體放回原來的位置
             transform.SetParent(originalParent);
             transform.position = originalParent.position;
             Debug.Log("not on target");
+             Debug.Log("correct"+correct);
         }
     }
 
@@ -295,6 +311,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
        if (collision.tag == "Target")
     {
+       
         targetTransform = collision.transform;
         anchor = targetTransform.Find("Anchor");
         Debug.Log("Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
@@ -305,8 +322,16 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         if (collision.tag == "Target")
     {
+         //correct=false;
         targetTransform = null;
         anchor = null;
     }
     }
+    public static bool checkTarget() // 宣告為靜態方法，回傳靜態變數 Check
+    {
+        return correct;
+    }
 }
+//UI 介面鎖屏
+//拖曳問題 (一半)  判斷拖曳物件是甚麼
+//木頭勾零件
