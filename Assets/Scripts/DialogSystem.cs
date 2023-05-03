@@ -52,7 +52,7 @@ public class DialogSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && index == textList.Count)
         {
             gameObject.SetActive(false);
-            Destroy(gameObject);
+            // Destroy(gameObject); //不刪除物件則可無限次數說話
             return;
         }
 
