@@ -249,6 +249,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private Vector3 offset;
     private Transform targetTransform;
     private Transform anchor;
+  
     // private Image changeImage;
      
   
@@ -287,7 +288,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     // 如果碰撞到了目標，將物體吸附到目標上
     // transform.SetParent(correctParent);
     // transform.localPosition = anchor.localPosition + offset;
-    transform.SetParent(correctParent);
+    //
+   // transform.SetParent(correctParent);
     transform.localPosition = targetTransform.localPosition; // 将拖曳物体设置到目标物体的位置上
      //GetComponent<Image>().sprite = newSprite;
       Debug.Log("on target");
