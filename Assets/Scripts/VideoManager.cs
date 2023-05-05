@@ -1,31 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
 public class VideoManager : MonoBehaviour
 {
-public VideoPlayer videoPlayer1;
-    public VideoPlayer videoPlayer2;
+ public VideoPlayer videoPlayer;
+    public VideoClip[] videoClips; // 要播放的视频数组
+    private int currentClipIndex = 0; // 当前要播放的视频的索引
 
     void Start()
     {
-        // 播放第一個MP4
-        videoPlayer1.Play();
+        videoPlayer.loopPointReached += LoopPointReached;
+
+        // 初始化视频Player，并预加载第一个视频
+        videoPlayer.source = VideoSource.VideoClip;
+        videoPlayer.clip = videoClips[currentClipIndex];
+        videoPlayer.Prepare();
     }
 
-    void Update()
+    void LoopPointReached(VideoPlayer vp)
     {
-        // 檢查第一個MP4是否已經播放完畢
-        if (videoPlayer1.isPlaying && videoPlayer1.time >= videoPlayer1.length)
+        // 判断是否为最后一个视频，如果不是则切换到下一个视频
+        if (currentClipIndex < videoClips.Length - 1)
         {
-            // 停止第一個MP4的播放
-            videoPlayer1.Stop();
-            
-            // // 設置第二個MP4的URL
-            // videoPlayer2.url = "file://path/to/second/video.mp4";
-            
-            // 循環播放第二個MP4
-            videoPlayer2.isLooping = true;
-            videoPlayer2.Play();
+            currentClipIndex++;
+            vp.clip = videoClips[currentClipIndex];
+            vp.Prepare(); // 预加载下一个视频
         }
+
+        vp.Play(); // 继续播放
     }
 }
