@@ -8779,7 +8779,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite1: {fileID: 21300000, guid: c41e24f11b5c05f4881e7636fe3c91c4, type: 3}
   sprite2: {fileID: 21300000, guid: 1d47e518b47394b4b8578b04092d3c7f, type: 3}
-  newCorrectParentTransform: {fileID: 581370266}
 --- !u!1 &582866079
 GameObject:
   m_ObjectHideFlags: 0
@@ -10565,7 +10564,7 @@ GameObject:
   - component: {fileID: 879175949}
   m_Layer: 0
   m_Name: "\u96F6\u4EF62"
-  m_TagString: Target
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10703,7 +10702,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite1: {fileID: 21300000, guid: 710e2105f0220b446a45488c761bb8d4, type: 3}
   sprite2: {fileID: 21300000, guid: 161fc21445cdeec498bd65505a9d3b31, type: 3}
-  newCorrectParentTransform: {fileID: 0}
 --- !u!1 &882856285
 GameObject:
   m_ObjectHideFlags: 0
@@ -17468,7 +17466,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite1: {fileID: 21300000, guid: a280ed62954c7ff4c8ada83b59001405, type: 3}
   sprite2: {fileID: 21300000, guid: 2e4d9595edbdaf046aa73f78d54644fd, type: 3}
-  newCorrectParentTransform: {fileID: 1852124775}
 --- !u!1 &1893474824
 GameObject:
   m_ObjectHideFlags: 0
