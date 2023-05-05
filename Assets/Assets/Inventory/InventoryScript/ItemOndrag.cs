@@ -249,7 +249,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private Vector3 offset;
     private Transform targetTransform;
     private Transform anchor;
-  
+    public Inventory myBag;
+    private int currentItemID;
     // private Image changeImage;
      
   
@@ -258,6 +259,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         this.transform.SetAsLastSibling();
         originalParent = transform.parent;
+        currentItemID=originalParent.GetComponent<slot>().slotID;
         transform.SetParent(transform.parent.parent);
         //跟隨鼠標
         transform.position = eventData.position;
@@ -275,6 +277,10 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         // 判斷是否碰撞到目標
         Vector2 localPoint;
         RectTransform targetRectTransform = targetTransform as RectTransform;
+//
+var temp=myBag.itemList[currentItemID];
+myBag.itemList[currentItemID]=myBag.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponent<slot>().slotID];
+        
         if (targetRectTransform != null &&
     RectTransformUtility.ScreenPointToLocalPointInRectangle(
         targetRectTransform,
@@ -283,6 +289,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         out localPoint))
    
 {
+    Debug.Log(myBag.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponent<item>().itemID]);
      // 计算偏移量
     //offset = transform.localPosition - anchor.localPosition;
     // 如果碰撞到了目標，將物體吸附到目標上

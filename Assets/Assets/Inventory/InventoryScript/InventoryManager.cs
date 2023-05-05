@@ -48,12 +48,14 @@ public class InventoryManager : MonoBehaviour
             Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
             instance.slots.Clear();
         }
+        //重新生成對應的slot
         for (int i = 0; i < instance.myBag.itemList.Count ; i++)
         {
              //未刪
             //CreateNewItem(instance.myBag.itemList[i]);
             instance.slots.Add(Instantiate(instance.emptySlot));
             instance.slots[i].transform.SetParent(instance.slotGrid.transform);
+            //instance.slot[i].GetComponent<slot>().slotID=i;
             instance.slots[i].GetComponent<slot>().SetupSlot(instance.myBag.itemList[i]);
         }
         

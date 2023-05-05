@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class slot : MonoBehaviour
 {
     //命名為item類才能取得
+    public int slotID;
    public item slotItem;
     public Image slotImage;
     public GameObject itemInSlot;
