@@ -250,7 +250,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private Transform anchor;
     // private Image changeImage;
      
-  
+    public static bool ok;
     public static bool correct;
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -269,7 +269,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        correct = false;
+        // correct = false;
         // 判斷是否碰撞到目標
         Vector2 localPoint;
         RectTransform targetRectTransform = targetTransform as RectTransform;
@@ -287,7 +287,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
       Debug.Log("on target");
     Debug.Log("correct"+correct);
-     correct=true;
+    // correct=true;
    Destroy(gameObject);
 }
         else
@@ -306,10 +306,18 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
        if (collision.tag == "Target")
     {
-       
+        correct=true;
+        Debug.Log("Trigger的correct"+correct);
         targetTransform = collision.transform;
         anchor = targetTransform.Find("Anchor");
         Debug.Log("Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
+    }
+    else if (collision.tag == "TargetObject")
+    {
+        ok=true;
+        targetTransform = collision.transform;
+        anchor = targetTransform.Find("Anchor");
+        Debug.Log("新的Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
     }
     }
 
@@ -317,7 +325,13 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         if (collision.tag == "Target")
     {
-         //correct=false;
+        correct=true;
+        targetTransform = null;
+        anchor = null;
+    }
+          else if (collision.tag == "TargetObject")
+    {
+        ok=true;
         targetTransform = null;
         anchor = null;
     }
@@ -325,6 +339,10 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public static bool checkTarget() // 宣告為靜態方法，回傳靜態變數 Check
     {
         return correct;
+    }
+        public static bool checkTarget2() // 宣告為靜態方法，回傳靜態變數 Check
+    {
+        return ok;
     }
 }
 //UI 介面鎖屏

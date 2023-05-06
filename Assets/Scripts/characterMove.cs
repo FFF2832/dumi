@@ -46,10 +46,12 @@ public class characterMove : MonoBehaviour
 
 	private void Update()
 	{
-    
-
-   
-        if (Input.GetMouseButtonDown(0))
+     // 檢查是否點擊了 Canvas 或 UI 介面
+    if (EventSystem.current.IsPointerOverGameObject())
+    {
+        moving = false;
+    }
+    else if (Input.GetMouseButtonDown(0))
     {
         // 取得在鏡頭中的滑鼠位置
         Vector2 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
