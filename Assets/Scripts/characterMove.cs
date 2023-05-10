@@ -209,6 +209,7 @@ private void OnCollisionEnter(Collision other)
                  }
                 
             }
+            
             // if (hit.collider.CompareTag("UI"))
             // {
             //    this.enabled = false;
