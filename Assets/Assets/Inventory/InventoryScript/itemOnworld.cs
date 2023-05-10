@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class itemOnworld : MonoBehaviour
 {
-   public item thisItem;
+   public static item thisItem;
+    // public static slot thisSlot;
    public Inventory playerInventory;
-
+public static int id;
   private void Update(){
     check2DObjectClicked();
   }
@@ -26,6 +27,7 @@ public class itemOnworld : MonoBehaviour
          for(int i=0;i<playerInventory.itemList.Count;i++){
                 if(playerInventory.itemList[i]==null){
                         playerInventory.itemList[i]=thisItem;
+                        Debug.Log(thisItem.name);
                         break;
                 }
          }
@@ -35,7 +37,8 @@ public class itemOnworld : MonoBehaviour
     }
     InventoryManager.RefreshItem(); 
    }
-
+   
+    
    void check2DObjectClicked()
 {
     if (Input.GetMouseButtonDown(0))
@@ -65,15 +68,16 @@ public class itemOnworld : MonoBehaviour
         {
             
           
-            if(hit.collider.name=="樹枝本人"){
+            if(hit.collider.name=="branch"){
              
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem();
                 Destroy(hit.collider);
                  Destroy(gameObject);
                 Debug.Log("touch");
+               
             }
-            if(hit.collider.name=="零件"){
+            if(hit.collider.name=="零件2"){
              
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem();

@@ -193,13 +193,14 @@ private void OnCollisionEnter(Collision other)
                 //this.enabled = false;
                  OpenPasswordUI();
             }
-            if(hit.collider.name=="樹枝本人"){
+            if(hit.collider.name=="branch"){
              
                 Debug.Log("We hit " + hit.collider.name);
                 itemOnworldInstance.AddNewItem();
                 Destroy(hit.collider);
                 Debug.Log("touch");
             }
+            
              if(hit.collider.name=="Password"){
              
                 Debug.Log("We hit " + hit.collider.name);

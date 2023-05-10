@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject slotGrid;
     //未刪
     //public slot slotPrefab;
+    public item item;
     public Text itemInformation;
     public List<GameObject> slots= new  List<GameObject>();
     public GameObject emptySlot;
@@ -55,7 +56,9 @@ public class InventoryManager : MonoBehaviour
             //CreateNewItem(instance.myBag.itemList[i]);
             instance.slots.Add(Instantiate(instance.emptySlot));
             instance.slots[i].transform.SetParent(instance.slotGrid.transform);
-            //instance.slot[i].GetComponent<slot>().slotID=i;
+        // instance.slot[i].GetComponent<slot>().slotID=i;
+         // 將生成的 itemID 賦值給對應的 item 物件
+
             instance.slots[i].GetComponent<slot>().SetupSlot(instance.myBag.itemList[i]);
         }
         

@@ -17,3 +17,4 @@ MonoBehaviour:
   itemHeild: 0
   itemInfo: "\u9019\u662F\u6A39\u679D"
   equip: 1
+  itemID: 0
