@@ -5,7 +5,7 @@ using UnityEngine;
 public class itemOnworld : MonoBehaviour
 {
    public static item thisItem;
-    public static slot thisSlot;
+    // public static slot thisSlot;
    public Inventory playerInventory;
 public static int id;
   private void Update(){
