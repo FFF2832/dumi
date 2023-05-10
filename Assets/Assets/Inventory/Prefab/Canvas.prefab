@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myBag: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
   slotGrid: {fileID: 6671910806674395835}
+  item: {fileID: 0}
   itemInformation: {fileID: 6608313206942041310}
   slots: []
   emptySlot: {fileID: 6845525433114419320, guid: a04ce3c2f2ced414da8f65e92b998dd6, type: 3}

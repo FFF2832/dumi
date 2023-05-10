@@ -249,22 +249,36 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private Transform targetTransform;
     private Transform anchor;
     // private Image changeImage;
-     
+      public item thisItem;
+   public Inventory myBag;
     public static bool ok;
     public static bool correct;
+  public itemOnworld itemonworld;
+   
     public void OnBeginDrag(PointerEventData eventData)
     {
+        
+        
         this.transform.SetAsLastSibling();
         originalParent = transform.parent;
         transform.SetParent(transform.parent.parent);
         //跟隨鼠標
         transform.position = eventData.position;
     }
-
     public void OnDrag(PointerEventData eventData)
     {
         //跟隨鼠標
+        // GameObject draggedItem = eventData.pointerDrag;
+        // item itemData = draggedItem.GetComponent<item>();
         transform.position = eventData.position;
+        //itemImage
+        Debug.Log(eventData.pointerCurrentRaycast.gameObject);
+        //Debug.Log(eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<item>());
+        //item itemData = eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<item>();
+         //Debug.Log(itemInfo.GetItemID(thisItem));
+            // 在这里可以根据物品ID进行相关操作
+              //Debug.Log( thisItem.itemID);
+        
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -279,12 +293,10 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         eventData.position,
         eventData.pressEventCamera,
         out localPoint))
-   
 {
-     
+    Debug.Log(thisItem.itemID);
     transform.SetParent(correctParent);
     transform.localPosition = targetTransform.localPosition; // 将拖曳物体设置到目标物体的位置上
-
       Debug.Log("on target");
     Debug.Log("correct"+correct);
     // correct=true;
@@ -343,7 +355,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         public static bool checkTarget2() // 宣告為靜態方法，回傳靜態變數 Check
     {
         return ok;
-    }
+    }   
+
 }
 //UI 介面鎖屏
 //拖曳問題 (一半)  判斷拖曳物件是甚麼
