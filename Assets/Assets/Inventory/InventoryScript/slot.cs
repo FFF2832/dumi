@@ -16,7 +16,7 @@ public class slot : MonoBehaviour
      public GameObject itemPrefab; // 物品預製體
     public Transform inventoryParent; // 背包的父物件
      public Inventory myBag;
-     public static slots thislot;
+ 
     //public int slotNum;
     public void ItemOnclicked(){
         InventoryManager.UpdateItemInfo(slotInfo);
