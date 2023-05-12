@@ -272,7 +272,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         // item itemData = draggedItem.GetComponent<item>();
         transform.position = eventData.position;
         //itemImage
-        Debug.Log(eventData.pointerCurrentRaycast.gameObject);
+        // Debug.Log(eventData.pointerCurrentRaycast.gameObject);
+        Debug.Log(eventData.pointerDrag.GetComponent<Image>().sprite);
         //Debug.Log(eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<item>());
         //item itemData = eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<item>();
          //Debug.Log(itemInfo.GetItemID(thisItem));
@@ -294,7 +295,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         eventData.pressEventCamera,
         out localPoint))
 {
-    Debug.Log(thisItem.itemID);
+    // Debug.Log(thisItem.itemID);
     transform.SetParent(correctParent);
     transform.localPosition = targetTransform.localPosition; // 将拖曳物体设置到目标物体的位置上
       Debug.Log("on target");
