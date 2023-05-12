@@ -10,8 +10,9 @@ public class InventoryManager : MonoBehaviour
     public GameObject slotGrid;
     //未刪
     //public slot slotPrefab;
-    public item item;
+    public item itemobject;
     public Text itemInformation;
+    //public int itemID;
     public List<GameObject> slots= new  List<GameObject>();
     public GameObject emptySlot;
     void Awake(){
@@ -29,6 +30,9 @@ public class InventoryManager : MonoBehaviour
     public static void UpdateItemInfo(string itemDescription){
         instance.itemInformation.text=itemDescription;
     }
+    // public static void UpdateItemID(int itemID){
+    //     instance.itemInformation.text=itemDescription;
+    // }
      //未刪
     //將item 的資料傳送到 slot
     // public static void  CreateNewItem(item item){
@@ -63,4 +67,5 @@ public class InventoryManager : MonoBehaviour
         }
         
     }
+ 
 }

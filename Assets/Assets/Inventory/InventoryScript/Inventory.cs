@@ -1,25 +1,5 @@
 
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-
-// [CreateAssetMenu(fileName="New Inventory",menuName="Inventory/New Inventory")]
-// public class   Inventory : ScriptableObject
-// {
-//     [SerializeField] public List<Item> itemList = new List<Item>();
-
-//     void Awake()
-//     {
-//         Item newItem = new Item(); // 創建一個新的 Item 物件
-//         AddItem(newItem); // 將新的 Item 物件添加到 itemList 中
-//     }
-
-//     void AddItem(Item newItem)
-//     {
-//         itemList.Add(newItem);
-//     }
-// }
-
+//成功的版本
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,3 +10,4 @@ public class Inventory : ScriptableObject
     public List<item> itemList = new List<item>();
  
 }
+//失敗的方法

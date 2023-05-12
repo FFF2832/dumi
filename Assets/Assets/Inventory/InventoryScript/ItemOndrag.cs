@@ -277,7 +277,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         //item itemData = eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<item>();
          //Debug.Log(itemInfo.GetItemID(thisItem));
             // 在这里可以根据物品ID进行相关操作
-              //Debug.Log( thisItem.itemID);
+        // Debug.Log( thisItem.itemID);
         
     }
 
