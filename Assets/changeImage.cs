@@ -75,4 +75,15 @@ public class changeImage : MonoBehaviour
             spriteChange.sprite = sprite2;
         }
     }
+  public static int GetTargetInfo(GameObject gameObject)
+{
+    if (gameObject.name == "輪胎")
+    {
+        return 1;
+    }
+    else
+    {
+        return 0; // or any other appropriate value
+    }
+}
 }

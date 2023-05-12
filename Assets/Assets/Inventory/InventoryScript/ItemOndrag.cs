@@ -5,64 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-// public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
-// {
-//     public Transform originalParent;
-//     public Transform correctParent;
-//     private bool isDragging = false;
-//     private Vector2 offset;
-//     private Transform targetTransform;
-
-//     public void OnBeginDrag(PointerEventData eventData)
-//     {
-//          this.transform.SetAsLastSibling();
-//         originalParent = transform.parent;
-//         transform.SetParent(transform.parent.parent);
-//         //跟隨鼠標
-//         transform.position = eventData.position;
-//         Debug.Log("start");
-//     }
-
-//     public void OnDrag(PointerEventData eventData)
-//     {
-//         //跟隨鼠標
-//         transform.position = eventData.position;
-//         Debug.Log("moving");
-//     }
-
-//     public void OnEndDrag(PointerEventData eventData)
-//     {
-//         if (targetTransform != null)
-//         {
-//             transform.position = targetTransform.position;
-//             transform.SetParent(correctParent);
-//             Debug.Log("endmoving_in");
-//         }
-//         else
-//         {
-//             transform.SetParent(originalParent);
-//             transform.position = originalParent.position;
-//             Debug.Log("endmoving_out");
-//         }
-//     }
-
-//     private void OnTriggerEnter2D(Collider2D collision)
-//     {
-//         if (collision.tag == "Target")
-//         {
-//             targetTransform = collision.transform;
-//             Debug.Log("onTarget");
-//         }
-//     }
-
-//     private void OnTriggerExit2D(Collider2D collision)
-//     {
-//         if (collision.tag == "Target")
-//         {
-//             targetTransform = null;
-//         }
-//     }
-// }
 
 //版本四
 // public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -72,65 +14,6 @@ using UnityEngine.UI;
 //     private bool isDragging = false;
 //     private Vector2 offset;
 //     private Transform targetTransform;
-    
-
-//     public void OnBeginDrag(PointerEventData eventData)
-//     {
-//         this.transform.SetAsLastSibling();
-//         originalParent = transform.parent;
-//         transform.SetParent(transform.parent.parent);
-//         //跟隨鼠標
-//         transform.position = eventData.position;
-//     }
-
-//     public void OnDrag(PointerEventData eventData)
-//     {
-//         //跟隨鼠標
-//         transform.position = eventData.position;
-//     }
-
-//     public void OnEndDrag(PointerEventData eventData)
-//     {
-//         // 判斷是否碰撞到目標
-//         Vector2 localPoint;
-//         RectTransform targetRectTransform = targetTransform as RectTransform;
-//         if (targetRectTransform != null &&
-//             RectTransformUtility.ScreenPointToLocalPointInRectangle(
-//                 targetRectTransform,
-//                 eventData.position,
-//                 eventData.pressEventCamera,
-//                 out localPoint))
-//         {
-//             // 如果碰撞到了目標，將物體吸附到目標上
-//             transform.SetParent(correctParent);
-//             transform.localPosition = localPoint;
-//             Debug.Log("on target");
-//         }
-//         else
-//         {
-//             // 如果沒有碰撞到目標，將物體放回原來的位置
-//             transform.SetParent(originalParent);
-//             transform.position = originalParent.position;
-//             Debug.Log("not on target");
-//         }
-//     }
-
-//     private void OnTriggerEnter2D(Collider2D collision)
-//     {
-//         if (collision.tag == "Target")
-//         {
-//             targetTransform = collision.transform;
-//         }
-//     }
-
-//     private void OnTriggerExit2D(Collider2D collision)
-//     {
-//         if (collision.tag == "Target")
-//         {
-//             targetTransform = null;
-//         }
-//     }
-// }
 
 //好像也沒用的何小姐版本
 // public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -273,12 +156,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         transform.position = eventData.position;
         //itemImage
         // Debug.Log(eventData.pointerCurrentRaycast.gameObject);
-        Debug.Log(eventData.pointerDrag.GetComponent<Image>().sprite);
-        //Debug.Log(eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<item>());
-        //item itemData = eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<item>();
-         //Debug.Log(itemInfo.GetItemID(thisItem));
-            // 在这里可以根据物品ID进行相关操作
-        // Debug.Log( thisItem.itemID);
+      
+       
         
     }
 
@@ -288,6 +167,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         // 判斷是否碰撞到目標
         Vector2 localPoint;
         RectTransform targetRectTransform = targetTransform as RectTransform;
+        
         if (targetRectTransform != null &&
     RectTransformUtility.ScreenPointToLocalPointInRectangle(
         targetRectTransform,
@@ -300,7 +180,14 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     transform.localPosition = targetTransform.localPosition; // 将拖曳物体设置到目标物体的位置上
       Debug.Log("on target");
     Debug.Log("correct"+correct);
-    // correct=true;
+    //Debug.Log(eventData.pointerDrag.GetComponent<Image>().sprite+"外面");
+      
+      if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "樹枝本人"){
+          //Debug.Log(eventData.pointerDrag.GetComponent<Image>().sprite);
+        // Debug.Log(correct);
+        if(changeImage.GetTargetInfo(gameObject)==1)correct=true;
+      }
+     
    Destroy(gameObject);
 }
         else
@@ -351,6 +238,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     }
     public static bool checkTarget() // 宣告為靜態方法，回傳靜態變數 Check
     {
+    
         return correct;
     }
         public static bool checkTarget2() // 宣告為靜態方法，回傳靜態變數 Check
