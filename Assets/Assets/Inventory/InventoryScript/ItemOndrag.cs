@@ -178,17 +178,26 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     // Debug.Log(thisItem.itemID);
     transform.SetParent(correctParent);
     transform.localPosition = targetTransform.localPosition; // 将拖曳物体设置到目标物体的位置上
-      Debug.Log("on target");
-    Debug.Log("correct"+correct);
+    //   Debug.Log("on target");
+    // Debug.Log("correct"+correct);
     //Debug.Log(eventData.pointerDrag.GetComponent<Image>().sprite+"外面");
       
       if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "樹枝本人"){
-          //Debug.Log(eventData.pointerDrag.GetComponent<Image>().sprite);
-        // Debug.Log(correct);
-        if(changeImage.GetTargetInfo(gameObject)==1)correct=true;
+          
+        correct=true;
+        //if(changeImage.GetTargetInfo(gameObject)==1)correct=true;
+        Destroy(gameObject);
       }
-     
-   Destroy(gameObject);
+      else  {
+        correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+            Debug.Log("not on target");
+             Debug.Log("correct"+correct);
+
+      }
+   
 }
         else
         {
@@ -206,7 +215,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
        if (collision.tag == "Target")
     {
-        correct=true;
+        //correct=true;
         Debug.Log("Trigger的correct"+correct);
         targetTransform = collision.transform;
         anchor = targetTransform.Find("Anchor");
@@ -225,7 +234,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         if (collision.tag == "Target")
     {
-        correct=true;
+       // correct=true;
         targetTransform = null;
         anchor = null;
     }

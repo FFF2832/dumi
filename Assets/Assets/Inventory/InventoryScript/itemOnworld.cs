@@ -73,13 +73,13 @@ public class itemOnworld : MonoBehaviour
                  Destroy(gameObject);
                 Debug.Log("touch");
             }
-            if(hit.collider.name=="零件"){
+            if(hit.collider.name=="collecttem_car"){
              
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem();
                 Destroy(gameObject);
                 Destroy(hit.collider);
-                Debug.Log("touch零件");
+                Debug.Log("touch");
             }
              
 
