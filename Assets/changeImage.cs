@@ -52,6 +52,9 @@ public class changeImage : MonoBehaviour
     public Sprite sprite1; // 第一個圖片
     public Sprite sprite2; // 第二個圖片
     private Image spriteChange;
+ 
+     public item thisItem;
+   public Inventory playerInventory;
     // 获取 ItemOndrag 组件
     //ItemOndrag item = GetComponent<ItemOndrag>();
     // 更改 correctParent 的值
@@ -63,13 +66,16 @@ public class changeImage : MonoBehaviour
         Debug.LogError("Image component not found!");
     }
     }
-
+    
     void Update()
     {
         if (ItemOndrag.checkTarget())
         {
+
             spriteChange.sprite = sprite1;
+            if(ItemOndrag.checkPosition()==1)AddNewItem();
         }
+        
         else
         {
             spriteChange.sprite = sprite2;
@@ -81,9 +87,30 @@ public class changeImage : MonoBehaviour
     {
         return 1;
     }
+    if (gameObject.name == "collecttem_car")
+    {
+        return 2;
+    }
     else
     {
         return 0; // or any other appropriate value
     }
 }
+public void AddNewItem(){
+    if(!playerInventory.itemList.Contains(thisItem)){
+         //playerInventory.itemList.Add(thisItem);
+          //未刪CreateNewItem
+         //InventoryManager.CreateNewItem(thisItem);
+         for(int i=0;i<playerInventory.itemList.Count;i++){
+                if(playerInventory.itemList[i]==null){
+                        playerInventory.itemList[i]=thisItem;
+                        break;
+                }
+         }
+    }
+    else {
+        thisItem.itemHeild += 1;
+    }
+    InventoryManager.RefreshItem(); 
+   }
 }

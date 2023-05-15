@@ -17,6 +17,7 @@ public class itemOnworld : MonoBehaviour
         Destroy(gameObject);
         Debug.Log("touch");
     }  
+   
    } 
    public void AddNewItem(){
     if(!playerInventory.itemList.Contains(thisItem)){
@@ -40,7 +41,7 @@ public class itemOnworld : MonoBehaviour
 {
     if (Input.GetMouseButtonDown(0))
     {
-        Debug.Log("Mouse is pressed down");
+       // Debug.Log("Mouse is pressed down");
         Camera cam = Camera.main;
 
         //Raycast depends on camera projection mode
@@ -73,7 +74,7 @@ public class itemOnworld : MonoBehaviour
                  Destroy(gameObject);
                 Debug.Log("touch");
             }
-            if(hit.collider.name=="collecttem_car"){
+            if(hit.collider.name=="collectitem_car"){
              
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem();
@@ -87,6 +88,10 @@ public class itemOnworld : MonoBehaviour
     } 
     
 }
+
+          
+        
+
 
 }
 

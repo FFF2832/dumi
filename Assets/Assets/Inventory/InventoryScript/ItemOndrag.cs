@@ -136,6 +136,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
    public Inventory myBag;
     public static bool ok;
     public static bool correct;
+    public static int positioncorrect;
   public itemOnworld itemonworld;
    
     public void OnBeginDrag(PointerEventData eventData)
@@ -181,12 +182,27 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     //   Debug.Log("on target");
     // Debug.Log("correct"+correct);
     //Debug.Log(eventData.pointerDrag.GetComponent<Image>().sprite+"外面");
-      
+
+      //用圖片找
       if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "樹枝本人"){
           
-        correct=true;
-        //if(changeImage.GetTargetInfo(gameObject)==1)correct=true;
-        Destroy(gameObject);
+        //correct=true;
+       // Destroy(gameObject);
+        if(positioncorrect==1){
+            correct=true;
+              Destroy(gameObject);
+            }
+            else {
+                correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+        
+            }
+      
+      }
+      else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "零件2")){
+
       }
       else  {
         correct=false;
@@ -216,10 +232,18 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
        if (collision.tag == "Target")
     {
         //correct=true;
-        Debug.Log("Trigger的correct"+correct);
+        //Debug.Log("Trigger的correct"+correct);
         targetTransform = collision.transform;
         anchor = targetTransform.Find("Anchor");
-        Debug.Log("Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
+       // Debug.Log("Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
+        if(targetTransform.name =="collectitem_car"){
+            Debug.Log("Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
+            positioncorrect=1;
+        }
+        else if(targetTransform.name =="輪胎"){
+            Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
+            positioncorrect=2;
+        }
     }
     else if (collision.tag == "TargetObject")
     {
@@ -253,7 +277,13 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         public static bool checkTarget2() // 宣告為靜態方法，回傳靜態變數 Check
     {
         return ok;
-    }   
+    } 
+    public static int checkPosition() // 宣告為靜態方法，回傳靜態變數 Check
+    {
+    
+        return positioncorrect;
+    }  
+    
 
 }
 //UI 介面鎖屏
