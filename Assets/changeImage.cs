@@ -51,8 +51,9 @@ public class changeImage : MonoBehaviour
 {
     public Sprite sprite1; // 第一個圖片
     public Sprite sprite2; // 第二個圖片
+    public Sprite sprite3; // 第二個圖片
     private Image spriteChange;
- 
+    public item itemToRemove;
      public item thisItem;
    public Inventory playerInventory;
     // 获取 ItemOndrag 组件
@@ -69,11 +70,26 @@ public class changeImage : MonoBehaviour
     
     void Update()
     {
-        if (ItemOndrag.checkTarget())
-        {
+        // if (ItemOndrag.checkTarget())
+        // {
 
-            spriteChange.sprite = sprite1;
-            if(ItemOndrag.checkPosition()==1)AddNewItem();
+        //     spriteChange.sprite = sprite1;
+        //     if(ItemOndrag.checkPosition()==1)AddNewItem();
+        // }
+        // if (ItemOndrag.checkTarget())
+        // {
+
+        //     spriteChange.sprite = sprite1;
+        //     if(ItemOndrag.checkPosition()==1)AddNewItem();
+        // }
+        if(ItemOndrag.checkPosition()==1&&ItemOndrag.checkitemPosition()==1){
+              AddNewItem();
+              //Destroy(gameObject);
+               RemoveItem(itemToRemove);
+        }
+       if(ItemOndrag.checkPosition()==2&&ItemOndrag.checkitemPosition()==2){
+              spriteChange.sprite = sprite3;
+                 RemoveItem(itemToRemove);
         }
         
         else
@@ -113,4 +129,12 @@ public void AddNewItem(){
     }
     InventoryManager.RefreshItem(); 
    }
+   public void RemoveItem(item itemToRemove)
+{
+    if (playerInventory.itemList.Contains(itemToRemove))
+    {
+        playerInventory.itemList.Remove(itemToRemove);
+        InventoryManager.RefreshItem();
+    }
+}
 }

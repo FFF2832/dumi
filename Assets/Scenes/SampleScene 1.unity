@@ -8967,8 +8967,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e25fd611b836d44f8cc45a420085d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite1: {fileID: 21300000, guid: c41e24f11b5c05f4881e7636fe3c91c4, type: 3}
+  sprite1: {fileID: 21300000, guid: 1d47e518b47394b4b8578b04092d3c7f, type: 3}
   sprite2: {fileID: 21300000, guid: 1d47e518b47394b4b8578b04092d3c7f, type: 3}
+  sprite3: {fileID: 21300000, guid: c41e24f11b5c05f4881e7636fe3c91c4, type: 3}
+  itemToRemove: {fileID: 11400000, guid: 6653d5a209b871e4d808ecfe49ea4f2e, type: 2}
   thisItem: {fileID: 0}
   playerInventory: {fileID: 0}
 --- !u!1 &582866079
@@ -11029,6 +11031,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite1: {fileID: 21300000, guid: 161fc21445cdeec498bd65505a9d3b31, type: 3}
   sprite2: {fileID: 21300000, guid: 710e2105f0220b446a45488c761bb8d4, type: 3}
+  sprite3: {fileID: 0}
+  itemToRemove: {fileID: 11400000, guid: f00c0d9782c180e4ca0685d3836037f0, type: 2}
   thisItem: {fileID: 11400000, guid: 6653d5a209b871e4d808ecfe49ea4f2e, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
 --- !u!114 &879175950
@@ -15555,7 +15559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1436029453
 MonoBehaviour:
   m_ObjectHideFlags: 0

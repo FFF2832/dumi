@@ -135,9 +135,11 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
       public item thisItem;
    public Inventory myBag;
     public static bool ok;
+     public static int itemcorrect;
     public static bool correct;
     public static int positioncorrect;
   public itemOnworld itemonworld;
+
    
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -169,6 +171,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         Vector2 localPoint;
         RectTransform targetRectTransform = targetTransform as RectTransform;
         
+        //放在正確的位置上
         if (targetRectTransform != null &&
     RectTransformUtility.ScreenPointToLocalPointInRectangle(
         targetRectTransform,
@@ -188,8 +191,9 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
           
         //correct=true;
        // Destroy(gameObject);
+        itemcorrect=1;
         if(positioncorrect==1){
-            correct=true;
+           // correct=true;
               Destroy(gameObject);
             }
             else {
@@ -202,7 +206,18 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
       
       }
       else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "零件2")){
-
+            itemcorrect=2;
+             if(positioncorrect==2){
+           // correct=true;
+              Destroy(gameObject);
+            }
+            else {
+                correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+        
+            }
       }
       else  {
         correct=false;
@@ -272,6 +287,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public static bool checkTarget() // 宣告為靜態方法，回傳靜態變數 Check
     {
     
+        if(positioncorrect==itemcorrect&&positioncorrect!=0)correct=true;
+        Debug.Log("correct:"+correct);
         return correct;
     }
         public static bool checkTarget2() // 宣告為靜態方法，回傳靜態變數 Check
@@ -283,6 +300,11 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     
         return positioncorrect;
     }  
+     public static int checkitemPosition() // 宣告為靜態方法，回傳靜態變數 Check
+    {
+    
+        return itemcorrect;
+    } 
     
 
 }
