@@ -205,9 +205,24 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             }
       
       }
-      else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "零件2")){
+      //太陽零件對應到輪胎1
+      else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "零件1")){
             itemcorrect=2;
              if(positioncorrect==2){
+           // correct=true;
+              Destroy(gameObject);
+            }
+            else {
+                correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+        
+            }
+      }
+      else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "零件2")){
+            itemcorrect=3;
+             if(positioncorrect==3){
            // correct=true;
               Destroy(gameObject);
             }
@@ -255,9 +270,13 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             Debug.Log("Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
             positioncorrect=1;
         }
-        else if(targetTransform.name =="輪胎"){
+         else if(targetTransform.name =="輪胎"){
             Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
             positioncorrect=2;
+        }
+        else if(targetTransform.name =="輪胎2"){
+            Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
+            positioncorrect=3;
         }
     }
     else if (collision.tag == "TargetObject")

@@ -198,7 +198,14 @@ private void OnCollisionEnter(Collision other)
                 Debug.Log("We hit " + hit.collider.name);
                 itemOnworldInstance.AddNewItem();
                 Destroy(hit.collider);
-                Debug.Log("touch");
+               // Debug.Log("touch");
+            }
+            if(hit.collider.name=="decoration_roof"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+                itemOnworldInstance.AddNewItem();
+                Destroy(hit.collider);
+                Debug.Log("touchsun");
             }
             
              if(hit.collider.name=="Password"){

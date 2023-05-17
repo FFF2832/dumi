@@ -52,6 +52,7 @@ public class changeImage : MonoBehaviour
     public Sprite sprite1; // 第一個圖片
     public Sprite sprite2; // 第二個圖片
     public Sprite sprite3; // 第二個圖片
+     public Sprite sprite4; // 第二個圖片
     private Image spriteChange;
     public item itemToRemove;
      public item thisItem;
@@ -70,24 +71,21 @@ public class changeImage : MonoBehaviour
     
     void Update()
     {
-        // if (ItemOndrag.checkTarget())
-        // {
-
-        //     spriteChange.sprite = sprite1;
-        //     if(ItemOndrag.checkPosition()==1)AddNewItem();
-        // }
-        // if (ItemOndrag.checkTarget())
-        // {
-
-        //     spriteChange.sprite = sprite1;
-        //     if(ItemOndrag.checkPosition()==1)AddNewItem();
-        // }
+      
+        //撿樹枝剪零件2
         if(ItemOndrag.checkPosition()==1&&ItemOndrag.checkitemPosition()==1){
               AddNewItem();
               //Destroy(gameObject);
+               spriteChange.sprite = sprite1;
                RemoveItem(itemToRemove);
         }
-       if(ItemOndrag.checkPosition()==2&&ItemOndrag.checkitemPosition()==2){
+        //撿零件1到太陽位置
+       else if(ItemOndrag.checkPosition()==2&&ItemOndrag.checkitemPosition()==2){
+              spriteChange.sprite = sprite4;
+                 RemoveItem(itemToRemove);
+        }
+         //撿零件2到圓形位置
+        else if(ItemOndrag.checkPosition()==3&&ItemOndrag.checkitemPosition()==3){
               spriteChange.sprite = sprite3;
                  RemoveItem(itemToRemove);
         }

@@ -83,6 +83,23 @@ public class itemOnworld : MonoBehaviour
                 Destroy(hit.collider);
                 Debug.Log("touch");
             }
+
+            if(hit.collider.name=="decoration_roof"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+                AddNewItem();
+                Destroy(gameObject);
+                Destroy(hit.collider);
+                Debug.Log("touch");
+            }
+             if(hit.collider.name=="decoration_sun"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+                AddNewItem();
+                Destroy(gameObject);
+                Destroy(hit.collider);
+                Debug.Log("touch");
+            }
              
 
         }
