@@ -6,7 +6,12 @@ public class itemOnworld : MonoBehaviour
 {
    public item thisItem;
    public Inventory playerInventory;
-
+    public GameObject sparkle;
+   
+    private void Start()
+    {
+        sparkle.SetActive(true);
+    }
   private void Update(){
     check2DObjectClicked();
   }
@@ -80,18 +85,20 @@ public class itemOnworld : MonoBehaviour
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem();
                 Destroy(gameObject);
+                  sparkle.SetActive(false);
                 Destroy(hit.collider);
                 Debug.Log("touch");
             }
 
-            if(hit.collider.name=="decoration_roof"){
+            // if(hit.collider.name=="decoration_roof"){
              
-                Debug.Log("We hit " + hit.collider.name);
-                AddNewItem();
-                Destroy(gameObject);
-                Destroy(hit.collider);
-                Debug.Log("touch");
-            }
+            //     Debug.Log("We hit " + hit.collider.name);
+            //     AddNewItem();
+               
+            //     Destroy(gameObject);
+            //     Destroy(hit.collider);
+            //     Debug.Log("touch");
+            // }
              if(hit.collider.name=="decoration_sun"){
              
                 Debug.Log("We hit " + hit.collider.name);
