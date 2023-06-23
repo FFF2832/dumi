@@ -68,33 +68,56 @@ public class changeImage : MonoBehaviour
         Debug.LogError("Image component not found!");
     }
     }
-    
     void Update()
+{
+    if (gameObject == this.gameObject) // 只有當前物件才會執行以下操作
     {
-      
-        //撿樹枝剪零件2
-        if(ItemOndrag.checkPosition()==1&&ItemOndrag.checkitemPosition()==1){
-              AddNewItem();
-              //Destroy(gameObject);
-               spriteChange.sprite = sprite1;
-               RemoveItem(itemToRemove);
-        }
-        //撿零件1到太陽位置
-       else if(ItemOndrag.checkPosition()==2&&ItemOndrag.checkitemPosition()==2){
-              spriteChange.sprite = sprite4;
-                 RemoveItem(itemToRemove);
-        }
-         //撿零件2到圓形位置
-        else if(ItemOndrag.checkPosition()==3&&ItemOndrag.checkitemPosition()==3){
-              spriteChange.sprite = sprite3;
-                 RemoveItem(itemToRemove);
-        }
+
+         if ((ItemOndrag.checkPosition() == ItemOndrag.checkitemPosition()))
+            {
+                // if(ItemOndrag.checkPosition() ==1&&ItemOndrag.checkitemPosition()==1){
+                //     AddNewItem();
+                // }
+            AddNewItem();
+            spriteChange.sprite = sprite1;
+            RemoveItem(itemToRemove);
+            }
         
-        else
-        {
+        
+            else
+            {
             spriteChange.sprite = sprite2;
-        }
+            }
+       
     }
+}
+
+    // void Update()
+    // {
+      
+    //     //撿樹枝剪零件2
+    //     if(ItemOndrag.checkPosition()==1&&ItemOndrag.checkitemPosition()==1){
+    //           AddNewItem();
+    //           //Destroy(gameObject);
+    //            spriteChange.sprite = sprite1;
+    //            RemoveItem(itemToRemove);
+    //     }
+    //     //撿零件1到太陽位置
+    //    else if(ItemOndrag.checkPosition()==2&&ItemOndrag.checkitemPosition()==2){
+    //           spriteChange.sprite = sprite4;
+    //              RemoveItem(itemToRemove);
+    //     }
+    //      //撿零件2到圓形位置
+    //     else if(ItemOndrag.checkPosition()==3&&ItemOndrag.checkitemPosition()==3){
+    //           spriteChange.sprite = sprite3;
+    //              RemoveItem(itemToRemove);
+    //     }
+        
+    //     else
+    //     {
+    //         spriteChange.sprite = sprite2;
+    //     }
+    // }
   public static int GetTargetInfo(GameObject gameObject)
 {
     if (gameObject.name == "輪胎")

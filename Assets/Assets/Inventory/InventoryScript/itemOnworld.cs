@@ -96,9 +96,10 @@ public class itemOnworld : MonoBehaviour
              
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem();
+                Destroy(hit.collider);
                 Destroy(gameObject);
                   sparkle.SetActive(false);
-                Destroy(hit.collider);
+           
                 Debug.Log("touch");
             }
 
@@ -115,8 +116,9 @@ public class itemOnworld : MonoBehaviour
              
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem();
-                Destroy(gameObject);
                 Destroy(hit.collider);
+                Destroy(gameObject);
+               
                 Debug.Log("touch");
             }
              
