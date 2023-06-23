@@ -68,6 +68,30 @@ public class DialogSystem : MonoBehaviour
                 isTyping = false;
             }
         }
+        // 如果按下跳到最后一段对话的按键（比如按下"A"键）
+    if (Input.GetKeyDown(KeyCode.A))
+    {
+        // 将索引设置为对话文本列表的最后一个元素的索引
+        index = textList.Count - 1;
+
+        // 关闭对话框
+        gameObject.SetActive(false);
+        return;
+    }
+
+    if (Input.GetKeyDown(KeyCode.Q))
+    {
+        // 检查对话是否已经完成
+        if (textFinished)
+        {
+            // 播放剩余的对话内容并关闭对话框
+            StartCoroutine(AutoPlayAndCloseDialog());
+        }
+        else if (!textFinished)
+        {
+            isTyping = false;
+        }
+    }
     }
 
     void GetTextFromFile(TextAsset file)
@@ -82,6 +106,65 @@ public class DialogSystem : MonoBehaviour
             textList.Add(line);
         }
     }
+
+    IEnumerator AutoPlayAndCloseDialog() //自動播放
+{
+    // 自动播放剩余的对话内容
+    while (index < textList.Count)
+    {
+        textFinished = false;
+        textLabel.text = ""; // 重置文本内容
+
+        switch (textList[index].Trim())
+        {
+             case "B":
+                dialogImage.sprite = dialogPlayer;
+                headImage.sprite = headPlayer;
+                 //Destroy(dialogImage);
+                //npcdialogImage.sprite.SetActive(false);
+                index++;
+                break;
+            case "A":
+                headImage.sprite = headNPC;
+                dialogImage.sprite = dialogNpc;
+                index++;
+                break;
+            case "I":
+                headImage.sprite = headNPC;
+                dialogImage.sprite = dialogIllustrate1;
+                index++;
+                break;
+            case "I2":
+                headImage.sprite = headNPC;
+                dialogImage.sprite = dialogIllustrate2;
+                index++;
+                break;         
+            case "...":
+                textFinished = true; 
+                break;// 设置对话框和头像的显示...
+        }
+
+        // 逐字显示文本内容
+        int word = 0;
+        while (word < textList[index].Length - 1)
+        {
+            // 逐字显示
+            textLabel.text += textList[index][word];
+            word++;
+            yield return new WaitForSeconds(textSpeed);
+        }
+
+        // 快速显示文本内容为本行内容
+        textLabel.text = textList[index];
+
+        isTyping = true;
+        textFinished = true;
+        index++;
+    }
+
+    // 关闭对话框
+    gameObject.SetActive(false);
+}
 
     IEnumerator setTextUI()
     {
