@@ -7738,7 +7738,6 @@ GameObject:
   - component: {fileID: 398562812}
   - component: {fileID: 398562811}
   - component: {fileID: 398562810}
-  - component: {fileID: 398562809}
   - component: {fileID: 398562808}
   m_Layer: 0
   m_Name: talkicon (1)
@@ -7760,20 +7759,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageToShow: {fileID: 21300000, guid: 69a05fc08eb6a9443bd8a7da0004f2c6, type: 3}
---- !u!114 &398562809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398562807}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47bfdd1e60dad6a43b1468dc6b840693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Button: {fileID: 0}
-  talkUI: {fileID: 0}
 --- !u!61 &398562810
 BoxCollider2D:
   m_ObjectHideFlags: 0
