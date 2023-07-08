@@ -112,8 +112,24 @@ public void OnBtnShowClick1(){
     Debug.Log("切換場景 " );
    } 
    public void OnBtnShowClick2(){
-     Application.LoadLevel(1);
-    Debug.Log("切換場景 " );
+    //  Application.LoadLevel(1);
+    // Debug.Log("切換場景 " );
+int previousScene = PlayerPrefs.GetInt("PreviousScene");
+
+    if (previousScene == 1)
+    {
+        SceneManager.LoadScene(1);
+        Debug.Log("返回第一个场景");
+    }
+    else if (previousScene == 3)
+    {
+        SceneManager.LoadScene(3);
+        Debug.Log("返回第三个场景");
+    }
+    else
+    {
+        Debug.Log("无法确定上一个场景");
+    }
    } 
     public void OnBtnShowClick3(){
      Application.LoadLevel(2);

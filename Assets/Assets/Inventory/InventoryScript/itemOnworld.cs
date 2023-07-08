@@ -7,9 +7,16 @@ public class itemOnworld : MonoBehaviour
    public item thisItem;
    public Inventory playerInventory;
     public GameObject sparkle;
+     private bool isDestroyed = false; // 标记物体是否被销毁
    
     private void Start()
     {
+    //     // 检查物体的销毁状态
+    //    if (PlayerPrefs.GetInt("IsItemDestroy_" + gameObject.name, 0) == 1)
+    //    {
+    //        Destroy(gameObject);
+    //        isDestroyed = true;
+    //    }
         sparkle.SetActive(true);
     }
   private void Update(){
@@ -78,6 +85,11 @@ public class itemOnworld : MonoBehaviour
                 AddNewItem();
                 Destroy(hit.collider);
                  Destroy(gameObject);
+                            isDestroyed = true;
+
+        //    // 保存物体的销毁状态
+        //    PlayerPrefs.SetInt("IsItemDestroy_" + gameObject.name, 1);
+        //    PlayerPrefs.Save();
                 Debug.Log("touch");
             }
             if(hit.collider.name=="collectitem_car"){
