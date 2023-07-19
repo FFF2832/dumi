@@ -20,6 +20,7 @@ MonoBehaviour:
     height: 629.3334
   m_ShowMode: 4
   m_Title: Game
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -45,6 +46,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1280
+    height: 629.3333
     height: 629.3333
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -91,6 +93,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 609.3333
+    y: 609.3333
     width: 1280
     height: 20
   m_MinSize: {x: 0, y: 0}
@@ -115,6 +118,7 @@ MonoBehaviour:
     x: 0
     y: 30
     width: 1280
+    height: 579.3333
     height: 579.3333
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
@@ -417,6 +421,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 8}
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
     m_ExpandedScenes: []
