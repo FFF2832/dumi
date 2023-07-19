@@ -9447,11 +9447,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite1: {fileID: 21300000, guid: 1d47e518b47394b4b8578b04092d3c7f, type: 3}
   sprite2: {fileID: 21300000, guid: 1d47e518b47394b4b8578b04092d3c7f, type: 3}
-  sprite3: {fileID: 21300000, guid: 1d47e518b47394b4b8578b04092d3c7f, type: 3}
+  sprite3: {fileID: 21300000, guid: c41e24f11b5c05f4881e7636fe3c91c4, type: 3}
   sprite4: {fileID: 21300000, guid: c41e24f11b5c05f4881e7636fe3c91c4, type: 3}
-  itemToRemove: {fileID: 11400000, guid: 6653d5a209b871e4d808ecfe49ea4f2e, type: 2}
+  itemToRemove: {fileID: 11400000, guid: 8e948690d24e4184592884a8438ff900, type: 2}
   thisItem: {fileID: 0}
-  playerInventory: {fileID: 0}
+  playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
 --- !u!1 &582866079
 GameObject:
   m_ObjectHideFlags: 0
@@ -19515,13 +19515,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e25fd611b836d44f8cc45a420085d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite1: {fileID: 21300000, guid: b01c28c5360494a4b9d43667e1c53596, type: 3}
+  sprite1: {fileID: 21300000, guid: 8c405c83c0b62394d90ec551d8463b1f, type: 3}
   sprite2: {fileID: 21300000, guid: b01c28c5360494a4b9d43667e1c53596, type: 3}
   sprite3: {fileID: 21300000, guid: 8c405c83c0b62394d90ec551d8463b1f, type: 3}
   sprite4: {fileID: 21300000, guid: b01c28c5360494a4b9d43667e1c53596, type: 3}
-  itemToRemove: {fileID: 0}
+  itemToRemove: {fileID: 11400000, guid: 6653d5a209b871e4d808ecfe49ea4f2e, type: 2}
   thisItem: {fileID: 0}
-  playerInventory: {fileID: 0}
+  playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
 --- !u!1 &1882353389
 GameObject:
   m_ObjectHideFlags: 0
