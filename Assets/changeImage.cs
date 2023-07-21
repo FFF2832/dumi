@@ -92,32 +92,66 @@ public class changeImage : MonoBehaviour
 //     }
 // }
 
-    void Update()
-    {
+
+///最開始的版本(同時換圖)
+    // void Update()
+    // {
       
-        //撿樹枝剪零件2
-        if(ItemOndrag.checkPosition()==1&&ItemOndrag.checkitemPosition()==1){
-              AddNewItem();
-              //Destroy(gameObject);
-               spriteChange.sprite = sprite1;
-               RemoveItem(itemToRemove);
-        }
-        //撿零件1到太陽位置
-       else if(ItemOndrag.checkPosition()==2&&ItemOndrag.checkitemPosition()==2){
-              spriteChange.sprite = sprite4;
-                 RemoveItem(itemToRemove);
-        }
-         //撿零件2到圓形位置
-        else if(ItemOndrag.checkPosition()==3&&ItemOndrag.checkitemPosition()==3){
-              spriteChange.sprite = sprite3;
-                 RemoveItem(itemToRemove);
-        }
+    //     //撿樹枝剪零件2
+    //     if(ItemOndrag.checkPosition()==1&&ItemOndrag.checkitemPosition()==1){
+    //           AddNewItem();
+    //           //Destroy(gameObject);
+    //            spriteChange.sprite = sprite1;
+    //            RemoveItem(itemToRemove);
+    //     }
+    //     //撿零件1到太陽位置
+    //    else if(ItemOndrag.checkPosition()==2&&ItemOndrag.checkitemPosition()==2){
+    //           spriteChange.sprite = sprite4;
+    //              RemoveItem(itemToRemove);
+    //     }
+    //      //撿零件2到圓形位置
+    //     else if(ItemOndrag.checkPosition()==3&&ItemOndrag.checkitemPosition()==3){
+    //           spriteChange.sprite = sprite3;
+    //              RemoveItem(itemToRemove);
+    //     }
         
+    //     else
+    //     {
+    //         spriteChange.sprite = sprite2;
+    //     }
+    // }
+
+    void Update()
+{
+    if (gameObject == this.gameObject)
+    {
+        // 檢查拖曳的物品是否是樹枝或剪刀
+        int position = ItemOndrag.checkPosition();
+        int itemPosition = ItemOndrag.checkitemPosition();
+
+        if (position == 1 && itemPosition == 1)
+        {
+            AddNewItem(thisItem);
+            spriteChange.sprite = sprite1;
+            RemoveItem(itemToRemove);
+        }
+        else if (position == 2 && itemPosition == 2)
+        {
+            spriteChange.sprite = sprite4;
+            RemoveItem(itemToRemove);
+        }
+        else if (position == 3 && itemPosition == 3)
+        {
+            spriteChange.sprite = sprite3;
+            RemoveItem(itemToRemove);
+        }
         else
         {
             spriteChange.sprite = sprite2;
         }
     }
+}
+
   public static int GetTargetInfo(GameObject gameObject)
 {
     if (gameObject.name == "輪胎")
@@ -133,7 +167,7 @@ public class changeImage : MonoBehaviour
         return 0; // or any other appropriate value
     }
 }
-public void AddNewItem(){
+public void AddNewItem(item thisItem){
     if(!playerInventory.itemList.Contains(thisItem)){
          //playerInventory.itemList.Add(thisItem);
           //未刪CreateNewItem

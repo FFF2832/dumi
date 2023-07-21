@@ -8,8 +8,8 @@ public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IDragHandler, IEn
     private bool isPlaced = false;
     private bool isCorrectlyPlaced = false; // 標記拼圖是否放置在正確位置
 
-    public RectTransform targetPosition; // 目標位置的RectTransform
-    public float snapDistance = 50f; // 拼圖碎片放置的吸附距離
+    public RectTransform targetPosition;
+    public float snapDistance = 50f;
 
     private void Awake()
     {
@@ -19,9 +19,6 @@ public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IDragHandler, IEn
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        // 如果拼圖已經放置在正確位置，則不處理拖動
-        if (isCorrectlyPlaced) return;
-
         // 將物品放到最前面
         transform.SetAsLastSibling();
     }
@@ -56,6 +53,7 @@ public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IDragHandler, IEn
         }
         else
         {
+            // 距離過遠，拼圖碎片返回原位
             rectTransform.anchoredPosition = originalPosition;
         }
     }
@@ -68,4 +66,3 @@ public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IDragHandler, IEn
         return false;
     }
 }
-

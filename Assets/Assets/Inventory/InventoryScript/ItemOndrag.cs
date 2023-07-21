@@ -135,10 +135,13 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
       public item thisItem;
    public Inventory myBag;
     public static bool ok;
+    public itemOnworld itemonworld;
+ 
+    
      public static int itemcorrect;
     public static bool correct;
     public static int positioncorrect;
-  public itemOnworld itemonworld;
+
 
    
     public void OnBeginDrag(PointerEventData eventData)
@@ -310,6 +313,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         Debug.Log("correct:"+correct);
         return correct;
     }
+
         public static bool checkTarget2() // 宣告為靜態方法，回傳靜態變數 Check
     {
         return ok;
@@ -319,6 +323,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     
         return positioncorrect;
     }  
+
+   
      public static int checkitemPosition() // 宣告為靜態方法，回傳靜態變數 Check
     {
     

@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd1d140e0a6b8334fa61d4e761f9416e, type: 3}
-  m_Name: myBag
+  m_Script: {fileID: 11500000, guid: ac374cd419dedeb4b837844d3f8b453c, type: 3}
+  m_Name: piece3
   m_EditorClassIdentifier: 
-  itemList:
-  - {fileID: 11400000, guid: f00c0d9782c180e4ca0685d3836037f0, type: 2}
-  - {fileID: 11400000, guid: fc145e7b0642f8f4b892f49d7f0d64dd, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  itemName: piece3
+  itemImage: {fileID: 21300000, guid: 212aa5c27c97bf54287725cdd02821c6, type: 3}
+  itemHeild: 0
+  itemInfo: 
+  equip: 0
+  itemID: 0
