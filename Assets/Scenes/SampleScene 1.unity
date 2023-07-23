@@ -328,7 +328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &80290293
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9976,9 +9976,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e25fd611b836d44f8cc45a420085d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite1: {fileID: 21300000, guid: 1d47e518b47394b4b8578b04092d3c7f, type: 3}
+  sprite1: {fileID: 21300000, guid: c41e24f11b5c05f4881e7636fe3c91c4, type: 3}
   sprite2: {fileID: 21300000, guid: 1d47e518b47394b4b8578b04092d3c7f, type: 3}
-  sprite3: {fileID: 21300000, guid: c41e24f11b5c05f4881e7636fe3c91c4, type: 3}
+  sprite3: {fileID: 21300000, guid: 1d47e518b47394b4b8578b04092d3c7f, type: 3}
   sprite4: {fileID: 21300000, guid: c41e24f11b5c05f4881e7636fe3c91c4, type: 3}
   itemToRemove: {fileID: 11400000, guid: 8e948690d24e4184592884a8438ff900, type: 2}
   thisItem: {fileID: 0}
