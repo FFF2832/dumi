@@ -119,7 +119,7 @@ public class characterMove : MonoBehaviour
 private void OnCollisionEnter(Collision other)
 {
     if(other.gameObject.tag=="npc"){
-        Debug.Log("132");
+        // Debug.Log("132");
     }
 }
  void OpenMybag(){
@@ -145,7 +145,7 @@ private void OnCollisionEnter(Collision other)
 {
     if (Input.GetMouseButtonDown(0))
     {
-        Debug.Log("Mouse is pressed down");
+        // Debug.Log("Mouse is pressed down");
         Camera cam = Camera.main;
 
         //Raycast depends on camera projection mode

@@ -8,6 +8,7 @@ public class LoadLevelsManager : MonoBehaviour
 
     private void Awake()
     {
+        //轉場
         animator = GameObject.Find("Crossfade").GetComponent<Animator>();
     }
 

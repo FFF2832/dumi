@@ -6,7 +6,7 @@ public class itemOnworld : MonoBehaviour
 {
    public item thisItem;
    public Inventory playerInventory;
-    public GameObject sparkle;
+    //public GameObject sparkle;
      private bool isDestroyed = false; // 标记物体是否被销毁
    
     private void Start()
@@ -17,7 +17,7 @@ public class itemOnworld : MonoBehaviour
     //        Destroy(gameObject);
     //        isDestroyed = true;
     //    }
-        sparkle.SetActive(true);
+        //sparkle.SetActive(true);
     }
   private void Update(){
     check2DObjectClicked();
@@ -98,7 +98,7 @@ public class itemOnworld : MonoBehaviour
                 AddNewItem();
                 Destroy(hit.collider);
                 Destroy(gameObject);
-                  sparkle.SetActive(false);
+                  //sparkle.SetActive(false);
            
                 Debug.Log("touch");
             }
