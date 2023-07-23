@@ -245,6 +245,7 @@ MonoBehaviour:
   slotInfo: 
   slotitemID: 0
   myBag: {fileID: 0}
+  detailedImage: {fileID: 0}
 --- !u!114 &6785170321611609910
 MonoBehaviour:
   m_ObjectHideFlags: 0

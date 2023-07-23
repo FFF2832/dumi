@@ -17,7 +17,19 @@ public class slot : MonoBehaviour
  
     //public int slotNum;
     public void ItemOnclicked(){
+        // 1. 更新物品信息文本
         InventoryManager.UpdateItemInfo(slotInfo);
+
+        // 2. 更新详细图片内容
+        if (slotItem != null && slotItem.detailedItemImage != null)
+        {
+            InventoryManager.UpdateDetailedItemInfo(slotItem.detailedItemImage);
+        }
+        else
+        {
+            // 如果没有详细图片，则清空显示区域
+            InventoryManager.ClearDetailedItemInfo();
+        }
     }
     public void SetupSlot(item itemobject){
         if(itemobject ==null){
@@ -27,6 +39,7 @@ public class slot : MonoBehaviour
         slotImage.sprite =itemobject.itemImage;
         slotInfo=itemobject.itemInfo;
          slotitemID=itemobject.itemID;
+         slotItem = itemobject; // 确保将itemobject赋值给slotItem
        // Debug.Log(itemobject.itemID);
     }
      

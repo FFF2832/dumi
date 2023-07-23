@@ -114,9 +114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab7d4786ca38c14cab9ca00d8f3efdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detailedItemImage: {fileID: 986358641612207151}
   myBag: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
   slotGrid: {fileID: 6671910806674395835}
-  item: {fileID: 0}
+  itemobject: {fileID: 0}
   itemInformation: {fileID: 6608313206942041310}
   slots: []
   emptySlot: {fileID: 6845525433114419320, guid: a04ce3c2f2ced414da8f65e92b998dd6, type: 3}
@@ -138,6 +139,10 @@ PrefabInstance:
     - target: {fileID: 687967626825990353, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047952269483836774, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
+      propertyPath: m_Name
+      value: img
       objectReference: {fileID: 0}
     - target: {fileID: 5037363361519643329, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -368,6 +373,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 6659803505434661171}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4900345281577485741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &986358641612207151 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5898695120525141276, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
+  m_PrefabInstance: {fileID: 6659803505434661171}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}

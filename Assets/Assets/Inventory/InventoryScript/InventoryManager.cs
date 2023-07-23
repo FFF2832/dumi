@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
+ public Image detailedItemImage; // 引用用于显示详细图片的Image组件
 
     static InventoryManager instance;
     public Inventory myBag;
@@ -26,10 +27,29 @@ public class InventoryManager : MonoBehaviour
     {
         RefreshItem();
         instance.itemInformation.text="";
+        //  ClearDetailedItemInfo(); // 在打开背包时，先清空详细图片内容显示
     }
     public static void UpdateItemInfo(string itemDescription){
         instance.itemInformation.text=itemDescription;
     }
+    // 新增方法用于更新详细图片
+    public static void UpdateDetailedItemInfo(Sprite detailedImage)
+    {
+         if (instance.detailedItemImage == null)
+    {
+        Debug.LogError("DetailedItemImage is not assigned. Make sure you have assigned the detailedItemImage variable in the InventoryManager script.");
+        return;
+    }
+
+    instance.detailedItemImage.sprite = detailedImage;
+    }
+
+    // 新增方法用于清空详细图片显示区域
+    public static void ClearDetailedItemInfo()
+    {
+        instance.detailedItemImage.sprite = null;
+    }
+
     // public static void UpdateItemID(int itemID){
     //     instance.itemInformation.text=itemDescription;
     // }
