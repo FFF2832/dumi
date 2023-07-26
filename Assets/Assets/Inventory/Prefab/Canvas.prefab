@@ -121,6 +121,7 @@ MonoBehaviour:
   itemInformation: {fileID: 6608313206942041310}
   slots: []
   emptySlot: {fileID: 6845525433114419320, guid: a04ce3c2f2ced414da8f65e92b998dd6, type: 3}
+  closeButton: {fileID: 6500388985387949638}
 --- !u!1001 &6659803505434661171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -244,6 +245,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6b19fed6ad8781a49bc52da348f9daf8, type: 3}
+    - target: {fileID: 7363583730250021130, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7555828874282933643, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -455,6 +460,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6500388985387949638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 457789739433234293, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}
+  m_PrefabInstance: {fileID: 6659803505434661171}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6608313206942041310 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 565502854989092333, guid: 225ccbcf4fcff2e428e6f92f0da46de5, type: 3}

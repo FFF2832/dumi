@@ -26499,23 +26499,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2802751193481174662, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4.4784117
+      value: 9.506325
       objectReference: {fileID: 0}
     - target: {fileID: 2802751193481174662, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4.4784117
+      value: 9.506325
       objectReference: {fileID: 0}
     - target: {fileID: 2802751193481174662, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4.4784117
+      value: 9.506325
       objectReference: {fileID: 0}
     - target: {fileID: 2802751193481174662, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1504
+      value: -952
       objectReference: {fileID: 0}
     - target: {fileID: 2802751193481174662, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -192
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 3798736071757118484, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -26589,6 +26589,14 @@ PrefabInstance:
       propertyPath: correctParent
       value: 
       objectReference: {fileID: 581370266}
+    - target: {fileID: 4522590340735205843, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1158
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522590340735205843, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -403
+      objectReference: {fileID: 0}
     - target: {fileID: 4900345281577485741, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
       propertyPath: m_TagString
       value: Grid
@@ -26793,6 +26801,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 63
       objectReference: {fileID: 0}
+    - target: {fileID: 7625158970697845470, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
+      propertyPath: m_Text
+      value: "\u95DC\u6389\u7167\u7247"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625158970697845470, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: fe07a539e5cc4f149af69e2eb91cb7a0, type: 3}
     - target: {fileID: 8463899100501475699, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
       propertyPath: m_Size.x
       value: 64.29934

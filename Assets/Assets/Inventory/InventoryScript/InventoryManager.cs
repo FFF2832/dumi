@@ -16,11 +16,14 @@ public class InventoryManager : MonoBehaviour
     //public int itemID;
     public List<GameObject> slots= new  List<GameObject>();
     public GameObject emptySlot;
+    public Button closeButton; // 用於關閉詳細圖片的按鈕參考
+
     void Awake(){
         if(instance !=null)Destroy(this);
             instance=this;
-        
-
+        // 一開始隱藏關閉按鈕
+        closeButton.gameObject.SetActive(false);
+        detailedItemImage.gameObject.SetActive(false);
     }
    
     public void OnEnable()
@@ -28,6 +31,7 @@ public class InventoryManager : MonoBehaviour
         RefreshItem();
         instance.itemInformation.text="";
         //  ClearDetailedItemInfo(); // 在打开背包时，先清空详细图片内容显示
+        closeButton.onClick.AddListener(CloseDetailedImage); // 監聽關閉按鈕的點擊事件
     }
     public static void UpdateItemInfo(string itemDescription){
         instance.itemInformation.text=itemDescription;
@@ -40,7 +44,8 @@ public class InventoryManager : MonoBehaviour
         Debug.LogError("DetailedItemImage is not assigned. Make sure you have assigned the detailedItemImage variable in the InventoryManager script.");
         return;
     }
-
+    instance.detailedItemImage.gameObject.SetActive(true); // 將物件設定為開啟
+    instance.closeButton.gameObject.SetActive(true); // 顯示關閉按鈕
     instance.detailedItemImage.sprite = detailedImage;
     }
 
@@ -48,6 +53,13 @@ public class InventoryManager : MonoBehaviour
     public static void ClearDetailedItemInfo()
     {
         instance.detailedItemImage.sprite = null;
+       instance.detailedItemImage.gameObject.SetActive(false); // 將物件設定為關閉狀態
+      instance.closeButton.gameObject.SetActive(false); // 顯示關閉按鈕
+    }
+     // 新增的方法：關閉詳細圖片
+    private void CloseDetailedImage()
+    {
+        ClearDetailedItemInfo(); // 清空詳細圖片內容顯示
     }
 
     // public static void UpdateItemID(int itemID){
