@@ -138,12 +138,38 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public itemOnworld itemonworld;
  
     
-     public static int itemcorrect;
+    
     public static bool correct;
-    public static int positioncorrect;
+     public static int itemcorrect;
+    // public static int positioncorrect;
+
+    public static bool tire1ok;
+    public static bool tire2ok;
+    public static bool treeok;
+
+     public static bool[] itemCorrect;
+    public static bool[] positionCorrect;
 
 
+
+     private void Awake()
+    {
+        // 初始化陣列
+        itemCorrect = new bool[4];
+        positionCorrect = new bool[4];
+    }
+    //  public changeImage changeImageScript;
    
+
+//    void Start()
+//     {
+//         // 在 Start 方法中初始化 changeImage 物件的參考
+//         changeImageScript = GameObject.FindObjectOfType<changeImage>();
+//         if (changeImageScript == null)
+//         {
+//             Debug.LogError("changeImage component not found!");
+//         }
+//     }
     public void OnBeginDrag(PointerEventData eventData)
     {
         
@@ -166,7 +192,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
        
         
     }
-
+   
     public void OnEndDrag(PointerEventData eventData)
     {
         // correct = false;
@@ -181,22 +207,30 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         eventData.position,
         eventData.pressEventCamera,
         out localPoint))
-{
-    // Debug.Log(thisItem.itemID);
-    transform.SetParent(correctParent);
-    transform.localPosition = targetTransform.localPosition; // 将拖曳物体设置到目标物体的位置上
+        {
+        // Debug.Log(thisItem.itemID);
+        transform.SetParent(correctParent);
+        transform.localPosition = targetTransform.localPosition; // 将拖曳物体设置到目标物体的位置上
    
-
+         itemCorrect[0]=false;
+        positionCorrect[0]=false;
       //用圖片找
       if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "樹枝本人"){
           
-        //correct=true;
-       // Destroy(gameObject);
+       
+
         itemcorrect=1;
-        if(positioncorrect==1){
-           // correct=true;
-              Destroy(gameObject);
-            }
+
+        itemCorrect[1]=true;
+            if(  positionCorrect[1]){
+            Destroy(gameObject);
+             }
+
+        // if(positioncorrect==1){
+        //    // correct=true;
+        //       Destroy(gameObject);
+
+        //     }
             else {
             correct=false;
             // 如果沒有碰撞到目標，將物體放回原來的位置
@@ -208,11 +242,18 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
       }
       //太陽零件對應到輪胎1
       else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "零件1")){
-            itemcorrect=2;
-             if(positioncorrect==2){
-           // correct=true;
-              Destroy(gameObject);
-            }
+
+         itemCorrect[2]=true;
+        itemcorrect=2;
+            if(  positionCorrect[2]){
+            Destroy(gameObject);
+             } 
+         
+        //      if(positioncorrect==2){
+        //    // correct=true;
+        //       Destroy(gameObject);
+            
+        //     }
             else {
                 correct=false;
             // 如果沒有碰撞到目標，將物體放回原來的位置
@@ -222,11 +263,18 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             }
       }
       else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "零件2")){
-            itemcorrect=3;
-             if(positioncorrect==3){
-           // correct=true;
-              Destroy(gameObject);
-            }
+             itemCorrect[3]=true;
+              itemcorrect=3;
+            if(  positionCorrect[3]){
+            Destroy(gameObject);
+             }   
+           
+        //      if(positioncorrect==3){
+        //    // correct=true;
+        //       Destroy(gameObject);
+              
+        //     }
+        
             else {
                 correct=false;
             // 如果沒有碰撞到目標，將物體放回原來的位置
@@ -245,7 +293,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
       }
    
-}
+    }
         else
         {
               
@@ -269,15 +317,18 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
        // Debug.Log("Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
         if(targetTransform.name =="collectitem_car"){
             Debug.Log("Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
-            positioncorrect=1;
+            positionCorrect[1]=true;
+            // positioncorrect=1;
         }
          else if(targetTransform.name =="輪胎"){
             Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
-            positioncorrect=2;
+              positionCorrect[2]=true;
+            // positioncorrect=2;
         }
         else if(targetTransform.name =="輪胎2"){
             Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
-            positioncorrect=3;
+              positionCorrect[3]=true;
+            // positioncorrect=3;
         }
     }
     else if (collision.tag == "TargetObject")
@@ -304,23 +355,48 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         anchor = null;
     }
     }
-    public static bool checkTarget() // 宣告為靜態方法，回傳靜態變數 Check
-    {
+    // public static bool checkTarget() // 宣告為靜態方法，回傳靜態變數 Check
+    // {
     
-        if(positioncorrect==itemcorrect&&positioncorrect!=0)correct=true;
-        Debug.Log("correct:"+correct);
-        return correct;
+    //     if(positioncorrect==itemcorrect&&positioncorrect!=0)correct=true;
+    //     Debug.Log("correct:"+correct);
+    //     return correct;
+    // }
+
+
+    public static bool checkTarget()
+{
+    // 檢查對應索引位置的值是否相等且不為 0
+    if (positionCorrect[1] == itemCorrect[1] && positionCorrect[1])
+    {
+        correct = true;
     }
+    else if (positionCorrect[2] == itemCorrect[2] && positionCorrect[2])
+    {
+        correct = true;
+    }
+    else if (positionCorrect[3] == itemCorrect[3] && positionCorrect[3])
+    {
+        correct = true;
+    }
+    else
+    {
+        correct = false;
+    }
+    Debug.Log("correct: " + correct);
+    return correct;
+}
+
 
         public static bool checkTarget2() // 宣告為靜態方法，回傳靜態變數 Check
     {
         return ok;
     } 
-    public static int checkPosition() // 宣告為靜態方法，回傳靜態變數 Check
-    {
+    // public static int checkPosition() // 宣告為靜態方法，回傳靜態變數 Check
+    // {
     
-        return positioncorrect;
-    }  
+    //     return positioncorrect;
+    // }  
 
    
      public static int checkitemPosition() // 宣告為靜態方法，回傳靜態變數 Check
@@ -328,6 +404,59 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     
         return itemcorrect;
     } 
+    public static bool[] checkPositionCorrect() // 宣告為靜態方法，回傳靜態陣列 positionCorrect
+    {
+    return positionCorrect;
+    }
+
+    public static bool[] checkItemCorrect() // 宣告為靜態方法，回傳靜態陣列 itemCorrect
+    {
+    return itemCorrect;
+    }
     
+    
+public static bool checktree()
+{
+    // 檢查對應索引位置的值是否相等且不為 0
+    if (positionCorrect[1] &&itemCorrect[1])
+    {
+        treeok = true;
+    }
+    else
+    {
+        treeok = false;
+    }
+    Debug.Log("treeok: " + treeok);
+    return treeok;
+}
+public static bool checktire1()
+{
+    // 檢查對應索引位置的值是否相等且不為 0
+    if (positionCorrect[2]&& itemCorrect[2])
+    {
+        tire1ok = true;
+    }
+    else
+    {
+        tire1ok = false;
+    }
+    Debug.Log("checktire1: " + tire1ok);
+    return tire1ok;
+}
+    
+public static bool checktire2()
+{
+    // 檢查對應索引位置的值是否相等且不為 0
+    if (positionCorrect[3] &&itemCorrect[3])
+    {
+        tire2ok = true;
+    }
+    else
+    {
+        tire2ok = false;
+    }
+    Debug.Log("checktire2: " + tire2ok);
+    return tire2ok;
+}
 
 }
