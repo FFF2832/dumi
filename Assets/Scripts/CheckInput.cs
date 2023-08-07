@@ -27,12 +27,12 @@ public class CheckInput : MonoBehaviour
         // 在正確的位置上且拖曳的物品輪胎1，更換成 sprite1
                 spriteChange.sprite = sprite1;
             }
-            if (ItemOndrag.checktire2())
+            else if (ItemOndrag.checktire2())
             {
         // 在正確的位置上且拖曳的物品是輪胎2，更換成 sprite2
                 spriteChange.sprite = sprite2;
             }
-            if(ItemOndrag.checktire1()&&ItemOndrag.checktire2()){
+            else if(ItemOndrag.checktire1()&&ItemOndrag.checktire2()){
                 spriteChange.sprite = sprite3; // 切換好車
             }
             else

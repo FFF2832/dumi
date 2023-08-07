@@ -216,6 +216,13 @@ private void OnCollisionEnter(Collision other)
                  }
                 
             }
+             if(hit.collider.name=="puzzlePiece1"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+                itemOnworldInstance.AddNewItem();
+                Destroy(hit.collider);
+              
+            }
             
             // if (hit.collider.CompareTag("UI"))
             // {

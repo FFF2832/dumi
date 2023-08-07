@@ -131,7 +131,15 @@ public class itemOnworld : MonoBehaviour
                
                 Debug.Log("touch");
             }
+            if(hit.collider.name=="puzzle1"){
              
+                Debug.Log("We hit " + hit.collider.name);
+                AddNewItem();
+                Destroy(hit.collider);
+                Destroy(gameObject);
+               
+                Debug.Log("touch");
+            }
 
         }
     } 

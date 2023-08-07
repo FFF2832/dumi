@@ -42,7 +42,7 @@ void Update()
         // 在正確的位置上且拖曳的物品是零件1，更換成 sprite1
         spriteChange.sprite = sprite1;
          AddNewItem();
-          RemoveItem(itemToRemove);
+        RemoveItem(itemToRemove);
     }
     else
     {
