@@ -8,7 +8,8 @@ public class itemOnworld : MonoBehaviour
    public Inventory playerInventory;
     //public GameObject sparkle;
      private bool isDestroyed = false; // 标记物体是否被销毁
-   
+     public item itemToRemove;
+
     private void Start()
     {
     //     // 检查物体的销毁状态
@@ -26,13 +27,13 @@ public class itemOnworld : MonoBehaviour
    {
      
     if(other.gameObject.CompareTag("Player")){
-        AddNewItem();
+        AddNewItem(thisItem);
         Destroy(gameObject);
-        Debug.Log("touch");
+      
     }  
    
    } 
-   public void AddNewItem(){
+   public void AddNewItem(item thisItem){
     if(!playerInventory.itemList.Contains(thisItem)){
          //playerInventory.itemList.Add(thisItem);
           //未刪CreateNewItem
@@ -82,7 +83,7 @@ public class itemOnworld : MonoBehaviour
             if(hit.collider.name=="樹枝本人"){
              
                 Debug.Log("We hit " + hit.collider.name);
-                AddNewItem();
+                AddNewItem(thisItem);
                 Destroy(hit.collider);
                  Destroy(gameObject);
                             isDestroyed = true;
@@ -95,7 +96,7 @@ public class itemOnworld : MonoBehaviour
             if(hit.collider.name=="collectitem_car"){
              
                 Debug.Log("We hit " + hit.collider.name);
-                AddNewItem();
+                AddNewItem(thisItem);
                 Destroy(hit.collider);
                 Destroy(gameObject);
                   //sparkle.SetActive(false);
@@ -115,7 +116,7 @@ public class itemOnworld : MonoBehaviour
              if(hit.collider.name=="decoration_sun"){
              
                 Debug.Log("We hit " + hit.collider.name);
-                AddNewItem();
+                AddNewItem(thisItem);
                 Destroy(hit.collider);
                 Destroy(gameObject);
                
@@ -125,7 +126,7 @@ public class itemOnworld : MonoBehaviour
              if(hit.collider.name=="clue"){
              
                 Debug.Log("We hit " + hit.collider.name);
-                AddNewItem();
+                AddNewItem(thisItem);
                 Destroy(hit.collider);
                 Destroy(gameObject);
                
@@ -134,19 +135,37 @@ public class itemOnworld : MonoBehaviour
             if(hit.collider.name=="puzzle1"){
              
                 Debug.Log("We hit " + hit.collider.name);
-                AddNewItem();
+                AddNewItem(thisItem);
                 Destroy(hit.collider);
                 Destroy(gameObject);
                
-                Debug.Log("touch");
+            }
+             if(hit.collider.name=="puzzle2"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+                AddNewItem(thisItem);
+                Destroy(hit.collider);
+                Destroy(gameObject);
+               
+               
+            }
+              if(hit.collider.name=="puzzle3"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+                AddNewItem(thisItem);
+                Destroy(hit.collider);
+                Destroy(gameObject);
+    
             }
 
         }
     } 
     
 }
-
-          
+ public  void RemoveItem(item itemToRemove)
+    {
+        playerInventory.itemList.Remove(itemToRemove);
+    }
         
 
 

@@ -6,118 +6,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-//版本四
-// public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
-// {
-//     public Transform originalParent;
-//     public Transform correctParent;
-//     private bool isDragging = false;
-//     private Vector2 offset;
-//     private Transform targetTransform;
-
-//好像也沒用的何小姐版本
-// public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
-// {
-//     //
-//     public Transform originalParent;
-//     public Transform correctParent;
-//     private bool isDragging = false;
-//     //偏移量
-//     private Vector3 offset;
-//     private Transform targetTransform;
-//     private Transform anchor;
-//     public Inventory myBag;
-//     private int currentItemID;
-//     // private Image changeImage;
-     
-  
-//     public static bool correct;
-//     public void OnBeginDrag(PointerEventData eventData)
-//     {
-//         this.transform.SetAsLastSibling();
-//         originalParent = transform.parent;
-//         currentItemID=originalParent.GetComponent<slot>().slotID;
-//         transform.SetParent(transform.parent.parent);
-//         //跟隨鼠標
-//         transform.position = eventData.position;
-//     }
-
-//     public void OnDrag(PointerEventData eventData)
-//     {
-//         //跟隨鼠標
-//         transform.position = eventData.position;
-//     }
-
-//     public void OnEndDrag(PointerEventData eventData)
-//     {
-//         correct = false;
-//         // 判斷是否碰撞到目標
-//         Vector2 localPoint;
-//         RectTransform targetRectTransform = targetTransform as RectTransform;
-// //
-// var temp=myBag.itemList[currentItemID];
-// myBag.itemList[currentItemID]=myBag.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponent<slot>().slotID];
-        
-//         if (targetRectTransform != null &&
-//     RectTransformUtility.ScreenPointToLocalPointInRectangle(
-//         targetRectTransform,
-//         eventData.position,
-//         eventData.pressEventCamera,
-//         out localPoint))
-   
-// {
-//     Debug.Log(myBag.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponent<item>().itemID]);
-//      // 计算偏移量
-//     //offset = transform.localPosition - anchor.localPosition;
-//     // 如果碰撞到了目標，將物體吸附到目標上
-//     // transform.SetParent(correctParent);
-//     // transform.localPosition = anchor.localPosition + offset;
-//     //
-//     transform.SetParent(correctParent);
-//     transform.localPosition = targetTransform.localPosition; // 将拖曳物体设置到目标物体的位置上
-//      //GetComponent<Image>().sprite = newSprite;
-//       Debug.Log("on target");
-//     Debug.Log("correct"+correct);
-//      correct=true;
-//    Destroy(gameObject);
-// }
-//         else
-//         {
-              
-//               correct=false;
-//             // 如果沒有碰撞到目標，將物體放回原來的位置
-//             transform.SetParent(originalParent);
-//             transform.position = originalParent.position;
-//             Debug.Log("not on target");
-//              Debug.Log("correct"+correct);
-//         }
-//     }
-
-//     private void OnTriggerEnter2D(Collider2D collision)
-//     {
-//        if (collision.tag == "Target")
-//     {
-       
-//         targetTransform = collision.transform;
-//         anchor = targetTransform.Find("Anchor");
-//         Debug.Log("Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
-//     }
-//     }
-
-//     private void OnTriggerExit2D(Collider2D collision)
-//     {
-//         if (collision.tag == "Target")
-//     {
-//          //correct=false;
-//         targetTransform = null;
-//         anchor = null;
-//     }
-//     }
-//     public static bool checkTarget() // 宣告為靜態方法，回傳靜態變數 Check
-//     {
-//         return correct;
-//     }
-// }
 
 
 
@@ -141,11 +29,17 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     
     public static bool correct;
      public static int itemcorrect;
-    // public static int positioncorrect;
+     public static int positioncorrect;
 
     public static bool tire1ok;
     public static bool tire2ok;
     public static bool treeok;
+    public static bool puzzle1ok;
+    public static bool puzzle2ok;
+     public static bool puzzle3ok;
+
+    public bool ispuzzle1ok;
+
 
      public static bool[] itemCorrect;
     public static bool[] positionCorrect;
@@ -157,8 +51,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
      private void Awake()
     {
         // 初始化陣列
-        itemCorrect = new bool[5];
-        positionCorrect = new bool[5];
+        itemCorrect = new bool[7];
+        positionCorrect = new bool[7];
         //放大
          originalScale = transform.localScale; // 儲存原始尺寸
        // rectTransform = GetComponent<RectTransform>();
@@ -190,9 +84,15 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
 
 
-         if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "1"){
-            transform.localScale = originalScale * 8f; // 可以調整放大倍數
-         }
+        //  if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "1"){
+        //     transform.localScale = originalScale * 6f; // 可以調整放大倍數
+        //  }
+        //  else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "2"){
+        //     transform.localScale = originalScale * 6f; // 可以調整放大倍數
+        //  }
+        //   else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "3 (1)"){
+        //     transform.localScale = originalScale * 6f; // 可以調整放大倍數
+        //  }
      
         // transform.localScale = originalScale * 3f; // 可以調整放大倍數
     }
@@ -207,7 +107,13 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     
          if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "1"){
-            transform.localScale = originalScale * 8f; // 可以調整放大倍數
+            transform.localScale = originalScale * 6f; // 可以調整放大倍數
+         }
+         else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "2"){
+            transform.localScale = originalScale * 6f; // 可以調整放大倍數
+         }
+         else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "3"){
+            transform.localScale = originalScale * 6f; // 可以調整放大倍數
          }
         
         // // 放大物品
@@ -229,6 +135,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
           // 還原物品尺寸
         transform.localScale = originalScale;
+
+        
       
         //放在正確的位置上
         if (targetRectTransform != null &&
@@ -302,11 +210,43 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         
             }
       }
-    else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "puzzlePiece1")){
+    else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "1")){
+        Debug.Log("find 1");
              itemCorrect[4]=true;
               itemcorrect=4;
             if(  positionCorrect[4]){
-            Destroy(gameObject);
+                    Destroy(gameObject);
+                    // transform.localScale = originalScale;
+             }   
+        
+            else {
+                correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+        
+            }
+      }
+       else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "2")){
+             itemCorrect[5]=true;
+              itemcorrect=5;
+            if(  positionCorrect[5]){
+                Destroy(gameObject);
+             }   
+        
+            else {
+                correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+        
+            }
+      }
+       else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "3")){
+             itemCorrect[6]=true;
+              itemcorrect=6;
+            if(  positionCorrect[6]){
+                Destroy(gameObject);
              }   
         
             else {
@@ -322,8 +262,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             // 如果沒有碰撞到目標，將物體放回原來的位置
             transform.SetParent(originalParent);
             transform.position = originalParent.position;
-            Debug.Log("not on target");
-             Debug.Log("correct"+correct);
+            // Debug.Log("not on target");
+            //  Debug.Log("correct"+correct);
 
       }
    
@@ -335,8 +275,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             // 如果沒有碰撞到目標，將物體放回原來的位置
             transform.SetParent(originalParent);
             transform.position = originalParent.position;
-            Debug.Log("not on target");
-             Debug.Log("correct"+correct);
+            // Debug.Log("not on target");
+            //  Debug.Log("correct"+correct);
         }
     }
 
@@ -352,23 +292,39 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if(targetTransform.name =="collectitem_car"){
             Debug.Log("Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
             positionCorrect[1]=true;
-            // positioncorrect=1;
+            //  positioncorrect=1;
         }
          else if(targetTransform.name =="輪胎"){
             Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
               positionCorrect[2]=true;
-            // positioncorrect=2;
+            //  positioncorrect=2;
         }
         else if(targetTransform.name =="輪胎2"){
             Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
               positionCorrect[3]=true;
-            // positioncorrect=3;
+            //  positioncorrect=3;
         }
 
-        else if(targetTransform.name =="fullpiece"){
+        // else if(targetTransform.name =="fullpiece"){
+        //     Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
+        //       positionCorrect[3]=true;
+        //     // positioncorrect=3;
+        // }
+
+         else if(targetTransform.name =="piece1_pos"){
+           Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
+              positionCorrect[4]=true;
+            // positioncorrect=4;
+        }
+         else if(targetTransform.name =="piece2_pos"){
             Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
-              positionCorrect[3]=true;
-            // positioncorrect=3;
+              positionCorrect[5]=true;
+            // positioncorrect=5;
+        }
+         else if(targetTransform.name =="piece3_pos"){
+            Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
+              positionCorrect[6]=true;
+            //  positioncorrect=6;
         }
     }
     else if (collision.tag == "TargetObject")
@@ -466,7 +422,7 @@ public static bool checktree()
     {
         treeok = false;
     }
-    Debug.Log("treeok: " + treeok);
+  //  Debug.Log("treeok: " + treeok);
     return treeok;
 }
 public static bool checktire1()
@@ -480,7 +436,7 @@ public static bool checktire1()
     {
         tire1ok = false;
     }
-    Debug.Log("checktire1: " + tire1ok);
+   // Debug.Log("checktire1: " + tire1ok);
     return tire1ok;
 }
     
@@ -495,12 +451,63 @@ public static bool checktire2()
     {
         tire2ok = false;
     }
-    Debug.Log("checktire2: " + tire2ok);
+   // Debug.Log("checktire2: " + tire2ok);
     return tire2ok;
 }
 
+public static bool checkpuzzle1()
+{
+    if (positionCorrect[4] && itemCorrect[4])
+        {
+            if (!puzzle1ok) // 增加判斷，只有在未完成拼圖時返回 true
+            {
+                puzzle1ok = true; // 將標誌設置為 true
+                return true;
+            }
+        }
+        return false; // 否則返回 false
+}
+public static bool checkpuzzle2()
+{
+    if (positionCorrect[5] && itemCorrect[5])
+        {
+            if (!puzzle2ok) // 增加判斷，只有在未完成拼圖時返回 true
+            {
+                puzzle2ok = true; // 將標誌設置為 true
+                return true;
+            }
+        }
+        return false; // 否則返回 false
+}
+public static bool checkpuzzle3()
+{
+    // 檢查對應索引位置的值是否相等且不為 0
+    if (positionCorrect[6]&& itemCorrect[6])
+    {
+        puzzle3ok = true;
+    }
+    else
+    {
+        puzzle3ok = false;
+    }
+   // Debug.Log("checktire1: " + tire1ok);
+    return puzzle3ok;
+}
 
-
+ public  bool checkpuzzle1ok()
+{
+    // 檢查對應索引位置的值是否相等且不為 0
+    if (positionCorrect[4]&& itemCorrect[4])
+    {
+        puzzle1ok = true;
+    }
+    else
+    {
+        puzzle1ok = false;
+    }
+   // Debug.Log("checktire1: " + tire1ok);
+    return puzzle1ok;
+}
 
 
 }

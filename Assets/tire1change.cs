@@ -35,8 +35,8 @@ void Update()
     bool[] itemCorrect = ItemOndrag.checkItemCorrect();
 
     // 您可以在這裡使用Debug.Log輸出這些陣列的值，以便檢查它們是否正確更新
-    Debug.Log("positionCorrect[2]: " + positionCorrect[2]);
-    Debug.Log("itemCorrect[2]: " + itemCorrect[2]);
+    // Debug.Log("positionCorrect[2]: " + positionCorrect[2]);
+    // Debug.Log("itemCorrect[2]: " + itemCorrect[2]);
 
     if (ItemOndrag.checktire1())
     {
@@ -45,6 +45,7 @@ void Update()
         spriteChange.sprite = sprite1;
     
     }
+
     else
     {
         // 如果不在正確的位置上，顯示 sprite2
@@ -52,14 +53,7 @@ void Update()
     }
 }
 
-//  public void RemoveItem(item itemToRemove)
-// {
-//     if (playerInventory.itemList.Contains(itemToRemove))
-//     {
-//         playerInventory.itemList.Remove(itemToRemove);
-//         InventoryManager.RefreshItem();
-//     }
-// }
+
 
 
 }

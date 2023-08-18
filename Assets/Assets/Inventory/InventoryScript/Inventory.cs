@@ -10,4 +10,3 @@ public class Inventory : ScriptableObject
     public List<item> itemList = new List<item>();
  
 }
-//失敗的方法

@@ -12,6 +12,7 @@ public class InventoryManager : MonoBehaviour
     //未刪
     //public slot slotPrefab;
     public item itemobject;
+     public item itemToRemove;
     public Text itemInformation;
     //public int itemID;
     public List<GameObject> slots= new  List<GameObject>();
@@ -99,5 +100,7 @@ public class InventoryManager : MonoBehaviour
         }
         
     }
+    
+          
  
 }

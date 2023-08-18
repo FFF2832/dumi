@@ -193,20 +193,20 @@ private void OnCollisionEnter(Collision other)
                 //this.enabled = false;
                  OpenPasswordUI();
             }
-            if(hit.collider.name=="branch"){
+            // if(hit.collider.name=="branch"){
              
-                Debug.Log("We hit " + hit.collider.name);
-                itemOnworldInstance.AddNewItem();
-                Destroy(hit.collider);
-               // Debug.Log("touch");
-            }
-            if(hit.collider.name=="decoration_roof"){
+            //     Debug.Log("We hit " + hit.collider.name);
+            //     itemOnworldInstance.AddNewItem();
+            //     Destroy(hit.collider);
+            //    // Debug.Log("touch");
+            // }
+            // if(hit.collider.name=="decoration_roof"){
              
-                Debug.Log("We hit " + hit.collider.name);
-                itemOnworldInstance.AddNewItem();
-                Destroy(hit.collider);
-                Debug.Log("touchsun");
-            }
+            //     Debug.Log("We hit " + hit.collider.name);
+            //     itemOnworldInstance.AddNewItem();
+            //     Destroy(hit.collider);
+            //     Debug.Log("touchsun");
+            // }
             
              if(hit.collider.name=="Password"){
              
@@ -216,13 +216,13 @@ private void OnCollisionEnter(Collision other)
                  }
                 
             }
-             if(hit.collider.name=="puzzlePiece1"){
+            //  if(hit.collider.name=="puzzlePiece1"){
              
-                Debug.Log("We hit " + hit.collider.name);
-                itemOnworldInstance.AddNewItem();
-                Destroy(hit.collider);
+            //     Debug.Log("We hit " + hit.collider.name);
+            //     itemOnworldInstance.AddNewItem();
+            //     Destroy(hit.collider);
               
-            }
+            // }
             
             // if (hit.collider.CompareTag("UI"))
             // {

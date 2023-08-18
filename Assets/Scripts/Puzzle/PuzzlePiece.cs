@@ -65,4 +65,15 @@ public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IDragHandler, IEn
         // 返回true表示拼圖放置在正確位置，否則返回false
         return false;
     }
+
+
+
+
+
+
+    
 }
+
+
+
+
