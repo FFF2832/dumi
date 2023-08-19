@@ -11,6 +11,7 @@ TagManager:
   - UI
   - Grid
   - Good
+  - PotionBottle
   layers:
   - Default
   - TransparentFX
