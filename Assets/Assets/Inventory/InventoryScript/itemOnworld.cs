@@ -157,6 +157,14 @@ public class itemOnworld : MonoBehaviour
                 Destroy(gameObject);
     
             }
+            // if(hit.collider.name=="fullpiece"){
+             
+            //     Debug.Log("We hit " + hit.collider.name);
+            //     AddNewItem(thisItem);
+            //     Destroy(hit.collider);
+            //     Destroy(gameObject);
+    
+            // }
 
         }
     } 

@@ -57,18 +57,10 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
          originalScale = transform.localScale; // 儲存原始尺寸
        // rectTransform = GetComponent<RectTransform>();
     }
-    //  public changeImage changeImageScript;
+    
    
 
-//    void Start()
-//     {
-//         // 在 Start 方法中初始化 changeImage 物件的參考
-//         changeImageScript = GameObject.FindObjectOfType<changeImage>();
-//         if (changeImageScript == null)
-//         {
-//             Debug.LogError("changeImage component not found!");
-//         }
-//     }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         
@@ -98,12 +90,9 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     }
     public void OnDrag(PointerEventData eventData)
     {
-        //跟隨鼠標
-        // GameObject draggedItem = eventData.pointerDrag;
-        // item itemData = draggedItem.GetComponent<item>();
+       
         transform.position = eventData.position;
-        //itemImage
-        // Debug.Log(eventData.pointerCurrentRaycast.gameObject);
+        
 
     
          if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "1"){
@@ -219,7 +208,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
              itemCorrect[4]=true;
               itemcorrect=4;
             if(  positionCorrect[4]){
-                    Destroy(gameObject);
+                    //Destroy(gameObject);
                     // transform.localScale = originalScale;
              }   
         
@@ -355,13 +344,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         anchor = null;
     }
     }
-    // public static bool checkTarget() // 宣告為靜態方法，回傳靜態變數 Check
-    // {
-    
-    //     if(positioncorrect==itemcorrect&&positioncorrect!=0)correct=true;
-    //     Debug.Log("correct:"+correct);
-    //     return correct;
-    // }
+  
+  
 
 
     public static bool checkTarget()

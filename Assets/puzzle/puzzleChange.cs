@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class puzzle3 : MonoBehaviour
+
+public class puzzleChange : MonoBehaviour
 {
-
-
-      public Sprite puzzleSprites; // 儲存不同拼圖的圖片
+    
+    public Sprite puzzleSprites; // 儲存不同拼圖的圖片
     private Image spriteChange;
 
        public item itemToRemove;
     public Inventory playerInventory;
+    public static bool complete1;
 void Start()
 {
     spriteChange = GetComponent<Image>();
@@ -26,9 +27,12 @@ void Start()
         bool[] itemCorrect = ItemOndrag.checkItemCorrect();
 
        
-        // if(ItemOndrag.checkpuzzle1())  ChangeSpriteIfCorrect(puzzleSprites[1], itemToRemove);
+        if(ItemOndrag.checkpuzzle1()) {
+             ChangeSpriteIfCorrect(puzzleSprites, itemToRemove);
+             
+        }
         // if(ItemOndrag.checkpuzzle2())  ChangeSpriteIfCorrect(puzzleSprites[2], itemToRemove);
-        if(ItemOndrag.checkpuzzle3())  ChangeSpriteIfCorrect(puzzleSprites, itemToRemove);
+        // if(ItemOndrag.checkpuzzle3())  ChangeSpriteIfCorrect(puzzleSprites[3], itemToRemove);
     }
 
     // ... 其他方法 ...
@@ -36,11 +40,23 @@ void Start()
     private void ChangeSpriteIfCorrect(Sprite newSprite, item itemToRemove)
     {
         spriteChange.sprite = newSprite;
-
+        complete1=true;
+         // 删除物品，确保 itemToRemove 引用了正确的物品对象
+        if (itemToRemove != null)
+        {
+            playerInventory.itemList.Remove(itemToRemove);
+        }
         // 可能需要在這裡處理物品的移除
     }
+    public static bool puzzle1complete(){
+        return complete1;
+    }
 
-//        public Sprite sprite1; // 第一個圖片
+
+
+
+//原始的版本
+//      public Sprite sprite1; // 第一個圖片
 //     public Sprite sprite2; // 第二個圖片
 //     private Image spriteChange;
 
@@ -73,7 +89,7 @@ void Start()
 //     // Debug.Log("positionCorrect[2]: " + positionCorrect[2]);
 //     // Debug.Log("itemCorrect[2]: " + itemCorrect[2]);
 
-//     if (ItemOndrag.checkpuzzle2())
+//     if (ItemOndrag.checkpuzzle1())
 //     {
 //           //  RemoveItem(itemToRemove);
 //         // 在正確的位置上且拖曳的物品是零件1，更換成 sprite1
@@ -87,6 +103,5 @@ void Start()
 //         spriteChange.sprite = sprite2;
 //     }
 // }
-
 
 }
