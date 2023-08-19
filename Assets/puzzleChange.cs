@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class puzzleChange : MonoBehaviour
 {
-    public Sprite[] puzzleSprites; // 儲存不同拼圖的圖片
+    
+    public Sprite puzzleSprites; // 儲存不同拼圖的圖片
     private Image spriteChange;
 
        public item itemToRemove;
@@ -25,9 +26,9 @@ void Start()
         bool[] itemCorrect = ItemOndrag.checkItemCorrect();
 
        
-        if(ItemOndrag.checkpuzzle1())  ChangeSpriteIfCorrect(puzzleSprites[1], itemToRemove);
-        if(ItemOndrag.checkpuzzle2())  ChangeSpriteIfCorrect(puzzleSprites[2], itemToRemove);
-        if(ItemOndrag.checkpuzzle3())  ChangeSpriteIfCorrect(puzzleSprites[3], itemToRemove);
+        if(ItemOndrag.checkpuzzle1())  ChangeSpriteIfCorrect(puzzleSprites, itemToRemove);
+        // if(ItemOndrag.checkpuzzle2())  ChangeSpriteIfCorrect(puzzleSprites[2], itemToRemove);
+        // if(ItemOndrag.checkpuzzle3())  ChangeSpriteIfCorrect(puzzleSprites[3], itemToRemove);
     }
 
     // ... 其他方法 ...

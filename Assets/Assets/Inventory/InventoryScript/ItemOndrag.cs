@@ -107,13 +107,16 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     
          if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "1"){
-            transform.localScale = originalScale * 6f; // 可以調整放大倍數
+            transform.localScale = originalScale * 7.8f; // 可以調整放大倍數
+            Debug.Log("(1): " + targetTransform.name + ", position: " + eventData.position);
          }
          else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "2"){
-            transform.localScale = originalScale * 6f; // 可以調整放大倍數
+            transform.localScale = originalScale * 8.3f; // 可以調整放大倍數
+            Debug.Log("(2): " + targetTransform.name + ", position: " + eventData.position);
          }
          else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "3"){
-            transform.localScale = originalScale * 6f; // 可以調整放大倍數
+            transform.localScale = originalScale * 9f; // 可以調整放大倍數
+            Debug.Log("(3): " + targetTransform.name + ", position: " + eventData.position);
          }
         
         // // 放大物品
@@ -211,6 +214,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             }
       }
     else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "1")){
+        
         Debug.Log("find 1");
              itemCorrect[4]=true;
               itemcorrect=4;

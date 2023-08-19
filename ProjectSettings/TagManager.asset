@@ -11,6 +11,9 @@ TagManager:
   - UI
   - Grid
   - Good
+  - P1
+  - P2
+  - P3
   layers:
   - Default
   - TransparentFX

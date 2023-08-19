@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: decoration_roof
   itemImage: {fileID: 21300000, guid: 761e80e0bb576dc4596f08509202309c, type: 3}
-  detailedItemImage: {fileID: 21300000, guid: 23209d9817b444242bb6f46fe0e5cc54, type: 3}
-  itemHeild: 2
+  detailedItemImage: {fileID: 21300000, guid: 0402d59dcdc60e74eab703a18ef0643e, type: 3}
+  itemHeild: 3
   itemInfo: "\u592A\u967D\u96F6\u4EF6"
   equip: 1
   itemID: 0
