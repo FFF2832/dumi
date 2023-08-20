@@ -6,8 +6,9 @@ public class GameManager : MonoBehaviour
     public UIController uiController; // 管理UI的腳本，請自行創建
 
     // 玩家倒入材料的操作，你可以根據你的遊戲設計自行實現
-    public void PourMaterial(string materialName)
+    public void GM(string materialName)
     {
+        Debug.Log("Pouring material: " + materialName);
         potionBottle.PourMaterial(materialName);
         uiController.UpdateMaterialUI(materialName);
         
