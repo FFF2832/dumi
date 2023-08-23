@@ -64,10 +64,12 @@ public class MaterialDragDrop : MonoBehaviour, IDragHandler, IEndDragHandler
         {
             potionBottle.PourMaterial(materialName);
             GameManager gm = other.GetComponent<GameManager>();
+            Destroy(gameObject);
             if (gm != null)
             {
                 // 確保將 materialName 傳遞給 PourMaterial 函數
                 gm.GM(materialName);
+            
             }
         }
     }

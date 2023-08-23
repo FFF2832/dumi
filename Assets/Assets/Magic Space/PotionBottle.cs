@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class PotionBottle : MonoBehaviour
 {
     public string[] requiredMaterials = new string[3]; 
@@ -42,76 +43,44 @@ public class PotionBottle : MonoBehaviour
     }
 
   
-//         public void PourMaterial(string materialName)
-// {
-//     UpdateMaterialUI(materialName);
-
-//     for (int i = 0; i < currentMaterials.Length; i++)
-//     {
-//          Debug.Log("i="+i);
-//         if (string.IsNullOrEmpty(currentMaterials[i]))
-//         {
-//             currentMaterials[i] = materialName;
-//             break;
-//         }
-
-//         // 如果所有材料都已經倒入，檢查是否正確
-//         if (i == currentMaterials.Length )
-//         {
-//             Debug.Log("CheckPotion"+CheckPotion());
-//             if (CheckPotion())
-//             {
-//                 // 成功
-//                 ShowSuccessMessage();
-//             }
-//             else
-//             {
-//                 // 失敗
-//                 ShowFailureMessage();
-//             }
-//         }
-//     }
-// }
-
-
 public void PourMaterial(string materialName)
 {
     UpdateMaterialUI(materialName);
 
-    bool allMaterialsFilled = true; // 假設所有材料都已經倒入
-
     for (int i = 0; i < currentMaterials.Length; i++)
     {
-        Debug.Log("i=" + i);
+         Debug.Log("i="+i);
         if (string.IsNullOrEmpty(currentMaterials[i]))
         {
             currentMaterials[i] = materialName;
             break;
         }
 
-        if (i == currentMaterials.Length - 1)
+        // 如果所有材料都已經倒入，檢查是否正確
+        if (i == currentMaterials.Length )
         {
-            // 迴圈結束後，檢查是否所有材料都已經倒入
-            allMaterialsFilled = CheckAllMaterialsFilled();
-            
+            Debug.Log("CheckPotion"+CheckPotion());
+            if (CheckPotion())
+            {
+                // 成功
+                ShowSuccessMessage();
+            }
+            else
+            {
+                // 失敗
+                ShowFailureMessage();
+            }
         }
-    }
-
-    // 只在所有材料都已經倒入時執行檢查
-    if (allMaterialsFilled)
-    {
-        if (CheckPotion())
-        {
-            // 成功
-            ShowSuccessMessage();
-        }
-        // else
-        // {
-        //     // 失敗
-        //     ShowFailureMessage();
-        // }
     }
 }
+
+
+// public void PourMaterial(string materialName)
+// {
+//     UpdateMaterialUI(materialName);
+
+   
+// }
 
 // 檢查是否所有材料都已經倒入
 private bool CheckAllMaterialsFilled()
@@ -146,4 +115,53 @@ public void ShowFailureMessage()
 
         messageText.text = "Potion Successfully Brewed!";
     }
+    public void ResetMaterials()
+{
+    // 這個方法用於重置所有材料，準備重新配置藥水
+    for (int i = 0; i < currentMaterials.Length; i++)
+    {
+        currentMaterials[i] = ""; // 重置每個材料為空
+    }
+}
+public void startBrew(string materialName){
+    // bool allMaterialsFilled = true; // 假設所有材料都已經倒入
+
+    // for (int i = 0; i < currentMaterials.Length; i++)
+    // {
+    //     Debug.Log("i=" + i);
+    //     if (string.IsNullOrEmpty(currentMaterials[i]))
+    //     {
+    //         currentMaterials[i] = materialName;
+    //         break;
+    //     }
+
+    //     if (i == currentMaterials.Length - 1)
+    //     {
+    //         // 迴圈結束後，檢查是否所有材料都已經倒入
+    //         allMaterialsFilled = CheckAllMaterialsFilled();
+            
+    //     }
+    // }
+
+    // // 只在所有材料都已經倒入時執行檢查
+    // if (allMaterialsFilled)
+    // {
+    //     if (CheckPotion())
+    //     {
+    //         // 成功
+    //         ShowSuccessMessage();
+    //     }
+    //     else
+    //     {
+    //         // 失敗
+    //         ShowFailureMessage();
+    //         ResetMaterials();
+    //         // 重新載入當前場景
+    //         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    //     }
+    // }
+
+    PourMaterial(materialName); // 執行材料的倒入
+    CheckPotion(); // 檢查藥水是否成功
+}
 }
