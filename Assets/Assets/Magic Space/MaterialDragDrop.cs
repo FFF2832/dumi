@@ -59,16 +59,20 @@ public class MaterialDragDrop : MonoBehaviour, IDragHandler, IEndDragHandler
           if (other.CompareTag("PotionBottle"))
     {
         string materialName = gameObject.GetComponent<Material>().materialName;
+
+        //圖片
+         Sprite materialImage = gameObject.GetComponent<Material>().materialSprite;
+
         PotionBottle potionBottle = other.GetComponent<PotionBottle>();
         if (potionBottle != null)
         {
-            potionBottle.PourMaterial(materialName);
+            potionBottle.PourMaterial(materialName,materialImage);
             GameManager gm = other.GetComponent<GameManager>();
             Destroy(gameObject);
             if (gm != null)
             {
                 // 確保將 materialName 傳遞給 PourMaterial 函數
-                gm.GM(materialName);
+                gm.GM(materialName,materialImage);
             
             }
         }
