@@ -62,6 +62,9 @@ TagManager:
   - name: bg
     uniqueID: 754000281
     locked: 0
+  - name: bg-2
+    uniqueID: 625189939
+    locked: 0
   - name: player
     uniqueID: 365823175
     locked: 0
