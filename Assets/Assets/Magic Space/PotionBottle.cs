@@ -19,8 +19,19 @@ public class PotionBottle : MonoBehaviour
     [SerializeField] Image materialImage2;
     [SerializeField] Image materialImage3;
      private int i = 0; // 定義 i 作為成員變量
+
+    public item thisItem;
+    public Inventory playerInventory;
+
+//動畫
+     private Animator anim; 
+    private Animator animskill;
+    private enum MovementState{ startBrew,potionSucess,potionFail};
+    public bool sucessPotion;
      private void Start()
     {
+        anim =GetComponent<Animator>();
+        animskill =GetComponent<Animator>();
         // 初始化 currentMaterials 陣列，使其具有與 requiredMaterials 相同的長度
         currentMaterials = new string[requiredMaterials.Length];
 
@@ -35,9 +46,11 @@ public class PotionBottle : MonoBehaviour
     // 檢查是否成功製作藥水
     public bool CheckPotion()
     {
+        //sucessPotion=true;
         if (currentMaterials.Length != requiredMaterials.Length)
 
         {
+            //sucessPotion=false;
             return false;
         }
 
@@ -45,6 +58,7 @@ public class PotionBottle : MonoBehaviour
         {
             if (currentMaterials[i] != requiredMaterials[i])
             {
+                //sucessPotion=false;
                 return false;
             }
         }
@@ -97,11 +111,13 @@ public class PotionBottle : MonoBehaviour
        
 //     }
 
-
+// public void Update(){
+//         UpdateAnimationState();
+// }
 public void PourMaterial(string materialName,Sprite materialSprite)
     {
         UpdateMaterialUI(materialName);
-       
+      
         if(i==0)UpdateMaterialSprite1(materialSprite);
         if(i==1)UpdateMaterialSprite2(materialSprite);
         if(i==2)UpdateMaterialSprite3(materialSprite);
@@ -109,6 +125,7 @@ public void PourMaterial(string materialName,Sprite materialSprite)
         {
             currentMaterials[i] = materialName;
             i++; // 增加 i
+             
         }
        
         
@@ -201,17 +218,21 @@ public void startBrew(string materialName ){
         {
             if (CheckPotion())
             {
+                sucessPotion=true;
                 ShowSuccessMessage();
+                AddNewItem(thisItem);
+             
             }
             else
             {
-
+                sucessPotion=false;
                 ShowFailureMessage();
                 
                 // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 // 延遲換場景，例如延遲 2 秒
             float delayInSeconds = 2.0f;
             Invoke("LoadNextScene", delayInSeconds);
+
             }
         }
 }
@@ -220,4 +241,46 @@ private void LoadNextScene()
 {
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 }
+
+   public void AddNewItem(item thisItem){
+    if(!playerInventory.itemList.Contains(thisItem)){
+         //playerInventory.itemList.Add(thisItem);
+          //未刪CreateNewItem
+         //InventoryManager.CreateNewItem(thisItem);
+         for(int i=0;i<playerInventory.itemList.Count;i++){
+                if(playerInventory.itemList[i]==null){
+                        playerInventory.itemList[i]=thisItem;
+                        break;
+                }
+         }
+    }
+    else {
+        thisItem.itemHeild += 1;
+    }
+    InventoryManager.RefreshItem(); 
+   }
+
+   private void UpdateAnimationState()
+    {
+        MovementState state;
+        Debug.Log("sucessPotion"+sucessPotion);
+    
+        if(sucessPotion){
+                state=MovementState.potionSucess;
+              
+            
+                
+        }
+        else if(!sucessPotion){
+            state=MovementState.potionFail;
+       
+            
+        }
+        else  {
+            state=MovementState.startBrew;
+            // moving = false;
+        }
+     
+       anim.SetInteger("state",(int)state);
+    }
 }
