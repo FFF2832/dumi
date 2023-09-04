@@ -26,8 +26,9 @@ public class PotionBottle : MonoBehaviour
 //動畫
      private Animator anim; 
     private Animator animskill;
-    private enum MovementState{ startBrew,potionSucess,potionFail};
+    private enum MovementState{ startBrew,potionSucess,potionFail,throwMaterial};
     public bool sucessPotion;
+    public bool throwMaterial;
      private void Start()
     {
         anim =GetComponent<Animator>();
@@ -35,7 +36,8 @@ public class PotionBottle : MonoBehaviour
         // 初始化 currentMaterials 陣列，使其具有與 requiredMaterials 相同的長度
         currentMaterials = new string[requiredMaterials.Length];
 
-
+        sucessPotion=false;
+        throwMaterial=false;
         requiredMaterials[0] = "pink";
         requiredMaterials[1] = "nail";
         requiredMaterials[2] = "lip";
@@ -46,7 +48,8 @@ public class PotionBottle : MonoBehaviour
     // 檢查是否成功製作藥水
     public bool CheckPotion()
     {
-        //sucessPotion=true;
+       sucessPotion=true;
+       Debug.Log("CheckPotion()");
         if (currentMaterials.Length != requiredMaterials.Length)
 
         {
@@ -111,18 +114,19 @@ public class PotionBottle : MonoBehaviour
        
 //     }
 
-// public void Update(){
-//         UpdateAnimationState();
-// }
+public void Update(){
+        UpdateAnimationState();
+}
 public void PourMaterial(string materialName,Sprite materialSprite)
     {
-        UpdateMaterialUI(materialName);
-      
+       
+       //UpdateAnimationState();
         if(i==0)UpdateMaterialSprite1(materialSprite);
         if(i==1)UpdateMaterialSprite2(materialSprite);
         if(i==2)UpdateMaterialSprite3(materialSprite);
         if (i < currentMaterials.Length) // 檢查是否可以倒入更多材料
         {
+            throwMaterial=true;
             currentMaterials[i] = materialName;
             i++; // 增加 i
              
@@ -213,7 +217,7 @@ public void UpdateMaterialSprite2(Sprite materialSprite)
 // }
 public void startBrew(string materialName ){
 
-   
+   //UpdateAnimationState();
     if (i == currentMaterials.Length)
         {
             if (CheckPotion())
@@ -264,20 +268,22 @@ private void LoadNextScene()
     {
         MovementState state;
         Debug.Log("sucessPotion"+sucessPotion);
-    
+        Debug.Log("throwMaterial"+throwMaterial);
+        if(throwMaterial){
+                state=MovementState.throwMaterial;
+        }
+        else{
+                 state=MovementState.startBrew;
+        }
         if(sucessPotion){
                 state=MovementState.potionSucess;
-              
-            
+ 
                 
         }
-        else if(!sucessPotion){
-            state=MovementState.potionFail;
-       
-            
-        }
+        
         else  {
-            state=MovementState.startBrew;
+            state=MovementState.potionFail;
+           // state=MovementState.startBrew;
             // moving = false;
         }
      
