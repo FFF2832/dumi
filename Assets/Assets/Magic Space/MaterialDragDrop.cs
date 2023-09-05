@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 public class MaterialDragDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     private RectTransform rectTransform;
-
+    // public static bool throwMaterial;
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -64,9 +64,11 @@ public class MaterialDragDrop : MonoBehaviour, IDragHandler, IEndDragHandler
          Sprite materialImage = gameObject.GetComponent<Material>().materialSprite;
 
         PotionBottle potionBottle = other.GetComponent<PotionBottle>();
+
         if (potionBottle != null)
         {
             potionBottle.PourMaterial(materialName,materialImage);
+           // throwMaterial=true;
             GameManager gm = other.GetComponent<GameManager>();
             Destroy(gameObject);
             if (gm != null)
@@ -76,6 +78,14 @@ public class MaterialDragDrop : MonoBehaviour, IDragHandler, IEndDragHandler
             
             }
         }
+       
     }
     }
+    // private void OnTriggerExit2D(Collider2D other){
+    //     throwMaterial=false;
+    // }
+
+    //  public static bool UpdatethrowMaterial(){
+    // return throwMaterial;
+    // }
 }

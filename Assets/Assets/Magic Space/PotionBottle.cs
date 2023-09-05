@@ -24,31 +24,29 @@ public class PotionBottle : MonoBehaviour
     public Inventory playerInventory;
 
 //動畫
-     private Animator anim; 
-    private Animator animskill;
-    private enum MovementState{ startBrew,potionSucess,potionFail,throwMaterial};
-    public bool sucessPotion;
-    public bool throwMaterial;
+    //  private Animator anim; 
+    // private Animator animskill;
+    private enum MovementState{ startBrew,throwMaterial,potionSucess,potionFail};
+    public static int sucessPotion;
+     public static bool throwMaterial;
      private void Start()
     {
-        anim =GetComponent<Animator>();
-        animskill =GetComponent<Animator>();
+        // anim =GetComponent<Animator>();
+        // animskill =GetComponent<Animator>();
         // 初始化 currentMaterials 陣列，使其具有與 requiredMaterials 相同的長度
         currentMaterials = new string[requiredMaterials.Length];
 
-        sucessPotion=false;
-        throwMaterial=false;
+        sucessPotion=0;
+       //這裡改成ui
         requiredMaterials[0] = "pink";
         requiredMaterials[1] = "nail";
         requiredMaterials[2] = "lip";
     }
-    // void Updated(){
-       
-    // }
+   
     // 檢查是否成功製作藥水
     public bool CheckPotion()
     {
-       sucessPotion=true;
+      
        Debug.Log("CheckPotion()");
         if (currentMaterials.Length != requiredMaterials.Length)
 
@@ -114,25 +112,28 @@ public class PotionBottle : MonoBehaviour
        
 //     }
 
-public void Update(){
-        UpdateAnimationState();
-}
+// public void Update(){
+//         UpdateAnimationState();
+// }
 public void PourMaterial(string materialName,Sprite materialSprite)
     {
        
-       //UpdateAnimationState();
+         //這裡改成ui
         if(i==0)UpdateMaterialSprite1(materialSprite);
         if(i==1)UpdateMaterialSprite2(materialSprite);
         if(i==2)UpdateMaterialSprite3(materialSprite);
         if (i < currentMaterials.Length) // 檢查是否可以倒入更多材料
         {
-            throwMaterial=true;
+            
+           throwMaterial=true;
             currentMaterials[i] = materialName;
             i++; // 增加 i
+            float delay = 1.0f;
+            Invoke("waitAnim", delay);
              
         }
-       
-        
+
+         //UpdateAnimationState();
        
     }
 
@@ -166,9 +167,11 @@ public void ShowFailureMessage()
 
 public void UpdateMaterialSprite1(Sprite materialSprite)
     {
+        // throwMaterial=true;
         if (materialSprite != null)
         {
             materialImage1.sprite = materialSprite;
+             
         }
     }
 public void UpdateMaterialSprite2(Sprite materialSprite)
@@ -222,14 +225,15 @@ public void startBrew(string materialName ){
         {
             if (CheckPotion())
             {
-                sucessPotion=true;
+                sucessPotion=1;
                 ShowSuccessMessage();
                 AddNewItem(thisItem);
              
             }
             else
             {
-                sucessPotion=false;
+                sucessPotion=2;
+               // throwMaterial=false;
                 ShowFailureMessage();
                 
                 // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -239,6 +243,11 @@ public void startBrew(string materialName ){
 
             }
         }
+}
+
+private void waitAnim()
+{
+  throwMaterial=false;
 }
 // 在這個函式中實現換場景的邏輯
 private void LoadNextScene()
@@ -264,29 +273,40 @@ private void LoadNextScene()
     InventoryManager.RefreshItem(); 
    }
 
-   private void UpdateAnimationState()
-    {
-        MovementState state;
-        Debug.Log("sucessPotion"+sucessPotion);
-        Debug.Log("throwMaterial"+throwMaterial);
-        if(throwMaterial){
-                state=MovementState.throwMaterial;
-        }
-        else{
-                 state=MovementState.startBrew;
-        }
-        if(sucessPotion){
-                state=MovementState.potionSucess;
+//    private void UpdateAnimationState()
+//     {
+//         // MovementState state;
+//         Debug.Log("sucessPotion"+sucessPotion);
+       
+//         if(throwMaterial){
+           
+//              anim.SetBool("throw",true);
+//                Debug.Log("throwMaterial"+throwMaterial);
+//                 //state=MovementState.throwMaterial;
+//         }
+//         else{
+//              anim.SetBool("throw",false);
+//                  //state=MovementState.startBrew;
+//         }
+//     //     if(sucessPotion){
+//     //             state=MovementState.potionSucess;
  
                 
-        }
+//     //     }
         
-        else  {
-            state=MovementState.potionFail;
-           // state=MovementState.startBrew;
-            // moving = false;
-        }
+//     //     else  {
+//     //         state=MovementState.potionFail;
+//     //        // state=MovementState.startBrew;
+//     //         // moving = false;
+//     //     }
      
-       anim.SetInteger("state",(int)state);
+//     //    anim.SetInteger("state",(int)state);
+//     }
+    public static bool UpdatethrowMaterial(){
+    return throwMaterial;
+    }
+
+    public static int UpdatesucessPotion(){
+        return sucessPotion;
     }
 }
