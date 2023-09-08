@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class PotionBottle : MonoBehaviour
 {
-    public string[] requiredMaterials = new string[3]; 
+    public string[] requiredMaterials = new string[5]; 
     // public string[] requiredMaterials; // 正確的材料配方
     private string[] currentMaterials; // 當前倒入的材料
 
@@ -18,6 +18,8 @@ public class PotionBottle : MonoBehaviour
     [SerializeField] Image materialImage1;    
     [SerializeField] Image materialImage2;
     [SerializeField] Image materialImage3;
+    [SerializeField] Image materialImage4;
+    [SerializeField] Image materialImage5;
      private int i = 0; // 定義 i 作為成員變量
 
     public item thisItem;
@@ -41,6 +43,8 @@ public class PotionBottle : MonoBehaviour
         requiredMaterials[0] = "pink";
         requiredMaterials[1] = "nail";
         requiredMaterials[2] = "lip";
+        requiredMaterials[3] = "fan";
+        requiredMaterials[4] = "water";
     }
    
     // 檢查是否成功製作藥水
@@ -122,6 +126,8 @@ public void PourMaterial(string materialName,Sprite materialSprite)
         if(i==0)UpdateMaterialSprite1(materialSprite);
         if(i==1)UpdateMaterialSprite2(materialSprite);
         if(i==2)UpdateMaterialSprite3(materialSprite);
+        if(i==3)UpdateMaterialSprite4(materialSprite);
+        if(i==4)UpdateMaterialSprite5(materialSprite);
         if (i < currentMaterials.Length) // 檢查是否可以倒入更多材料
         {
             
@@ -186,6 +192,20 @@ public void UpdateMaterialSprite2(Sprite materialSprite)
         if (materialSprite != null)
         {
             materialImage3.sprite = materialSprite;
+        }
+    }
+        public void UpdateMaterialSprite4(Sprite materialSprite)
+    {
+        if (materialSprite != null)
+        {
+            materialImage4.sprite = materialSprite;
+        }
+    }
+        public void UpdateMaterialSprite5(Sprite materialSprite)
+    {
+        if (materialSprite != null)
+        {
+            materialImage5.sprite = materialSprite;
         }
     }
     // 顯示成功消息
