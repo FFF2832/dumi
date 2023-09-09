@@ -258,7 +258,7 @@ public void startBrew(string materialName ){
                 
                 // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 // 延遲換場景，例如延遲 2 秒
-            float delayInSeconds = 2.0f;
+            float delayInSeconds = 4.0f;
             Invoke("LoadNextScene", delayInSeconds);
 
             }

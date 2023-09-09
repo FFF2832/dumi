@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1093020973028574512}
   - component: {fileID: 1093020973028574513}
   m_Layer: 0
-  m_Name: "\u5100\u9336\u677F-0"
+  m_Name: "\u65E5\u6677\u8207\u6642\u9418"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 104794215
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1dddcb34fde40864db7a718129bc8bde, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1db7875601aadcc45a68dd17f0df7ebc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
