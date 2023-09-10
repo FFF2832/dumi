@@ -12,6 +12,7 @@ public class additemChangeImage : MonoBehaviour
     private Image spriteChange;
     public item itemToRemove;
      public item thisItem;
+     public GameObject itemcollect;
    public Inventory playerInventory;
     
     void Start()
@@ -41,8 +42,9 @@ void Update()
     {
         // 在正確的位置上且拖曳的物品是零件1，更換成 sprite1
         spriteChange.sprite = sprite1;
-         AddNewItem();
+         AddNewItem(thisItem);
         RemoveItem(itemToRemove);
+        Destroy(itemcollect);
     }
     else
     {
@@ -52,7 +54,7 @@ void Update()
 }
 
 
-public void AddNewItem(){
+public void AddNewItem(item thisItem){
     if(!playerInventory.itemList.Contains(thisItem)){
          for(int i=0;i<playerInventory.itemList.Count;i++){
                 if(playerInventory.itemList[i]==null){

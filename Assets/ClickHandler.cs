@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+//提示消失
 public class ClickHandler : MonoBehaviour
 {
     public Canvas tempCanvas;

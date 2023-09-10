@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+//按下按鈕成功或失敗要在圖層最上方
 public class PotionBottle : MonoBehaviour
 {
     public string[] requiredMaterials = new string[5]; 
@@ -31,6 +32,8 @@ public class PotionBottle : MonoBehaviour
     private enum MovementState{ startBrew,throwMaterial,potionSucess,potionFail};
     public static int sucessPotion;
      public static bool throwMaterial;
+
+     public static bool magicDone;
      private void Start()
     {
         // anim =GetComponent<Animator>();
@@ -248,7 +251,7 @@ public void startBrew(string materialName ){
                 sucessPotion=1;
                 ShowSuccessMessage();
                 AddNewItem(thisItem);
-             
+                magicDone=true;
             }
             else
             {
@@ -328,5 +331,9 @@ private void LoadNextScene()
 
     public static int UpdatesucessPotion(){
         return sucessPotion;
+    }
+
+     public static bool UpdatemagicDone(){
+        return magicDone;
     }
 }
