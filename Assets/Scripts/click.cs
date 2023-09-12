@@ -72,8 +72,11 @@ public class click : MonoBehaviour
         //Check if we hit anything
         if (hit)
         {
-            if(hit.collider.name=="樹枝畫"){
+            if(hit.collider.name=="樹枝畫"&&glow.Updateinside()){
+               
                 OnBtnShowClick1();
+                
+               
                 Debug.Log("We hit " + hit.collider.name);
             }
             else if(hit.collider.name=="back"){
@@ -84,7 +87,7 @@ public class click : MonoBehaviour
                 OnBtnShowClick2();
                 Debug.Log("We hit " + hit.collider.name);
             }
-            else if(hit.collider.name=="paint"){
+            else if(hit.collider.name=="paint"&&glow.Updateinside()){
                 OnBtnShowClick3();
                 Debug.Log("We hit " + hit.collider.name);
             }

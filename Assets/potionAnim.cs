@@ -10,6 +10,11 @@ public class potionAnim : MonoBehaviour
     private enum MovementState{ startBrew,throwMaterial,potionSucess,potionFail};
     // private bool sucessPotion;
     // private bool throwMaterial;
+
+    public GameObject myUIElement; // 參考到UI元素
+    public int newSortOrder; // 新的Sort Order值
+
+       
      private void Start()
     {
         anim =GetComponent<Animator>();
@@ -75,5 +80,20 @@ public class potionAnim : MonoBehaviour
         }
      
     //    anim.SetInteger("state",(int)state);
+    }
+
+
+     // 在需要時調用這個函數，以改變UI元素的Sort Order
+    public void ChangeOrder()
+    {
+        // 獲取UI元素的Canvas組件
+        Canvas uiCanvas = myUIElement.GetComponent<Canvas>();
+
+        
+
+        newSortOrder= PotionBottle.UpdatesortOrder();
+
+        // 設置新的Sort Order值
+        uiCanvas.sortingOrder = newSortOrder;
     }
 }

@@ -34,6 +34,8 @@ public class PotionBottle : MonoBehaviour
      public static bool throwMaterial;
 
      public static bool magicDone;
+
+      public static int sortOrder;
      private void Start()
     {
         // anim =GetComponent<Animator>();
@@ -135,6 +137,7 @@ public void PourMaterial(string materialName,Sprite materialSprite)
         {
             
            throwMaterial=true;
+           sortOrder=-1;
             currentMaterials[i] = materialName;
             i++; // 增加 i
             float delay = 1.0f;
@@ -249,12 +252,14 @@ public void startBrew(string materialName ){
             if (CheckPotion())
             {
                 sucessPotion=1;
+                sortOrder=1;
                 ShowSuccessMessage();
                 AddNewItem(thisItem);
                 magicDone=true;
             }
             else
             {
+                sortOrder=1;
                 sucessPotion=2;
                // throwMaterial=false;
                 ShowFailureMessage();
@@ -335,5 +340,9 @@ private void LoadNextScene()
 
      public static bool UpdatemagicDone(){
         return magicDone;
+    }
+
+    public static int UpdatesortOrder(){
+        return sortOrder;
     }
 }

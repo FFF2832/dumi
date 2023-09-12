@@ -38,6 +38,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public static bool puzzle2ok;
      public static bool puzzle3ok;
 
+     public static bool magicOk;
+
     public bool ispuzzle1ok;
 
 
@@ -51,8 +53,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
      private void Awake()
     {
         // 初始化陣列
-        itemCorrect = new bool[7];
-        positionCorrect = new bool[7];
+        itemCorrect = new bool[8];
+        positionCorrect = new bool[8];
         //放大
          originalScale = transform.localScale; // 儲存原始尺寸
        // rectTransform = GetComponent<RectTransform>();
@@ -250,6 +252,21 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         
             }
       }
+        else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "magicPotion")){
+             itemCorrect[7]=true;
+              itemcorrect=7;
+            if(  positionCorrect[7]){
+                Destroy(gameObject);
+             }   
+        
+            else {
+                correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+        
+            }
+      }
       else  {
         correct=false;
             // 如果沒有碰撞到目標，將物體放回原來的位置
@@ -317,6 +334,11 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
          else if(targetTransform.name =="piece3_pos"){
             Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
               positionCorrect[6]=true;
+            //  positioncorrect=6;
+        }
+        else if(targetTransform.name =="Msbamboo"){
+            Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
+              positionCorrect[7]=true;
             //  positioncorrect=6;
         }
     }
@@ -495,6 +517,21 @@ public static bool checkpuzzle3()
     }
    // Debug.Log("checktire1: " + tire1ok);
     return puzzle1ok;
+}
+
+public static bool checkmagicOk()
+{
+    // 檢查對應索引位置的值是否相等且不為 0
+    if (positionCorrect[7]&& itemCorrect[7])
+    {
+        magicOk = true;
+    }
+    else
+    {
+        magicOk = false;
+    }
+   // Debug.Log("checktire1: " + tire1ok);
+    return magicOk;
 }
 
 

@@ -6981,11 +6981,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 390574411}
+  - component: {fileID: 390574412}
   - component: {fileID: 390574410}
   - component: {fileID: 390574409}
   - component: {fileID: 390574414}
   - component: {fileID: 390574413}
-  - component: {fileID: 390574412}
   - component: {fileID: 390574415}
   m_Layer: 3
   m_Name: potionAnim (1)
@@ -7026,6 +7026,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f91a41df786c242b98d47c620e75bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myUIElement: {fileID: 390574405}
+  newSortOrder: -1
 --- !u!224 &390574411
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7038,8 +7040,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1710953765}
-  m_RootOrder: 10
+  m_Father: {fileID: 1066914009}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7065,7 +7067,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &390574413
 MonoBehaviour:
@@ -9006,7 +9008,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1710953765}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9585,6 +9587,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f91a41df786c242b98d47c620e75bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myUIElement: {fileID: 0}
+  newSortOrder: 0
 --- !u!212 &958790264
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9649,6 +9653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f91a41df786c242b98d47c620e75bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myUIElement: {fileID: 0}
+  newSortOrder: 0
 --- !u!1 &961260631
 GameObject:
   m_ObjectHideFlags: 0
@@ -10706,6 +10712,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 390574411}
   - {fileID: 1083143764}
   m_Father: {fileID: 1094573103}
   m_RootOrder: 5
@@ -10811,7 +10818,7 @@ RectTransform:
   - {fileID: 1100357052}
   - {fileID: 329506354}
   m_Father: {fileID: 1066914009}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13525,7 +13532,6 @@ RectTransform:
   - {fileID: 371982438}
   - {fileID: 2011618109}
   - {fileID: 1363726597}
-  - {fileID: 390574411}
   - {fileID: 831910568}
   - {fileID: 1759266005}
   - {fileID: 2135963438}
@@ -14132,7 +14138,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1710953765}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16123,7 +16129,7 @@ RectTransform:
   - {fileID: 1525888286}
   - {fileID: 603076318}
   m_Father: {fileID: 1710953765}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
