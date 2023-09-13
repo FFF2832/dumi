@@ -50,30 +50,30 @@ public class potionAnim : MonoBehaviour
         if(PotionBottle.UpdatethrowMaterial()){
            
              anim.SetBool("throw",true);
-             Debug.Log("throwMaterial"+PotionBottle.UpdatethrowMaterial());
+            // Debug.Log("throwMaterial"+PotionBottle.UpdatethrowMaterial());
                 //state=MovementState.throwMaterial;
         }
         else{
-             Debug.Log("throwMaterial"+PotionBottle.UpdatethrowMaterial());
+             //Debug.Log("throwMaterial"+PotionBottle.UpdatethrowMaterial());
              anim.SetBool("throw",false);
                  //state=MovementState.startBrew;
         }
         if(PotionBottle.UpdatesucessPotion()==1){
                 // state=MovementState.potionSucess;
                 anim.SetInteger("sucessPotion",1);
-               Debug.Log("sucessPotion"+PotionBottle.UpdatesucessPotion());
+              // Debug.Log("sucessPotion"+PotionBottle.UpdatesucessPotion());
                 
         }
          else if(PotionBottle.UpdatesucessPotion()==2){
                 // state=MovementState.potionSucess;
                 anim.SetInteger("sucessPotion",2);
-               Debug.Log("sucessPotion"+PotionBottle.UpdatesucessPotion());
+              // Debug.Log("sucessPotion"+PotionBottle.UpdatesucessPotion());
                 
         }
         
         else  {
              anim.SetInteger("sucessPotion",0);
-            Debug.Log("sucessPotion"+PotionBottle.UpdatesucessPotion());
+         //   Debug.Log("sucessPotion"+PotionBottle.UpdatesucessPotion());
             // state=MovementState.potionFail;
            // state=MovementState.startBrew;
             // moving = false;

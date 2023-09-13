@@ -29,6 +29,7 @@ public class DialogSystem : MonoBehaviour
     public Sprite dialogIllustrate1;
     public Sprite dialogIllustrate2;
     bool textFinished;  //文本是否显示完毕
+    private static bool videoPlayed;
     bool isTyping;  //是否在逐字显示
 
     List<string> textList = new List<string>();
@@ -140,8 +141,9 @@ public class DialogSystem : MonoBehaviour
                 dialogImage.sprite = dialogIllustrate2;
                 index++;
                 break;         
-            case "...":
+            case "V":
                 textFinished = true; 
+                videoPlayed=true;
                 break;// 设置对话框和头像的显示...
         }
 
@@ -197,8 +199,9 @@ public class DialogSystem : MonoBehaviour
                 dialogImage.sprite = dialogIllustrate2;
                 index++;
                 break;         
-            case "...":
+            case "V":
                 textFinished = true; 
+                videoPlayed=true;
                 break;
         }
 
@@ -217,6 +220,10 @@ public class DialogSystem : MonoBehaviour
         isTyping = true;
         textFinished = true;
         index++;
+    }
+
+    public static bool UpdatevideoPlayed(){
+            return videoPlayed;
     }
 }
 

@@ -26,7 +26,12 @@ public class Bamboo : MonoBehaviour
     private void Update()
     {
         // 在这里添加您的条件检查逻辑
-        if (ItemOndrag.checkmagicOk() && !videoPlaying)
+        // if (ItemOndrag.checkmagicOk() && !videoPlaying)
+        // {
+        //     PlayVideo();
+        //     Debug.Log("Video played");
+        // }
+        if (bambooTalk.UpdatefinishTalk() && !videoPlaying)
         {
             PlayVideo();
             Debug.Log("Video played");

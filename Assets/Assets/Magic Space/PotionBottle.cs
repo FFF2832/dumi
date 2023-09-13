@@ -56,7 +56,7 @@ public class PotionBottle : MonoBehaviour
     public bool CheckPotion()
     {
       
-       Debug.Log("CheckPotion()");
+       //Debug.Log("CheckPotion()");
         if (currentMaterials.Length != requiredMaterials.Length)
 
         {
@@ -339,6 +339,7 @@ private void LoadNextScene()
     }
 
      public static bool UpdatemagicDone(){
+        // magicDone=true;
         return magicDone;
     }
 

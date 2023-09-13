@@ -10,7 +10,7 @@ public class click : MonoBehaviour
     {
         
         check2DObjectClicked();
-        //checkclick();
+        checkclick();
         
     }
     
@@ -99,6 +99,16 @@ public class click : MonoBehaviour
              
                 Debug.Log("We hit " + hit.collider.name);
             }
+            else if(hit.collider.name=="裝飾畫1"){
+             
+                   OnBtnShowClick4();
+                Debug.Log("We hit " + hit.collider.name);
+            }
+             else if(hit.collider.name=="Exit"){
+             
+                     Application.LoadLevel(3);
+                Debug.Log("We hit " + hit.collider.name);
+            }
             
             else if(hit.collider.name=="Password"){
              
@@ -136,6 +146,11 @@ int previousScene = PlayerPrefs.GetInt("PreviousScene");
    } 
     public void OnBtnShowClick3(){
      Application.LoadLevel(2);
+    Debug.Log("切換場景 " );
+   } 
+
+   public void OnBtnShowClick4(){
+     Application.LoadLevel(4);
     Debug.Log("切換場景 " );
    } 
    

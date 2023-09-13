@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene night.unity
     guid: 61dc62c8f8930f94c98960e980859017
+  - enabled: 1
+    path: Assets/Scenes/Scene Magicroom.unity
+    guid: 27bd3431d44618047ae919d4eb60d72a
+  - enabled: 1
+    path: Assets/Scenes/Scene Test 1.unity
+    guid: e8852829697b6b646a957c5d43983444
   m_configObjects: {}
