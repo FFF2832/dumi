@@ -8,9 +8,11 @@ public class EnterKey : MonoBehaviour
     string password;//正确密码
     public string inputPassword;//输入密码
     // Start is called before the first frame update
+    private static bool passwordCorrect;
     void Start()
     {
         password = "123";
+          passwordCorrect=false;
     }
     /// <summary>
     /// 检查密码方法
@@ -49,6 +51,7 @@ public class EnterKey : MonoBehaviour
 
     if (inputPassword == password)
     {
+        passwordCorrect=true;
         print("解鎖成功");
     }
     else
@@ -57,5 +60,8 @@ public class EnterKey : MonoBehaviour
         inputPassword = null;
     }
 }
+    public static bool UpdatepasswordCorrect(){
+        return passwordCorrect;
+    } 
 
 }

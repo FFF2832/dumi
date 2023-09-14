@@ -14,6 +14,7 @@ public class Bamboo : MonoBehaviour
     public Canvas videoCanvas; // 引用Canvas对象
 
     private bool videoPlaying = false;
+   
 
     private void Start()
     {
@@ -33,6 +34,10 @@ public class Bamboo : MonoBehaviour
         // }
         if (bambooTalk.UpdatefinishTalk() && !videoPlaying)
         {
+            PlayVideo();
+            Debug.Log("Video played");
+        }
+        if(EnterKey.UpdatepasswordCorrect()){
             PlayVideo();
             Debug.Log("Video played");
         }
