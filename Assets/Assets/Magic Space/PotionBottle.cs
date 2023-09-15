@@ -253,7 +253,7 @@ public void startBrew(string materialName ){
             {
                 sucessPotion=1;
                 sortOrder=1;
-                ShowSuccessMessage();
+                //ShowSuccessMessage();
                 AddNewItem(thisItem);
                 magicDone=true;
             }
@@ -262,7 +262,7 @@ public void startBrew(string materialName ){
                 sortOrder=1;
                 sucessPotion=2;
                // throwMaterial=false;
-                ShowFailureMessage();
+                //ShowFailureMessage();
                 
                 // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 // 延遲換場景，例如延遲 2 秒

@@ -11,8 +11,10 @@ public class potionAnim : MonoBehaviour
     // private bool sucessPotion;
     // private bool throwMaterial;
 
-    public GameObject myUIElement; // 參考到UI元素
-    public int newSortOrder; // 新的Sort Order值
+//圖層
+    // public GameObject myUIElement; // 參考到UI元素
+    // public int newSortOrder; // 新的Sort Order值
+    public Canvas uiCanvas;
 
        
      private void Start()
@@ -32,26 +34,11 @@ public class potionAnim : MonoBehaviour
 
       private void UpdateAnimationState()
     {
-        // MovementState state;
-       // Debug.Log("sucessPotion"+sucessPotion);
-       
-        // if(MaterialDragDrop.UpdatethrowMaterial()){
-           
-        //      anim.SetBool("throw",true);
-        //      Debug.Log("throwMaterial"+MaterialDragDrop.UpdatethrowMaterial());
-        //         //state=MovementState.throwMaterial;
-        // }
-        // else{
-        //      Debug.Log("throwMaterial"+MaterialDragDrop.UpdatethrowMaterial());
-        //      anim.SetBool("throw",false);
-        //          //state=MovementState.startBrew;
-        // }
+    ChangeOrder();
 
         if(PotionBottle.UpdatethrowMaterial()){
            
              anim.SetBool("throw",true);
-            // Debug.Log("throwMaterial"+PotionBottle.UpdatethrowMaterial());
-                //state=MovementState.throwMaterial;
         }
         else{
              //Debug.Log("throwMaterial"+PotionBottle.UpdatethrowMaterial());
@@ -73,27 +60,45 @@ public class potionAnim : MonoBehaviour
         
         else  {
              anim.SetInteger("sucessPotion",0);
-         //   Debug.Log("sucessPotion"+PotionBottle.UpdatesucessPotion());
-            // state=MovementState.potionFail;
-           // state=MovementState.startBrew;
-            // moving = false;
+        
         }
+        // 調用 ChangeOrder() 方法來設置新的 sort order
+    
      
     //    anim.SetInteger("state",(int)state);
     }
 
-
-     // 在需要時調用這個函數，以改變UI元素的Sort Order
-    public void ChangeOrder()
-    {
-        // 獲取UI元素的Canvas組件
-        Canvas uiCanvas = myUIElement.GetComponent<Canvas>();
+//圖層
+    //  // 在需要時調用這個函數，以改變UI元素的Sort Order
+    // public void ChangeOrder()
+    // {
+    //     // 獲取UI元素的Canvas組件
+    //     Canvas uiCanvas = myUIElement.GetComponent<Canvas>();
 
         
 
-        newSortOrder= PotionBottle.UpdatesortOrder();
+    //     newSortOrder= PotionBottle.UpdatesortOrder();
 
-        // 設置新的Sort Order值
-        uiCanvas.sortingOrder = newSortOrder;
+    //     // 設置新的Sort Order值
+    //     uiCanvas.sortingOrder = newSortOrder;
+    // }
+    public void ChangeOrder()
+{
+    int newSortOrder = 0;  // 預設值
+
+    // 根據條件設置新的 sort order
+    if (PotionBottle.UpdatesucessPotion() == 1)
+    {
+        newSortOrder = 3;  // 你想要的 sort order
     }
+    else if (PotionBottle.UpdatesucessPotion() == 2)
+    {
+        newSortOrder = 3;  // 另一種條件下的 sort order
+    }
+    else   newSortOrder = -1;
+
+    // 設置新的 sort order
+    uiCanvas.sortingOrder = newSortOrder;
+}
+
 }

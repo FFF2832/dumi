@@ -7144,8 +7144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f91a41df786c242b98d47c620e75bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myUIElement: {fileID: 390574405}
-  newSortOrder: -1
+  uiCanvas: {fileID: 390574412}
 --- !u!224 &390574411
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7794,10 +7793,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3a677228f5ddd43a73958c316fe157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  clampLeft: 0
-  clampRight: 0
-  obj: {fileID: 0}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9830,8 +9825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f91a41df786c242b98d47c620e75bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myUIElement: {fileID: 0}
-  newSortOrder: 0
+  uiCanvas: {fileID: 0}
 --- !u!212 &958790264
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9896,8 +9890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f91a41df786c242b98d47c620e75bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myUIElement: {fileID: 0}
-  newSortOrder: 0
+  uiCanvas: {fileID: 0}
 --- !u!1 &961260631
 GameObject:
   m_ObjectHideFlags: 0
@@ -16394,6 +16387,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   materialText: {fileID: 1281289778}
   messageText: {fileID: 946978709}
+  uiCanvas: {fileID: 2135963440}
+  grid: {fileID: 2135963437}
 --- !u!223 &2135963440
 Canvas:
   m_ObjectHideFlags: 0
