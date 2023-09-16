@@ -339,7 +339,7 @@ private void LoadNextScene()
     }
 
      public static bool UpdatemagicDone(){
-        // magicDone=true;
+        magicDone=true;
         return magicDone;
     }
 

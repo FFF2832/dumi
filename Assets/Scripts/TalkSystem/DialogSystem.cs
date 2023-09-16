@@ -141,7 +141,7 @@ public class DialogSystem : MonoBehaviour
                 dialogImage.sprite = dialogIllustrate2;
                 index++;
                 break;         
-            case "V":
+            case "学Unity！":
                 textFinished = true; 
                 videoPlayed=true;
                 break;// 设置对话框和头像的显示...

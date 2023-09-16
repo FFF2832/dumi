@@ -1198,7 +1198,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294529546}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 22e754f821885db4098d74cd8b2bf572, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 3139659abb201454ab4cdb52a0b0d552, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 519420031}
@@ -1211,12 +1211,14 @@ VideoPlayer:
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: 
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 0
@@ -1236,7 +1238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 294529549}
-  videoCanvas: {fileID: 0}
+  videoCanvas: {fileID: 1637559641}
 --- !u!1 &310874906
 GameObject:
   m_ObjectHideFlags: 0
@@ -11826,6 +11828,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564590932}
   m_CullTransparentMesh: 1
+--- !u!223 &1637559641 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4128075748068440805, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
+  m_PrefabInstance: {fileID: 4128075747308719065}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1751097180 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7568562742441523660, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
@@ -13115,6 +13122,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 332556318}
     m_Modifications:
+    - target: {fileID: 4128075746782494659, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128075746782494660, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 3139659abb201454ab4cdb52a0b0d552, type: 3}
+    - target: {fileID: 4128075746782494660, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
+      propertyPath: m_ControlledAudioTrackCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128075746782494660, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
+      propertyPath: m_DirectAudioMutes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128075746782494660, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
+      propertyPath: m_DirectAudioVolumes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128075746782494660, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
+      propertyPath: m_EnabledAudioTracks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128075746782494660, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
+      propertyPath: m_TargetAudioSources.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128075746782494660, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
+      propertyPath: m_DirectAudioVolumes.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128075746782494660, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
+      propertyPath: m_EnabledAudioTracks.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128075746782494663, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4128075748068440800, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -13202,6 +13249,10 @@ PrefabInstance:
     - target: {fileID: 4128075748068440801, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
       propertyPath: m_Name
       value: Bamboo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128075748068440801, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
