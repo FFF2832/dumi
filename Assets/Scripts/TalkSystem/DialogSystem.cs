@@ -202,6 +202,7 @@ public class DialogSystem : MonoBehaviour
             case "V":
                 textFinished = true; 
                 videoPlayed=true;
+                gameObject.SetActive(false);
                 break;
         }
 
