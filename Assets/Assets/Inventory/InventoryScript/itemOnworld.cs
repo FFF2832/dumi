@@ -76,9 +76,10 @@ public class itemOnworld : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(origin, dir);
 
         //Check if we hit anything
+        //判斷是不是ui之下
         if (hit)
         {
-            
+             Debug.Log("We hit " + hit.collider.name);
           
             if(hit.collider.name=="樹枝本人"){
              
@@ -86,22 +87,23 @@ public class itemOnworld : MonoBehaviour
                 AddNewItem(thisItem);
                 Destroy(hit.collider);
                  Destroy(gameObject);
-                            isDestroyed = true;
+             //   isDestroyed = true;
 
         //    // 保存物体的销毁状态
         //    PlayerPrefs.SetInt("IsItemDestroy_" + gameObject.name, 1);
         //    PlayerPrefs.Save();
-                Debug.Log("touch");
+                //Debug.Log("touch");
             }
-            if(hit.collider.name=="collectitem_car"){
+            else if(hit.collider.name=="collectitem_car"){
              
-                Debug.Log("We hit " + hit.collider.name);
+              //  Debug.Log("We hit " + hit.collider.name);
+                 Debug.Log(" 1" );
                 AddNewItem(thisItem);
                 Destroy(hit.collider);
                 Destroy(gameObject);
                   //sparkle.SetActive(false);
            
-                Debug.Log("touch");
+               // Debug.Log("touch");
             }
 
             // if(hit.collider.name=="decoration_roof"){
@@ -113,14 +115,13 @@ public class itemOnworld : MonoBehaviour
             //     Destroy(hit.collider);
             //     Debug.Log("touch");
             // }
-             if(hit.collider.name=="decoration_sun"){
-             
+            else if(hit.collider.name=="decoration_sun"){
+               Debug.Log(" 2" );
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem(thisItem);
                 Destroy(hit.collider);
                 Destroy(gameObject);
                
-                Debug.Log("touch");
             }
 
              if(hit.collider.name=="clue"){
@@ -129,8 +130,7 @@ public class itemOnworld : MonoBehaviour
                 AddNewItem(thisItem);
                 Destroy(hit.collider);
                 Destroy(gameObject);
-               
-                Debug.Log("touch");
+            
             }
             if(hit.collider.name=="puzzle1"){
              

@@ -5,11 +5,15 @@ using UnityEngine;
 public class Enlarge : MonoBehaviour
 {
     public GameObject canvas;
-
+    public Texture2D fingerCursorTexture; // 新增手指指针纹理
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
+    private static bool ifUI;
     void Start()
     {
         // 隐藏 Canvas
         canvas.SetActive(false);
+        ifUI=false;
     }
 
     void Update()
@@ -29,7 +33,24 @@ public class Enlarge : MonoBehaviour
             {
                 // 显示 Canvas
                 canvas.SetActive(true);
+                ifUI=true;
             }
         }
     }
+
+    void OnMouseEnter()
+    {
+        Debug.Log("HOVER");
+        Cursor.SetCursor(fingerCursorTexture, hotSpot, cursorMode); // 使用手指指针纹理
+    
+    }
+
+    void OnMouseExit()
+    {
+        // Pass 'null' to the texture parameter to use the default system cursor.
+        Cursor.SetCursor(null, Vector2.zero, cursorMode);
+    }
+    public static bool UpdateifUI(){
+        return ifUI;
+    } 
 }

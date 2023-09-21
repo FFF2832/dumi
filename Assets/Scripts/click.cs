@@ -6,9 +6,14 @@ public class click : MonoBehaviour
 {
      public GameObject obj;
     // Update is called once per frame
+
+    public Texture2D fingerCursorTexture; // 新增手指指针纹理
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
+    private bool UIstate;
     void Update()
     {
-        
+        UIstate=Enlarge.UpdateifUI();
         check2DObjectClicked();
         checkclick();
         
@@ -36,7 +41,7 @@ public class click : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 10, -1); ;
-            if (hit.collider)
+            if (hit.collider&&!UIstate)
             {
                 Debug.DrawLine(ray.origin, hit.transform.position, Color.red, 0.1f, true);
                 Debug.Log(hit.transform.name);
@@ -70,7 +75,7 @@ public class click : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(origin, dir);
 
         //Check if we hit anything
-        if (hit)
+        if (hit&&!UIstate)
         {
             if(hit.collider.name=="樹枝畫"&&glow.Updateinside()){
                
@@ -153,5 +158,18 @@ int previousScene = PlayerPrefs.GetInt("PreviousScene");
      Application.LoadLevel(4);
     Debug.Log("切換場景 " );
    } 
+
+//    void OnMouseEnter()
+//     {
+//         Debug.Log("HOVER");
+//         Cursor.SetCursor(fingerCursorTexture, hotSpot, cursorMode); // 使用手指指针纹理
+    
+//     }
+
+//     void OnMouseExit()
+//     {
+//         // Pass 'null' to the texture parameter to use the default system cursor.
+//         Cursor.SetCursor(null, Vector2.zero, cursorMode);
+//     }
    
 }

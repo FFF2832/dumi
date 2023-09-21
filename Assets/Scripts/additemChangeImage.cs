@@ -35,8 +35,8 @@ void Update()
     bool[] itemCorrect = ItemOndrag.checkItemCorrect();
 
     // 您可以在這裡使用Debug.Log輸出這些陣列的值，以便檢查它們是否正確更新
-    Debug.Log("positionCorrect[1]: " + positionCorrect[1]);
-    Debug.Log("itemCorrect[1]: " + itemCorrect[1]);
+    // Debug.Log("positionCorrect[1]: " + positionCorrect[1]);
+    // Debug.Log("itemCorrect[1]: " + itemCorrect[1]);
 
     if (ItemOndrag.checktree())
     {
