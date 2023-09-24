@@ -3286,7 +3286,7 @@ RectTransform:
   m_GameObject: {fileID: 285628784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.08935745, y: 0.090488575, z: 0.090488575}
+  m_LocalScale: {x: 0.09983395, y: 0.10109769, z: 0.10109769}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1859288848}
@@ -3294,7 +3294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -148, y: -150}
+  m_AnchoredPosition: {x: -82, y: -158}
   m_SizeDelta: {x: 11400.81, y: 3000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &285628786
@@ -3779,9 +3779,9 @@ Transform:
   m_LocalScale: {x: 0.24414974, y: 0.24414974, z: 0.24414974}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2096834227}
   - {fileID: 1219972640}
   - {fileID: 901509433}
-  - {fileID: 2096834227}
   - {fileID: 1436644008}
   - {fileID: 1264848874}
   m_Father: {fileID: 0}
@@ -5157,6 +5157,7 @@ MonoBehaviour:
   headPlayer: {fileID: 21300000, guid: 845282e93f9aedb458456a0eb8ef812f, type: 3}
   headNPC: {fileID: 21300000, guid: 845282e93f9aedb458456a0eb8ef812f, type: 3}
   dialogPlayer: {fileID: 21300000, guid: 168d5109c6cbcb34e8f9c7d83735c88c, type: 3}
+  dialogPlayer2: {fileID: 0}
   dialogNpc: {fileID: 21300000, guid: 54dbaba4f40aedc4a8911c1ebb53c7ef, type: 3}
   dialogNpc2: {fileID: 0}
   dialogIllustrate1: {fileID: 0}
@@ -9673,7 +9674,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 332556318}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16231,7 +16232,7 @@ RectTransform:
   m_GameObject: {fileID: 1472449297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.08935745, y: 0.090488575, z: 0.090488575}
+  m_LocalScale: {x: 0.09983395, y: 0.10109769, z: 0.10109769}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 521179649}
@@ -16239,7 +16240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -148, y: -150}
+  m_AnchoredPosition: {x: -82, y: -158}
   m_SizeDelta: {x: 11400.81, y: 3000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1472449299
@@ -18118,6 +18119,7 @@ MonoBehaviour:
   headPlayer: {fileID: 21300000, guid: 845282e93f9aedb458456a0eb8ef812f, type: 3}
   headNPC: {fileID: 21300000, guid: 845282e93f9aedb458456a0eb8ef812f, type: 3}
   dialogPlayer: {fileID: 21300000, guid: 168d5109c6cbcb34e8f9c7d83735c88c, type: 3}
+  dialogPlayer2: {fileID: 21300000, guid: 698998e72ce448943b8507664e6fcf94, type: 3}
   dialogNpc: {fileID: 21300000, guid: 54dbaba4f40aedc4a8911c1ebb53c7ef, type: 3}
   dialogNpc2: {fileID: 21300000, guid: c8e67d0477a9cc14cb01b9893c92f131, type: 3}
   dialogIllustrate1: {fileID: 21300000, guid: 715b35ad0ad1a8b43827df120039b0af, type: 3}
@@ -19286,7 +19288,7 @@ RectTransform:
   m_Children:
   - {fileID: 521179649}
   m_Father: {fileID: 332556318}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -19583,7 +19585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4128075748068440800, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4128075748068440800, guid: 357acaae6de0a0741ac8563153fbffd1, type: 3}
       propertyPath: m_AnchorMax.x

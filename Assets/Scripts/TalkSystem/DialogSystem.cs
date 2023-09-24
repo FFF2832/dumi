@@ -25,6 +25,7 @@ public class DialogSystem : MonoBehaviour
 
     [Header("對話框")]
     public Sprite dialogPlayer;
+    public Sprite dialogPlayer2;
     public Sprite dialogNpc;
     public Sprite dialogNpc2;
     public Sprite dialogIllustrate1;
@@ -208,6 +209,13 @@ public class DialogSystem : MonoBehaviour
             case "A2":
                 headImage.sprite = headNPC;
                 dialogImage.sprite = dialogNpc2;
+                index++;
+                break;
+            case "B2":
+                dialogImage.sprite = dialogPlayer2;
+                headImage.sprite = headPlayer;
+                 //Destroy(dialogImage);
+                //npcdialogImage.sprite.SetActive(false);
                 index++;
                 break;
         }
