@@ -26,6 +26,7 @@ public class DialogSystem : MonoBehaviour
     [Header("對話框")]
     public Sprite dialogPlayer;
     public Sprite dialogNpc;
+    public Sprite dialogNpc2;
     public Sprite dialogIllustrate1;
     public Sprite dialogIllustrate2;
     bool textFinished;  //文本是否显示完毕
@@ -203,6 +204,11 @@ public class DialogSystem : MonoBehaviour
                 textFinished = true; 
                 videoPlayed=true;
                 gameObject.SetActive(false);
+                break;
+            case "A2":
+                headImage.sprite = headNPC;
+                dialogImage.sprite = dialogNpc2;
+                index++;
                 break;
         }
 
