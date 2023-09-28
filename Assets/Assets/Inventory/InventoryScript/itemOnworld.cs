@@ -22,6 +22,7 @@ public class itemOnworld : MonoBehaviour
     }
   private void Update(){
     check2DObjectClicked();
+      
   }
    private void OnTriggerEnter2D(Collider2D other)
    {
@@ -94,17 +95,17 @@ public class itemOnworld : MonoBehaviour
         //    PlayerPrefs.Save();
                 //Debug.Log("touch");
             }
-            else if(hit.collider.name=="collectitem_car"){
+            // else if(hit.collider.name=="collectitem_car"){
              
-              //  Debug.Log("We hit " + hit.collider.name);
-                 Debug.Log(" 1" );
-                AddNewItem(thisItem);
-                Destroy(hit.collider);
-                Destroy(gameObject);
-                  //sparkle.SetActive(false);
+            //   //  Debug.Log("We hit " + hit.collider.name);
+            //      Debug.Log(" 1" );
+            //     AddNewItem(thisItem);
+            //     Destroy(hit.collider);
+            //     Destroy(gameObject);
+            //       //sparkle.SetActive(false);
            
-               // Debug.Log("touch");
-            }
+            //    // Debug.Log("touch");
+            // }
 
             // if(hit.collider.name=="decoration_roof"){
              
@@ -124,7 +125,7 @@ public class itemOnworld : MonoBehaviour
                
             }
 
-             if(hit.collider.name=="clue"){
+            else if(hit.collider.name=="clue"){
              
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem(thisItem);
@@ -132,7 +133,7 @@ public class itemOnworld : MonoBehaviour
                 Destroy(gameObject);
             
             }
-            if(hit.collider.name=="puzzle1"){
+            else if(hit.collider.name=="puzzle1"){
              
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem(thisItem);
@@ -140,7 +141,7 @@ public class itemOnworld : MonoBehaviour
                 Destroy(gameObject);
                
             }
-             if(hit.collider.name=="puzzle2"){
+            else if(hit.collider.name=="puzzle2"){
              
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem(thisItem);
@@ -149,7 +150,7 @@ public class itemOnworld : MonoBehaviour
                
                
             }
-              if(hit.collider.name=="puzzle3"){
+           else  if(hit.collider.name=="puzzle3"){
              
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem(thisItem);
@@ -174,7 +175,14 @@ public class itemOnworld : MonoBehaviour
     {
         playerInventory.itemList.Remove(itemToRemove);
     }
-        
+//     public static void RemoveItem(item itemToRemove)
+// {
+//     if (playerInventory.itemList.Contains(itemToRemove))
+//     {
+//         playerInventory.itemList.Remove(itemToRemove);
+//         InventoryManager.RefreshItem();
+//     }
+// }  
 
 
 }

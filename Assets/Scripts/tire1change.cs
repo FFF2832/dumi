@@ -40,10 +40,10 @@ void Update()
 
     if (ItemOndrag.checktire1())
     {
-          //  RemoveItem(itemToRemove);
+         // RemoveItem(itemToRemove);
         // 在正確的位置上且拖曳的物品是零件1，更換成 sprite1
         spriteChange.sprite = sprite1;
-    
+         RemoveItem(itemToRemove);
     }
 
     else
@@ -54,6 +54,26 @@ void Update()
 }
 
 
+ public  void RemoveItem(item itemToRemove)
+    {
+        List<item> itemsToRemove = new List<item>();
 
+    // Find all instances of itemToRemove in the itemList
+    foreach (var item in playerInventory.itemList)
+    {
+        if (item == itemToRemove)
+        {
+            itemsToRemove.Add(item);
+        }
+    }
+
+    // Remove all instances of itemToRemove
+    foreach (var item in itemsToRemove)
+    {
+        playerInventory.itemList.Remove(item);
+    }
+
+    InventoryManager.RefreshItem();
+    }
 
 }

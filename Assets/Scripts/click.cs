@@ -27,7 +27,7 @@ public class click : MonoBehaviour
                     if(Physics.Raycast(ray,out hit)){
                             obj=hit.collider.gameObject;
                             //OnBtnShowClick();
-                            Debug.Log("碰到物件");
+                            //Debug.Log("碰到物件");
         
                     }
 
@@ -54,7 +54,7 @@ public class click : MonoBehaviour
     if (Input.GetMouseButtonDown(0))
     {
        
-        Debug.Log("Mouse is pressed down");
+       // Debug.Log("Mouse is pressed down");
         Camera cam = Camera.main;
 
         //Raycast depends on camera projection mode

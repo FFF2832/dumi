@@ -42,7 +42,7 @@ void Update()
     {
         // 在正確的位置上且拖曳的物品是零件1，更換成 sprite1
         spriteChange.sprite = sprite1;
-         AddNewItem(thisItem);
+       AddNewItem(thisItem);
         RemoveItem(itemToRemove);
         Destroy(itemcollect);
     }
@@ -66,7 +66,7 @@ public void AddNewItem(item thisItem){
     else {
         thisItem.itemHeild += 1;
     }
-    InventoryManager.RefreshItem(); 
+   // InventoryManager.RefreshItem(); 
    }
    public void RemoveItem(item itemToRemove)
 {

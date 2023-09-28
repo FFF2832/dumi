@@ -24,11 +24,11 @@ public class characterMove : MonoBehaviour
      public GameObject myBag; 
      public GameObject password; 
      bool isOpen;  
-    public item thisItem;
+    // public item thisItem;
   
-    public Inventory playerInventory;
+    // public Inventory playerInventory;
    
-    public itemOnworld itemOnworldInstance;
+    // public itemOnworld itemOnworldInstance;
   
 	 private void Start()
     {
@@ -76,7 +76,7 @@ public class characterMove : MonoBehaviour
     }
 
 		UpdateAnimationState();
-        check2DObjectClicked();
+        //check2DObjectClicked();
         
 	}
 	private void UpdateAnimationState()
@@ -141,105 +141,75 @@ private void OnCollisionEnter(Collision other)
         password.SetActive(isOpen);
     }
 }
- void check2DObjectClicked()
-{
-    if (Input.GetMouseButtonDown(0))
-    {
-        // Debug.Log("Mouse is pressed down");
-        Camera cam = Camera.main;
+//  void check2DObjectClicked()
+// {
+//     if (Input.GetMouseButtonDown(0))
+//     {
+//         // Debug.Log("Mouse is pressed down");
+//         Camera cam = Camera.main;
 
-        //Raycast depends on camera projection mode
-        Vector2 origin = Vector2.zero;
-        Vector2 dir = Vector2.zero;
+//         //Raycast depends on camera projection mode
+//         Vector2 origin = Vector2.zero;
+//         Vector2 dir = Vector2.zero;
 
-        if (cam.orthographic)
-        {
-            origin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        }
-        else
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            origin = ray.origin;
-            dir = ray.direction;
-        }
+//         if (cam.orthographic)
+//         {
+//             origin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+//         }
+//         else
+//         {
+//             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+//             origin = ray.origin;
+//             dir = ray.direction;
+//         }
 
-        RaycastHit2D hit = Physics2D.Raycast(origin, dir);
+//         RaycastHit2D hit = Physics2D.Raycast(origin, dir);
 
-        //Check if we hit anything
-        if (hit)
-        {
+//         //Check if we hit anything
+//         if (hit)
+//         {
             
-            if(hit.collider.name=="Bagicon"){
+//             if(hit.collider.name=="Bagicon"){
              
-                Debug.Log("We hit " + hit.collider.name);
-                moving=false;
-                OpenMybag();
-            }
-            if(hit.collider.name=="Guideicon"){
+//                 Debug.Log("We hit " + hit.collider.name);
+//                 moving=false;
+//                 OpenMybag();
+//             }
+//             if(hit.collider.name=="Guideicon"){
              
-                Debug.Log("We hit " + hit.collider.name);
-                moving=false;
-            }
-            if(hit.collider.name=="STOP"){
+//                 Debug.Log("We hit " + hit.collider.name);
+//                 moving=false;
+//             }
+//             if(hit.collider.name=="STOP"){
              
-                Debug.Log("We hit " + hit.collider.name);
-                moving=false;
-            }//點UI不移動偷吃步
+//                 Debug.Log("We hit " + hit.collider.name);
+//                 moving=false;
+//             }//點UI不移動偷吃步
 
-            if(hit.collider.name=="Password"){
+//             if(hit.collider.name=="Password"){
              
-                Debug.Log("We hit " + hit.collider.name);
-                //moving=false;
-                //this.enabled = false;
-                 OpenPasswordUI();
-            }
-            // if(hit.collider.name=="branch"){
-             
-            //     Debug.Log("We hit " + hit.collider.name);
-            //     itemOnworldInstance.AddNewItem();
-            //     Destroy(hit.collider);
-            //    // Debug.Log("touch");
-            // }
-            // if(hit.collider.name=="decoration_roof"){
-             
-            //     Debug.Log("We hit " + hit.collider.name);
-            //     itemOnworldInstance.AddNewItem();
-            //     Destroy(hit.collider);
-            //     Debug.Log("touchsun");
-            // }
+//                 Debug.Log("We hit " + hit.collider.name);
+//                 //moving=false;
+//                 //this.enabled = false;
+//                  OpenPasswordUI();
+//             }
+         
             
-             if(hit.collider.name=="Password"){
+//              if(hit.collider.name=="Password"){
              
-                Debug.Log("We hit " + hit.collider.name);
-               if(CheckInput.ChangeScene){
-                    CheckInput.ChangeTonight();
-                 }
+//                 Debug.Log("We hit " + hit.collider.name);
+//                if(CheckInput.ChangeScene){
+//                     CheckInput.ChangeTonight();
+//                  }
                 
-            }
-            //  if(hit.collider.name=="puzzlePiece1"){
-             
-            //     Debug.Log("We hit " + hit.collider.name);
-            //     itemOnworldInstance.AddNewItem();
-            //     Destroy(hit.collider);
+//             }
               
-            // }
-            
-            // if (hit.collider.CompareTag("UI"))
-            // {
-            //    this.enabled = false;
-            //     moving = false;
-            // }
-            // else
-            // {
-            // // 點擊到非 UI 物件，將 moving 設定為 false
-            
-            // }       
              
 
-        }
-    } 
+//         }
+//     } 
     
-}
+// }
 
 
 }

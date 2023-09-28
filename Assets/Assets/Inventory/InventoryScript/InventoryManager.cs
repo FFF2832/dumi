@@ -80,12 +80,28 @@ public class InventoryManager : MonoBehaviour
      //用來計算數量
     public static void RefreshItem()
     {
+        //清除舊格子和清單(原版)
         for (int i = 0; i < instance.slotGrid.transform.childCount; i++)
         {
+           
             if(instance.slotGrid.transform.childCount==0)break;
             Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
             instance.slots.Clear();
         }
+         Debug.Log(instance.slotGrid.transform.childCount);
+
+        //   //清除舊格子和清單
+        // for (int i = 0; i < instance.slotGrid.transform.childCount; i++)
+        // {
+        //     if(instance.slotGrid.transform.childCount==0)break;
+        //     //   if(i==0){
+        //     //     instance.slots.Add(Instantiate(instance.emptySlot));
+                
+        //     //   }
+        //     else{Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
+        //     instance.slots.Clear();}
+        // }
+
         //重新生成對應的slot
         for (int i = 0; i < instance.myBag.itemList.Count ; i++)
         {
@@ -93,9 +109,6 @@ public class InventoryManager : MonoBehaviour
             //CreateNewItem(instance.myBag.itemList[i]);
             instance.slots.Add(Instantiate(instance.emptySlot));
             instance.slots[i].transform.SetParent(instance.slotGrid.transform);
-        // instance.slot[i].GetComponent<slot>().slotID=i;
-         // 將生成的 itemID 賦值給對應的 item 物件
-
             instance.slots[i].GetComponent<slot>().SetupSlot(instance.myBag.itemList[i]);
         }
         

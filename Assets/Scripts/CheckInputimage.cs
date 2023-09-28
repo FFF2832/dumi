@@ -19,8 +19,7 @@ public class CheckInputimage : MonoBehaviour
         {
            
               imageChange.sprite = sprite2; // 切換成第一個圖片
-       
-            
+
         }
        
         else

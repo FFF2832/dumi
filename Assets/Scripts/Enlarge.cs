@@ -40,7 +40,7 @@ public class Enlarge : MonoBehaviour
 
     void OnMouseEnter()
     {
-        Debug.Log("HOVER");
+        //Debug.Log("HOVER");
         Cursor.SetCursor(fingerCursorTexture, hotSpot, cursorMode); // 使用手指指针纹理
     
     }
