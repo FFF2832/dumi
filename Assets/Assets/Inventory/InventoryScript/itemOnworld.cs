@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class itemOnworld : MonoBehaviour
 {
@@ -10,6 +11,15 @@ public class itemOnworld : MonoBehaviour
      private bool isDestroyed = false; // 标记物体是否被销毁
      public item itemToRemove;
 
+//動畫
+    // public GameObject itemObject;
+    // public Transform targetPosition;  // 包包的目標位置
+    // public float movementDuration = 1.0f;  // 移動動畫的持續時間
+ public Transform initialPosition;  // 物品初始位置
+    public Transform targetPosition;   // 包包的目標位置
+    public float movementSpeed = 1.0f;  // 移動速度
+
+    private bool isMoving = false;
     private void Start()
     {
     //     // 检查物体的销毁状态
@@ -22,6 +32,11 @@ public class itemOnworld : MonoBehaviour
     }
   private void Update(){
     check2DObjectClicked();
+     if (isMoving)
+        {
+          
+            MoveItemToTargetPosition();
+        }
       
   }
    private void OnTriggerEnter2D(Collider2D other)
@@ -42,6 +57,9 @@ public class itemOnworld : MonoBehaviour
          for(int i=0;i<playerInventory.itemList.Count;i++){
                 if(playerInventory.itemList[i]==null){
                         playerInventory.itemList[i]=thisItem;
+                         // 開始移動動畫
+                        // StartCoroutine(MoveItemToTargetPosition(itemObject));
+                   
                         break;
                 }
          }
@@ -80,8 +98,11 @@ public class itemOnworld : MonoBehaviour
         //判斷是不是ui之下
         if (hit)
         {
-             Debug.Log("We hit " + hit.collider.name);
-          
+            // Debug.Log("We hit " + hit.collider.name);
+             //如果點到
+            // if(Enlarge.UpdateifUI()){
+
+            // }
             if(hit.collider.name=="樹枝本人"){
              
                 Debug.Log("We hit " + hit.collider.name);
@@ -158,6 +179,24 @@ public class itemOnworld : MonoBehaviour
                 Destroy(gameObject);
     
             }
+              else  if(hit.collider.name=="test"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+                AddNewItem(thisItem);
+                 isMoving = true;
+                // Destroy(hit.collider);
+                // Destroy(gameObject);
+    
+            }
+             else  if(hit.collider.name=="key1"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+                AddNewItem(thisItem);
+                 isMoving = true;
+                // Destroy(hit.collider);
+                // Destroy(gameObject);
+    
+            }
             // if(hit.collider.name=="fullpiece"){
              
             //     Debug.Log("We hit " + hit.collider.name);
@@ -183,6 +222,63 @@ public class itemOnworld : MonoBehaviour
 //         InventoryManager.RefreshItem();
 //     }
 // }  
+
+//  private IEnumerator MoveItemToTargetPosition(GameObject itemObject)
+//     {
+//         float elapsedTime = 0f;
+//         Vector3 initialPosition = itemObject.transform.position;
+//         Vector3 targetPosition = this.targetPosition.position;
+//         Debug.Log("Starting animation...");
+
+//         while (elapsedTime < movementDuration)
+//         {
+//             elapsedTime += Time.deltaTime;
+//             float t = Mathf.Clamp01(elapsedTime / movementDuration);
+
+//             // 使用向量插值平滑地移動物品到目標位置
+//             itemObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
+//             Debug.Log("Animation completed.");
+
+
+//             yield return null;
+//         }
+
+//         // 確保物品最終位置準確
+//         itemObject.transform.position = targetPosition;
+//         // 隱藏物品遊戲物件
+//     itemObject.SetActive(false);
+
+//     // 等待一小段時間後刪除或者隱藏視覺上的表示
+//     yield return new WaitForSeconds(0.5f);
+
+
+//         // 刪除物品或者隱藏視覺上的表示
+//         Destroy(itemObject);
+//     }
+
+
+           private void MoveItemToTargetPosition()
+    {
+        // 检查是否已到达目标位置
+        if (Vector3.Distance(transform.position, targetPosition.position) > 0.1f)
+        {
+            // 计算物品朝向目标的方向
+            Vector3 direction = (targetPosition.position - transform.position).normalized;
+
+            // 移动物品
+            transform.Translate(direction * movementSpeed * Time.deltaTime);
+        }
+        else
+        {
+            // 到达目标位置，停止移动
+            isMoving = false;
+            Destroy(gameObject);
+        }
+    }
+
+
+
+
 
 
 }

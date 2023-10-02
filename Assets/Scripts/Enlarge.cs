@@ -8,16 +8,17 @@ public class Enlarge : MonoBehaviour
     public Texture2D fingerCursorTexture; // 新增手指指针纹理
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
-    private static bool ifUI;
+    public static bool ifUI;
     void Start()
     {
         // 隐藏 Canvas
         canvas.SetActive(false);
-        ifUI=false;
+         ifUI=false;
     }
 
     void Update()
     {
+          Debug.Log("ifUI"+ifUI);
         // 如果点击了鼠标左键
         if (Input.GetMouseButtonDown(0))
         {
@@ -34,7 +35,15 @@ public class Enlarge : MonoBehaviour
                 // 显示 Canvas
                 canvas.SetActive(true);
                 ifUI=true;
+                
             }
+          
+            //   else
+            // {
+            // // 隐藏 Canvas
+            // canvas.SetActive(false);
+            // 
+            // }
         }
     }
 
@@ -51,6 +60,7 @@ public class Enlarge : MonoBehaviour
         Cursor.SetCursor(null, Vector2.zero, cursorMode);
     }
     public static bool UpdateifUI(){
+      
         return ifUI;
     } 
 }

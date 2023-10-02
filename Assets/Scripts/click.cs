@@ -15,7 +15,7 @@ public class click : MonoBehaviour
     {
         UIstate=Enlarge.UpdateifUI();
         check2DObjectClicked();
-        checkclick();
+        //checkclick();
         
     }
     
@@ -75,13 +75,18 @@ public class click : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(origin, dir);
 
         //Check if we hit anything
-        if (hit&&!UIstate)
+        if (hit)
         {
+           
             if(hit.collider.name=="樹枝畫"&&glow.Updateinside()){
                
                 OnBtnShowClick1();
                 
                
+                Debug.Log("We hit " + hit.collider.name);
+            }
+            else if(hit.collider.name=="closebtn"){
+               Enlarge.ifUI=false;
                 Debug.Log("We hit " + hit.collider.name);
             }
             else if(hit.collider.name=="back"){
@@ -119,7 +124,7 @@ public class click : MonoBehaviour
              
                 Debug.Log("We hit " + hit.collider.name);
             }
-              
+               Debug.Log("ifUI"+Enlarge.ifUI);
 
         }
     } 
