@@ -188,7 +188,7 @@ public class itemOnworld : MonoBehaviour
                 // Destroy(gameObject);
     
             }
-             else  if(hit.collider.name=="key1"){
+             else  if(hit.collider.name=="key_f1"){
              
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem(thisItem);
@@ -210,6 +210,13 @@ public class itemOnworld : MonoBehaviour
     } 
     
 }
+public  void OnButtonClick()
+    {
+       
+        AddNewItem(thisItem);
+        isMoving = true;
+         Destroy(gameObject);
+    }
  public  void RemoveItem(item itemToRemove)
     {
         playerInventory.itemList.Remove(itemToRemove);

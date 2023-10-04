@@ -18,7 +18,7 @@ public class Enlarge : MonoBehaviour
 
     void Update()
     {
-          Debug.Log("ifUI"+ifUI);
+        //  Debug.Log("ifUI"+ifUI);
         // 如果点击了鼠标左键
         if (Input.GetMouseButtonDown(0))
         {
@@ -46,7 +46,10 @@ public class Enlarge : MonoBehaviour
             // }
         }
     }
-
+    public void closebtnOnclick(){
+        canvas.SetActive(false);
+        ifUI=false;
+    }
     void OnMouseEnter()
     {
         //Debug.Log("HOVER");

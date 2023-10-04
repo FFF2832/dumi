@@ -62,6 +62,10 @@ public class Look : MonoBehaviour
             spriteRenderer.enabled = false;
         }
     }
+     public static bool UpdateifUI(){
+      
+        return ifUI;
+    } 
 
     // void OnMouseEnter()
     // {

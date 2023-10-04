@@ -15,7 +15,7 @@ public class click : MonoBehaviour
     {
         UIstate=Enlarge.UpdateifUI();
         check2DObjectClicked();
-        //checkclick();
+        checkclick();
         
     }
     
@@ -75,7 +75,7 @@ public class click : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(origin, dir);
 
         //Check if we hit anything
-        if (hit)
+        if (hit&&!(Enlarge.UpdateifUI()))
         {
            
             if(hit.collider.name=="樹枝畫"&&glow.Updateinside()){

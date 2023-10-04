@@ -51,6 +51,7 @@ void Update()
         // 如果不在正確的位置上，顯示 sprite2
         spriteChange.sprite = sprite2;
     }
+   
 }
 
 

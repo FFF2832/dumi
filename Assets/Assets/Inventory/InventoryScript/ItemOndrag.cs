@@ -39,6 +39,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
      public static bool puzzle3ok;
 
      public static bool magicOk;
+      public static bool keyCorrect;
 
     public bool ispuzzle1ok;
 
@@ -53,8 +54,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
      private void Awake()
     {
         // 初始化陣列
-        itemCorrect = new bool[8];
-        positionCorrect = new bool[8];
+        itemCorrect = new bool[9];
+        positionCorrect = new bool[9];
         //放大
          originalScale = transform.localScale; // 儲存原始尺寸
        // rectTransform = GetComponent<RectTransform>();
@@ -267,6 +268,22 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         
             }
       }
+      
+        else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "correctKey")){
+             itemCorrect[8]=true;
+              itemcorrect=8;
+            if(  positionCorrect[8]){
+                Destroy(gameObject);
+             }   
+        
+            else {
+                correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+        
+            }
+      }
       else  {
         correct=false;
             // 如果沒有碰撞到目標，將物體放回原來的位置
@@ -339,6 +356,11 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         else if(targetTransform.name =="Msbamboo"){
             Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
               positionCorrect[7]=true;
+            //  positioncorrect=6;
+        }
+         else if(targetTransform.name =="leftkeyspace"){
+            Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
+              positionCorrect[8]=true;
             //  positioncorrect=6;
         }
     }
@@ -532,6 +554,21 @@ public static bool checkmagicOk()
     }
    // Debug.Log("checktire1: " + tire1ok);
     return magicOk;
+}
+
+public static bool checkkeyCorrect()
+{
+    // 檢查對應索引位置的值是否相等且不為 0
+    if (positionCorrect[8]&& itemCorrect[8])
+    {
+        keyCorrect = true;
+    }
+    else
+    {
+        keyCorrect = false;
+    }
+   // Debug.Log("checktire1: " + tire1ok);
+    return keyCorrect;
 }
 
 
