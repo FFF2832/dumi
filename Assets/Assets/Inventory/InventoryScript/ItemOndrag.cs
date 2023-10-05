@@ -38,8 +38,9 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public static bool puzzle2ok;
      public static bool puzzle3ok;
 
-     public static bool magicOk;
-      public static bool keyCorrect;
+    public static bool magicOk;
+    public static bool keyCorrect;
+    public static bool key_F3correct;
 
     public bool ispuzzle1ok;
 
@@ -54,8 +55,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
      private void Awake()
     {
         // 初始化陣列
-        itemCorrect = new bool[9];
-        positionCorrect = new bool[9];
+        itemCorrect = new bool[10];
+        positionCorrect = new bool[10];
         //放大
          originalScale = transform.localScale; // 儲存原始尺寸
        // rectTransform = GetComponent<RectTransform>();
@@ -276,13 +277,22 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                 Destroy(gameObject);
              }   
         
-            else {
-                correct=false;
-            // 如果沒有碰撞到目標，將物體放回原來的位置
-            transform.SetParent(originalParent);
-            transform.position = originalParent.position;
+            // else {
+            //     correct=false;
+            // // 如果沒有碰撞到目標，將物體放回原來的位置
+            // transform.SetParent(originalParent);
+            // transform.position = originalParent.position;
         
-            }
+            // }
+      }
+       else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "key_F3")){
+             itemCorrect[9]=true;
+              itemcorrect=9;
+            if(  positionCorrect[9]){
+                Destroy(gameObject);
+             }   
+            
+        
       }
       else  {
         correct=false;
@@ -315,53 +325,53 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         //Debug.Log("Trigger的correct"+correct);
         targetTransform = collision.transform;
         anchor = targetTransform.Find("Anchor");
+        Debug.Log("Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
        // Debug.Log("Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
         if(targetTransform.name =="collectitem_car"){
-            Debug.Log("Target detected: " + targetTransform.name + ", position: " + targetTransform.position);
+          
             positionCorrect[1]=true;
             //  positioncorrect=1;
         }
          else if(targetTransform.name =="輪胎"){
-            Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
+          
               positionCorrect[2]=true;
             //  positioncorrect=2;
         }
         else if(targetTransform.name =="輪胎2"){
-            Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
+          
               positionCorrect[3]=true;
             //  positioncorrect=3;
         }
 
-        // else if(targetTransform.name =="fullpiece"){
-        //     Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
-        //       positionCorrect[3]=true;
-        //     // positioncorrect=3;
-        // }
 
          else if(targetTransform.name =="piece1_pos"){
-           Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
+          
               positionCorrect[4]=true;
             // positioncorrect=4;
         }
          else if(targetTransform.name =="piece2_pos"){
-            Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
+         
               positionCorrect[5]=true;
             // positioncorrect=5;
         }
          else if(targetTransform.name =="piece3_pos"){
-            Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
+           
               positionCorrect[6]=true;
-            //  positioncorrect=6;
+          
         }
         else if(targetTransform.name =="Msbamboo"){
-            Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
+           
               positionCorrect[7]=true;
-            //  positioncorrect=6;
+           
         }
          else if(targetTransform.name =="leftkeyspace"){
-            Debug.Log("Target detected(true): " + targetTransform.name + ", position: " + targetTransform.position);
+          
               positionCorrect[8]=true;
-            //  positioncorrect=6;
+            
+        }
+        else if(targetTransform.name =="rightkeyspace"){
+              positionCorrect[9]=true;
+           
         }
     }
     else if (collision.tag == "TargetObject")
@@ -570,6 +580,19 @@ public static bool checkkeyCorrect()
    // Debug.Log("checktire1: " + tire1ok);
     return keyCorrect;
 }
-
+public static bool checkkey_F3correct()
+{
+    // 檢查對應索引位置的值是否相等且不為 0
+    if (positionCorrect[9]&& itemCorrect[9])
+    {
+        key_F3correct = true;
+    }
+    else
+    {
+        key_F3correct = false;
+    }
+   // Debug.Log("checktire1: " + tire1ok);
+    return key_F3correct;
+}
 
 }

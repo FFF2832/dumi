@@ -193,8 +193,7 @@ public class itemOnworld : MonoBehaviour
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem(thisItem);
                  isMoving = true;
-                // Destroy(hit.collider);
-                // Destroy(gameObject);
+                
     
             }
             // if(hit.collider.name=="fullpiece"){
@@ -214,9 +213,24 @@ public  void OnButtonClick()
     {
        
         AddNewItem(thisItem);
+       
         isMoving = true;
+
          Destroy(gameObject);
     }
+  public  void correctKey(){
+    if(keyChange.changekey_1){
+        AddNewItem(thisItem);
+         Destroy(gameObject);
+    }
+   
+  }  
+  public void wrongkey(){
+         if(keyChange.changekey_2){
+        AddNewItem(thisItem);
+         Destroy(gameObject);
+    }
+  }
  public  void RemoveItem(item itemToRemove)
     {
         playerInventory.itemList.Remove(itemToRemove);
