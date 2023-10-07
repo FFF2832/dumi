@@ -5550,6 +5550,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 199828607}
+  fingerCursorTexture: {fileID: 0}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!114 &199828610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7162,7 +7165,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.000011444092}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &390574412
@@ -8318,7 +8321,9 @@ MonoBehaviour:
   headPlayer: {fileID: 21300000, guid: 43d684fb8c4d35c42a63dc791ae23897, type: 3}
   headNPC: {fileID: 21300000, guid: acb80deab7314f94b937260935a0a4b4, type: 3}
   dialogPlayer: {fileID: 21300000, guid: 168d5109c6cbcb34e8f9c7d83735c88c, type: 3}
+  dialogPlayer2: {fileID: 0}
   dialogNpc: {fileID: 21300000, guid: 80967b5fc8694c044807e1faa151821b, type: 3}
+  dialogNpc2: {fileID: 0}
   dialogIllustrate1: {fileID: 21300000, guid: 715b35ad0ad1a8b43827df120039b0af, type: 3}
   dialogIllustrate2: {fileID: 21300000, guid: cd8cbe2e50f3ff240b1e438d9c9c6999, type: 3}
 --- !u!1 &671008441
@@ -8368,6 +8373,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 671008441}
+  fingerCursorTexture: {fileID: 0}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!212 &671008444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9047,7 +9055,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054951ad77717c84080b633a8340b23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
   imageToShow: {fileID: 21300000, guid: f118d744ca6cb934f960b61f361f9787, type: 3}
+  fingerCursorTexture: {fileID: 0}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!114 &784805735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10504,7 +10516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1011289490
 Transform:
   m_ObjectHideFlags: 0
@@ -11238,7 +11250,9 @@ MonoBehaviour:
   headPlayer: {fileID: 21300000, guid: 43d684fb8c4d35c42a63dc791ae23897, type: 3}
   headNPC: {fileID: 21300000, guid: acb80deab7314f94b937260935a0a4b4, type: 3}
   dialogPlayer: {fileID: 21300000, guid: 168d5109c6cbcb34e8f9c7d83735c88c, type: 3}
+  dialogPlayer2: {fileID: 0}
   dialogNpc: {fileID: 21300000, guid: 80967b5fc8694c044807e1faa151821b, type: 3}
+  dialogNpc2: {fileID: 0}
   dialogIllustrate1: {fileID: 21300000, guid: 715b35ad0ad1a8b43827df120039b0af, type: 3}
   dialogIllustrate2: {fileID: 21300000, guid: cd8cbe2e50f3ff240b1e438d9c9c6999, type: 3}
 --- !u!114 &1100357054
@@ -15277,9 +15291,6 @@ MonoBehaviour:
   speed: 3
   myBag: {fileID: 419882699}
   password: {fileID: 0}
-  thisItem: {fileID: 0}
-  playerInventory: {fileID: 0}
-  itemOnworldInstance: {fileID: 0}
 --- !u!212 &1922059529
 SpriteRenderer:
   m_ObjectHideFlags: 0
