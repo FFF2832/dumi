@@ -14,6 +14,7 @@ public class additemChangeImage : MonoBehaviour
      public item thisItem;
      public GameObject itemcollect;
    public Inventory playerInventory;
+   public static bool ok;
     
     void Start()
     {
@@ -40,12 +41,14 @@ void Update()
 
     if (ItemOndrag.checktree())
     {
-        
+        ok=true;
+        isok() ;
         // 在正確的位置上且拖曳的物品是零件1，更換成 sprite1
         spriteChange.sprite = sprite1;
        AddNewItem(thisItem);
         RemoveItem(itemToRemove);
         Destroy(itemcollect);
+        ok=true;
     }
     else
     {
@@ -77,4 +80,9 @@ public void AddNewItem(item thisItem){
         InventoryManager.RefreshItem();
     }
 }
+public static bool isok() // 宣告為靜態方法，回傳靜態變數 Check
+    {
+    Debug.Log("有ok "+ok );
+        return ok;
+    } 
 }

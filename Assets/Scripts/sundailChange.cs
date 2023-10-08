@@ -9,6 +9,7 @@ public class sundailChange : MonoBehaviour
     public Sprite sprite1; // 第一個圖片
     public Sprite sprite2; // 第二個圖片
     private Image spriteChange;
+    public Image pic;
 
     // public item itemToRemove;
     // public Inventory playerInventory;
@@ -22,6 +23,7 @@ void Start()
     if (spriteChange == null)
     {
         Debug.LogError("Image component not found!");
+        pic.enabled=false;
     }
 
 }
@@ -35,6 +37,8 @@ void Update()
     {
         
         spriteChange.sprite = sprite2;
+        pic.enabled=true;
+        pic.gameObject.SetActive(true);
     
     }
 
