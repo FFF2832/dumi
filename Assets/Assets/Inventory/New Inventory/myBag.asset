@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: myBag
   m_EditorClassIdentifier: 
   itemList:
-  - {fileID: 11400000, guid: 8e948690d24e4184592884a8438ff900, type: 2}
-  - {fileID: 11400000, guid: 6653d5a209b871e4d808ecfe49ea4f2e, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: acdf7974219b46c4a99dd35240fcee9e, type: 2}
+  - {fileID: 11400000, guid: cc9bce03b239c8f4da804bacc84a9664, type: 2}
+  - {fileID: 11400000, guid: b0365ba04a0860a41a47c1c290504016, type: 2}
+  - {fileID: 11400000, guid: d59a805dfa8acf54092fc874b467873e, type: 2}
   - {fileID: 0}
   - {fileID: 0}

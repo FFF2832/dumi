@@ -63,7 +63,7 @@ public class Enlarge : MonoBehaviour
         Cursor.SetCursor(null, Vector2.zero, cursorMode);
     }
     public static bool UpdateifUI(){
-      
+        Debug.Log("ifUI"+ifUI);
         return ifUI;
     } 
 }

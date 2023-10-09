@@ -83,46 +83,43 @@ public class click : MonoBehaviour
                 OnBtnShowClick1();
                 
                
-                Debug.Log("We hit " + hit.collider.name);
+                
             }
             else if(hit.collider.name=="closebtn"){
                Enlarge.ifUI=false;
-                Debug.Log("We hit " + hit.collider.name);
+               
             }
             else if(hit.collider.name=="back"){
                 OnBtnShowClick2();
-                Debug.Log("We hit " + hit.collider.name);
             }
              else if(hit.collider.name=="球"){
                 OnBtnShowClick2();
-                Debug.Log("We hit " + hit.collider.name);
             }
             else if(hit.collider.name=="paint"&&glow.Updateinside()){
                 OnBtnShowClick3();
-                Debug.Log("We hit " + hit.collider.name);
+              
             }
             else if(hit.collider.name=="glowobj"){
                 OnBtnShowClick3();
-                Debug.Log("We hit " + hit.collider.name);
+                
             }
             else if(hit.collider.name=="Bagicon"){
              
-                Debug.Log("We hit " + hit.collider.name);
+                
             }
             else if(hit.collider.name=="裝飾畫1"){
              
                    OnBtnShowClick4();
-                Debug.Log("We hit " + hit.collider.name);
+               
             }
              else if(hit.collider.name=="Exit"){
              
                      Application.LoadLevel(3);
-                Debug.Log("We hit " + hit.collider.name);
+               
             }
             
             else if(hit.collider.name=="Password"){
              
-                Debug.Log("We hit " + hit.collider.name);
             }
                Debug.Log("ifUI"+Enlarge.ifUI);
 

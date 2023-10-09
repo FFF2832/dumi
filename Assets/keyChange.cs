@@ -29,6 +29,7 @@ public class keyChange : MonoBehaviour
     {
          if (ItemOndrag.checkkeyCorrect())
         {
+            Debug.Log("checkkey_F3correct"+ItemOndrag.checkkey_F3correct());
        
          RemoveItem(itemToRemove);
          Destroy(layer1);

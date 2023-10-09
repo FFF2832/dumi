@@ -8456,7 +8456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25af1bf3af2ae2347b1e967f29423d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fingerCursorTexture: {fileID: 0}
+  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
 --- !u!114 &193956457
@@ -8509,7 +8509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193956455}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 51.797253, y: 19.3324, z: 0}
+  m_LocalPosition: {x: 51.797253, y: 19, z: 0}
   m_LocalScale: {x: 0.8681332, y: 0.8681332, z: 0.8681332}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10176,10 +10176,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 901404040}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1404461139}
+        m_TargetAssemblyTypeName: Enlarge, Assembly-CSharp
+        m_MethodName: closebtnOnclick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11507,6 +11507,8 @@ GameObject:
   - component: {fileID: 415569425}
   - component: {fileID: 415569424}
   - component: {fileID: 415569427}
+  - component: {fileID: 415569429}
+  - component: {fileID: 415569428}
   m_Layer: 0
   m_Name: deer_key
   m_TagString: Untagged
@@ -11621,7 +11623,38 @@ MonoBehaviour:
   - {fileID: 678564443}
   - {fileID: 892448099}
   - {fileID: 1368579070}
-  newSprite: {fileID: 0}
+--- !u!114 &415569428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415569422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd0ed019bc9819459c3ea7ef0986484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 901404040}
+  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
+--- !u!114 &415569429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415569422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd0ed019bc9819459c3ea7ef0986484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 901404040}
+  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &419407114
 GameObject:
   m_ObjectHideFlags: 0
@@ -23958,7 +23991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25af1bf3af2ae2347b1e967f29423d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fingerCursorTexture: {fileID: 0}
+  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
 --- !u!1 &1253908883
@@ -24458,7 +24491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25af1bf3af2ae2347b1e967f29423d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fingerCursorTexture: {fileID: 0}
+  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
 --- !u!4 &1344290809 stripped
@@ -24564,7 +24597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25af1bf3af2ae2347b1e967f29423d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fingerCursorTexture: {fileID: 0}
+  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
 --- !u!1001 &1359749246
@@ -26088,8 +26121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd0ed019bc9819459c3ea7ef0986484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 1825192531}
-  fingerCursorTexture: {fileID: 0}
+  canvas: {fileID: 901404040}
+  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
 --- !u!1 &1415162057
@@ -26508,8 +26541,9 @@ GameObject:
   - component: {fileID: 1430635724}
   - component: {fileID: 1430635727}
   - component: {fileID: 1430635725}
+  - component: {fileID: 1430635728}
   m_Layer: 0
-  m_Name: paper
+  m_Name: paper1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26608,6 +26642,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1430635728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430635723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd0ed019bc9819459c3ea7ef0986484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1825192531}
+  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 25, y: 25}
 --- !u!1 &1434176047
 GameObject:
   m_ObjectHideFlags: 0
@@ -26890,10 +26940,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1404461139}
-        m_TargetAssemblyTypeName: Enlarge, Assembly-CSharp
-        m_MethodName: closebtnOnclick
-        m_Mode: 1
+      - m_Target: {fileID: 1825192531}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -27356,6 +27406,7 @@ GameObject:
   - component: {fileID: 1461299087}
   - component: {fileID: 1461299086}
   - component: {fileID: 1461299088}
+  - component: {fileID: 1461299089}
   m_Layer: 0
   m_Name: deer
   m_TagString: Untagged
@@ -27472,6 +27523,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.17, y: 4.36}
   m_EdgeRadius: 0
+--- !u!114 &1461299089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461299084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e25fd611b836d44f8cc45a420085d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite1: {fileID: 21300000, guid: 691a55e123c73ea40b706fe9b3371233, type: 3}
+  sprite2: {fileID: 21300000, guid: 21fe33191b38ea04198f1f43a51ec32e, type: 3}
 --- !u!1 &1471179108
 GameObject:
   m_ObjectHideFlags: 0
@@ -27940,8 +28005,9 @@ GameObject:
   - component: {fileID: 1511386302}
   - component: {fileID: 1511386305}
   - component: {fileID: 1511386303}
+  - component: {fileID: 1511386306}
   m_Layer: 0
-  m_Name: paper
+  m_Name: paper3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28040,6 +28106,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1511386306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511386301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd0ed019bc9819459c3ea7ef0986484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1825192531}
+  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &1519600281
 GameObject:
   m_ObjectHideFlags: 0
@@ -29077,8 +29159,9 @@ GameObject:
   - component: {fileID: 1584335643}
   - component: {fileID: 1584335646}
   - component: {fileID: 1584335644}
+  - component: {fileID: 1584335647}
   m_Layer: 0
-  m_Name: paper
+  m_Name: paper2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29177,6 +29260,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1584335647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584335642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd0ed019bc9819459c3ea7ef0986484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1825192531}
+  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &1615230447
 GameObject:
   m_ObjectHideFlags: 0
@@ -32316,7 +32415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1825192532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33676,7 +33775,7 @@ GameObject:
   - component: {fileID: 1918679538}
   - component: {fileID: 1918679537}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: layer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34247,7 +34346,7 @@ GameObject:
   - component: {fileID: 1940561693}
   - component: {fileID: 1940561692}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: layer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

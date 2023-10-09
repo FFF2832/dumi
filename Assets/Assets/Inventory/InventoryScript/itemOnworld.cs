@@ -107,8 +107,9 @@ public class itemOnworld : MonoBehaviour
              
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem(thisItem);
-                Destroy(hit.collider);
-                 Destroy(gameObject);
+                   isMoving = true;
+                // Destroy(hit.collider);
+                //  Destroy(gameObject);
              //   isDestroyed = true;
 
         //    // 保存物体的销毁状态

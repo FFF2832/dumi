@@ -14,12 +14,13 @@ void Start(){
     }
 void Update()
 {
-     if (EnterKey.UpdatepasswordCorrect())
+     if (EnterKey.UpdatepasswordCorrect()||deerKey.UpdateallObjectsDisappeared())
     {
         
         spriteChange.sprite = sprite2;
     
     }
+   
 
     else
     {

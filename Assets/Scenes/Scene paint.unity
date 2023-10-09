@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &7794251 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 76157589817054516, guid: 5b935f19997a315478f1ccdeaf32b9f6, type: 3}
+  m_PrefabInstance: {fileID: 1258172107}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &52651460
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,9 +730,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 454843662}
-  fingerCursorTexture: {fileID: 0}
+  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
   cursorMode: 0
-  hotSpot: {x: 0, y: 0}
+  hotSpot: {x: 24, y: 24}
 --- !u!114 &454843667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7496,8 +7501,8 @@ MonoBehaviour:
   thisItem: {fileID: 11400000, guid: f00c0d9782c180e4ca0685d3836037f0, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
   itemToRemove: {fileID: 0}
-  initialPosition: {fileID: 0}
-  targetPosition: {fileID: 0}
+  initialPosition: {fileID: 1543115261}
+  targetPosition: {fileID: 7794251}
   movementSpeed: 1
 --- !u!1001 &1559565888
 PrefabInstance:

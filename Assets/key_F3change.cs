@@ -1,3 +1,4 @@
+//key_F3change
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,22 +28,22 @@ public class key_F3change : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //  if (ItemOndrag.checkkeyCorrect())
-        // {
-       
-        //  RemoveItem(itemToRemove);
-        //  Destroy(layer1);
-        //   Destroy(layer2);
-        //   changekey_1=true;
-        //  }
-        if (ItemOndrag.checkkey_F3correct())
+         if (ItemOndrag.checkkey_F3correct())
         {
        
          RemoveItem(itemToRemove);
          Destroy(layer1);
           Destroy(layer2);
-           changekey_2=true;
+          changekey_2=true;
          }
+        // if (ItemOndrag.checkkey_F3correct())
+        // {
+       
+        //  RemoveItem(itemToRemove);
+        //  Destroy(layer1);
+        //   Destroy(layer2);
+        //    changekey_2=true;
+        //  }
 
        
     }
@@ -69,4 +70,3 @@ public class key_F3change : MonoBehaviour
     InventoryManager.RefreshItem();
     }
 }
-
