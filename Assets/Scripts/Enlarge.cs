@@ -18,7 +18,7 @@ public class Enlarge : MonoBehaviour
 
     void Update()
     {
-        //  Debug.Log("ifUI"+ifUI);
+       
         // 如果点击了鼠标左键
         if (Input.GetMouseButtonDown(0))
         {
@@ -30,7 +30,7 @@ public class Enlarge : MonoBehaviour
 
             // 如果鼠标点击了这个物体
             if (mousePos.x >= objPos.x - 0.5f && mousePos.x <= objPos.x + 0.5f
-                && mousePos.y >= objPos.y - 0.5f && mousePos.y <= objPos.y + 0.5f)
+                && mousePos.y >= objPos.y - 0.5f && mousePos.y <= objPos.y + 0.5f&&(!(ifUI)||!(DialogSystem.UpadateconversationUI())))
             {
                 // 显示 Canvas
                 canvas.SetActive(true);
@@ -44,6 +44,7 @@ public class Enlarge : MonoBehaviour
             // canvas.SetActive(false);
             // 
             // }
+            
         }
     }
     public void closebtnOnclick(){
@@ -63,7 +64,7 @@ public class Enlarge : MonoBehaviour
         Cursor.SetCursor(null, Vector2.zero, cursorMode);
     }
     public static bool UpdateifUI(){
-        Debug.Log("ifUI"+ifUI);
+      //  Debug.Log("ifUI"+ifUI);
         return ifUI;
     } 
 }

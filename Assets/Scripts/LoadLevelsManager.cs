@@ -9,15 +9,20 @@ public class LoadLevelsManager : MonoBehaviour
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
 
+    private bool UIstate;
+
     private void Awake()
     {
         //轉場
         animator = GameObject.Find("Crossfade").GetComponent<Animator>();
     }
+    private void Update(){
+         UIstate=Enlarge.UpdateifUI();
+    }
 
     private void OnMouseDown()
     {
-        LoadNextLevel();
+        if(!UIstate)LoadNextLevel();
     }
 
     public void LoadNextLevel()

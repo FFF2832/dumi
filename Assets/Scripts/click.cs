@@ -14,8 +14,9 @@ public class click : MonoBehaviour
     void Update()
     {
         UIstate=Enlarge.UpdateifUI();
+        Debug.Log("UIstate"+UIstate);
         check2DObjectClicked();
-        checkclick();
+        //checkclick();
         
     }
     
@@ -37,7 +38,7 @@ public class click : MonoBehaviour
     }
     //找點到的物件名字
     void checkclick(){
- Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Input.GetMouseButton(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 10, -1); ;
@@ -75,20 +76,19 @@ public class click : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(origin, dir);
 
         //Check if we hit anything
-        if (hit&&!(Enlarge.UpdateifUI()))
+        if (hit&&!(Enlarge.UpdateifUI())||!(DialogSystem.UpadateconversationUI()))
         {
            
-            if(hit.collider.name=="樹枝畫"&&glow.Updateinside()){
+            if(hit.collider.name=="樹枝畫"&&glow.Updateinside()&&!UIstate){
                
                 OnBtnShowClick1();
-                
-               
+
                 
             }
-            else if(hit.collider.name=="closebtn"){
-               Enlarge.ifUI=false;
+            // else if(hit.collider.name=="closebtn"){
+            //    Enlarge.ifUI=false;
                
-            }
+            // }
             else if(hit.collider.name=="back"){
                 OnBtnShowClick2();
             }
@@ -121,7 +121,7 @@ public class click : MonoBehaviour
             else if(hit.collider.name=="Password"){
              
             }
-               Debug.Log("ifUI"+Enlarge.ifUI);
+              // Debug.Log("ifUI"+Enlarge.ifUI);
 
         }
     } 

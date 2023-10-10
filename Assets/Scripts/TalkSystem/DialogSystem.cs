@@ -32,11 +32,18 @@ public class DialogSystem : MonoBehaviour
     public Sprite dialogIllustrate2;
     bool textFinished;  //文本是否显示完毕
     private static bool videoPlayed;
+
+    
     bool isTyping;  //是否在逐字显示
 
     List<string> textList = new List<string>();
+    public static bool conversationUI; 
+
     void Start(){
-      //\headImage.enabled=false;
+
+      //headImage.enabled=false;
+      conversationUI=true;
+
     }
     void Awake()
     {
@@ -48,6 +55,8 @@ public class DialogSystem : MonoBehaviour
         index = 0;  //对话框每次隐藏变为显示就重置对话
         textFinished = true;    //对话框每次隐藏变为显示状态变为文本已结束
         StartCoroutine(setTextUI());
+        
+       
     }
 
     void Update()
@@ -234,11 +243,15 @@ public class DialogSystem : MonoBehaviour
 
         isTyping = true;
         textFinished = true;
+        conversationUI=false;
         index++;
     }
 
     public static bool UpdatevideoPlayed(){
             return videoPlayed;
+    }
+    public static bool UpadateconversationUI(){
+        return conversationUI;
     }
 }
 

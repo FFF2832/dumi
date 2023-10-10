@@ -10,7 +10,7 @@ public class Look : MonoBehaviour
     public Texture2D fingerCursorTexture; // 新增手指指针纹理
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
-     private static bool ifUI;
+    //  private static bool ifUI;
     private void Start()
     {
         // 获取 SpriteRenderer 组件
@@ -37,11 +37,11 @@ public class Look : MonoBehaviour
 
             // 如果鼠标点击了这个物体
             if (mousePos.x >= objPos.x - 0.5f && mousePos.x <= objPos.x + 0.5f
-                && mousePos.y >= objPos.y - 0.5f && mousePos.y <= objPos.y + 0.5f)
+                && mousePos.y >= objPos.y - 0.5f && mousePos.y <= objPos.y + 0.5f&&(!(Enlarge.UpdateifUI())||!(DialogSystem.UpadateconversationUI())))
             {
                 // 显示 Canvas
                 canvas.SetActive(true);
-                ifUI=true;
+                
             }
         }
     }
@@ -62,10 +62,10 @@ public class Look : MonoBehaviour
             spriteRenderer.enabled = false;
         }
     }
-     public static bool UpdateifUI(){
+    //  public static bool UpdateifUI(){
       
-        return ifUI;
-    } 
+    //     return ifUI;
+    // } 
 
     // void OnMouseEnter()
     // {
