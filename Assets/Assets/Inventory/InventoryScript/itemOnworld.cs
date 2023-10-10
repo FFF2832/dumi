@@ -20,6 +20,8 @@ public class itemOnworld : MonoBehaviour
     public float movementSpeed = 1.0f;  // 移動速度
 
     private bool isMoving = false;
+    public Sprite moveSprite;
+    public Animator animator;
     private void Start()
     {
     //     // 检查物体的销毁状态
@@ -106,6 +108,9 @@ public class itemOnworld : MonoBehaviour
             if(hit.collider.name=="樹枝本人"){
              
                 Debug.Log("We hit " + hit.collider.name);
+                SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = moveSprite;
+                animator.enabled = false;
                 AddNewItem(thisItem);
                    isMoving = true;
                 // Destroy(hit.collider);
