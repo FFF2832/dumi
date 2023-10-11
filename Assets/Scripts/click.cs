@@ -11,12 +11,14 @@ public class click : MonoBehaviour
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
     private bool UIstate;
+     private bool UIstate2;
     void Update()
     {
         UIstate=Enlarge.UpdateifUI();
-        Debug.Log("UIstate"+UIstate);
+        UIstate2=Look.UpdateifUI();
+      //  Debug.Log("UIstate"+UIstate);
         check2DObjectClicked();
-        //checkclick();
+        checkclick();
         
     }
     
@@ -42,6 +44,7 @@ public class click : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 10, -1); ;
+             // if (hit.collider&&!UIstate&&!UIstate2)
             if (hit.collider&&!UIstate)
             {
                 Debug.DrawLine(ray.origin, hit.transform.position, Color.red, 0.1f, true);
@@ -76,7 +79,8 @@ public class click : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(origin, dir);
 
         //Check if we hit anything
-        if (hit&&!(Enlarge.UpdateifUI())||!(DialogSystem.UpadateconversationUI()))
+        // if (hit&&!(Enlarge.UpdateifUI())||!(DialogSystem.UpadateconversationUI()))
+        if (hit&&!UIstate)
         {
            
             if(hit.collider.name=="樹枝畫"&&glow.Updateinside()&&!UIstate){
@@ -121,7 +125,20 @@ public class click : MonoBehaviour
             else if(hit.collider.name=="Password"){
              
             }
-              // Debug.Log("ifUI"+Enlarge.ifUI);
+            else if(hit.collider.name=="closebtn"){
+                 Application.LoadLevel(3);
+            }
+            else if(hit.collider.name=="paint_room"){
+             
+                     Application.LoadLevel(5);
+                      Debug.Log("切換場景 " );
+               
+            }
+             else if(hit.collider.name=="magic_room"){
+             
+                     Application.LoadLevel(4);
+               
+            }
 
         }
     } 

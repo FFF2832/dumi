@@ -22,7 +22,7 @@ public class LoadLevelsManager : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(!UIstate)LoadNextLevel();
+        LoadNextLevel();
     }
 
     public void LoadNextLevel()

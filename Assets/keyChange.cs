@@ -8,7 +8,17 @@ public class keyChange : MonoBehaviour
     public GameObject layer2;
     private Image spriteChange;
 
-    public item itemToRemove;
+    public item itemToRemove1;
+
+    public item itemToRemove2;
+
+    public item itemToRemove3;
+
+    public item itemToRemove4;
+
+      public item itemToRemove5;
+
+   // public item itemToRemove;
     public Inventory playerInventory;
     public static bool changekey_1;
     public static bool changekey_2;
@@ -29,9 +39,13 @@ public class keyChange : MonoBehaviour
     {
          if (ItemOndrag.checkkeyCorrect())
         {
-            Debug.Log("checkkey_F3correct"+ItemOndrag.checkkey_F3correct());
+            Debug.Log("checkkeyCorrect"+ItemOndrag.checkkeyCorrect());
        
-         RemoveItem(itemToRemove);
+         RemoveItem(itemToRemove1);
+         RemoveItem(itemToRemove2);
+         RemoveItem(itemToRemove3);
+         RemoveItem(itemToRemove4);
+         RemoveItem(itemToRemove5);
          Destroy(layer1);
           Destroy(layer2);
           changekey_1=true;

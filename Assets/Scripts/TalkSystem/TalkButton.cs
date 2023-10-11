@@ -63,6 +63,6 @@ public class TalkButton : MonoBehaviour
                 obj.gameObject.GetComponent<SpriteRenderer>().color=Color.white;
             }
         }
-        Debug.Log("有問題");
+       // Debug.Log("有問題");
     }
 }
