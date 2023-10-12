@@ -339,6 +339,7 @@ private void LoadNextScene()
     }
 
      public static bool UpdatemagicDone(){
+        //藥水完成
        // magicDone=true;
         return magicDone;
     }

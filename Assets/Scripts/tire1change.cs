@@ -11,6 +11,7 @@ public class tire1change : MonoBehaviour
 
     public item itemToRemove;
     public Inventory playerInventory;
+  //  public Image tire;
 
 
 
@@ -22,7 +23,7 @@ void Start()
     {
         Debug.LogError("Image component not found!");
     }
-
+   // tire.enabled = false;
 }
 
 // 在 Update 方法中使用 ItemOndrag 腳本中的陣列值
@@ -43,7 +44,8 @@ void Update()
         // RemoveItem(itemToRemove);
         // 在正確的位置上且拖曳的物品是零件1，更換成 sprite1
         spriteChange.sprite = sprite1;
-        //RemoveItem(itemToRemove);
+        //tire.enabled = true;
+       // RemoveItem(itemToRemove);
       
     }
 
@@ -51,6 +53,7 @@ void Update()
     {
         // 如果不在正確的位置上，顯示 sprite2
         spriteChange.sprite = sprite2;
+       //tire.enabled = false;
     }
    
 }

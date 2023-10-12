@@ -124,6 +124,8 @@ public class click : MonoBehaviour
             }
             
             else if(hit.collider.name=="Password"){
+                if(CheckInput.UpdateChangeScene())Application.LoadLevel(3);
+                Debug.Log("切換場景 " );
              
             }
             else if(hit.collider.name=="closebtn"){

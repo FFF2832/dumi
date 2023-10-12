@@ -87,8 +87,7 @@ private float popupTimer = 0f; // 用于计时显示Canvas的时间
 
     }
     public static void ChangeTonight(){
-     if(ChangeScene)Application.LoadLevel(3);
-    Debug.Log("切換場景 " );
+    
    } 
    public static bool UpdateChangeScene(){
         return ChangeScene;
