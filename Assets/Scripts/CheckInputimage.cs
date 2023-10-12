@@ -7,6 +7,9 @@ public class CheckInputimage : MonoBehaviour
        private Image imageChange;
        public Sprite sprite1; // 第一個圖片
     public Sprite sprite2; // 第二個圖片
+    private bool birdChange;
+    private bool stoneChange;
+    private bool bambooChange;
     void Start()
     {
           imageChange = GetComponent<Image>();

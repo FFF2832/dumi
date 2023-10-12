@@ -17,7 +17,7 @@ public class LoadLevelsManager : MonoBehaviour
         animator = GameObject.Find("Crossfade").GetComponent<Animator>();
     }
     private void Update(){
-         UIstate=Enlarge.UpdateifUI();
+         UIstate=Enlarge.UpdateisMouseOverobj();
     }
 
     private void OnMouseDown()

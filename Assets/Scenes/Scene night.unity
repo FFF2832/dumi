@@ -19451,6 +19451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite1: {fileID: 21300000, guid: 1c4d61b4a02abe94ea218a9e27adc51b, type: 3}
   sprite2: {fileID: 21300000, guid: 66d0f7707edc38e4b8d816887e67d825, type: 3}
+  pic: {fileID: 0}
 --- !u!114 &1441764048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22217,6 +22218,8 @@ MonoBehaviour:
   - {fileID: 1134230739}
   - {fileID: 36674291}
   inputPassword: 123
+  videoScreen: {fileID: 0}
+  videoPlayer: {fileID: 0}
 --- !u!114 &1844553183
 MonoBehaviour:
   m_ObjectHideFlags: 0

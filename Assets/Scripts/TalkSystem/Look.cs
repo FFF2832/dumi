@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Look : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Look : MonoBehaviour
         // 隐藏图像
         spriteRenderer.enabled = false;
          canvas.SetActive(false);
+         ifUI=false;
         
     }
     void Update()

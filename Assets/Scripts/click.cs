@@ -14,11 +14,11 @@ public class click : MonoBehaviour
      private bool UIstate2;
     void Update()
     {
-        UIstate=Enlarge.UpdateifUI();
+        UIstate=Enlarge.UpdateisMouseOverobj();
         UIstate2=Look.UpdateifUI();
       //  Debug.Log("UIstate"+UIstate);
         check2DObjectClicked();
-        checkclick();
+       // checkclick();
         
     }
     
@@ -45,6 +45,7 @@ public class click : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 10, -1); ;
              // if (hit.collider&&!UIstate&&!UIstate2)
+             //if (hit.collider&&!UIstate)
             if (hit.collider&&!UIstate)
             {
                 Debug.DrawLine(ray.origin, hit.transform.position, Color.red, 0.1f, true);

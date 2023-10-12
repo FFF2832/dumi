@@ -30,7 +30,7 @@ private float popupTimer = 0f; // 用于计时显示Canvas的时间
     if (isPopupVisible)
     {
         popupTimer += Time.deltaTime;
-Debug.Log("popupTimer: " + popupTimer); // 输出计时器的值
+    //Debug.Log("popupTimer: " + popupTimer); // 输出计时器的值
         // 如果计时超过指定的持续时间，隐藏Canvas并重置计时器
         if (popupTimer >= popupDuration)
         {
@@ -71,8 +71,8 @@ Debug.Log("popupTimer: " + popupTimer); // 输出计时器的值
             spriteChange.sprite = sprite3; // 切換好車
            
             ChangeScene=true;
-                             popupCanvas.gameObject.SetActive(true);
-    isPopupVisible = true;
+            popupCanvas.gameObject.SetActive(true);
+            isPopupVisible = true;
     
             
             }
@@ -87,7 +87,10 @@ Debug.Log("popupTimer: " + popupTimer); // 输出计时器的值
 
     }
     public static void ChangeTonight(){
-     Application.LoadLevel(3);
+     if(ChangeScene)Application.LoadLevel(3);
     Debug.Log("切換場景 " );
    } 
+   public static bool UpdateChangeScene(){
+        return ChangeScene;
+   }
 }
