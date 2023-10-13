@@ -13,6 +13,22 @@ public class ButtonPress : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [SerializeField, Header("缩放变化持续时间：抬起过程")]
     private float _upDuration = 0.15f;
 
+
+    [SerializeField, Header("Audio Clip")]
+    private AudioClip buttonPressSound;
+    private AudioSource audioSource;
+
+    private void Awake()
+{
+    audioSource = GetComponent<AudioSource>();
+    // Ensure the AudioSource is not null and set to play on awake
+    if (audioSource != null)
+    {
+        audioSource.playOnAwake = false;
+    }
+}
+
+
     private RectTransform RectTransform
     {
         get
@@ -31,6 +47,12 @@ public class ButtonPress : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         StopAllCoroutines();
         StartCoroutine(ChangeScaleCoroutine(1, _downScale, _downDuration));
+
+
+        if (audioSource != null && buttonPressSound != null)
+        {
+        audioSource.PlayOneShot(buttonPressSound);
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
