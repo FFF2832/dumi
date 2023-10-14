@@ -26,10 +26,15 @@ public class DialogSystem : MonoBehaviour
     [Header("對話框")]
     public Sprite dialogPlayer;
     public Sprite dialogPlayer2;
+    public Sprite dialogPlayer3;
     public Sprite dialogNpc;
     public Sprite dialogNpc2;
+    public Sprite dialogNpc3;
+    public Sprite dialogNpc4;
     public Sprite dialogIllustrate1;
     public Sprite dialogIllustrate2;
+    public Sprite dialogIllustrate3;
+    public Sprite dialogIllustrate4;
     bool textFinished;  //文本是否显示完毕
     private static bool videoPlayed;
 
@@ -142,6 +147,21 @@ public class DialogSystem : MonoBehaviour
                 dialogImage.sprite = dialogNpc;
                 index++;
                 break;
+            case "A2":
+                headImage.sprite = headNPC;
+                dialogImage.sprite = dialogNpc2;
+                index++;
+                break;
+            case "A3":
+                headImage.sprite = headNPC;
+                dialogImage.sprite = dialogNpc3;
+                index++;
+                break;
+            case "A4":
+                headImage.sprite = headNPC;
+                dialogImage.sprite = dialogNpc4;
+                index++;
+                break;     
             case "I":
                 headImage.sprite = headNPC;
                 dialogImage.sprite = dialogIllustrate1;
@@ -209,7 +229,17 @@ public class DialogSystem : MonoBehaviour
                 headImage.sprite = headNPC;
                 dialogImage.sprite = dialogIllustrate2;
                 index++;
-                break;         
+                break; 
+            case "I3":
+                headImage.sprite = headNPC;
+                dialogImage.sprite = dialogIllustrate3;
+                index++;
+                break;
+            case "I4":
+                headImage.sprite = headNPC;
+                dialogImage.sprite = dialogIllustrate4;
+                index++;
+                break;           
             case "V":
                 textFinished = true; 
                 videoPlayed=true;
@@ -220,8 +250,25 @@ public class DialogSystem : MonoBehaviour
                 dialogImage.sprite = dialogNpc2;
                 index++;
                 break;
+            case "A3":
+                headImage.sprite = headNPC;
+                dialogImage.sprite = dialogNpc3;
+                index++;
+                break;
+            case "A4":
+                headImage.sprite = headNPC;
+                dialogImage.sprite = dialogNpc4;
+                index++;
+                break;
             case "B2":
                 dialogImage.sprite = dialogPlayer2;
+                headImage.sprite = headPlayer;
+                 //Destroy(dialogImage);
+                //npcdialogImage.sprite.SetActive(false);
+                index++;
+                break;
+            case "B3":
+                dialogImage.sprite = dialogPlayer3;
                 headImage.sprite = headPlayer;
                  //Destroy(dialogImage);
                 //npcdialogImage.sprite.SetActive(false);
