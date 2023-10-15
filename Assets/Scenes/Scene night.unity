@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  fingerCursorTexture: {fileID: 2800000, guid: 9c749f273c1ff8741b57eb6ffe55405e, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
 --- !u!212 &49382672
@@ -784,7 +784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  fingerCursorTexture: {fileID: 2800000, guid: e5dc3aeada11c7d44afadc41b0aafa35, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
 --- !u!212 &53573786
@@ -1085,6 +1085,7 @@ MonoBehaviour:
   _downScale: 0.9
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &76628160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1557,7 +1558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  fingerCursorTexture: {fileID: 2800000, guid: e5dc3aeada11c7d44afadc41b0aafa35, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
 --- !u!212 &87782818
@@ -1761,7 +1762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  fingerCursorTexture: {fileID: 2800000, guid: 9c749f273c1ff8741b57eb6ffe55405e, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
 --- !u!212 &98254619
@@ -2620,7 +2621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  fingerCursorTexture: {fileID: 2800000, guid: 9c749f273c1ff8741b57eb6ffe55405e, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
 --- !u!212 &149111237
@@ -2856,6 +2857,7 @@ MonoBehaviour:
   _downScale: 0.925
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &160868724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3413,7 +3415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  fingerCursorTexture: {fileID: 2800000, guid: e5dc3aeada11c7d44afadc41b0aafa35, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
 --- !u!212 &233199047
@@ -3599,6 +3601,7 @@ MonoBehaviour:
   _downScale: 0.925
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &244043131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3867,7 +3870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  fingerCursorTexture: {fileID: 2800000, guid: e5dc3aeada11c7d44afadc41b0aafa35, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
 --- !u!212 &255647443
@@ -3977,6 +3980,7 @@ MonoBehaviour:
   _downScale: 0.925
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &274198666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4362,7 +4366,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -82, y: -158}
+  m_AnchoredPosition: {x: -82, y: -169}
   m_SizeDelta: {x: 11400.81, y: 3000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &285628786
@@ -4462,6 +4466,7 @@ MonoBehaviour:
   _downScale: 0.95
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &310874909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6447,7 +6452,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.69, y: -0.36000013, z: -10}
+  m_LocalPosition: {x: -5.69, y: -0.17585039, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6580,10 +6585,15 @@ MonoBehaviour:
   headNPC: {fileID: 21300000, guid: 845282e93f9aedb458456a0eb8ef812f, type: 3}
   dialogPlayer: {fileID: 21300000, guid: 168d5109c6cbcb34e8f9c7d83735c88c, type: 3}
   dialogPlayer2: {fileID: 0}
+  dialogPlayer3: {fileID: 0}
   dialogNpc: {fileID: 21300000, guid: 54dbaba4f40aedc4a8911c1ebb53c7ef, type: 3}
   dialogNpc2: {fileID: 0}
+  dialogNpc3: {fileID: 0}
+  dialogNpc4: {fileID: 0}
   dialogIllustrate1: {fileID: 0}
   dialogIllustrate2: {fileID: 0}
+  dialogIllustrate3: {fileID: 0}
+  dialogIllustrate4: {fileID: 0}
 --- !u!114 &521179651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7847,7 +7857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  fingerCursorTexture: {fileID: 2800000, guid: 9c749f273c1ff8741b57eb6ffe55405e, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
 --- !u!212 &690353257
@@ -8893,7 +8903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  fingerCursorTexture: {fileID: 2800000, guid: 9c749f273c1ff8741b57eb6ffe55405e, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
 --- !u!212 &782643584
@@ -9084,6 +9094,7 @@ MonoBehaviour:
   _downScale: 0.9
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &882408089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9320,6 +9331,7 @@ MonoBehaviour:
   _downScale: 0.925
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &922800948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9937,7 +9949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10455,6 +10467,7 @@ MonoBehaviour:
   _downScale: 0.925
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &1047363523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12206,6 +12219,7 @@ MonoBehaviour:
   _downScale: 0.925
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &1179897359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12651,7 +12665,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217969421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.843342, y: 0.054221258, z: 0.00594771}
+  m_LocalPosition: {x: 1.843342, y: 0.15, z: 0.00594771}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12692,7 +12706,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 28.429874, y: -5.081706}
+  m_Offset: {x: 28.444887, y: -5.081706}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12703,7 +12717,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 90.0622, y: 1.2010441}
+  m_Size: {x: 90.03218, y: 1.2010441}
   m_EdgeRadius: 0
 --- !u!212 &1217969425
 SpriteRenderer:
@@ -18054,7 +18068,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264292299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.69, y: -0.36000013, z: -10}
+  m_LocalPosition: {x: -5.69, y: -0.17585039, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18711,7 +18725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 4.57, y: 3.3, z: 0}
+  m_TrackedObjectOffset: {x: 4.57, y: 3.24, z: 0}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
@@ -19120,7 +19134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  fingerCursorTexture: {fileID: 2800000, guid: e5dc3aeada11c7d44afadc41b0aafa35, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
 --- !u!212 &1399787857
@@ -19706,7 +19720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 265}
+  m_AnchoredPosition: {x: 0, y: 312}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1468893356
@@ -19729,7 +19743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 168d5109c6cbcb34e8f9c7d83735c88c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 95ea1d25579574b4b99f7f247b304a6b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20324,7 +20338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  fingerCursorTexture: {fileID: 2800000, guid: 9c749f273c1ff8741b57eb6ffe55405e, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
 --- !u!212 &1536308866
@@ -20735,6 +20749,7 @@ MonoBehaviour:
   _downScale: 0.9
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &1629750507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21685,7 +21700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774533365}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 250.62984, y: 32.68486, z: 0}
+  m_LocalPosition: {x: 250.62984, y: 31.8, z: 0}
   m_LocalScale: {x: 4.095847, y: 4.095847, z: 4.095847}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21837,7 +21852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
+  fingerCursorTexture: {fileID: 2800000, guid: 9c749f273c1ff8741b57eb6ffe55405e, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
 --- !u!212 &1787628205
@@ -22369,6 +22384,7 @@ MonoBehaviour:
   _downScale: 0.9
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &1847539535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22519,6 +22535,7 @@ MonoBehaviour:
   _downScale: 0.9
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &1851816576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22691,12 +22708,17 @@ MonoBehaviour:
   textSpeed: 0.1
   headPlayer: {fileID: 21300000, guid: 845282e93f9aedb458456a0eb8ef812f, type: 3}
   headNPC: {fileID: 21300000, guid: 845282e93f9aedb458456a0eb8ef812f, type: 3}
-  dialogPlayer: {fileID: 21300000, guid: 168d5109c6cbcb34e8f9c7d83735c88c, type: 3}
-  dialogPlayer2: {fileID: 21300000, guid: 698998e72ce448943b8507664e6fcf94, type: 3}
-  dialogNpc: {fileID: 21300000, guid: 54dbaba4f40aedc4a8911c1ebb53c7ef, type: 3}
-  dialogNpc2: {fileID: 21300000, guid: c8e67d0477a9cc14cb01b9893c92f131, type: 3}
-  dialogIllustrate1: {fileID: 21300000, guid: 715b35ad0ad1a8b43827df120039b0af, type: 3}
-  dialogIllustrate2: {fileID: 21300000, guid: cd8cbe2e50f3ff240b1e438d9c9c6999, type: 3}
+  dialogPlayer: {fileID: 21300000, guid: 95ea1d25579574b4b99f7f247b304a6b, type: 3}
+  dialogPlayer2: {fileID: 21300000, guid: fac5e54822b4f8c46a9a1fdb2078a18b, type: 3}
+  dialogPlayer3: {fileID: 21300000, guid: 475e1b07a6174434f949c36b24fa5870, type: 3}
+  dialogNpc: {fileID: 21300000, guid: 704cedf425c25164da3fa077576e8693, type: 3}
+  dialogNpc2: {fileID: 21300000, guid: 72927388727c0a442ac295679c61912b, type: 3}
+  dialogNpc3: {fileID: 21300000, guid: df76fa9a2363ce54192e535a20a89a2e, type: 3}
+  dialogNpc4: {fileID: 21300000, guid: e9809d2e7ed66a84c9346f239a816e50, type: 3}
+  dialogIllustrate1: {fileID: 21300000, guid: ff8b8309bae59ed4aab7e4d8535eeb24, type: 3}
+  dialogIllustrate2: {fileID: 21300000, guid: 918a922f749174e41adb447971445457, type: 3}
+  dialogIllustrate3: {fileID: 21300000, guid: 5b43219e2a06acd488c28e5c46b4da9b, type: 3}
+  dialogIllustrate4: {fileID: 21300000, guid: f5017f7ee87e09346bbff8f7d750ed45, type: 3}
 --- !u!114 &1859288850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23159,7 +23181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922059527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23958,6 +23980,7 @@ MonoBehaviour:
   _downScale: 0.9
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &2033643235
 MonoBehaviour:
   m_ObjectHideFlags: 0

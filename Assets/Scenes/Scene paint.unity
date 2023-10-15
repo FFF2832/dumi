@@ -748,6 +748,7 @@ MonoBehaviour:
   _downScale: 0.9
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!1 &514949778
 GameObject:
   m_ObjectHideFlags: 0
@@ -6931,6 +6932,7 @@ MonoBehaviour:
   _downScale: 0.9
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &1304686285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7559,7 +7561,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543115259}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 74003cd323384b8428545f3dfd0c0551, type: 2}
   m_CullingMode: 0
@@ -7996,6 +7998,7 @@ MonoBehaviour:
   _downScale: 0.9
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &1687813612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8994,6 +8997,7 @@ MonoBehaviour:
   _downScale: 0.95
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &2124669951
 MonoBehaviour:
   m_ObjectHideFlags: 0
