@@ -146,11 +146,16 @@ public class itemOnworld : MonoBehaviour
             //     Debug.Log("touch");
             // }
             else if(hit.collider.name=="decoration_sun"){
-               Debug.Log(" 2" );
-                Debug.Log("We hit " + hit.collider.name);
+            
+            //     AddNewItem(thisItem);
+            //     Destroy(hit.collider);
+            //     Destroy(gameObject);
+            Debug.Log("We hit " + hit.collider.name);
+                SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = moveSprite;
+                animator.enabled = false;
                 AddNewItem(thisItem);
-                Destroy(hit.collider);
-                Destroy(gameObject);
+                   isMoving = true;
                
             }
 

@@ -16,7 +16,7 @@ public class EnterKey : MonoBehaviour
     {
          videoScreen.enabled = false;
         videoPlayer.loopPointReached += OnVideoEnd;
-        password = "123";
+        password = "391";
           passwordCorrect=false;
   
               // 开始加载视频

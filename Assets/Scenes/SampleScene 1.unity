@@ -17298,7 +17298,7 @@ MonoBehaviour:
   - {fileID: 1251112172}
   - {fileID: 1990861798}
   - {fileID: 152445287}
-  inputPassword: 123
+  inputPassword: 391
   videoScreen: {fileID: 557493563}
   videoPlayer: {fileID: 557493562}
 --- !u!114 &720555056
@@ -18541,11 +18541,11 @@ MonoBehaviour:
   thisItem: {fileID: 11400000, guid: 8e948690d24e4184592884a8438ff900, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
   itemToRemove: {fileID: 0}
-  initialPosition: {fileID: 0}
-  targetPosition: {fileID: 1961311889}
-  movementSpeed: 1
-  moveSprite: {fileID: 0}
-  animator: {fileID: 0}
+  initialPosition: {fileID: 829449970}
+  targetPosition: {fileID: 473211485}
+  movementSpeed: 25
+  moveSprite: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
+  animator: {fileID: 829449972}
 --- !u!50 &829449974
 Rigidbody2D:
   serializedVersion: 4
@@ -34689,7 +34689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1893153806
 AudioSource:
   m_ObjectHideFlags: 0
