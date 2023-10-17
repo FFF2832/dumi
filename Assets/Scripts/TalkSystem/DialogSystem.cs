@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class DialogSystem : MonoBehaviour
 {
     //public GameObject obj;
@@ -244,6 +245,8 @@ public class DialogSystem : MonoBehaviour
                 textFinished = true; 
                 videoPlayed=true;
                 gameObject.SetActive(false);
+                // SceneManager.LoadScene("Scene Clear_1");
+
                 break;
             case "A2":
                 headImage.sprite = headNPC;

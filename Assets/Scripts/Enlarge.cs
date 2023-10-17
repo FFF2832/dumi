@@ -27,7 +27,7 @@ public class Enlarge : MonoBehaviour
         {
              // 現在點的是不是gameObject
             isMouseOverobj =EventSystem.current.IsPointerOverGameObject();
-            Debug.Log("isMouseOverobj"+isMouseOverobj);
+           // Debug.Log("isMouseOverobj"+isMouseOverobj);
             // 获取鼠标的位置
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 

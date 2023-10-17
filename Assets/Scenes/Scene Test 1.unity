@@ -457,6 +457,7 @@ MonoBehaviour:
   _downScale: 0.9
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &37315208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7618,6 +7619,7 @@ MonoBehaviour:
   _downScale: 0.9
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!1 &328128500
 GameObject:
   m_ObjectHideFlags: 0
@@ -9751,6 +9753,7 @@ MonoBehaviour:
   _downScale: 0.9
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &567765301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10981,10 +10984,15 @@ MonoBehaviour:
   headNPC: {fileID: 21300000, guid: acb80deab7314f94b937260935a0a4b4, type: 3}
   dialogPlayer: {fileID: 21300000, guid: 168d5109c6cbcb34e8f9c7d83735c88c, type: 3}
   dialogPlayer2: {fileID: 0}
+  dialogPlayer3: {fileID: 0}
   dialogNpc: {fileID: 21300000, guid: 80967b5fc8694c044807e1faa151821b, type: 3}
   dialogNpc2: {fileID: 0}
+  dialogNpc3: {fileID: 0}
+  dialogNpc4: {fileID: 0}
   dialogIllustrate1: {fileID: 21300000, guid: 715b35ad0ad1a8b43827df120039b0af, type: 3}
   dialogIllustrate2: {fileID: 21300000, guid: cd8cbe2e50f3ff240b1e438d9c9c6999, type: 3}
+  dialogIllustrate3: {fileID: 0}
+  dialogIllustrate4: {fileID: 0}
 --- !u!1 &626678986
 GameObject:
   m_ObjectHideFlags: 0
@@ -21336,6 +21344,7 @@ MonoBehaviour:
   _downScale: 0.9
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!1 &1745556998
 GameObject:
   m_ObjectHideFlags: 0
@@ -21882,7 +21891,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4ab8a29c620c989449d914efe07d6781, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a40dde9a2d02898489575d3ede84d030, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22220,6 +22229,7 @@ MonoBehaviour:
   _downScale: 0.95
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!1 &1847242342
 GameObject:
   m_ObjectHideFlags: 0
@@ -24333,6 +24343,7 @@ MonoBehaviour:
   _downScale: 0.9
   _downDuration: 0.2
   _upDuration: 0.15
+  buttonPressSound: {fileID: 0}
 --- !u!114 &2055799654
 MonoBehaviour:
   m_ObjectHideFlags: 0

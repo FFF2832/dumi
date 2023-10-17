@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.Video;
-
+using UnityEngine.SceneManagement;
 public class Bamboo : MonoBehaviour
 {
     
@@ -55,6 +55,7 @@ public class Bamboo : MonoBehaviour
     {
         // 视频播放结束时的处理
           videoCanvas.enabled = false; 
+            if (bambooTalk.UpdatefinishTalk() )SceneManager.LoadScene("Scene Clear_1");
     }
 
     // 添加您的条件检查函数

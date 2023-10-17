@@ -20,6 +20,7 @@ public class itemOnworld : MonoBehaviour
     public float movementSpeed = 1.0f;  // 移動速度
 
     private bool isMoving = false;
+    
     public Sprite moveSprite;
     public Animator animator;
     private void Start()
@@ -31,6 +32,7 @@ public class itemOnworld : MonoBehaviour
     //        isDestroyed = true;
     //    }
         //sparkle.SetActive(true);
+       
     }
   private void Update(){
     check2DObjectClicked();

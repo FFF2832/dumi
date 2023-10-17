@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class click : MonoBehaviour
 {
      public GameObject obj;
@@ -18,7 +19,7 @@ public class click : MonoBehaviour
         UIstate2=Look.UpdateifUI();
       //  Debug.Log("UIstate"+UIstate);
         check2DObjectClicked();
-       // checkclick();
+        checkclick();
         
     }
     
@@ -124,12 +125,18 @@ public class click : MonoBehaviour
             }
             
             else if(hit.collider.name=="Password"){
+                // 獲取當前場景的名稱
+                string currentSceneName = SceneManager.GetActiveScene().name;
                 if(CheckInput.UpdateChangeScene())Application.LoadLevel(3);
+                else if(!CheckInput.UpdateChangeScene()&&currentSceneName == "Scene night")Application.LoadLevel(1);
                 Debug.Log("切換場景 " );
              
             }
             else if(hit.collider.name=="closebtn"){
                  Application.LoadLevel(3);
+            }
+            else if(hit.collider.name=="car"){
+                 Application.LoadLevel(1);
             }
             else if(hit.collider.name=="paint_room"){
              
@@ -137,9 +144,14 @@ public class click : MonoBehaviour
                       Debug.Log("切換場景 " );
                
             }
-             else if(hit.collider.name=="magic_room"){
+             else if((hit.collider.name=="magic_room"||hit.collider.name=="light4")&&glow.Updateinside()){
              
                      Application.LoadLevel(4);
+               
+            }
+             else if(hit.collider.name=="gohall_btn "||hit.collider.name=="go hall_L"){
+                    Debug.Log("去大廳");
+                    SceneManager.LoadScene("Scene Hall");
                
             }
 

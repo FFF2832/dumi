@@ -14,7 +14,13 @@ void Start(){
     }
 void Update()
 {
-     if (EnterKey.UpdatepasswordCorrect()||deerKey.UpdateallObjectsDisappeared())
+     if (EnterKey.UpdatepasswordCorrect())
+    {
+        
+        spriteChange.sprite = sprite2;
+    
+    }
+    if (deerKey.UpdateallObjectsDisappeared())
     {
         
         spriteChange.sprite = sprite2;

@@ -39,7 +39,7 @@ public class key_F3change : MonoBehaviour
           Destroy(layer2);
         Destroy(layer3);
           Destroy(layer4);
-          changekey_1=true;
+          changekey_2=true;
          }
 
        
