@@ -124,6 +124,26 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             transform.localScale = originalScale * 7f; // 可以調整放大倍數
             Debug.Log("(3): " + targetTransform.name + ", position: " + eventData.position);
          }
+         else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "鹿頭_背包鑰匙F2"){
+            transform.localScale = originalScale * 2f; // 可以調整放大倍數
+            Debug.Log("(3): " + targetTransform.name + ", position: " + eventData.position);
+         }
+        else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "correctKey"){
+            transform.localScale = originalScale * 2f; // 可以調整放大倍數
+            Debug.Log("(3): " + targetTransform.name + ", position: " + eventData.position);
+         }
+        else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "鹿頭_背包鑰匙F1"){
+            transform.localScale = originalScale * 2f; // 可以調整放大倍數
+            Debug.Log("(3): " + targetTransform.name + ", position: " + eventData.position);
+         }
+        else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "鹿頭_背包鑰匙F4"){
+            transform.localScale = originalScale * 2f; // 可以調整放大倍數
+            Debug.Log("(3): " + targetTransform.name + ", position: " + eventData.position);
+         }
+        else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "key_F3"){
+            transform.localScale = originalScale * 2f; // 可以調整放大倍數
+            Debug.Log("(3): " + targetTransform.name + ", position: " + eventData.position);
+         }
         
         // // 放大物品
         // transform.localScale = originalScale * 3f; // 可以調整放大倍數
