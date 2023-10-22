@@ -56,8 +56,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
      private void Awake()
     {
         // 初始化陣列
-        itemCorrect = new bool[10];
-        positionCorrect = new bool[10];
+        itemCorrect = new bool[20];
+        positionCorrect = new bool[20];
         //放大
          originalScale = transform.localScale; // 儲存原始尺寸
        // rectTransform = GetComponent<RectTransform>();
@@ -327,15 +327,15 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             
         
       }
-    //    else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "鹿頭_背包鑰匙F4")){
-    //          itemCorrect[10]=true;
-    //           itemcorrect=10;
-    //         if(  positionCorrect[10]){
-    //             Destroy(gameObject);
-    //          }   
+       else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "鹿頭_背包鑰匙F4")){
+             itemCorrect[10]=true;
+              itemcorrect=10;
+            if(  positionCorrect[10]){
+                Destroy(gameObject);
+             }   
             
         
-    //   }
+      }
       else  {
         correct=false;
             // 如果沒有碰撞到目標，將物體放回原來的位置
@@ -415,10 +415,10 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
               positionCorrect[9]=true;
            
         }
-        // else if(targetTransform.name =="heartkeyspcae"){
-        //       positionCorrect[10]=true;
+        else if(targetTransform.name =="heartkeyspcae"){
+              positionCorrect[10]=true;
            
-        // }
+        }
     }
     else if (collision.tag == "TargetObject")
     {
@@ -640,18 +640,18 @@ public static bool checkkey_F3correct()
    // Debug.Log("checktire1: " + tire1ok);
     return key_F3correct;
 }
-// public static bool checkkey_F4correct()
-// {
-//     // 檢查對應索引位置的值是否相等且不為 0
-//     if (positionCorrect[10]&& itemCorrect[10])
-//     {
-//         key_F4correct = true;
-//     }
-//     else
-//     {
-//         key_F4correct = false;
-//     }
-//    // Debug.Log("checktire1: " + tire1ok);
-//     return key_F4correct;
-// }
+public static bool checkkey_F4correct()
+{
+    // 檢查對應索引位置的值是否相等且不為 0
+    if (positionCorrect[10]&& itemCorrect[10])
+    {
+        key_F4correct = true;
+    }
+    else
+    {
+        key_F4correct = false;
+    }
+   // Debug.Log("checktire1: " + tire1ok);
+    return key_F4correct;
+}
 }

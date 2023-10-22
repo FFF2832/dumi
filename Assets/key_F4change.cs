@@ -26,15 +26,15 @@ public class key_F4change : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //   if (ItemOndrag.checkkey_F4correct())
-        // {
-        //     Debug.Log("有"+ItemOndrag.checkkey_F4correct());
+          if (ItemOndrag.checkkey_F4correct())
+        {
+            Debug.Log("有4"+ItemOndrag.checkkey_F4correct());
        
-        //  RemoveItem(itemToRemove1);
-        //  Destroy(layer1);
-        //   Destroy(layer2);
-        //   changekey_1=true;
-        //  }
+         RemoveItem(itemToRemove1);
+         Destroy(layer1);
+          Destroy(layer2);
+          changekey_1=true;
+         }
 
        
     }
