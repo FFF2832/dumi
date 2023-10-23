@@ -34,6 +34,9 @@ public class itemOnworld : MonoBehaviour
     public float initialScaleFactor = 0.2f; // 指定的初始缩放倍数
 
     private Vector3 originalScale;
+    //
+   private bool isCollected = false;
+
     private void Start()
     {
     //     // 检查物体的销毁状态
@@ -43,6 +46,17 @@ public class itemOnworld : MonoBehaviour
     //        isDestroyed = true;
     //    }
         //sparkle.SetActive(true);
+
+        // 檢查物品是否已被收集
+    if (PlayerPrefs.GetInt("IsCollected_" + thisItem.itemName, 0) == 1)
+    {
+        // 如果已被收集，你可以隱藏物品或者改變其外觀
+        isCollected = true;
+        gameObject.SetActive(false); // 隱藏物品
+        // 或者改變物品的外觀
+        // spriteRenderer.sprite = collectedSprite;
+    }
+    
        
     }
   private void Update(){
@@ -64,8 +78,34 @@ public class itemOnworld : MonoBehaviour
     }  
    
    } 
+   //原始addItem()
+//      public void AddNewItem(item thisItem){
+//     if(!playerInventory.itemList.Contains(thisItem)){
+//          //playerInventory.itemList.Add(thisItem);
+//           //未刪CreateNewItem
+//          //InventoryManager.CreateNewItem(thisItem);
+//          for(int i=0;i<playerInventory.itemList.Count;i++){
+//                 if(playerInventory.itemList[i]==null){
+//                         playerInventory.itemList[i]=thisItem;
+//                          // 開始移動動畫
+//                         // StartCoroutine(MoveItemToTargetPosition(itemObject));
+                   
+//                         break;
+//                 }
+//          }
+//     }
+//     else {
+//         thisItem.itemHeild += 1;
+//     }
+//     InventoryManager.RefreshItem(); 
+//    }
    public void AddNewItem(item thisItem){
-    if(!playerInventory.itemList.Contains(thisItem)){
+    
+     if (!isCollected)
+    {
+        // 將物品添加到玩家背包的相應邏輯
+        // ...
+        if(!playerInventory.itemList.Contains(thisItem)){
          //playerInventory.itemList.Add(thisItem);
           //未刪CreateNewItem
          //InventoryManager.CreateNewItem(thisItem);
@@ -78,9 +118,16 @@ public class itemOnworld : MonoBehaviour
                         break;
                 }
          }
-    }
-    else {
+        }
+        else {
         thisItem.itemHeild += 1;
+        }
+        
+        // 設置物品為已收集
+        isCollected = true;
+        // 保存物品狀態
+        PlayerPrefs.SetInt("IsCollected_" + thisItem.itemName, 1);
+        PlayerPrefs.Save();
     }
     InventoryManager.RefreshItem(); 
    }
@@ -89,7 +136,7 @@ public class itemOnworld : MonoBehaviour
 {
     if (Input.GetMouseButtonDown(0))
     {
-       // Debug.Log("Mouse is pressed down");
+       
         Camera cam = Camera.main;
 
         //Raycast depends on camera projection mode
@@ -250,6 +297,7 @@ public  void OnButtonClick()
         // 设置初始缩放
         transform.localScale = originalScale * initialScaleFactor;
         AddNewItem(thisItem);
+       
         // 更改UI物品的Image组件的Sprite
         if (itemImage != null && newSprite != null)
         {
@@ -257,7 +305,9 @@ public  void OnButtonClick()
         }
         // 启动协程，实现平滑移动
         StartCoroutine(MoveToTargetPosition(Recttarget.position));
+        
     }
+    
    
   }  
      // 协程用于平滑移动

@@ -101,6 +101,9 @@ public class click : MonoBehaviour
              else if(hit.collider.name=="球"){
                 OnBtnShowClick2();
             }
+            else if(hit.collider.name=="btn-paint"&&glow.Updateinside()){
+                OnBtnShowClick3(); 
+            }
             else if(hit.collider.name=="paint"&&glow.Updateinside()){
                 OnBtnShowClick3();
               
