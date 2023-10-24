@@ -999,7 +999,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 758496258}
-  - component: {fileID: 758496257}
+  - component: {fileID: 758496259}
   m_Layer: 0
   m_Name: gameManager
   m_TagString: Untagged
@@ -1007,23 +1007,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &758496257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758496256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332c103505a7e2b4fa3f45905da551d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectStates:
-  - gameObject: {fileID: 1543115259}
-    position: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0, w: 0}
-    isDeleted: 0
 --- !u!4 &758496258
 Transform:
   m_ObjectHideFlags: 0
@@ -1039,6 +1022,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &758496259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758496256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a30d8143cd208184b9f0d6308bf37927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &792549191
 GameObject:
   m_ObjectHideFlags: 0
@@ -7529,7 +7524,7 @@ GameObject:
   - component: {fileID: 1543115263}
   - component: {fileID: 1543115264}
   m_Layer: 0
-  m_Name: "\u6A39\u679D\u672C\u4EBA"
+  m_Name: branch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7668,6 +7663,13 @@ MonoBehaviour:
   movementSpeed: 25
   moveSprite: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
   animator: {fileID: 1543115262}
+  Recttarget: {fileID: 0}
+  moveSpeed: 2
+  shrinkSpeed: 0.1
+  itemImage: {fileID: 0}
+  newSprite: {fileID: 0}
+  initialScaleFactor: 0.2
+  isCollected: 0
 --- !u!1001 &1559565888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8827,7 +8829,6 @@ GameObject:
   - component: {fileID: 2011898327}
   - component: {fileID: 2011898326}
   - component: {fileID: 2011898325}
-  - component: {fileID: 2011898324}
   - component: {fileID: 2011898323}
   m_Layer: 0
   m_Name: lookicon (2)
@@ -8853,20 +8854,6 @@ MonoBehaviour:
   fingerCursorTexture: {fileID: 0}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
---- !u!114 &2011898324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011898322}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47bfdd1e60dad6a43b1468dc6b840693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Button: {fileID: 0}
-  talkUI: {fileID: 0}
 --- !u!61 &2011898325
 BoxCollider2D:
   m_ObjectHideFlags: 0

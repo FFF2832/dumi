@@ -35,8 +35,25 @@ public class itemOnworld : MonoBehaviour
 
     private Vector3 originalScale;
     //
-   private bool isCollected = false;
+  
+    public  bool isCollected;
 
+     private void Awake()
+    {
+         
+        // 在這裡檢查物品是否已被收集，但不要馬上重置 isCollected
+        if (PlayerPrefs.GetInt("IsCollected_" + thisItem.itemName, 0) == 1)
+        {
+            // 如果已被收集，你可以隱藏物品或者改變其外觀
+            isCollected = true;
+             if(isCollected)gameObject.SetActive(false); // 隱藏物品
+            //gameObject.SetActive(false); // 隱藏物品
+            // 或者改變物品的外觀
+            // spriteRenderer.sprite = collectedSprite
+        }
+        
+        // 不要在這裡重置 isCollected
+    }
     private void Start()
     {
     //     // 检查物体的销毁状态
@@ -48,18 +65,19 @@ public class itemOnworld : MonoBehaviour
         //sparkle.SetActive(true);
 
         // 檢查物品是否已被收集
-    if (PlayerPrefs.GetInt("IsCollected_" + thisItem.itemName, 0) == 1)
-    {
-        // 如果已被收集，你可以隱藏物品或者改變其外觀
-        isCollected = true;
-        gameObject.SetActive(false); // 隱藏物品
-        // 或者改變物品的外觀
-        // spriteRenderer.sprite = collectedSprite;
-    }
+    // if (PlayerPrefs.GetInt("IsCollected_" + thisItem.itemName, 0) == 1)
+    // {
+    //     // 如果已被收集，你可以隱藏物品或者改變其外觀
+    //     isCollected = true;
+    //     gameObject.SetActive(false); // 隱藏物品
+       
+    // }
     
        
     }
   private void Update(){
+    
+   
     check2DObjectClicked();
      if (isMoving)
         {
@@ -99,6 +117,12 @@ public class itemOnworld : MonoBehaviour
 //     }
 //     InventoryManager.RefreshItem(); 
 //    }
+     public void SaveItemState()
+    {
+        // 使用物品的名稱作為唯一標識，保存物品的狀態
+        PlayerPrefs.SetInt("IsCollected_" + thisItem.itemName, isCollected ? 1 : 0);
+        PlayerPrefs.Save();
+    }
    public void AddNewItem(item thisItem){
     
      if (!isCollected)
@@ -124,12 +148,16 @@ public class itemOnworld : MonoBehaviour
         }
         
         // 設置物品為已收集
-        isCollected = true;
-        // 保存物品狀態
-        PlayerPrefs.SetInt("IsCollected_" + thisItem.itemName, 1);
-        PlayerPrefs.Save();
+            isCollected = true;
+
+            // 保存物品狀態
+            SaveItemState();
+
+            // 隱藏物品
+            gameObject.SetActive(false);
     }
     InventoryManager.RefreshItem(); 
+    Debug.Log("isCollected"+isCollected);
    }
 
    void check2DObjectClicked()
@@ -165,9 +193,9 @@ public class itemOnworld : MonoBehaviour
             // if(Enlarge.UpdateifUI()){
 
             // }
-            if(hit.collider.name=="樹枝本人"){
+            if(hit.collider.name=="branch"){
              
-                Debug.Log("We hit " + hit.collider.name);
+                //Debug.Log("We hit " + hit.collider.name);
                 SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
                 spriteRenderer.sprite = moveSprite;
                 animator.enabled = false;
@@ -434,7 +462,17 @@ public  void OnButtonClick()
         }
     }
 
+    public void ResetItem()
+    {
+        // 重置物品狀態
+        isCollected = false;
+        // 啟用物品遊戲物件
+        gameObject.SetActive(true);
 
+        // 清除 PlayerPrefs 中的收集狀態
+        PlayerPrefs.DeleteKey("IsCollected_" + thisItem.itemName);
+        PlayerPrefs.Save();
+    }
 
 
 

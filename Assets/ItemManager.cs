@@ -2,23 +2,20 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class ItemData
+    private void Start()
     {
-        public string itemName;
-        public bool isCollected;
+   
+        RestartGame();
     }
 
-    public void CollectItem(string itemName)
+    public void RestartGame()
     {
-        // 更新物品狀態並保存
-        // ...
-    }
-
-    public bool IsItemCollected(string itemName)
-    {
-        // 檢查物品狀態
-        // ...
-        return true;
+        // 這個方法應該在遊戲重新開始時調用，以重置所有物品的狀態
+        itemOnworld[] allItems = FindObjectsOfType<itemOnworld>();
+        foreach (itemOnworld item in allItems)
+        {
+            // 設置isCollected為false
+            item.isCollected = false;
+        }
     }
 }
