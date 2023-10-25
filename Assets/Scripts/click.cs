@@ -13,6 +13,11 @@ public class click : MonoBehaviour
     public Vector2 hotSpot = Vector2.zero;
     private bool UIstate;
      private bool UIstate2;
+     private CheckInput checkInputInstance;
+     
+    void Start(){
+         checkInputInstance = new CheckInput();
+    }
     void Update()
     {
         UIstate=Enlarge.UpdateisMouseOverobj();
@@ -127,10 +132,11 @@ public class click : MonoBehaviour
                
             }
             
-            else if(hit.collider.name=="Password"){
+            else if(hit.collider.name=="Password"||hit.collider.name=="lookicon_car"){
                 // 獲取當前場景的名稱
                 string currentSceneName = SceneManager.GetActiveScene().name;
-                if(CheckInput.UpdateChangeScene())Application.LoadLevel(3);
+                if(checkInputInstance.UpdatechangeSceneFlag()==1)Application.LoadLevel(3);
+                else if(CheckInput.UpdateChangeScene())Application.LoadLevel(3);
                 else if(!CheckInput.UpdateChangeScene()&&currentSceneName == "Scene night")Application.LoadLevel(1);
                 Debug.Log("切換場景 " );
              
