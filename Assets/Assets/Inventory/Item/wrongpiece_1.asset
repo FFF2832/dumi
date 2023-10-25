@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: wrongpiece_1
   m_EditorClassIdentifier: 
   itemName: 
-  itemImage: {fileID: 21300000, guid: 0da3930229b4b0042baf1318a0dd7690, type: 3}
+  itemImage: {fileID: 21300000, guid: 05e1b38ad2241174ba6497f7f203bdfb, type: 3}
   detailedItemImage: {fileID: 21300000, guid: 0da3930229b4b0042baf1318a0dd7690, type: 3}
   itemHeild: 0
   itemInfo: 

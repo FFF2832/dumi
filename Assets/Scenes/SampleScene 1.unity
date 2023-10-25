@@ -1055,6 +1055,7 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   newSprite: {fileID: 0}
   initialScaleFactor: 0.2
+  isCollected: 0
 --- !u!212 &80290295
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12147,7 +12148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &415569423
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14220,6 +14221,7 @@ MonoBehaviour:
   itemImage: {fileID: 520962415}
   newSprite: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
   initialScaleFactor: 0.2
+  isCollected: 0
 --- !u!114 &520962418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15505,6 +15507,7 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   newSprite: {fileID: 0}
   initialScaleFactor: 0.2
+  isCollected: 0
 --- !u!1 &603607651
 GameObject:
   m_ObjectHideFlags: 0
@@ -16585,6 +16588,7 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   newSprite: {fileID: 0}
   initialScaleFactor: 0.2
+  isCollected: 0
 --- !u!114 &678564448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18837,6 +18841,7 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   newSprite: {fileID: 0}
   initialScaleFactor: 0.2
+  isCollected: 0
 --- !u!50 &829449974
 Rigidbody2D:
   serializedVersion: 4
@@ -19298,6 +19303,7 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   newSprite: {fileID: 0}
   initialScaleFactor: 0.2
+  isCollected: 0
 --- !u!223 &879175954
 Canvas:
   m_ObjectHideFlags: 0
@@ -19731,6 +19737,7 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   newSprite: {fileID: 0}
   initialScaleFactor: 0.2
+  isCollected: 0
 --- !u!1 &898236578
 GameObject:
   m_ObjectHideFlags: 0
@@ -24763,6 +24770,7 @@ MonoBehaviour:
   itemImage: {fileID: 1228548994}
   newSprite: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
   initialScaleFactor: 0.2
+  isCollected: 0
 --- !u!114 &1228548997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26171,6 +26179,7 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   newSprite: {fileID: 0}
   initialScaleFactor: 0.2
+  isCollected: 0
 --- !u!1 &1371566339
 GameObject:
   m_ObjectHideFlags: 0
@@ -26275,6 +26284,7 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   newSprite: {fileID: 0}
   initialScaleFactor: 0.2
+  isCollected: 0
 --- !u!114 &1371566344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31641,6 +31651,7 @@ MonoBehaviour:
   itemImage: {fileID: 1646249294}
   newSprite: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
   initialScaleFactor: 0.2
+  isCollected: 0
 --- !u!1 &1649477243
 GameObject:
   m_ObjectHideFlags: 0
@@ -33529,6 +33540,7 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   newSprite: {fileID: 0}
   initialScaleFactor: 0.2
+  isCollected: 0
 --- !u!61 &1772262374
 BoxCollider2D:
   m_ObjectHideFlags: 0

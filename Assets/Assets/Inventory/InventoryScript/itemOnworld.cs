@@ -37,25 +37,28 @@ public class itemOnworld : MonoBehaviour
     //
   
     public  bool isCollected;
-
+    
      private void Awake()
     {
-         
-        // 在這裡檢查物品是否已被收集，但不要馬上重置 isCollected
-        if (PlayerPrefs.GetInt("IsCollected_" + thisItem.itemName, 0) == 1)
+       
+        // 在这里檢查物品是否已被收集，但不要馬上重置 isCollected
+    if (PlayerPrefs.GetInt("IsCollected_" + thisItem.itemName, 0) == 1)
+    {
+        // 如果已被收集，你可以隱藏物品或者改變其外觀
+        isCollected = true;
+        if (isCollected)
         {
-            // 如果已被收集，你可以隱藏物品或者改變其外觀
-            isCollected = true;
-             if(isCollected)gameObject.SetActive(false); // 隱藏物品
-            //gameObject.SetActive(false); // 隱藏物品
-            // 或者改變物品的外觀
-            // spriteRenderer.sprite = collectedSprite
+            gameObject.SetActive(false); // 隱藏物品
         }
-        
-        // 不要在這裡重置 isCollected
+    }
+    else
+    {
+        isCollected = false; // 如果未被收集，将 isCollected 设置为 false
+    }
     }
     private void Start()
     {
+         
     //     // 检查物体的销毁状态
     //    if (PlayerPrefs.GetInt("IsItemDestroy_" + gameObject.name, 0) == 1)
     //    {
@@ -77,7 +80,7 @@ public class itemOnworld : MonoBehaviour
     }
   private void Update(){
     
-   
+  // Debug.Log("isCollected"+isCollected);
     check2DObjectClicked();
      if (isMoving)
         {
@@ -157,7 +160,7 @@ public class itemOnworld : MonoBehaviour
             gameObject.SetActive(false);
     }
     InventoryManager.RefreshItem(); 
-    Debug.Log("isCollected"+isCollected);
+    
    }
 
    void check2DObjectClicked()
@@ -201,6 +204,7 @@ public class itemOnworld : MonoBehaviour
                 animator.enabled = false;
                 AddNewItem(thisItem);
                    isMoving = true;
+                   isCollected =true;
                 // Destroy(hit.collider);
                 //  Destroy(gameObject);
              //   isDestroyed = true;
@@ -474,7 +478,12 @@ public  void OnButtonClick()
         PlayerPrefs.Save();
     }
 
-
+     private void OnApplicationQuit()
+    {
+        // 在游戏退出时将特定的PlayerPrefs值重置为0
+        PlayerPrefs.SetInt("IsCollected_" + thisItem.itemName, 0);
+        PlayerPrefs.Save();
+    }
 
 
 }

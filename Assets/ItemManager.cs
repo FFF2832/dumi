@@ -8,7 +8,7 @@ public class ItemManager : MonoBehaviour
         RestartGame();
     }
 
-    public void RestartGame()
+    public static void RestartGame()
     {
         // 這個方法應該在遊戲重新開始時調用，以重置所有物品的狀態
         itemOnworld[] allItems = FindObjectsOfType<itemOnworld>();
@@ -16,6 +16,7 @@ public class ItemManager : MonoBehaviour
         {
             // 設置isCollected為false
             item.isCollected = false;
+            //PlayerPrefs.SetInt("IsCollected_branch", 0);
         }
     }
 }
