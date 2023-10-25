@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac374cd419dedeb4b837844d3f8b453c, type: 3}
   m_Name: key5
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: key5
   itemImage: {fileID: 21300000, guid: f2ac40eaee0944d4ba1be71a67e72751, type: 3}
   detailedItemImage: {fileID: 21300000, guid: f8c7fb21bd21903449d7cbeebef54ad8, type: 3}
-  itemHeild: 0
+  itemHeild: 2
   itemInfo: 
   equip: 0
   itemID: 0
