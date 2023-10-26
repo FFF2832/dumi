@@ -14,8 +14,27 @@ public class clue : MonoBehaviour, IPointerClickHandler
     public float initialScaleFactor = 0.2f; // 指定的初始缩放倍数
 
     private Vector3 originalScale;
-
-
+       public  bool isCollected;
+    
+     private void Awake()
+    {
+       
+        // 在这里檢查物品是否已被收集，但不要馬上重置 isCollected
+    if (PlayerPrefs.GetInt("IsCollected_" + thisItem.itemName, 0) == 1)
+    {
+        // 如果已被收集，你可以隱藏物品或者改變其外觀
+        isCollected = true;
+        if (isCollected)
+        {
+            gameObject.SetActive(false); // 隱藏物品
+        }
+    }
+    else
+    {
+        isCollected = false; // 如果未被收集，将 isCollected 设置为 false
+    }
+    }
+    
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("點擊了UI物品：" + name);
@@ -60,23 +79,66 @@ public class clue : MonoBehaviour, IPointerClickHandler
     }
     public item thisItem;
    public Inventory playerInventory;
-     public void AddNewItem(){
-    if(!playerInventory.itemList.Contains(thisItem)){
+//      public void AddNewItem(){
+//     if(!playerInventory.itemList.Contains(thisItem)){
+//          //playerInventory.itemList.Add(thisItem);
+//           //未刪CreateNewItem
+//          //InventoryManager.CreateNewItem(thisItem);
+//          for(int i=0;i<playerInventory.itemList.Count;i++){
+//                 if(playerInventory.itemList[i]==null){
+//                         playerInventory.itemList[i]=thisItem;
+//                         break;
+//                 }
+//          }
+//     }
+//     else {
+//         thisItem.itemHeild += 1;
+//     }
+//     InventoryManager.RefreshItem(); 
+    
+//    }
+  public void AddNewItem(){
+    
+     if (!isCollected)
+    {
+        // 將物品添加到玩家背包的相應邏輯
+        // ...
+        if(!playerInventory.itemList.Contains(thisItem)){
          //playerInventory.itemList.Add(thisItem);
           //未刪CreateNewItem
          //InventoryManager.CreateNewItem(thisItem);
          for(int i=0;i<playerInventory.itemList.Count;i++){
                 if(playerInventory.itemList[i]==null){
                         playerInventory.itemList[i]=thisItem;
+                         // 開始移動動畫
+                        // StartCoroutine(MoveItemToTargetPosition(itemObject));
+                   
                         break;
                 }
          }
-    }
-    else {
+        }
+        else {
         thisItem.itemHeild += 1;
+        }
+        
+        // 設置物品為已收集
+            isCollected = true;
+
+            // 保存物品狀態
+            SaveItemState();
+
+            // 隱藏物品
+            gameObject.SetActive(false);
     }
     InventoryManager.RefreshItem(); 
     
    }
+
+      public void SaveItemState()
+    {
+        // 使用物品的名稱作為唯一標識，保存物品的狀態
+        PlayerPrefs.SetInt("IsCollected_" + thisItem.itemName, isCollected ? 1 : 0);
+        PlayerPrefs.Save();
+    }
    
 }

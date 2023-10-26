@@ -11272,6 +11272,7 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   newSprite: {fileID: 0}
   initialScaleFactor: 0.2
+  isCollected: 0
   thisItem: {fileID: 11400000, guid: a81ade8dcad6f644e8f60b09860374dc, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
 --- !u!114 &347735883
@@ -33762,6 +33763,7 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   newSprite: {fileID: 0}
   initialScaleFactor: 0.2
+  isCollected: 0
   thisItem: {fileID: 11400000, guid: fc145e7b0642f8f4b892f49d7f0d64dd, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
 --- !u!114 &1780397015

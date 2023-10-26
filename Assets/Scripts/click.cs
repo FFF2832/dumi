@@ -135,7 +135,11 @@ public class click : MonoBehaviour
             else if(hit.collider.name=="Password"||hit.collider.name=="lookicon_car"){
                 // 獲取當前場景的名稱
                 string currentSceneName = SceneManager.GetActiveScene().name;
-                if(checkInputInstance.UpdatechangeSceneFlag()==1)Application.LoadLevel(3);
+                if(checkInputInstance.UpdatechangeSceneFlag()==1){
+                    //checkInputInstance.ChangeTonight();
+                    Application.LoadLevel(3);
+                   
+                    }
                 else if(CheckInput.UpdateChangeScene())Application.LoadLevel(3);
                 else if(!CheckInput.UpdateChangeScene()&&currentSceneName == "Scene night")Application.LoadLevel(1);
                 Debug.Log("切換場景 " );

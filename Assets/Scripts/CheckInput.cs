@@ -115,123 +115,166 @@ public class CheckInput : MonoBehaviour
     // 从PlayerPrefs中获取ChangeScene标志
     private static int changeSceneFlag;
     public static bool ChangeScene ;
-     
-    void Start()
-    {
+    private Enlarge enlargeScript; // 引用Enlarge脚本的变量
+  
+     private void Awake()
+     {
+        enlargeScript = GetComponent<Enlarge>();
         spriteChange = GetComponent<SpriteRenderer>();
 
-    // 从PlayerPrefs中获取ChangeScene标志的值
-    changeSceneFlag = PlayerPrefs.GetInt("ChangeSceneFlag", 0);
+        // 从PlayerPrefs中获取ChangeScene标志的值
+        changeSceneFlag = PlayerPrefs.GetInt("ChangeSceneFlag", 0);
 
-    if (changeSceneFlag == 1)
-    {
-        ChangeScene = true;
-    }
-    else
-    {
-        ChangeScene = false;
-    }
-
-    popupCanvas.gameObject.SetActive(false);
-    }
-
-
-     private void Awake()
-    {
-       
-        // 在这里檢查物品是否已被收集，但不要馬上重置 isCollected
-    if (changeSceneFlag == 1)
-    {
+       // 在这里檢查物品是否已被收集，但不要馬上重置 isCollected
+        if (changeSceneFlag == 1)
+        {
          spriteChange.sprite = sprite3; // 切換成第二個圖片
         // 如果已被收集，你可以隱藏物品或者改變其外觀
-        ChangeScene = true;
-        if (ChangeScene)
-        {
-             spriteChange.sprite = sprite3; // 切換成第二個圖片
+            ChangeScene = true;
+            spriteChange.sprite = sprite3; // 切換成第二個圖片
+            
         }
-    }
-    else
-    {
+        else
+        {
         ChangeScene = false; // 如果未被收集，将 isCollected 设置为 false
-    }
-    }
+        }
+
+        popupCanvas.gameObject.SetActive(false);
+     }
+    // void Start()
+    // {
+    //     enlargeScript = GetComponent<Enlarge>();
+    //     spriteChange = GetComponent<SpriteRenderer>();
+
+    // // 从PlayerPrefs中获取ChangeScene标志的值
+    // changeSceneFlag = PlayerPrefs.GetInt("ChangeSceneFlag", 0);
+
+    // if (changeSceneFlag == 1)
+    // {
+    //     ChangeScene = true;
+    // }
+    // else
+    // {
+    //     ChangeScene = false;
+    // }
+
+    // popupCanvas.gameObject.SetActive(false);
+    // }
+
+
+    //  private void Awake()
+    // {
+       
+    //     // 在这里檢查物品是否已被收集，但不要馬上重置 isCollected
+    //     if (changeSceneFlag == 1)
+    //     {
+    //      spriteChange.sprite = sprite3; // 切換成第二個圖片
+    //     // 如果已被收集，你可以隱藏物品或者改變其外觀
+    //         ChangeScene = true;
+    //         spriteChange.sprite = sprite3; // 切換成第二個圖片
+        
+    //     }
+    //     else
+    //     {
+    //     ChangeScene = false; // 如果未被收集，将 isCollected 设置为 false
+    //     }
+    // }
 
     // Update is called once per frame
     void Update()
     {
-        // 如果Canvas可见，开始计时
-        if (isPopupVisible)
+        //場景未切換
+        if(changeSceneFlag==0)
         {
-            popupTimer += Time.deltaTime;
+                // 如果Canvas可见，开始计时
+                if (isPopupVisible)
+                {
+                popupTimer += Time.deltaTime;
 
-            // 如果计时超过指定的持续时间，隐藏Canvas并重置计时器
-            if (popupTimer >= popupDuration)
+                    // 如果计时超过指定的持续时间，隐藏Canvas并重置计时器
+                    if (popupTimer >= popupDuration)
+                    {
+                    popupCanvas.gameObject.SetActive(false);
+                    popupCanvas.enabled = false;
+                    isPopupVisible = false;
+                    Destroy(popupCanvas);
+                    }
+                }
+            //沒有輸入密碼
+            if (!PassWord.checkInput())
             {
-                popupCanvas.gameObject.SetActive(false);
-                popupCanvas.enabled = false;
-                isPopupVisible = false;
-            }
-        }
-
-        if (!PassWord.checkInput())
-        {
-            if (ItemOndrag.checktire1())
-            {
-                // 在正確的位置上且拖曳的物品輪胎1，更換成 sprite1
-                spriteChange.sprite = sprite1;
-            }
-            else if (ItemOndrag.checktire2())
-            {
-                // 在正確的位置上且拖曳的物品是輪胎2，更換成 sprite2
-                spriteChange.sprite = sprite2;
-            }
-            else if (ItemOndrag.checktire1() && ItemOndrag.checktire2())
-            {
-                spriteChange.sprite = sprite3; // 切換好車
-                popupCanvas.gameObject.SetActive(true);
-                isPopupVisible = true;
+                if (ItemOndrag.checktire1())
+                {
+                    // 在正確的位置上且拖曳的物品輪胎1，更換成 sprite1
+                    spriteChange.sprite = sprite1;
+                }
+                else if (ItemOndrag.checktire2())
+                {
+                    // 在正確的位置上且拖曳的物品是輪胎2，更換成 sprite2
+                    spriteChange.sprite = sprite2;
+                }
+                else if (ItemOndrag.checktire1() && ItemOndrag.checktire2())
+                {
+                    spriteChange.sprite = sprite3; // 切換好車
+                    popupCanvas.gameObject.SetActive(true);
+                    isPopupVisible = true;
+                }
+                else
+                {
+                    //壞車，顯示 sprite4
+                    spriteChange.sprite = sprite4;
+                }
             }
             else
             {
-                //壞車，顯示 sprite4
-                spriteChange.sprite = sprite4;
+                //輸入密碼且輪胎皆放置成功
+                if (PassWord.checkInput() && ItemOndrag.checktire1() && ItemOndrag.checktire2()) // 呼叫 PassWord 的 checkInput 方法，回傳 bool 值
+                {
+                    spriteChange.sprite = sprite3; // 切換好車
+
+                    // 设置ChangeScene为true
+                    ChangeScene = true;
+
+                    // 将ChangeScene标志存储在PlayerPrefs中
+                    PlayerPrefs.SetInt("ChangeSceneFlag", 1);
+                    PlayerPrefs.Save();
+
+                    popupCanvas.gameObject.SetActive(true);
+                    isPopupVisible = true;
+                }
+                else
+                {
+                    spriteChange.sprite = sprite4; // 切換成第二個圖片
+
+                    // 设置ChangeScene为false
+                    ChangeScene = false;
+
+                    // 将ChangeScene标志存储在PlayerPrefs中
+                    PlayerPrefs.SetInt("ChangeSceneFlag", 0);
+                    PlayerPrefs.Save();
+                }
             }
         }
-        else
-        {
-            if (PassWord.checkInput() && ItemOndrag.checktire1() && ItemOndrag.checktire2()) // 呼叫 PassWord 的 checkInput 方法，回傳 bool 值
+        //場景已切換
+        else {
+            spriteChange.sprite = sprite3; // 切換好車
+            
+
+            if (enlargeScript != null)
             {
-                spriteChange.sprite = sprite3; // 切換好車
-
-                // 设置ChangeScene为true
-                ChangeScene = true;
-
-                // 将ChangeScene标志存储在PlayerPrefs中
-                PlayerPrefs.SetInt("ChangeSceneFlag", 1);
-                PlayerPrefs.Save();
-
-                popupCanvas.gameObject.SetActive(true);
-                isPopupVisible = true;
+            // 禁用Enlarge脚本
+            enlargeScript.enabled = false;
             }
-            else
-            {
-                spriteChange.sprite = sprite4; // 切換成第二個圖片
-
-                // 设置ChangeScene为false
-                ChangeScene = false;
-
-                // 将ChangeScene标志存储在PlayerPrefs中
-                PlayerPrefs.SetInt("ChangeSceneFlag", 0);
-                PlayerPrefs.Save();
-            }
+           
+            
+              
         }
+        
     }
         public void ChangeTonight(){
         if(changeSceneFlag==1) {
         spriteChange.sprite = sprite3; // 切換好車
         Application.LoadLevel(3);
-        
-
         }
 
    } 
@@ -239,7 +282,7 @@ public class CheckInput : MonoBehaviour
         return ChangeScene;
    }
    public  int UpdatechangeSceneFlag(){
-        if(changeSceneFlag==1)spriteChange.sprite = sprite3; // 切換好車
+       
         return changeSceneFlag;
    }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac374cd419dedeb4b837844d3f8b453c, type: 3}
   m_Name: wrongpiece_2
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: wrong_2
   itemImage: {fileID: 21300000, guid: 05e1b38ad2241174ba6497f7f203bdfb, type: 3}
   detailedItemImage: {fileID: 21300000, guid: 76f6bc5303b5a5e4cbe2d803d0ad03ca, type: 3}
   itemHeild: 0

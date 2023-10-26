@@ -11,6 +11,7 @@ public class Enlarge : MonoBehaviour
     public Vector2 hotSpot = Vector2.zero;
     //public static bool ifUI;
     private static bool isMouseOverobj;
+    
     void Start()
     {
         // 隐藏 Canvas
