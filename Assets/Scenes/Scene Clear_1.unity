@@ -13553,7 +13553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eba3bac10cb4eb48bbae9969b9a8b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 4
   myBag: {fileID: 419882699}
   password: {fileID: 0}
 --- !u!212 &1922059529

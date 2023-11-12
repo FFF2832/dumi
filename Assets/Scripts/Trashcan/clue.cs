@@ -79,66 +79,66 @@ public class clue : MonoBehaviour, IPointerClickHandler
     }
     public item thisItem;
    public Inventory playerInventory;
-//      public void AddNewItem(){
-//     if(!playerInventory.itemList.Contains(thisItem)){
-//          //playerInventory.itemList.Add(thisItem);
-//           //未刪CreateNewItem
-//          //InventoryManager.CreateNewItem(thisItem);
-//          for(int i=0;i<playerInventory.itemList.Count;i++){
-//                 if(playerInventory.itemList[i]==null){
-//                         playerInventory.itemList[i]=thisItem;
-//                         break;
-//                 }
-//          }
-//     }
-//     else {
-//         thisItem.itemHeild += 1;
-//     }
-//     InventoryManager.RefreshItem(); 
-    
-//    }
-  public void AddNewItem(){
-    
-     if (!isCollected)
-    {
-        // 將物品添加到玩家背包的相應邏輯
-        // ...
-        if(!playerInventory.itemList.Contains(thisItem)){
+     public void AddNewItem(){
+    if(!playerInventory.itemList.Contains(thisItem)){
          //playerInventory.itemList.Add(thisItem);
           //未刪CreateNewItem
          //InventoryManager.CreateNewItem(thisItem);
          for(int i=0;i<playerInventory.itemList.Count;i++){
                 if(playerInventory.itemList[i]==null){
                         playerInventory.itemList[i]=thisItem;
-                         // 開始移動動畫
-                        // StartCoroutine(MoveItemToTargetPosition(itemObject));
-                   
                         break;
                 }
          }
-        }
-        else {
+    }
+    else {
         thisItem.itemHeild += 1;
-        }
-        
-        // 設置物品為已收集
-            isCollected = true;
-
-            // 保存物品狀態
-            SaveItemState();
-
-            // 隱藏物品
-            gameObject.SetActive(false);
     }
     InventoryManager.RefreshItem(); 
     
    }
+//   public void AddNewItem(){
+    
+//      if (!isCollected)
+//     {
+//         // 將物品添加到玩家背包的相應邏輯
+//         // ...
+//         if(!playerInventory.itemList.Contains(thisItem)){
+//          //playerInventory.itemList.Add(thisItem);
+//           //未刪CreateNewItem
+//          //InventoryManager.CreateNewItem(thisItem);
+//          for(int i=0;i<playerInventory.itemList.Count;i++){
+//                 if(playerInventory.itemList[i]==null){
+//                         playerInventory.itemList[i]=thisItem;
+//                          // 開始移動動畫
+//                         // StartCoroutine(MoveItemToTargetPosition(itemObject));
+                   
+//                         break;
+//                 }
+//          }
+//         }
+//         else {
+//         thisItem.itemHeild += 1;
+//         }
+        
+//         // 設置物品為已收集
+//             isCollected = true;
 
-      public void SaveItemState()
-    {
-        // 使用物品的名稱作為唯一標識，保存物品的狀態
-        PlayerPrefs.SetInt("IsCollected_" + thisItem.itemName, isCollected ? 1 : 0);
-        PlayerPrefs.Save();
-    }
+//             // 保存物品狀態
+//             SaveItemState();
+
+//             // 隱藏物品
+//             gameObject.SetActive(false);
+//     }
+//     InventoryManager.RefreshItem(); 
+    
+//    }
+
+//       public void SaveItemState()
+//     {
+//         // 使用物品的名稱作為唯一標識，保存物品的狀態
+//         PlayerPrefs.SetInt("IsCollected_" + thisItem.itemName, isCollected ? 1 : 0);
+//         PlayerPrefs.Save();
+//     }
    
 }

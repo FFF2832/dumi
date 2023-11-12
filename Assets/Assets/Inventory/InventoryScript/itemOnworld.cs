@@ -84,7 +84,7 @@ public class itemOnworld : MonoBehaviour
     check2DObjectClicked();
      if (isMoving)
         {
-          
+          //Debug.Log("isMoving"+isMoving);
             MoveItemToTargetPosition();
         }
       
@@ -139,15 +139,15 @@ public class itemOnworld : MonoBehaviour
          for(int i=0;i<playerInventory.itemList.Count;i++){
                 if(playerInventory.itemList[i]==null){
                         playerInventory.itemList[i]=thisItem;
-                         // 開始移動動畫
-                        // StartCoroutine(MoveItemToTargetPosition(itemObject));
+                        //  // 開始移動動畫
+                        //  MoveItemToTargetPosition();
                    
                         break;
                 }
          }
         }
         else {
-        thisItem.itemHeild += 1;
+        // thisItem.itemHeild += 1;
         }
         
         // 設置物品為已收集
@@ -157,7 +157,7 @@ public class itemOnworld : MonoBehaviour
             SaveItemState();
 
             // 隱藏物品
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
     }
     InventoryManager.RefreshItem(); 
     
@@ -287,8 +287,7 @@ public class itemOnworld : MonoBehaviour
                 Debug.Log("We hit " + hit.collider.name);
                 AddNewItem(thisItem);
                  isMoving = true;
-                // Destroy(hit.collider);
-                // Destroy(gameObject);
+              
     
             }
              else  if(hit.collider.name=="key_f1"){

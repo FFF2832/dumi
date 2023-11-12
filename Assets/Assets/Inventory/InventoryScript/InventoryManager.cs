@@ -66,8 +66,8 @@ public class InventoryManager : MonoBehaviour
     // public static void UpdateItemID(int itemID){
     //     instance.itemInformation.text=itemDescription;
     // }
-     //未刪
-    //將item 的資料傳送到 slot
+    //  未刪
+    // 將item 的資料傳送到 slot
     // public static void  CreateNewItem(item item){
     //     slot newItem=Instantiate(instance.slotPrefab,instance.slotGrid.transform.position,Quaternion.identity);
     //     //子集
@@ -77,43 +77,130 @@ public class InventoryManager : MonoBehaviour
     //     newItem.slotImage.sprite=item.itemImage;
         
     // }
-     //用來計算數量
-    public static void RefreshItem()
-    {
-        //清除舊格子和清單(原版)
-        for (int i = 0; i < instance.slotGrid.transform.childCount; i++)
-        {
+    //  原版
+    // public static void RefreshItem()
+    // {
+    //     //清除舊格子和清單(原版)
+    //     for (int i = 0; i < instance.slotGrid.transform.childCount; i++)
+    //     {
            
-            if(instance.slotGrid.transform.childCount==0)break;
-            Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
-            instance.slots.Clear();
-        }
-         Debug.Log(instance.slotGrid.transform.childCount);
+    //         if(instance.slotGrid.transform.childCount==0)break;
+    //         Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
+    //         instance.slots.Clear();
+    //         if(instance.myBag.itemList.Count==0){
+    //             instance.slots.Add(Instantiate(instance.emptySlot));
+    //              instance.slots[0].transform.SetParent(instance.slotGrid.transform);
+    //              instance.slots[0].GetComponent<slot>().SetupSlot(instance.myBag.itemList[0]);
+    //         }
+    //     }
+    //      Debug.Log(instance.myBag.itemList.Count);
 
-        //   //清除舊格子和清單
-        // for (int i = 0; i < instance.slotGrid.transform.childCount; i++)
-        // {
-        //     if(instance.slotGrid.transform.childCount==0)break;
-        //     //   if(i==0){
-        //     //     instance.slots.Add(Instantiate(instance.emptySlot));
+    //     //   //清除舊格子和清單
+    //     // for (int i = 0; i < instance.slotGrid.transform.childCount; i++)
+    //     // {
+    //     //     if(instance.slotGrid.transform.childCount==0)break;
+    //     //     //   if(i==0){
+    //     //     //     instance.slots.Add(Instantiate(instance.emptySlot));
                 
-        //     //   }
-        //     else{Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
-        //     instance.slots.Clear();}
-        // }
+    //     //     //   }
+    //     //     else{Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
+    //     //     instance.slots.Clear();}
+    //     // }
 
-        //重新生成對應的slot
-        for (int i = 0; i < instance.myBag.itemList.Count ; i++)
-        {
-             //未刪
-            //CreateNewItem(instance.myBag.itemList[i]);
-            instance.slots.Add(Instantiate(instance.emptySlot));
-            instance.slots[i].transform.SetParent(instance.slotGrid.transform);
-            instance.slots[i].GetComponent<slot>().SetupSlot(instance.myBag.itemList[i]);
-        }
+    //     //重新生成對應的slot
+    //     for (int i = 0; i < instance.myBag.itemList.Count ; i++)
+    //     {
+    //          //未刪
+    //         //CreateNewItem(instance.myBag.itemList[i]);
+    //         instance.slots.Add(Instantiate(instance.emptySlot));
+    //         instance.slots[i].transform.SetParent(instance.slotGrid.transform);
+    //         instance.slots[i].GetComponent<slot>().SetupSlot(instance.myBag.itemList[i]);
+    //     }
         
+    // }
+//   public static void RefreshItem()
+// {
+//     // 清除舊格子和清單(原版)
+//     for (int i = 0; i < instance.slotGrid.transform.childCount; i++)
+//     {
+//         Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
+
+//     }
+
+//     instance.slots.Clear();
+
+//     Debug.Log(instance.myBag.itemList.Count);
+
+//     // 如果背包為空，新增一個空格子
+//     if (instance.myBag.itemList.Count == 0)
+//     {
+//         // 新增一個空物品到 itemList
+//         instance.myBag.itemList.Add(null);
+
+//         GameObject newEmptySlot = Instantiate(instance.emptySlot);
+//         newEmptySlot.transform.SetParent(instance.slotGrid.transform);
+//         instance.slots.Add(newEmptySlot);
+//         newEmptySlot.GetComponent<slot>().SetupSlot(instance.myBag.itemList[0]);
+//     }
+//     else
+//     {
+//         // 重新生成對應的 slot
+//         for (int i = 0; i < instance.myBag.itemList.Count; i++)
+//         {
+//             // 創建新的物品格子
+//             GameObject newSlot = Instantiate(instance.emptySlot);
+//             newSlot.transform.SetParent(instance.slotGrid.transform);
+//             instance.slots.Add(newSlot);
+
+//             // 將物品資料設置到格子中
+//             newSlot.GetComponent<slot>().SetupSlot(instance.myBag.itemList[i]);
+            
+//         }
+//     }
+// }
+public static void RefreshItem()
+{
+    // 清除舊格子和清單(原版)
+    for (int i = 0; i < instance.slotGrid.transform.childCount; i++)
+    {
+        Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
     }
-    
+
+    instance.slots.Clear();
+
+    Debug.Log(instance.myBag.itemList.Count);
+
+    // 保持格子數量為7
+    int targetSlotCount = 7;
+
+    // 如果背包為空，新增空格子
+    while (instance.myBag.itemList.Count < targetSlotCount)
+    {
+        // 新增一個空物品到 itemList
+        instance.myBag.itemList.Add(null);
+
+        GameObject newEmptySlot = Instantiate(instance.emptySlot);
+        newEmptySlot.transform.SetParent(instance.slotGrid.transform);
+        instance.slots.Add(newEmptySlot);
+        newEmptySlot.GetComponent<slot>().SetupSlot(instance.myBag.itemList[instance.myBag.itemList.Count - 1]);
+    }
+
+    // 重新生成對應的 slot
+    for (int i = 0; i < instance.myBag.itemList.Count; i++)
+    {
+        // 創建新的物品格子
+        GameObject newSlot = Instantiate(instance.emptySlot);
+        newSlot.transform.SetParent(instance.slotGrid.transform);
+        instance.slots.Add(newSlot);
+
+        // 將物品資料設置到格子中
+        newSlot.GetComponent<slot>().SetupSlot(instance.myBag.itemList[i]);
+    }
+}
+
+
           
- 
+
+
+
 }

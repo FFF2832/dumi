@@ -106,10 +106,10 @@ public class click : MonoBehaviour
              else if(hit.collider.name=="球"){
                 OnBtnShowClick2();
             }
-            else if(hit.collider.name=="btn-paint"&&glow.Updateinside()){
+            else if((hit.collider.name=="btn-paint"||hit.collider.name=="light_glow")&&glow.Updateinside()){
                 OnBtnShowClick3(); 
             }
-            else if(hit.collider.name=="paint"&&glow.Updateinside()){
+            else if((hit.collider.name=="paint"||hit.collider.name=="light_glow")&&glow.Updateinside()){
                 OnBtnShowClick3();
               
             }
@@ -117,6 +117,7 @@ public class click : MonoBehaviour
                 OnBtnShowClick3();
                 
             }
+           
             else if(hit.collider.name=="Bagicon"){
              
                 
