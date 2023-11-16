@@ -22140,7 +22140,7 @@ MonoBehaviour:
   shrinkSpeed: 0.1
   itemImage: {fileID: 1780397015}
   newSprite: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
-  initialScaleFactor: 0.1
+  initialScaleFactor: 0.2
   isCollected: 0
   thisItem: {fileID: 11400000, guid: 08780d8df7130564e983f52d1f3059cd, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}

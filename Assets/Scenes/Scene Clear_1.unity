@@ -6915,7 +6915,6 @@ GameObject:
   m_Component:
   - component: {fileID: 462418985}
   - component: {fileID: 462418984}
-  - component: {fileID: 462418986}
   - component: {fileID: 462418987}
   m_Layer: 0
   m_Name: "\u8ECA\u756B(\u65E5)"
@@ -6991,22 +6990,6 @@ Transform:
   m_Father: {fileID: 1710117572}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &462418986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462418983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffd0ed019bc9819459c3ea7ef0986484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  fingerCursorTexture: {fileID: 2800000, guid: 391f97da05cf45240a8ecdec752cd9be, type: 3}
-  cursorMode: 0
-  hotSpot: {x: 24, y: 22}
 --- !u!61 &462418987
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11029,7 +11012,6 @@ GameObject:
   - component: {fileID: 1404461135}
   - component: {fileID: 1404461138}
   - component: {fileID: 1404461136}
-  - component: {fileID: 1404461139}
   m_Layer: 0
   m_Name: cabinet
   m_TagString: Untagged
@@ -11130,22 +11112,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1404461139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404461134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffd0ed019bc9819459c3ea7ef0986484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  fingerCursorTexture: {fileID: 0}
-  cursorMode: 0
-  hotSpot: {x: 24, y: 24}
 --- !u!1 &1418450549
 GameObject:
   m_ObjectHideFlags: 0

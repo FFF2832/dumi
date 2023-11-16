@@ -64,15 +64,16 @@ public class Enlarge : MonoBehaviour
     }
     void OnMouseEnter()
     {
-        //Debug.Log("HOVER");
+       
         Cursor.SetCursor(fingerCursorTexture, hotSpot, cursorMode); // 使用手指指针纹理
-    
+        Debug.Log("Mouse entered: " + gameObject.name);
     }
 
     void OnMouseExit()
     {
         // Pass 'null' to the texture parameter to use the default system cursor.
         Cursor.SetCursor(null, Vector2.zero, cursorMode);
+         Debug.Log("Mouse exited: " + gameObject.name);
     }
     // public static bool UpdateifUI(){
     //   //  Debug.Log("ifUI"+ifUI);

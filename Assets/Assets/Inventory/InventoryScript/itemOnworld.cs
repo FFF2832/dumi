@@ -314,11 +314,26 @@ public class itemOnworld : MonoBehaviour
 public  void OnButtonClick()
     {
        
+        // AddNewItem(thisItem);
+       
+        // isMoving = true;
+
+        //  Destroy(gameObject);
+
+          // 在這裡添加你想要的點擊功能邏輯
+        originalScale = transform.localScale;
+
+        // 设置初始缩放
+        transform.localScale = originalScale * initialScaleFactor;
         AddNewItem(thisItem);
        
-        isMoving = true;
-
-         Destroy(gameObject);
+        // 更改UI物品的Image组件的Sprite
+        if (itemImage != null && newSprite != null)
+        {
+            itemImage.sprite = newSprite;
+        }
+        // 启动协程，实现平滑移动
+        StartCoroutine(MoveToTargetPosition(Recttarget.position));
     }
   public  void correctKey(){
     if(keyChange.changekey_1){
