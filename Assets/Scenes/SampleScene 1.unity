@@ -12150,7 +12150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &415569423
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16586,11 +16586,11 @@ MonoBehaviour:
   moveSprite: {fileID: 0}
   animator: {fileID: 0}
   Recttarget: {fileID: 1740970912}
-  moveSpeed: 2
+  moveSpeed: 3
   shrinkSpeed: 0.1
   itemImage: {fileID: 678564445}
-  newSprite: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
-  initialScaleFactor: 0.2
+  newSprite: {fileID: 21300000, guid: 5c3f96cbb8e1a2b44843ccd80951cf2a, type: 3}
+  initialScaleFactor: 1
   isCollected: 0
 --- !u!114 &678564448
 MonoBehaviour:
@@ -19811,11 +19811,11 @@ MonoBehaviour:
   moveSprite: {fileID: 0}
   animator: {fileID: 0}
   Recttarget: {fileID: 1740970912}
-  moveSpeed: 2
+  moveSpeed: 3
   shrinkSpeed: 0.1
   itemImage: {fileID: 892448101}
-  newSprite: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
-  initialScaleFactor: 0.2
+  newSprite: {fileID: 21300000, guid: 5c3f96cbb8e1a2b44843ccd80951cf2a, type: 3}
+  initialScaleFactor: 1
   isCollected: 0
 --- !u!1 &898236578
 GameObject:
@@ -26221,11 +26221,11 @@ MonoBehaviour:
   moveSprite: {fileID: 0}
   animator: {fileID: 0}
   Recttarget: {fileID: 1740970912}
-  moveSpeed: 2
+  moveSpeed: 3
   shrinkSpeed: 0.1
   itemImage: {fileID: 1368579072}
-  newSprite: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
-  initialScaleFactor: 0.2
+  newSprite: {fileID: 21300000, guid: 5c3f96cbb8e1a2b44843ccd80951cf2a, type: 3}
+  initialScaleFactor: 1
   isCollected: 0
 --- !u!1 &1371566339
 GameObject:
@@ -26326,11 +26326,11 @@ MonoBehaviour:
   moveSprite: {fileID: 0}
   animator: {fileID: 0}
   Recttarget: {fileID: 1740970912}
-  moveSpeed: 2
+  moveSpeed: 3
   shrinkSpeed: 0.1
   itemImage: {fileID: 1371566341}
-  newSprite: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
-  initialScaleFactor: 0.2
+  newSprite: {fileID: 21300000, guid: 5c3f96cbb8e1a2b44843ccd80951cf2a, type: 3}
+  initialScaleFactor: 1
   isCollected: 0
 --- !u!114 &1371566344
 MonoBehaviour:
@@ -33658,11 +33658,11 @@ MonoBehaviour:
   moveSprite: {fileID: 0}
   animator: {fileID: 0}
   Recttarget: {fileID: 1740970912}
-  moveSpeed: 2
+  moveSpeed: 3
   shrinkSpeed: 0.1
   itemImage: {fileID: 1772262371}
-  newSprite: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
-  initialScaleFactor: 0.2
+  newSprite: {fileID: 21300000, guid: 5c3f96cbb8e1a2b44843ccd80951cf2a, type: 3}
+  initialScaleFactor: 1
   isCollected: 0
 --- !u!61 &1772262374
 BoxCollider2D:

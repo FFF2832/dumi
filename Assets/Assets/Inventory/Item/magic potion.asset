@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: magic potion
   m_EditorClassIdentifier: 
   itemName: 
-  itemImage: {fileID: 21300000, guid: f0f4ec4d873b7414ebea2aa0c1c04126, type: 3}
-  detailedItemImage: {fileID: 21300000, guid: f0f4ec4d873b7414ebea2aa0c1c04126, type: 3}
+  itemImage: {fileID: 21300000, guid: 8d0b87d31c7dff14b85a2632bb08cdb5, type: 3}
+  detailedItemImage: {fileID: 21300000, guid: 729740d1e580d8f44975ed28c7964bd0, type: 3}
   itemHeild: 0
   itemInfo: 
   equip: 0
