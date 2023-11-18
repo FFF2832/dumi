@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 //按下按鈕成功或失敗要在圖層最上方
 public class PotionBottle : MonoBehaviour
 {
@@ -25,6 +27,10 @@ public class PotionBottle : MonoBehaviour
 
     public item thisItem;
     public Inventory playerInventory;
+    public Canvas popupCanvas; // 在Unity编辑器中将Canvas拖拽到这个字段中
+    public float popupDuration = 2f; // 指定弹出Canvas的持续时间，以秒为单位
+    private bool isPopupVisible = false; // 用于跟踪Canvas是否可见
+    private float popupTimer = 0f; // 用于计时显示Canvas的时间
 
 //動畫
     //  private Animator anim; 
@@ -50,6 +56,24 @@ public class PotionBottle : MonoBehaviour
         requiredMaterials[2] = "lip";
         requiredMaterials[3] = "fan";
         requiredMaterials[4] = "water";
+
+        popupCanvas.gameObject.SetActive(false);
+    }
+    void Update(){
+        // 如果Canvas可见，开始计时
+                if (isPopupVisible)
+                {
+                popupTimer += Time.deltaTime;
+
+                    // 如果计时超过指定的持续时间，隐藏Canvas并重置计时器
+                    if (popupTimer >= popupDuration)
+                    {
+                    popupCanvas.gameObject.SetActive(false);
+                    popupCanvas.enabled = false;
+                    isPopupVisible = false;
+                    Destroy(popupCanvas);
+                    }
+                }
     }
    
     // 檢查是否成功製作藥水
@@ -261,6 +285,7 @@ public void startBrew(string materialName ){
             {
                 sortOrder=1;
                 sucessPotion=2;
+                // sucessPotion=1;
                // throwMaterial=false;
                 //ShowFailureMessage();
                 
@@ -268,6 +293,14 @@ public void startBrew(string materialName ){
                 // 延遲換場景，例如延遲 2 秒
             float delayInSeconds = 4.0f;
             Invoke("LoadNextScene", delayInSeconds);
+
+            }
+            if(sucessPotion==1)
+            {  
+            popupCanvas.gameObject.SetActive(true);
+            isPopupVisible = true;
+            float delayInSeconds = 5.0f;
+            Invoke("LoadNextScene", delayInSeconds); 
 
             }
         }

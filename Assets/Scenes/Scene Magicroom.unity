@@ -6508,7 +6508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &329506354
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10934,7 +10934,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083143763}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b11942d7e23474b469148499ae468e75, type: 3}
   m_Name: 
@@ -12365,6 +12365,8 @@ MonoBehaviour:
   materialImage5: {fileID: 603076316}
   thisItem: {fileID: 11400000, guid: 57b36390129800b4daf7c6dbb0f8402a, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
+  popupCanvas: {fileID: 1083143768}
+  popupDuration: 3
 --- !u!61 &1476417916
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14228,6 +14230,8 @@ MonoBehaviour:
   materialImage5: {fileID: 0}
   thisItem: {fileID: 11400000, guid: 57b36390129800b4daf7c6dbb0f8402a, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
+  popupCanvas: {fileID: 0}
+  popupDuration: 2
 --- !u!50 &1814645351
 Rigidbody2D:
   serializedVersion: 4
