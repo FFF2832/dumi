@@ -14,9 +14,11 @@ public class click : MonoBehaviour
     private bool UIstate;
      private bool UIstate2;
      private CheckInput checkInputInstance;
+    private glow glowInstance; // 假設你有一個 glow 實例的引用
      
     void Start(){
          checkInputInstance = new CheckInput();
+        glowInstance = GetComponent<glow>(); 
     }
     void Update()
     {
@@ -90,7 +92,7 @@ public class click : MonoBehaviour
         if (hit&&!UIstate)
         {
            
-            if(hit.collider.name=="樹枝畫"&&glow.Updateinside()&&!UIstate){
+            if(hit.collider.name=="樹枝畫"&&!UIstate){
                
                 OnBtnShowClick1();
 
@@ -106,10 +108,10 @@ public class click : MonoBehaviour
              else if(hit.collider.name=="球"){
                 OnBtnShowClick2();
             }
-            else if((hit.collider.name=="btn-paint"||hit.collider.name=="light_glow")&&glow.Updateinside()){
+            else if((hit.collider.name=="btn-paint"||hit.collider.name=="light_glow")&&glowInstance.Updateinside()){
                 OnBtnShowClick3(); 
             }
-            else if((hit.collider.name=="paint"||hit.collider.name=="light_glow")&&glow.Updateinside()){
+            else if(hit.collider.name=="paint"&&glowInstance.Updateinside()){
                 OnBtnShowClick3();
               
             }
@@ -158,7 +160,7 @@ public class click : MonoBehaviour
                       Debug.Log("切換場景 " );
                
             }
-             else if((hit.collider.name=="magic_room"||hit.collider.name=="light4")&&glow.Updateinside()){
+             else if((hit.collider.name=="magic_room"||hit.collider.name=="light4")){
              
                      Application.LoadLevel(4);
                

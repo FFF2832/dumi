@@ -20,7 +20,7 @@ public class additemChangeImage : MonoBehaviour
     {
         spriteChange = GetComponent<Image>();
           if (spriteChange == null) {
-        Debug.LogError("Image component not found!");
+        //Debug.LogError("Image component not found!");
     }
     }
 
@@ -82,7 +82,7 @@ public void AddNewItem(item thisItem){
 }
 public static bool isok() // 宣告為靜態方法，回傳靜態變數 Check
     {
-    Debug.Log("有ok "+ok );
+    //Debug.Log("有ok "+ok );
         return ok;
     } 
 }

@@ -9,13 +9,13 @@ public class glow : MonoBehaviour
     private CanvasGroup canvasGroup;
      //private SpriteRenderer sprite;
     private float fadeTime =0.3f;
-    private static bool inside;
+    private  bool inside;
      private void Start()
     {
         //sprite=GetComponent<SpriteRenderer>();
          canvasGroup = GetComponent<CanvasGroup>();
          inside=false;
-        Debug.Log("inside"+inside);
+        // Debug.Log("inside"+inside);
     }
 
     void Awake(){
@@ -23,12 +23,13 @@ public class glow : MonoBehaviour
         light_glow.DOFade(0f,0.01f);
         //canvasGroup=this.transform.Find("Canvas").GetComponent<CanvasGroup>();
         //canvasGroup.DOFade(0f,0.01f);
+           inside=false;
     }
     void OnTriggerEnter2D(Collider2D other)
     {        
          Debug.Log("in");
         inside=true;
-         Debug.Log("inside"+inside);
+      
         //sprite.DOFade(0f,0.01f);
         canvasGroup.DOFade(1f,fadeTime);
         light_glow.DOFade(1f,fadeTime);
@@ -38,7 +39,7 @@ public class glow : MonoBehaviour
      void OnTriggerExit2D(Collider2D other)
     {
         inside=false;
-         Debug.Log("inside"+inside);
+      
         //inform.SetActive(false);
         Debug.Log("out");
         
@@ -48,7 +49,8 @@ public class glow : MonoBehaviour
         canvasGroup.DOFade(0, 5);
         
     }
-    public static bool Updateinside(){
+    public  bool Updateinside(){
+        Debug.Log("inside"+inside);
         return inside;
     }
 
