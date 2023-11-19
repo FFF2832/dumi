@@ -1288,6 +1288,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2932236854678246735, guid: dfb9a610c87eeba4f9bf1a78c27f4916, type: 3}
+      propertyPath: dialogIllustrate3
+      value: 
+      objectReference: {fileID: 21300000, guid: 7e758902e1ab8054ea5ed10183919c5e, type: 3}
     - target: {fileID: 2932236855760579774, guid: dfb9a610c87eeba4f9bf1a78c27f4916, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.090026855
