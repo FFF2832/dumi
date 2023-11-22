@@ -171,7 +171,7 @@ public static void RefreshItem()
     Debug.Log(instance.myBag.itemList.Count);
 
     // 保持格子數量為7
-    int targetSlotCount = 7;
+    int targetSlotCount = 6;
 
     // 如果背包為空，新增空格子
     while (instance.myBag.itemList.Count < targetSlotCount)

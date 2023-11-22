@@ -116,11 +116,17 @@ public class CheckInput : MonoBehaviour
     private static int changeSceneFlag;
     public static bool ChangeScene ;
     private Enlarge enlargeScript; // 引用Enlarge脚本的变量
+    private tire1change tire1Change;
   
      private void Awake()
      {
         enlargeScript = GetComponent<Enlarge>();
         spriteChange = GetComponent<SpriteRenderer>();
+        tire1Change=  GetComponent<tire1change>();
+         if (tire1Change == null)
+        {
+        Debug.LogError("tire1change script is not attached or not found.");
+        }
 
         // 从PlayerPrefs中获取ChangeScene标志的值
         changeSceneFlag = PlayerPrefs.GetInt("ChangeSceneFlag", 0);
@@ -227,9 +233,13 @@ public class CheckInput : MonoBehaviour
             }
             else
             {
+
                 //輸入密碼且輪胎皆放置成功
-                if (PassWord.checkInput() && ItemOndrag.checktire1() && ItemOndrag.checktire2()) // 呼叫 PassWord 的 checkInput 方法，回傳 bool 值
+               if (PassWord.checkInput() && ItemOndrag.checktire1() && ItemOndrag.checktire2()) 
+             ///   if (PassWord.checkInput() && PlayerPrefs.GetInt("changeTire1", 1)) 
                 {
+                    Debug.Log("都正確");
+
                     spriteChange.sprite = sprite3; // 切換好車
 
                     // 设置ChangeScene为true

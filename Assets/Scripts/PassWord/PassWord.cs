@@ -93,6 +93,8 @@ Check=false;
 } 
 public static bool checkInput() // 宣告為靜態方法，回傳靜態變數 Check
     {
+        // if(Check)Debug.Log("啟動成功");
+        // else Debug.Log("密碼錯誤");
         return Check;
     }
 }

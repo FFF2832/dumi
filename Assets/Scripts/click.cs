@@ -26,7 +26,7 @@ public class click : MonoBehaviour
         UIstate2=Look.UpdateifUI();
       //  Debug.Log("UIstate"+UIstate);
         check2DObjectClicked();
-        checkclick();
+       // checkclick();
         
     }
     
@@ -111,7 +111,7 @@ public class click : MonoBehaviour
             else if((hit.collider.name=="btn-paint"||hit.collider.name=="light_glow")&&glowInstance.Updateinside()){
                 OnBtnShowClick3(); 
             }
-            else if(hit.collider.name=="paint"&&glowInstance.Updateinside()){
+            else if(hit.collider.name=="paint"){
                 OnBtnShowClick3();
               
             }
@@ -144,8 +144,10 @@ public class click : MonoBehaviour
                    
                     }
                 else if(CheckInput.UpdateChangeScene())Application.LoadLevel(3);
-                else if(!CheckInput.UpdateChangeScene()&&currentSceneName == "Scene night")Application.LoadLevel(1);
+                else if(!CheckInput.UpdateChangeScene()&&currentSceneName == "Scene night"){
+                    Application.LoadLevel(1);
                 Debug.Log("切換場景 " );
+                }
              
             }
             else if(hit.collider.name=="closebtn"){
