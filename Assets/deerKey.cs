@@ -10,6 +10,9 @@ public class deerKey : MonoBehaviour
 
     // private Image spriteChange;
     public static bool allObjectsDisappeared ;
+    public GameObject obj1;
+      public GameObject obj2;
+       public GameObject obj3;
 
     void Start()
     {
@@ -46,9 +49,15 @@ public class deerKey : MonoBehaviour
            
 
         }
+        changekeyImage();
     }
 
     public static bool UpdateallObjectsDisappeared(){
         return allObjectsDisappeared;
+    }
+    public void changekeyImage(){
+        if(PlayerPrefs.GetInt("IsCollected_key1") == 1)Destroy(obj1);
+        if(PlayerPrefs.GetInt("IsCollected_key2") == 1)Destroy(obj2);
+           if(PlayerPrefs.GetInt("IsCollected_key3") == 1)Destroy(obj3);
     }
 }

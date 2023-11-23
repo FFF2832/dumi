@@ -26,7 +26,7 @@ public class click : MonoBehaviour
         UIstate2=Look.UpdateifUI();
       //  Debug.Log("UIstate"+UIstate);
         check2DObjectClicked();
-       // checkclick();
+        checkclick();
         
     }
     

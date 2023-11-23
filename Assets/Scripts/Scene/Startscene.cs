@@ -69,6 +69,10 @@ public class Startscene : MonoBehaviour
                 OnBtnShowClick1();
                 Debug.Log("We hit " + hit.collider.name);
             }
+            if(hit.collider.name=="Skipbutton"){
+                  SceneManager.LoadScene("Scene Start");
+                Debug.Log("We hit " + hit.collider.name);
+            }
               
 
         }

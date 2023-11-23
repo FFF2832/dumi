@@ -9,6 +9,9 @@ public class changeImage : MonoBehaviour
     public Sprite sprite1; // 第一個圖片
     public Sprite sprite2; // 第二個圖片
      private SpriteRenderer spriteChange;
+    //  public Gameobject obj1;
+    //   public Gameobject obj2;
+    //    public Gameobject obj3;
 void Start(){
         spriteChange = GetComponent<SpriteRenderer>();
     }
@@ -20,12 +23,12 @@ void Update()
         spriteChange.sprite = sprite2;
     
     }
-    if (deerKey.UpdateallObjectsDisappeared())
-    {
+    // if (deerKey.UpdateallObjectsDisappeared())
+    // {
         
-        spriteChange.sprite = sprite2;
+    //     spriteChange.sprite = sprite2;
     
-    }
+    // }
    
 
     else

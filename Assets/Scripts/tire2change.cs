@@ -174,6 +174,7 @@ void Update()
         {
             spriteChange.sprite = sprite2; // 更新圖片
             changetire2 = false;
+             PlayerPrefs.SetInt("changeTire2", 1);
         }
         else {
              spriteChange.sprite = sprite1; // 更新圖片

@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene Hall.unity
     guid: 05fab23ac1d166e4f9b71bc87fc7d288
+  - enabled: 1
+    path: Assets/Scenes/Scene OP.unity
+    guid: 9dad028f1eed57f4c84ebedfcec1f925
   m_configObjects: {}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
-
+using UnityEngine.SceneManagement;
 public class VideoManager : MonoBehaviour
 {
  public VideoPlayer videoPlayer;
@@ -28,8 +28,19 @@ public class VideoManager : MonoBehaviour
             vp.clip = videoClips[currentClipIndex];
             vp.Prepare(); // 预加载下一个视频
         }
+         else
+        {
+            // If it's the last video, switch to the next scene
+            SwitchToNextScene();
+            return;
+        }
 
         vp.Play(); // 继续播放
+    }
+    void SwitchToNextScene()
+    {
+        // You can modify "YourNextSceneName" to the name of your next scene
+        SceneManager.LoadScene("Scene Start");
     }
    
 }

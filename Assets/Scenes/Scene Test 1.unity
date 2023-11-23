@@ -7023,6 +7023,7 @@ MonoBehaviour:
   fingerCursorTexture: {fileID: 0}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
+  imageToShow: {fileID: 0}
 --- !u!212 &222329754
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8543,6 +8544,7 @@ MonoBehaviour:
   fingerCursorTexture: {fileID: 2800000, guid: 9c749f273c1ff8741b57eb6ffe55405e, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
+  imageToShow: {fileID: 0}
 --- !u!61 &421855276
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12492,7 +12494,7 @@ PrefabInstance:
     - target: {fileID: 1130935677738354691, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 3c9246a37c7285848b4f7a2fc8366c5e, type: 3}
+      objectReference: {fileID: 8300000, guid: d560a32cca772ef479c5639641f993d3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
 --- !u!1 &784805732
@@ -16755,6 +16757,7 @@ MonoBehaviour:
   fingerCursorTexture: {fileID: 0}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
+  imageToShow: {fileID: 0}
 --- !u!212 &1121615001
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19576,6 +19579,7 @@ MonoBehaviour:
   fingerCursorTexture: {fileID: 0}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
+  imageToShow: {fileID: 0}
 --- !u!1 &1461181029
 GameObject:
   m_ObjectHideFlags: 0
@@ -21159,6 +21163,7 @@ MonoBehaviour:
   fingerCursorTexture: {fileID: 2800000, guid: 9c749f273c1ff8741b57eb6ffe55405e, type: 3}
   cursorMode: 0
   hotSpot: {x: 24, y: 24}
+  imageToShow: {fileID: 0}
 --- !u!61 &1685606435
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25338,6 +25343,7 @@ MonoBehaviour:
   fingerCursorTexture: {fileID: 0}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
+  imageToShow: {fileID: 0}
 --- !u!114 &2105225667
 MonoBehaviour:
   m_ObjectHideFlags: 0

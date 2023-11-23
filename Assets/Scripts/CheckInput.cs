@@ -209,34 +209,59 @@ public class CheckInput : MonoBehaviour
             //沒有輸入密碼
             if (!PassWord.checkInput())
             {
-                if (ItemOndrag.checktire1())
-                {
+                // if (PlayerPrefs.GetInt("changeTire1")==1)
+                // {
+                //     // 在正確的位置上且拖曳的物品輪胎1，更換成 sprite1
+                //     spriteChange.sprite = sprite1;
+                // }
+                // if (PlayerPrefs.GetInt("changeTire2")==1)
+                // {
+                //     // 在正確的位置上且拖曳的物品是輪胎2，更換成 sprite2
+                //     spriteChange.sprite = sprite2;
+                // }
+                // else if (PlayerPrefs.GetInt("changeTire1")==1 && PlayerPrefs.GetInt("changeTire2")==1)
+                // {
+                //     spriteChange.sprite = sprite3; // 切換好車
+                //     popupCanvas.gameObject.SetActive(true);
+                //     isPopupVisible = true;
+                // }
+                // else
+                // {
+                //     //壞車，顯示 sprite4
+                //     spriteChange.sprite = sprite4;
+                // }
+
+                    if (PlayerPrefs.GetInt("changeTire1") == 1)
+                                {
                     // 在正確的位置上且拖曳的物品輪胎1，更換成 sprite1
                     spriteChange.sprite = sprite1;
-                }
-                else if (ItemOndrag.checktire2())
-                {
-                    // 在正確的位置上且拖曳的物品是輪胎2，更換成 sprite2
-                    spriteChange.sprite = sprite2;
-                }
-                else if (ItemOndrag.checktire1() && ItemOndrag.checktire2())
-                {
-                    spriteChange.sprite = sprite3; // 切換好車
-                    popupCanvas.gameObject.SetActive(true);
-                    isPopupVisible = true;
-                }
-                else
-                {
-                    //壞車，顯示 sprite4
-                    spriteChange.sprite = sprite4;
-                }
+                    }
+
+                    if (PlayerPrefs.GetInt("changeTire2") == 1)
+                    {
+                     // 在正確的位置上且拖曳的物品是輪胎2，更換成 sprite2
+                       spriteChange.sprite = sprite2;
+                    }
+
+                    if (PlayerPrefs.GetInt("changeTire1") == 1 && PlayerPrefs.GetInt("changeTire2") == 1)
+                    {
+                        spriteChange.sprite = sprite3; // 切換好車
+                        popupCanvas.gameObject.SetActive(true);
+                        //isPopupVisible = true;
+                    }
+
+                if (!(PlayerPrefs.GetInt("changeTire1") == 1 || PlayerPrefs.GetInt("changeTire2") == 1))
+                    {
+                // 壞車，顯示 sprite4
+                spriteChange.sprite = sprite4;
+                    }
             }
             else
             {
 
                 //輸入密碼且輪胎皆放置成功
-               if (PassWord.checkInput() && ItemOndrag.checktire1() && ItemOndrag.checktire2()) 
-             ///   if (PassWord.checkInput() && PlayerPrefs.GetInt("changeTire1", 1)) 
+              // if (PassWord.checkInput() && ItemOndrag.checktire1() && ItemOndrag.checktire2()) 
+             if (PassWord.checkInput() && PlayerPrefs.GetInt("changeTire1")==1&&PlayerPrefs.GetInt("changeTire2")==1) 
                 {
                     Debug.Log("都正確");
 
