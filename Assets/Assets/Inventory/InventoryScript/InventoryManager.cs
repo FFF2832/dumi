@@ -158,6 +158,47 @@ public class InventoryManager : MonoBehaviour
 //         }
 //     }
 // }
+//7格
+// public static void RefreshItem()
+// {
+//     // 清除舊格子和清單(原版)
+//     for (int i = 0; i < instance.slotGrid.transform.childCount; i++)
+//     {
+//         Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
+//     }
+
+//     instance.slots.Clear();
+
+//     Debug.Log(instance.myBag.itemList.Count);
+
+//     // 保持格子數量為7
+//     int targetSlotCount = 6;
+
+//     // 如果背包為空，新增空格子
+//     while (instance.myBag.itemList.Count < targetSlotCount)
+//     {
+//         // 新增一個空物品到 itemList
+//         instance.myBag.itemList.Add(null);
+
+//         GameObject newEmptySlot = Instantiate(instance.emptySlot);
+//         newEmptySlot.transform.SetParent(instance.slotGrid.transform);
+//         instance.slots.Add(newEmptySlot);
+//         newEmptySlot.GetComponent<slot>().SetupSlot(instance.myBag.itemList[instance.myBag.itemList.Count - 1]);
+//     }
+
+//     // 重新生成對應的 slot
+//     for (int i = 0; i < instance.myBag.itemList.Count; i++)
+//     {
+//         // 創建新的物品格子
+//         GameObject newSlot = Instantiate(instance.emptySlot);
+//         newSlot.transform.SetParent(instance.slotGrid.transform);
+//         instance.slots.Add(newSlot);
+
+//         // 將物品資料設置到格子中
+//         newSlot.GetComponent<slot>().SetupSlot(instance.myBag.itemList[i]);
+//     }
+// }
+
 public static void RefreshItem()
 {
     // 清除舊格子和清單(原版)
@@ -170,34 +211,28 @@ public static void RefreshItem()
 
     Debug.Log(instance.myBag.itemList.Count);
 
-    // 保持格子數量為7
-    int targetSlotCount = 6;
+    // 保持格子數量為12，6個為一排
+    int rows = 2; // 兩排
+    int columns = 6; // 每排六個
 
-    // 如果背包為空，新增空格子
-    while (instance.myBag.itemList.Count < targetSlotCount)
+    for (int row = 0; row < rows; row++)
     {
-        // 新增一個空物品到 itemList
-        instance.myBag.itemList.Add(null);
+        for (int col = 0; col < columns; col++)
+        {
+            // 創建新的物品格子
+            GameObject newSlot = Instantiate(instance.emptySlot);
+            newSlot.transform.SetParent(instance.slotGrid.transform);
+            instance.slots.Add(newSlot);
 
-        GameObject newEmptySlot = Instantiate(instance.emptySlot);
-        newEmptySlot.transform.SetParent(instance.slotGrid.transform);
-        instance.slots.Add(newEmptySlot);
-        newEmptySlot.GetComponent<slot>().SetupSlot(instance.myBag.itemList[instance.myBag.itemList.Count - 1]);
-    }
-
-    // 重新生成對應的 slot
-    for (int i = 0; i < instance.myBag.itemList.Count; i++)
-    {
-        // 創建新的物品格子
-        GameObject newSlot = Instantiate(instance.emptySlot);
-        newSlot.transform.SetParent(instance.slotGrid.transform);
-        instance.slots.Add(newSlot);
-
-        // 將物品資料設置到格子中
-        newSlot.GetComponent<slot>().SetupSlot(instance.myBag.itemList[i]);
+            // 將物品資料設置到格子中
+            int index = row * columns + col;
+            if (index < instance.myBag.itemList.Count)
+            {
+                newSlot.GetComponent<slot>().SetupSlot(instance.myBag.itemList[index]);
+            }
+        }
     }
 }
-
 
           
 
