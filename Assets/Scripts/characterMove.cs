@@ -81,21 +81,23 @@ public class characterMove : MonoBehaviour
 	}
 	private void UpdateAnimationState()
     {
+    //       Debug.Log("Transform position x: " + transform.position.x);
+    // Debug.Log("Last clicked position x: " + lastClickedPos.x);
         MovementState state;
-        if((transform.position.x<lastClickedPos.x)&& moving){
-                state=MovementState.running;
-                sprite.flipX=false;
-                
-        }
-        else if((transform.position.x>lastClickedPos.x)&&moving){
-            state=MovementState.running;
-            sprite.flipX=true;
-            
-        }
-        else if(rb.velocity.x==lastClickedPos.x){
-            state=MovementState.idle;
-             moving = false;
-        }
+        // 設定一個小的閾值
+    float positionThreshold = 0.1f;
+
+    // 檢查角色的移動方向
+    if (transform.position.x < lastClickedPos.x - positionThreshold && moving)
+    {
+        state = MovementState.running;
+        sprite.flipX = false; // 如果角色向左移動，就不翻轉圖片
+    }
+    else if (transform.position.x > lastClickedPos.x + positionThreshold && moving)
+    {
+        state = MovementState.running;
+        sprite.flipX = true; // 如果角色向右移動，翻轉圖片
+    }
         else  {
             state=MovementState.idle;
             moving = false;

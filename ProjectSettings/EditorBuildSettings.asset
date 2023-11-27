@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene OP.unity
     guid: 9dad028f1eed57f4c84ebedfcec1f925
+  - enabled: 1
+    path: Assets/Scenes/Scene nightmare.unity
+    guid: 9cefc59fe1f4d2c48b5cc08eff4216de
+  - enabled: 1
+    path: Assets/Scenes/Scene Disease.unity
+    guid: 3a3d4613c5a4b6d43bbf56035b653e7e
   m_configObjects: {}
