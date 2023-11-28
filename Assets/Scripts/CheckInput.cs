@@ -246,7 +246,7 @@ public class CheckInput : MonoBehaviour
                     if (PlayerPrefs.GetInt("changeTire1") == 1 && PlayerPrefs.GetInt("changeTire2") == 1)
                     {
                         spriteChange.sprite = sprite3; // 切換好車
-                        popupCanvas.gameObject.SetActive(true);
+                       // popupCanvas.gameObject.SetActive(true);
                         //isPopupVisible = true;
                     }
 

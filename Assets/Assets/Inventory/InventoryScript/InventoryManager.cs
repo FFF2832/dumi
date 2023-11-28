@@ -210,10 +210,29 @@ public static void RefreshItem()
     instance.slots.Clear();
 
     Debug.Log(instance.myBag.itemList.Count);
+     // 保持格子數量為7
+    int targetSlotCount = 14; // 兩排，每排7個格子
+
+    // 如果背包為空，新增空格子
+    while (instance.myBag.itemList.Count < targetSlotCount)
+    {
+        // 新增一個空物品到 itemList
+        instance.myBag.itemList.Add(null);
+
+        // GameObject newEmptySlot = Instantiate(instance.emptySlot);
+        // newEmptySlot.transform.SetParent(instance.slotGrid.transform);
+        // instance.slots.Add(newEmptySlot);
+
+        // // 將物品資料設置到格子中
+        // int index = instance.myBag.itemList.Count - 1;
+        // newEmptySlot.GetComponent<slot>().SetupSlot(instance.myBag.itemList[index]);
+    }
+
+
 
     // 保持格子數量為12，6個為一排
     int rows = 2; // 兩排
-    int columns = 6; // 每排六個
+    int columns = 7; // 每排六個
 
     for (int row = 0; row < rows; row++)
     {

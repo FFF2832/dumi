@@ -60,6 +60,8 @@ public class deerKey : MonoBehaviour
     public void changekeyImage(){
         if(PlayerPrefs.GetInt("IsCollected_key1") == 1)Destroy(obj1);
         if(PlayerPrefs.GetInt("IsCollected_key2") == 1)Destroy(obj2);
-           if(PlayerPrefs.GetInt("IsCollected_key3") == 1)Destroy(obj3);
+        if(PlayerPrefs.GetInt("IsCollected_key3") == 1)Destroy(obj3);
+        if(PlayerPrefs.GetInt("IsCollected_key4") == 1)Destroy(obj4);
+        if(PlayerPrefs.GetInt("IsCollected_key5") == 1)Destroy(obj5);
     }
 }
