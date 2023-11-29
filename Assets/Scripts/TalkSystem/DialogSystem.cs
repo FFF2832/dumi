@@ -38,6 +38,7 @@ public class DialogSystem : MonoBehaviour
     public Sprite dialogIllustrate4;
     bool textFinished;  //文本是否显示完毕
     private static bool videoPlayed;
+    private static bool changeScene;
 
     
     bool isTyping;  //是否在逐字显示
@@ -172,10 +173,15 @@ public class DialogSystem : MonoBehaviour
                 headImage.sprite = headNPC;
                 dialogImage.sprite = dialogIllustrate2;
                 index++;
-                break;         
+                break;     
+            case "CS1":
+                textFinished = true; 
+                changeScene=true;
+                break;
             case "学Unity！":
                 textFinished = true; 
                 videoPlayed=true;
+                 
                 break;// 设置对话框和头像的显示...
         }
 
@@ -277,6 +283,10 @@ public class DialogSystem : MonoBehaviour
                 //npcdialogImage.sprite.SetActive(false);
                 index++;
                 break;
+            case "CS1":
+                textFinished = true; 
+                changeScene=true;
+                break;
         }
 
         //每按一次F键播放一行文字
@@ -299,6 +309,9 @@ public class DialogSystem : MonoBehaviour
 
     public static bool UpdatevideoPlayed(){
             return videoPlayed;
+    }
+    public  static bool UpdatechangeScene(){
+            return changeScene;
     }
     public static bool UpadateconversationUI(){
         return conversationUI;

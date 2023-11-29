@@ -17,7 +17,7 @@ void Start(){
     }
 void Update()
 {
-     if (EnterKey.UpdatepasswordCorrect())
+     if (EnterKey.UpdatepasswordCorrect()||PlayerPrefs.GetInt("IsCollected_piece3")==1)
     {
         
         spriteChange.sprite = sprite2;

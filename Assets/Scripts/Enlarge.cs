@@ -12,7 +12,7 @@ public class Enlarge : MonoBehaviour
     //public static bool ifUI;
     private static bool isMouseOverobj;
     public GameObject imageToShow; // 要显示的图像
-    
+    bool isCanvasVisible = false;
     void Start()
     {
         imageToShow.SetActive(false);
@@ -38,11 +38,12 @@ public class Enlarge : MonoBehaviour
             Vector2 objPos = transform.position;
 
           
-            if (mousePos.x >= objPos.x - 0.5f && mousePos.x <= objPos.x + 0.5f
-                && mousePos.y >= objPos.y - 0.5f && mousePos.y <= objPos.y + 0.5f&&!isMouseOverobj)
+            if (mousePos.x >= objPos.x - 0.8f && mousePos.x <= objPos.x + 0.8f
+                && mousePos.y >= objPos.y - 0.8f && mousePos.y <= objPos.y + 0.8f&&!isMouseOverobj)
             {
                 // 显示 Canvas
                 canvas.SetActive(true);
+                isCanvasVisible = true;
                 //ifUI=true;
                 
             }
@@ -55,12 +56,47 @@ public class Enlarge : MonoBehaviour
             // }
             
         }
+       
     }
-    public void closebtnOnclick(){
+    
+    
+
+// void Update()
+// {
+//     if (Input.GetMouseButtonDown(0))
+//     {
+//         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+//         Collider2D hitCollider = Physics2D.OverlapPoint(mousePos);
+
+//         if (hitCollider != null && hitCollider.gameObject == gameObject && !EventSystem.current.IsPointerOverGameObject())
+//         {
+//             if (!isCanvasVisible)
+//             {
+//                 canvas.SetActive(true);
+//                 isCanvasVisible = true;
+//             }
+//         }
+//     }
+// }
+
+// public void closebtnOnclick()
+// {
+//     if (isCanvasVisible)
+//     {
+//         canvas.SetActive(false);
+//         isCanvasVisible = false;
+//     }
+// }
+
+    public void closebtnOnclick()
+{
+    if (isCanvasVisible)
+    {
         canvas.SetActive(false);
+        isCanvasVisible = false;
          isMouseOverobj=false;
-        //ifUI=false;
     }
+}
     void OnMouseEnter()
     {
        
@@ -141,7 +177,12 @@ public class Enlarge : MonoBehaviour
                 Debug.Log("打到了");
                 
             }
-           
+            if(hit.collider.name=="chair"){
+          
+                canvas.SetActive(true);
+              
+                
+            }
             else if(hit.collider.name=="back"){
          
             }

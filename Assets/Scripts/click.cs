@@ -108,17 +108,17 @@ public class click : MonoBehaviour
              else if(hit.collider.name=="球"){
                 OnBtnShowClick2();
             }
-            else if((hit.collider.name=="btn-paint"||hit.collider.name=="light_glow"||hit.collider.name=="light")&&glowInstance.Updateinside()){
+            else if((hit.collider.name=="btn-paint")&&glowInstance.Updateinside()){
                 OnBtnShowClick3(); 
             }
             else if(hit.collider.name=="paint"){
                 OnBtnShowClick3();
               
             }
-            else if(hit.collider.name=="glowobj"){
-                OnBtnShowClick3();
+            // else if(hit.collider.name=="glowobj"){
+            //     OnBtnShowClick3();
                 
-            }
+            // }
            
             else if(hit.collider.name=="Bagicon"){
              
@@ -162,6 +162,7 @@ public class click : MonoBehaviour
                       Debug.Log("切換場景 " );
                
             }
+           
              else if((hit.collider.name=="magic_room"||hit.collider.name=="light4")){
              
                      Application.LoadLevel(4);
@@ -215,17 +216,17 @@ int previousScene = PlayerPrefs.GetInt("PreviousScene");
     Debug.Log("切換場景 " );
    } 
 
-//    void OnMouseEnter()
-//     {
-//         Debug.Log("HOVER");
-//         Cursor.SetCursor(fingerCursorTexture, hotSpot, cursorMode); // 使用手指指针纹理
+   void OnMouseEnter()
+    {
+        Debug.Log("HOVER");
+        Cursor.SetCursor(fingerCursorTexture, hotSpot, cursorMode); // 使用手指指针纹理
     
-//     }
+    }
 
-//     void OnMouseExit()
-//     {
-//         // Pass 'null' to the texture parameter to use the default system cursor.
-//         Cursor.SetCursor(null, Vector2.zero, cursorMode);
-//     }
+    void OnMouseExit()
+    {
+        // Pass 'null' to the texture parameter to use the default system cursor.
+        Cursor.SetCursor(null, Vector2.zero, cursorMode);
+    }
    
 }

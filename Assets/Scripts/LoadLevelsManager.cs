@@ -15,9 +15,14 @@ public class LoadLevelsManager : MonoBehaviour
     {
         //轉場
         animator = GameObject.Find("Crossfade").GetComponent<Animator>();
+      
     }
     private void Update(){
          UIstate=Enlarge.UpdateisMouseOverobj();
+         if(DialogSystem.UpdatechangeScene()){
+            SceneManager.LoadScene("SampleScene 1");
+            Debug.Log("切到第一關");
+         }
     }
 
     private void OnMouseDown()
