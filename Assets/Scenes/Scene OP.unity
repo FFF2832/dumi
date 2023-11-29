@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &113904594 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1130935677738354691, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
+  m_PrefabInstance: {fileID: 129643459}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &129643459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -178,14 +183,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: sound
       objectReference: {fileID: 0}
+    - target: {fileID: 1130935676561806673, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130935677738354691, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1130935677738354691, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
       propertyPath: m_Volume
       value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 1130935677738354691, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130935677738354691, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: e708eb58951a41d4cb4365f1bb742c41, type: 3}
+      objectReference: {fileID: 8300000, guid: 9ae66bba5bcb0c940850cf3736d3a1b2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
 --- !u!1 &325250758
@@ -522,9 +539,9 @@ VideoPlayer:
   m_AspectRatio: 2
   m_DataSource: 0
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 1
   m_TargetAudioSources:
-  - {fileID: 0}
+  - {fileID: 113904594}
   m_DirectAudioVolumes:
   - 1
   m_Url: 
@@ -802,7 +819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 892529109}
   videoClips:
-  - {fileID: 32900000, guid: e1d91a8a0e579ef48a82c652a5e64ee6, type: 3}
+  - {fileID: 32900000, guid: d183d24233d4e284494440892f017503, type: 3}
 --- !u!4 &1608073910
 Transform:
   m_ObjectHideFlags: 0
@@ -885,7 +902,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.57, y: 1.62}
+    oldSize: {x: 2.05, y: 0.46}
     newSize: {x: 2.57, y: 1.62}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -948,7 +965,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 26ec65409e9e7b042a479580acc63b57, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a779706b733653439a73f0c9798fdf0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -967,7 +984,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995828114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.62, y: 3.42, z: -0.05441431}
+  m_LocalPosition: {x: 5.39, y: 4.49, z: -0.05441431}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
