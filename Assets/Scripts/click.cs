@@ -215,6 +215,10 @@ int previousScene = PlayerPrefs.GetInt("PreviousScene");
      Application.LoadLevel(10);
     Debug.Log("切換場景 " );
    } 
+         public void OnBtnShowClick9(){
+     Application.LoadLevel(9);
+    Debug.Log("切換場景 " );
+   } 
 
    void OnMouseEnter()
     {
