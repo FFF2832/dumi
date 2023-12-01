@@ -163,7 +163,7 @@ public class click : MonoBehaviour
                
             }
            // else if((hit.collider.name=="magic_room"||hit.collider.name=="light4"))
-             else if(hit.collider.name=="magic_room"){
+             else if((hit.collider.name=="magic_room"||hit.collider.name=="light4")){
              
                      Application.LoadLevel(4);
                

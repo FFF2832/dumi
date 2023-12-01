@@ -50,6 +50,7 @@ public class Bamboo : MonoBehaviour
         videoPlayer.Play();
         videoCanvas.enabled = true; // 在播放视频时启用Canvas
     }
+    
 
     private void OnVideoEnd(VideoPlayer vp)
     {

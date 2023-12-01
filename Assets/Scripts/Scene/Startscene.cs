@@ -5,19 +5,19 @@ using UnityEngine.SceneManagement;
 public class Startscene : MonoBehaviour
 {
      public GameObject obj;
-      Animator anim;
+    //  Animator anim;
     // Update is called once per frame
     private bool start;
     private void Start()
     {
-          anim = GetComponent<Animator>();
+        //  anim = GetComponent<Animator>();
           start=true;
     }
     void Update()
     {
         
         check2DObjectClicked();
-        anim.SetBool("start", true);
+       // anim.SetBool("start", true);
         
     }
     private void OnMouseDown()
@@ -73,6 +73,10 @@ public class Startscene : MonoBehaviour
                   SceneManager.LoadScene("Scene Start");
                 Debug.Log("We hit " + hit.collider.name);
             }
+            if(hit.collider.name=="paint_room"){
+                  SceneManager.LoadScene("Scene Test");
+                Debug.Log("We hit " + hit.collider.name);
+            }
               
 
         }
@@ -80,7 +84,7 @@ public class Startscene : MonoBehaviour
     
 }
 public void OnBtnShowClick1(){
-     Application.LoadLevel(0);
+     Application.LoadLevel(7);
     Debug.Log("切換場景 " );
    } 
 }

@@ -396,10 +396,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1207999107}
-        m_TargetAssemblyTypeName: Enlarge, Assembly-CSharp
-        m_MethodName: closebtnOnclick
-        m_Mode: 1
+      - m_Target: {fileID: 1229148124}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7932,7 +7932,7 @@ MonoBehaviour:
   thirdCanvas: {fileID: 1215598289}
   startButton: {fileID: 1912049200}
   backButton: {fileID: 1392236408}
-  back2Button: {fileID: 0}
+  back2Button: {fileID: 505005707}
   thirdButton: {fileID: 589111554}
 --- !u!114 &531672148
 MonoBehaviour:
@@ -11473,7 +11473,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1214629774}
+      - m_Target: {fileID: 1476600023}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -14893,11 +14893,6 @@ RectTransform:
   m_AnchoredPosition: {x: 440, y: 53}
   m_SizeDelta: {x: 280, y: 280}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1214629774 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7727293857870749736, guid: 0f5c4476548fa0547b7b01391b7d3ff4, type: 3}
-  m_PrefabInstance: {fileID: 1147061211}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1215598289
 GameObject:
   m_ObjectHideFlags: 0
@@ -15635,7 +15630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -9.73, y: -3.16}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1229148126
@@ -20944,9 +20939,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1260792010}
   - component: {fileID: 1260792014}
-  - component: {fileID: 1260792013}
   - component: {fileID: 1260792012}
-  - component: {fileID: 1260792011}
+  - component: {fileID: 1260792015}
   m_Layer: 0
   m_Name: paint_room
   m_TagString: Untagged
@@ -20969,21 +20963,6 @@ Transform:
   m_Father: {fileID: 1889732323}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1260792011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260792009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25af1bf3af2ae2347b1e967f29423d89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fingerCursorTexture: {fileID: 2800000, guid: 9c749f273c1ff8741b57eb6ffe55405e, type: 3}
-  cursorMode: 0
-  hotSpot: {x: 0, y: 0}
 --- !u!61 &1260792012
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21010,22 +20989,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.7679462, y: 4.6202183}
   m_EdgeRadius: 0
---- !u!114 &1260792013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260792009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc16abbf1abfe71408c1f7d6ff7058f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj: {fileID: 1260792009}
-  fingerCursorTexture: {fileID: 2800000, guid: 9c749f273c1ff8741b57eb6ffe55405e, type: 3}
-  cursorMode: 0
-  hotSpot: {x: 0, y: 0}
 --- !u!212 &1260792014
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21078,6 +21041,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1260792015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260792009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25af1bf3af2ae2347b1e967f29423d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fingerCursorTexture: {fileID: 0}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &1264292299
 GameObject:
   m_ObjectHideFlags: 0
@@ -22156,10 +22134,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1207999107}
-        m_TargetAssemblyTypeName: Enlarge, Assembly-CSharp
-        m_MethodName: closebtnOnclick
-        m_Mode: 1
+      - m_Target: {fileID: 1523727078}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23678,6 +23656,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472449297}
   m_CullTransparentMesh: 1
+--- !u!1 &1476600023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 564641566283598644, guid: 20ce40d37fb5ac8468267b36025004f4, type: 3}
+  m_PrefabInstance: {fileID: 1067392419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1481615156
 GameObject:
   m_ObjectHideFlags: 0
@@ -23968,7 +23951,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -9.73, y: -3.16}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &1526591471
@@ -26406,8 +26389,8 @@ GameObject:
   - component: {fileID: 1766505607}
   - component: {fileID: 1766505606}
   - component: {fileID: 1766505605}
-  - component: {fileID: 1766505604}
   - component: {fileID: 1766505603}
+  - component: {fileID: 1766505608}
   m_Layer: 5
   m_Name: heartkeyspcae
   m_TagString: Target
@@ -26451,27 +26434,6 @@ MonoBehaviour:
   layer2: {fileID: 397844632}
   itemToRemove1: {fileID: 11400000, guid: b0365ba04a0860a41a47c1c290504016, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
---- !u!50 &1766505604
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766505601}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &1766505605
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26482,7 +26444,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -357.21033, y: -48.945236}
@@ -26536,6 +26498,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766505601}
   m_CullTransparentMesh: 1
+--- !u!50 &1766505608
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766505601}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1774533365
 GameObject:
   m_ObjectHideFlags: 0
@@ -30545,7 +30528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2147353184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30570,7 +30553,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3c9246a37c7285848b4f7a2fc8366c5e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.65
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
