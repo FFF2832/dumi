@@ -571,7 +571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3496691416555547193, guid: 20ce40d37fb5ac8468267b36025004f4, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3496691416555547193, guid: 20ce40d37fb5ac8468267b36025004f4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1415,9 +1415,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2932236854275813074, guid: dfb9a610c87eeba4f9bf1a78c27f4916, type: 3}
+      propertyPath: headNPC
+      value: 
+      objectReference: {fileID: 21300000, guid: 845282e93f9aedb458456a0eb8ef812f, type: 3}
+    - target: {fileID: 2932236854275813074, guid: dfb9a610c87eeba4f9bf1a78c27f4916, type: 3}
       propertyPath: textFile
       value: 
       objectReference: {fileID: 4900000, guid: a31916cf462f27a4bb26ff23bc7232c6, type: 3}
+    - target: {fileID: 2932236854275813074, guid: dfb9a610c87eeba4f9bf1a78c27f4916, type: 3}
+      propertyPath: dialogNpc
+      value: 
+      objectReference: {fileID: 21300000, guid: 80967b5fc8694c044807e1faa151821b, type: 3}
+    - target: {fileID: 2932236854275813074, guid: dfb9a610c87eeba4f9bf1a78c27f4916, type: 3}
+      propertyPath: headPlayer
+      value: 
+      objectReference: {fileID: 21300000, guid: 845282e93f9aedb458456a0eb8ef812f, type: 3}
+    - target: {fileID: 2932236854275813074, guid: dfb9a610c87eeba4f9bf1a78c27f4916, type: 3}
+      propertyPath: dialogIllustrate1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932236854275813074, guid: dfb9a610c87eeba4f9bf1a78c27f4916, type: 3}
+      propertyPath: dialogIllustrate2
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2932236854275813075, guid: dfb9a610c87eeba4f9bf1a78c27f4916, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.090026855
@@ -1438,6 +1458,10 @@ PrefabInstance:
       propertyPath: dialogIllustrate3
       value: 
       objectReference: {fileID: 21300000, guid: 7e758902e1ab8054ea5ed10183919c5e, type: 3}
+    - target: {fileID: 2932236854678246735, guid: dfb9a610c87eeba4f9bf1a78c27f4916, type: 3}
+      propertyPath: dialogIllustrate4
+      value: 
+      objectReference: {fileID: 21300000, guid: 2954e83b4f510a64aae49f2fdece07e7, type: 3}
     - target: {fileID: 2932236855760579774, guid: dfb9a610c87eeba4f9bf1a78c27f4916, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.090026855
@@ -7466,7 +7490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d2b9a3b1f20fb4494e1d7bacd8d0d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiObject: {fileID: 1023766674}
+  uiObject: {fileID: 0}
 --- !u!114 &1304686286
 MonoBehaviour:
   m_ObjectHideFlags: 0
