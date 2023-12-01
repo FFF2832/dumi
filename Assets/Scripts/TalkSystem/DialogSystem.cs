@@ -39,7 +39,7 @@ public class DialogSystem : MonoBehaviour
     bool textFinished;  //文本是否显示完毕
     private static bool videoPlayed;
     private static bool changeScene;
-
+    public  static bool changeScene2;
     
     bool isTyping;  //是否在逐字显示
 
@@ -177,6 +177,7 @@ public class DialogSystem : MonoBehaviour
             case "CS1":
                 textFinished = true; 
                 changeScene=true;
+                index++;
                 break;
             case "学Unity！":
                 textFinished = true; 
@@ -286,6 +287,12 @@ public class DialogSystem : MonoBehaviour
             case "CS1":
                 textFinished = true; 
                 changeScene=true;
+                index++;
+                break;
+            case "CS2":
+                textFinished = true; 
+                changeScene2=true;
+                index++;
                 break;
         }
 
@@ -312,6 +319,9 @@ public class DialogSystem : MonoBehaviour
     }
     public  static bool UpdatechangeScene(){
             return changeScene;
+    }
+    public  static bool UpdatechangeScene2(){
+            return changeScene2;
     }
     public static bool UpadateconversationUI(){
         return conversationUI;

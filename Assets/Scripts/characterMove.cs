@@ -22,7 +22,7 @@ public class characterMove : MonoBehaviour
      //private Inventory inventory;
     //[SerializeField] private UI_Inventory uiInventory;
      public GameObject myBag; 
-     public GameObject password; 
+   //  public GameObject password; 
      bool isOpen;  
     // public item thisItem;
   
@@ -39,7 +39,7 @@ public class characterMove : MonoBehaviour
         animskill =GetComponent<Animator>();
 		target=transform.position;
         myBag.SetActive(false);
-        password.SetActive(false);
+        // password.SetActive(false);
         //itemOnworldInstance = FindObjectOfType<itemOnworld>();
         
     }
@@ -137,12 +137,12 @@ private void OnCollisionEnter(Collision other)
     
 
 }
- void OpenPasswordUI(){
-    if(Input.GetMouseButtonDown(0)){
-        isOpen= true;
-        password.SetActive(isOpen);
-    }
-}
+//  void OpenPasswordUI(){
+//     if(Input.GetMouseButtonDown(0)){
+//         isOpen= true;
+//         password.SetActive(isOpen);
+//     }
+// }
 //  void check2DObjectClicked()
 // {
 //     if (Input.GetMouseButtonDown(0))

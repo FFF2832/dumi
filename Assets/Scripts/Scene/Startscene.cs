@@ -80,7 +80,7 @@ public class Startscene : MonoBehaviour
     
 }
 public void OnBtnShowClick1(){
-     Application.LoadLevel(1);
+     Application.LoadLevel(7);
     Debug.Log("切換場景 " );
    } 
 }

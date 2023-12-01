@@ -23,6 +23,10 @@ public class LoadLevelsManager : MonoBehaviour
             SceneManager.LoadScene("SampleScene 1");
             Debug.Log("切到第一關");
          }
+         if(DialogSystem.UpdatechangeScene2()){
+            SceneManager.LoadScene("Scene Disease");
+            Debug.Log("切到第二關");
+         }
     }
 
     private void OnMouseDown()

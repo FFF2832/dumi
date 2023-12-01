@@ -162,8 +162,8 @@ public class click : MonoBehaviour
                       Debug.Log("切換場景 " );
                
             }
-           
-             else if((hit.collider.name=="magic_room"||hit.collider.name=="light4")){
+           // else if((hit.collider.name=="magic_room"||hit.collider.name=="light4"))
+             else if(hit.collider.name=="magic_room"){
              
                      Application.LoadLevel(4);
                
