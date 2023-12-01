@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
-public class Bamboo : MonoBehaviour
+public class code : MonoBehaviour
 {
     
 
@@ -20,7 +20,7 @@ public class Bamboo : MonoBehaviour
     private void Start()
     {
         videoPlayer = GetComponent<VideoPlayer>();
-        videoPlayer.loopPointReached += OnVideoEnd;
+        // videoPlayer.loopPointReached += OnVideoEnd;
         videoPlayer.Pause(); // 确保视频在开始时暂停
         videoCanvas.enabled = false; // 初始时禁用Canvas
     }
@@ -33,15 +33,15 @@ public class Bamboo : MonoBehaviour
         //     PlayVideo();
         //     Debug.Log("Video played");
         // }
-        if (bambooTalk.UpdatefinishTalk() && !videoPlaying)
-        {
-            PlayVideo();
-            Debug.Log("Video played");
-        }
-        // if(EnterKey.UpdatepasswordCorrect()&& !videoPlaying){
+        // if (bambooTalk.UpdatefinishTalk() && !videoPlaying)
+        // {
         //     PlayVideo();
         //     Debug.Log("Video played");
         // }
+        if(EnterKey.UpdatepasswordCorrect()&& !videoPlaying){
+            PlayVideo();
+            Debug.Log("Video played");
+        }
     }
 
     private void PlayVideo()
@@ -52,22 +52,22 @@ public class Bamboo : MonoBehaviour
     }
     
 
-    private void OnVideoEnd(VideoPlayer vp)
-    {
-        // 视频播放结束时的处理
-          videoCanvas.enabled = false; 
-            if (bambooTalk.UpdatefinishTalk() )SceneManager.LoadScene("Scene Clear_1");
-    }
-
-    // 添加您的条件检查函数
-    private bool YourConditionIsMet()
-    {
-        // 返回true或false，根据您的条件
-        return true;
-    }
-    // public static bool UpdatevideoPlaying(){
-    //     return videoPlaying;
+    // private void OnVideoEnd(VideoPlayer vp)
+    // {
+    //     // 视频播放结束时的处理
+    //       videoCanvas.enabled = false; 
+    //         if (bambooTalk.UpdatefinishTalk() )SceneManager.LoadScene("Scene Clear_1");
     // }
+
+    // // 添加您的条件检查函数
+    // private bool YourConditionIsMet()
+    // {
+    //     // 返回true或false，根据您的条件
+    //     return true;
+    // }
+    // // public static bool UpdatevideoPlaying(){
+    // //     return videoPlaying;
+    // // }
     
 
 }
