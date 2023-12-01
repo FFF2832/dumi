@@ -40,7 +40,7 @@ public class VideoManager : MonoBehaviour
     void SwitchToNextScene()
     {
         // You can modify "YourNextSceneName" to the name of your next scene
-        SceneManager.LoadScene("Scene Hall");
+        SceneManager.LoadScene("Scene Start");
     }
    
 }
