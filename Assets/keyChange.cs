@@ -37,7 +37,8 @@ public class keyChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if (ItemOndrag.checkkeyCorrect())
+        //if(PlayerPrefs.GetInt("keyCorrect")==1)
+        if (ItemOndrag.checkkeyCorrect())
         {
             Debug.Log("checkkeyCorrect"+ItemOndrag.checkkeyCorrect());
        
@@ -50,6 +51,7 @@ public class keyChange : MonoBehaviour
           Destroy(layer2);
           changekey_1=true;
          }
+         
         // if (ItemOndrag.checkkey_F3correct())
         // {
        

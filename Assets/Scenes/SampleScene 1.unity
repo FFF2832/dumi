@@ -9837,7 +9837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &238388213
 Transform:
   m_ObjectHideFlags: 0
@@ -25054,7 +25054,7 @@ MonoBehaviour:
   layer2: {fileID: 172399703}
   layer3: {fileID: 820903803}
   layer4: {fileID: 1160552381}
-  itemToRemove1: {fileID: 11400000, guid: b0365ba04a0860a41a47c1c290504016, type: 2}
+  itemToRemove1: {fileID: 11400000, guid: cc9bce03b239c8f4da804bacc84a9664, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
 --- !u!1 &1218665271
 GameObject:
@@ -34446,7 +34446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1825192532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36190,7 +36190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eba3bac10cb4eb48bbae9969b9a8b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 5
   myBag: {fileID: 419882699}
 --- !u!212 &1922059529
 SpriteRenderer:
@@ -39919,7 +39919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1130935677738354688, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1130935677738354691, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
       propertyPath: Loop

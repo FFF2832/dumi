@@ -23,23 +23,41 @@ public class key_F3change : MonoBehaviour
     {
         Debug.LogError("Image component not found!");
     }
+    changekey_2 = PlayerPrefs.GetInt("key_F3correct", 0) == 1;
     changekey_1=false;
-    changekey_2=false;
+    //changekey_2=false;
+    if(changekey_2){
+            RemoveItem(itemToRemove1);
+            Destroy(layer1);
+             Destroy(layer2);
+            Destroy(layer3);
+            Destroy(layer4);
+            changekey_2=true;
+    }
     }
 
     // Update is called once per frame
     void Update()
     {
+        //if( PlayerPrefs.GetInt("key_F3correct")==1)
           if (ItemOndrag.checkkey_F3correct())
         {
             Debug.Log("有喔"+ItemOndrag.checkkey_F3correct());
-       
+        // if( changekey_2){
+        //     RemoveItem(itemToRemove1);
+        //     Destroy(layer1);
+        //      Destroy(layer2);
+        //     Destroy(layer3);
+        //     Destroy(layer4);
+        //     changekey_2=true;
+        // }
          RemoveItem(itemToRemove1);
-         Destroy(layer1);
-          Destroy(layer2);
-        Destroy(layer3);
-          Destroy(layer4);
-          changekey_2=true;
+            Destroy(layer1);
+             Destroy(layer2);
+            Destroy(layer3);
+            Destroy(layer4);
+            changekey_2=true;
+        
          }
 
        

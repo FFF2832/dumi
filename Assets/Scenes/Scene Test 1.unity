@@ -12481,6 +12481,14 @@ PrefabInstance:
       value: sound
       objectReference: {fileID: 0}
     - target: {fileID: 1130935677738354691, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130935677738354691, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130935677738354691, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: d560a32cca772ef479c5639641f993d3, type: 3}
@@ -23578,7 +23586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eba3bac10cb4eb48bbae9969b9a8b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 5
   myBag: {fileID: 419882699}
 --- !u!212 &1922059529
 SpriteRenderer:

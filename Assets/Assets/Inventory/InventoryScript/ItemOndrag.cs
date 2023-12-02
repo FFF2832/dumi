@@ -308,11 +308,11 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
       }
       
         else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "correctKey")){
-             itemCorrect[8]=true;
-              itemcorrect=8;
-            if(  positionCorrect[8]){
-                Destroy(gameObject);
-             }   
+            //  itemCorrect[8]=true;
+            //   itemcorrect=8;
+            // if(  positionCorrect[8]){
+            //     Destroy(gameObject);
+            //  }   
         
             // else {
             //     correct=false;
@@ -321,6 +321,20 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             // transform.position = originalParent.position;
         
             // }
+
+            itemCorrect[8]=true;
+              itemcorrect=8;
+            if(  positionCorrect[8]){
+                Destroy(gameObject);
+             }   
+        
+            else {
+                correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+        
+            }
       }
        else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "鹿頭_背包鑰匙F2")){
              itemCorrect[9]=true;
@@ -627,6 +641,9 @@ public static bool checkkeyCorrect()
     if (positionCorrect[8]&& itemCorrect[8])
     {
         keyCorrect = true;
+        PlayerPrefs.SetInt("keyCorrect",1);
+        Debug.Log("positionCorrect[8]: "+positionCorrect[8] );
+         Debug.Log("itemCorrect[8]: "+itemCorrect[8] );
     }
     else
     {
@@ -640,7 +657,9 @@ public static bool checkkey_F3correct()
     // 檢查對應索引位置的值是否相等且不為 0
     if (positionCorrect[9]&& itemCorrect[9])
     {
+        PlayerPrefs.SetInt("key_F3correct",1);
         key_F3correct = true;
+        Debug.Log("有偵測到鑰匙三: " );
     }
     else
     {

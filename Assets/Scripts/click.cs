@@ -177,6 +177,10 @@ public class click : MonoBehaviour
                     SceneManager.LoadScene("Scene Hall");
                
             }
+             else if(hit.collider.name=="paintyell"){
+                SceneManager.LoadScene("Scene nightmare");
+              
+            }
 
         }
     } 

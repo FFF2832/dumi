@@ -6725,7 +6725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &170482228
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13842,9 +13842,17 @@ PrefabInstance:
       value: sound
       objectReference: {fileID: 0}
     - target: {fileID: 1130935677738354691, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130935677738354691, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130935677738354691, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: d560a32cca772ef479c5639641f993d3, type: 3}
+      objectReference: {fileID: 8300000, guid: 904dffdbc8c12854d82a35292d890ea1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f18d91288b0f334ca41ba9c12b576eb, type: 3}
 --- !u!1 &784805732
@@ -15030,7 +15038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3496691416555547193, guid: 20ce40d37fb5ac8468267b36025004f4, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3496691416555547193, guid: 20ce40d37fb5ac8468267b36025004f4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -25967,7 +25975,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   myBag: {fileID: 0}
-  password: {fileID: 572880644}
 --- !u!212 &1922059529
 SpriteRenderer:
   m_ObjectHideFlags: 0
