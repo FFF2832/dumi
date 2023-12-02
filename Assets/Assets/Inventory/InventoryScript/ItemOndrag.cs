@@ -551,6 +551,7 @@ public static bool checkpuzzle1()
 {
     if (positionCorrect[4] && itemCorrect[4])
         {
+             PlayerPrefs.SetInt("puzzle1Pos",1);
             if (!puzzle1ok) // 增加判斷，只有在未完成拼圖時返回 true
             {
                 puzzle1ok = true; // 將標誌設置為 true
@@ -563,11 +564,13 @@ public static bool checkpuzzle2()
 {
     if (positionCorrect[5] && itemCorrect[5])
         {
+             PlayerPrefs.SetInt("puzzle2Pos",1);
             if (!puzzle2ok) // 增加判斷，只有在未完成拼圖時返回 true
             {
                 puzzle2ok = true; // 將標誌設置為 true
                 return true;
             }
+            
         }
         return false; // 否則返回 false
 }
@@ -577,6 +580,7 @@ public static bool checkpuzzle3()
     if (positionCorrect[6]&& itemCorrect[6])
     {
         puzzle3ok = true;
+        PlayerPrefs.SetInt("puzzle3Pos",1);
     }
     else
     {
@@ -592,6 +596,7 @@ public static bool checkpuzzle3()
     if (positionCorrect[4]&& itemCorrect[4])
     {
         puzzle1ok = true;
+        
     }
     else
     {

@@ -152,7 +152,11 @@ public class click : MonoBehaviour
             }
             else if(hit.collider.name=="closebtn"){
                  Application.LoadLevel(3);
+                 Debug.Log("切回夜晚");
             }
+            // else if(hit.collider.name=="closebtnNight"){
+            //      Application.LoadLevel(3);
+            // }
             else if(hit.collider.name=="car"){
                  Application.LoadLevel(1);
             }
@@ -219,7 +223,10 @@ int previousScene = PlayerPrefs.GetInt("PreviousScene");
      Application.LoadLevel(9);
     Debug.Log("切換場景 " );
    } 
-
+    public void OnBtnShowClick7(){
+     Application.LoadLevel(3);
+    Debug.Log("切換場景 " );
+   } 
    void OnMouseEnter()
     {
         Debug.Log("HOVER");
