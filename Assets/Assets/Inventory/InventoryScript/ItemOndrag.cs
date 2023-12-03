@@ -325,7 +325,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             itemCorrect[8]=true;
               itemcorrect=8;
             if(  positionCorrect[8]){
-                Destroy(gameObject);
+                correct=true;
+                // Destroy(gameObject);
              }   
         
             else {
@@ -340,8 +341,15 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
              itemCorrect[9]=true;
               itemcorrect=9;
             if(  positionCorrect[9]){
-                Destroy(gameObject);
+                //Destroy(gameObject);
              }   
+             else {
+                correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+        
+            }
             
         
       }
@@ -349,8 +357,14 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
              itemCorrect[10]=true;
               itemcorrect=10;
             if(  positionCorrect[10]){
-                Destroy(gameObject);
-             }   
+              
+             }  
+             else {
+                correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+            } 
             
         
       }
@@ -649,7 +663,7 @@ public static bool checkkeyCorrect()
     {
         keyCorrect = false;
     }
-   // Debug.Log("checktire1: " + tire1ok);
+   Debug.Log("keyCorrect: " + keyCorrect);
     return keyCorrect;
 }
 public static bool checkkey_F3correct()
