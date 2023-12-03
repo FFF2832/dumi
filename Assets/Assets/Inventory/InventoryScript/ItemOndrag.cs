@@ -148,6 +148,10 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             transform.localScale = originalScale * 7.8f; // 可以調整放大倍數
             Debug.Log("(3): " + targetTransform.name + ", position: " + eventData.position);
          }
+        else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "紙條_F右"){
+            transform.localScale = originalScale * 7.8f; // 可以調整放大倍數
+            Debug.Log("(3): " + targetTransform.name + ", position: " + eventData.position);
+         }
         
         // // 放大物品
         // transform.localScale = originalScale * 3f; // 可以調整放大倍數

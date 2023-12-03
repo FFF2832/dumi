@@ -172,7 +172,12 @@ public class click : MonoBehaviour
                      Application.LoadLevel(4);
                
             }
-             else if(hit.collider.name=="gohall_btn "||hit.collider.name=="go hall_L"){
+             else if(hit.collider.name=="gohall_btn"||hit.collider.name=="gohall_L"){
+                    Debug.Log("去大廳");
+                    SceneManager.LoadScene("Scene Hall");
+               
+            }
+            else if(hit.collider.name=="gohall_btn"||hit.collider.name=="gohall_R"){
                     Debug.Log("去大廳");
                     SceneManager.LoadScene("Scene Hall");
                
@@ -229,6 +234,10 @@ int previousScene = PlayerPrefs.GetInt("PreviousScene");
    } 
     public void OnBtnShowClick7(){
      Application.LoadLevel(3);
+    Debug.Log("切換場景 " );
+   } 
+      public void OnBtnShowClick77(){
+     Application.LoadLevel(7);
     Debug.Log("切換場景 " );
    } 
    void OnMouseEnter()
