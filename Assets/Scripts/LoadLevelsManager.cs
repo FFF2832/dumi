@@ -10,6 +10,7 @@ public class LoadLevelsManager : MonoBehaviour
     public Vector2 hotSpot = Vector2.zero;
 
     private bool UIstate;
+  private static bool scene1Loaded = false;
 
     private void Awake()
     {
@@ -18,16 +19,23 @@ public class LoadLevelsManager : MonoBehaviour
       
     }
     private void Update(){
+        Debug.Log(scene1Loaded);
          UIstate=Enlarge.UpdateisMouseOverobj();
-         if(DialogSystem.UpdatechangeScene()){
+         if(DialogSystem.UpdatechangeScene()&& !scene1Loaded){
+            scene1Loaded = true;
             SceneManager.LoadScene("SampleScene 1");
-            Debug.Log("切到第一關");
+            Debug.Log("切到第一關"+scene1Loaded);
          }
          if(DialogSystem.UpdatechangeScene2()){
             SceneManager.LoadScene("Scene Disease");
             Debug.Log("切到第二關");
          }
     }
+    private void OnDisable()
+{
+    // 腳本啟用時重置標誌
+    scene1Loaded = true;
+}
 
     private void OnMouseDown()
     {
