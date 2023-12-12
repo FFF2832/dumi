@@ -69,7 +69,7 @@ public class DialogSystem : MonoBehaviour
     void Update()
     {
         //如果按下F键并且对话全部结束后关闭对话框
-        if (Input.GetKeyDown(KeyCode.Space) && index == textList.Count)
+        if ((Input.GetKeyDown(KeyCode.Space)|| Input.GetMouseButtonDown(0)) && index == textList.Count)
         {
             gameObject.SetActive(false);
             // Destroy(gameObject); //不刪除物件則可無限次數說話
@@ -77,7 +77,7 @@ public class DialogSystem : MonoBehaviour
         }
 
         //按下F键，当前行文本完成就执行协程，当前行文本未完成就直接显示当前行文本
-        if (Input.GetKeyDown(KeyCode.Space))
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
         {
             if (textFinished)
             {
