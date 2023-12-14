@@ -26,7 +26,7 @@ public class click : MonoBehaviour
         UIstate2=Look.UpdateifUI();
       //  Debug.Log("UIstate"+UIstate);
         check2DObjectClicked();
-        checkclick();
+       // checkclick();
         
     }
     
@@ -111,7 +111,7 @@ public class click : MonoBehaviour
             else if((hit.collider.name=="btn-paint")&&glowInstance.Updateinside()){
                 OnBtnShowClick3(); 
             }
-            else if(hit.collider.name=="paint"){
+            else if(hit.collider.name=="paint"||hit.collider.name=="glowobj"){
                 OnBtnShowClick3();
               
             }
