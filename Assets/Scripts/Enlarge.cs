@@ -125,7 +125,7 @@ public class Enlarge : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
               imageToShow.SetActive(true);
-              Debug.Log("in");
+             // Debug.Log("in");
         }
     }
 
@@ -135,7 +135,7 @@ public class Enlarge : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
              imageToShow.SetActive(false);
-               Debug.Log("out");
+           ///    Debug.Log("out");
         }
     }
 

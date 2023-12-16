@@ -6,7 +6,7 @@ public class CandleManager : MonoBehaviour
     public GameObject[] candles;
     private int currentIndex = 0;
     private Animator anim;
-    private Animator animskill;
+    private Animator animcandle1;
     private bool candleCorrect;
     private int clickCount = 0;
     private bool animationInitialized = false;
@@ -15,7 +15,7 @@ public class CandleManager : MonoBehaviour
     {
         SetNextCandle();
         anim = GetComponent<Animator>();
-        animskill = GetComponent<Animator>();
+        animcandle1 = GetComponent<Animator>();
         anim.SetInteger("CandleCorrect", 0);
     }
 
@@ -27,13 +27,11 @@ public class CandleManager : MonoBehaviour
    // 當點擊蠟燭時呼叫此函數
 public void CandleClicked(GameObject clickedCandle)
 {
-    // while( clickCount <4){
-
-    // }
+      
     if (clickedCandle == candles[currentIndex])
     {
         // 正確的蠟燭
-        PlayCandleAnimation(clickedCandle);
+        PlayCandleAnimation(clickedCandle, currentIndex);
         currentIndex++;
         clickCount++;
         if (currentIndex == candles.Length)
@@ -64,10 +62,22 @@ public void CandleClicked(GameObject clickedCandle)
 }
 
 
-    private void PlayCandleAnimation(GameObject candle)
+   private void PlayCandleAnimation(GameObject candle, int index)
     {
         // 在這裡添加播放動畫的邏輯
-
+        switch (index)
+        {
+            case 0:
+                 Debug.Log("點到蠟燭1");
+                // 播放第一个蜡烛的动画
+                animcandle1.SetInteger("candle1Anim",1);
+                break;
+            case 1:
+                // 播放第二个蜡烛的动画
+                // 添加你的第二个蜡烛的动画播放逻辑
+                break;
+            // ... 继续添加其他蜡烛的情况
+        }
     }
 
     private void SetNextCandle()

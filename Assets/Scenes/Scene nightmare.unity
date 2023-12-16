@@ -975,6 +975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   candleManager: {fileID: 2093898061}
+  candleNumber: 4
 --- !u!212 &73895812
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7576,6 +7577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   candleManager: {fileID: 2093898061}
+  candleNumber: 3
 --- !u!212 &208908071
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9282,6 +9284,7 @@ GameObject:
   - component: {fileID: 385961012}
   - component: {fileID: 385961013}
   - component: {fileID: 385961014}
+  - component: {fileID: 385961015}
   m_Layer: 0
   m_Name: "\u58C1\u756B"
   m_TagString: Untagged
@@ -9363,7 +9366,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385961011}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffd0ed019bc9819459c3ea7ef0986484, type: 3}
   m_Name: 
@@ -9373,6 +9376,26 @@ MonoBehaviour:
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
   imageToShow: {fileID: 0}
+--- !u!95 &385961015
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385961011}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15c5c332e77d40d4784d7fda54886d27, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &388809658
 GameObject:
   m_ObjectHideFlags: 0
@@ -19348,6 +19371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   candleManager: {fileID: 2093898061}
+  candleNumber: 1
 --- !u!212 &1148044748
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19548,6 +19572,7 @@ GameObject:
   - component: {fileID: 1154318713}
   - component: {fileID: 1154318712}
   - component: {fileID: 1154318711}
+  - component: {fileID: 1154318715}
   m_Layer: 0
   m_Name: candle2
   m_TagString: Untagged
@@ -19594,6 +19619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   candleManager: {fileID: 2093898061}
+  candleNumber: 2
 --- !u!212 &1154318713
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19661,6 +19687,26 @@ Transform:
   m_Father: {fileID: 2093898060}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1154318715
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154318710}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e66315a955f248544861da10678286b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1170644015
 GameObject:
   m_ObjectHideFlags: 0
