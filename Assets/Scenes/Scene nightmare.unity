@@ -976,7 +976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   candleManager: {fileID: 2093898061}
-  paint: {fileID: 0}
+  paint: {fileID: 105111807}
   candleNumber: 4
 --- !u!212 &73895812
 SpriteRenderer:
@@ -6296,7 +6296,7 @@ Animator:
   m_GameObject: {fileID: 105111805}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 15c5c332e77d40d4784d7fda54886d27, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8c7a951dd8c48004383609f0f866af50, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7705,7 +7705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   candleManager: {fileID: 2093898061}
-  paint: {fileID: 0}
+  paint: {fileID: 391094327}
   candleNumber: 3
 --- !u!212 &208908071
 SpriteRenderer:
@@ -9807,7 +9807,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.8}
+  m_Size: {x: 3.61, y: 4.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -11011,7 +11011,7 @@ Animator:
   m_GameObject: {fileID: 490411150}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 15c5c332e77d40d4784d7fda54886d27, type: 2}
+  m_Controller: {fileID: 9100000, guid: f81ff35bf9bbfae42bbea38eb3627823, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -19792,7 +19792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   candleManager: {fileID: 2093898061}
-  paint: {fileID: 391094327}
+  paint: {fileID: 490411152}
   candleNumber: 1
 --- !u!212 &1148044748
 SpriteRenderer:
@@ -20041,7 +20041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   candleManager: {fileID: 2093898061}
-  paint: {fileID: 0}
+  paint: {fileID: 2038726812}
   candleNumber: 2
 --- !u!212 &1154318713
 SpriteRenderer:
@@ -29366,7 +29366,7 @@ Animator:
   m_GameObject: {fileID: 2038726810}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 15c5c332e77d40d4784d7fda54886d27, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7120c656b54a7d746a86fc2e466ba96c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

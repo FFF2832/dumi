@@ -19,13 +19,13 @@ public class Candle : MonoBehaviour
              //paint.SetInteger("paint1",1);
             animcandle1.SetInteger("candle1Anim",1);
            Debug.Log("Animator component: " + paint); // 检查获取到的 Animator 组件
-            paint.SetInteger("paint1", 1);
+           paint.SetInteger("paint1", 1);
             Debug.Log("Setting paint1 to 1");
 
 
         }
         if(candleNumber==2)  {
-             //paint.SetInteger("paint1",1);
+             paint.SetInteger("paint1",1);
             animcandle1.SetInteger("candle1Anim",1);
 
         }
@@ -34,12 +34,12 @@ public class Candle : MonoBehaviour
         candleManager.CandleClicked(gameObject);
 
         if(candleNumber==3) {
-             //paint.SetInteger("paint1",1);
+             paint.SetInteger("paint1",1);
             animcandle1.SetInteger("candle1Anim",1);
 
         }
         if(candleNumber==4) {
-             //paint.SetInteger("paint1",1);
+            paint.SetInteger("paint1",1);
             animcandle1.SetInteger("candle1Anim",1);
 
         }
