@@ -4,12 +4,12 @@ public class Candle : MonoBehaviour
 {
     public CandleManager candleManager; // 連接到CandleManager腳本
     private Animator animcandle1;
-    private Animator paint;
+    public Animator paint;
     public int candleNumber;
    private void Start()
     {
        
-       paint = GetComponent<Animator>();
+    //    paint = GetComponent<Animator>();
         animcandle1 = GetComponent<Animator>();
       
     }
@@ -24,9 +24,25 @@ public class Candle : MonoBehaviour
 
 
         }
-        if(candleNumber==2) animcandle1.SetInteger("animCandle2",1);
+        if(candleNumber==2)  {
+             //paint.SetInteger("paint1",1);
+            animcandle1.SetInteger("candle1Anim",1);
+
+        }
+        // animcandle1.SetInteger("animCandle2",1);
         // 當蠟燭被點擊時呼叫CandleManager的CandleClicked函數
         candleManager.CandleClicked(gameObject);
+
+        if(candleNumber==3) {
+             //paint.SetInteger("paint1",1);
+            animcandle1.SetInteger("candle1Anim",1);
+
+        }
+        if(candleNumber==4) {
+             //paint.SetInteger("paint1",1);
+            animcandle1.SetInteger("candle1Anim",1);
+
+        }
        
     }
 }
