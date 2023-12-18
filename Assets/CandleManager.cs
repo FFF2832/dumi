@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+
 
 public class CandleManager : MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class CandleManager : MonoBehaviour
     private bool candleCorrect;
     private int clickCount = 0;
     private bool animationInitialized = false;
+ private List<GameObject> clickedCandles = new List<GameObject>();
+
+
 
     private void Start()
     {
@@ -24,42 +29,89 @@ public class CandleManager : MonoBehaviour
         // 如果你希望每帧都更新动画状态，可以在这里调用 UpdateAnimationState()
     }
 
-   // 當點擊蠟燭時呼叫此函數
+
+
+
 public void CandleClicked(GameObject clickedCandle)
 {
-      
-    if (clickedCandle == candles[currentIndex])
+    if (!clickedCandles.Contains(clickedCandle))
     {
-        // 正確的蠟燭
-        PlayCandleAnimation(clickedCandle, currentIndex);
-        currentIndex++;
-        clickCount++;
-        if (currentIndex == candles.Length)
+        clickedCandles.Add(clickedCandle);
+
+        if (clickedCandle == candles[currentIndex])
         {
-            // 完成整個順序
-            Debug.Log("完成順序！");
-            ResetCandleSequence();
-            candleCorrect = true;
+            // 正確的蠟燭
+             PlayCandleAnimation(clickedCandle, currentIndex);
+            currentIndex++;
+            clickCount++;
+
+            if (currentIndex == candles.Length)
+            {
+                // 完成整個順序
+                Debug.Log("完成順序！");
+                ResetCandleSequence();
+                candleCorrect = true;
+            }
+            else
+            {
+                // 設置下一個應點擊的蠟燭
+                SetNextCandle();
+            }
         }
         else
         {
-            // 設置下一個應點擊的蠟燭
-            SetNextCandle();
+            // 錯誤的蠟燭，可以在這裡添加錯誤處理邏輯
+            Debug.Log("錯誤的順序！");
+            candleCorrect = false;  
+            ResetCandleSequence();
+            clickCount++;
         }
+
+        // 更新動畫狀態
+        if (clickCount == 4) UpdateAnimationState();
     }
     else
     {
-        // 錯誤的蠟燭，可以在這裡添加錯誤處理邏輯
-        Debug.Log("錯誤的順序！");
-        candleCorrect = false;  
-        ResetCandleSequence();
-        clickCount++;
-        
+        // 已經點過這根蠟燭，你可以添加相應的處理邏輯，例如提示或其他操作
+        Debug.Log("這根蠟燭已經點過了！");
     }
-
-    // 更新動畫狀態
-    if(clickCount==4)UpdateAnimationState();
 }
+
+// public void CandleClicked(GameObject clickedCandle)
+// {
+      
+//     if (clickedCandle == candles[currentIndex])
+//     {
+//         // 正確的蠟燭
+//         PlayCandleAnimation(clickedCandle, currentIndex);
+//         currentIndex++;
+//         clickCount++;
+//         if (currentIndex == candles.Length)
+//         {
+//             // 完成整個順序
+//             Debug.Log("完成順序！");
+//             ResetCandleSequence();
+//             candleCorrect = true;
+//         }
+//         else
+//         {
+//             // 設置下一個應點擊的蠟燭
+//             SetNextCandle();
+//         }
+//     }
+//     else
+//     {
+//         // 錯誤的蠟燭，可以在這裡添加錯誤處理邏輯
+//         Debug.Log("錯誤的順序！");
+//         candleCorrect = false;  
+//         ResetCandleSequence();
+//         clickCount++;
+        
+//     }
+
+//     // 更新動畫狀態
+//     if(clickCount==4)UpdateAnimationState();
+// }
 
 
    private void PlayCandleAnimation(GameObject candle, int index)

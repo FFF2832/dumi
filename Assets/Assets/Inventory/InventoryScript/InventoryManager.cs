@@ -209,7 +209,7 @@ public static void RefreshItem()
 
     instance.slots.Clear();
 
-    Debug.Log(instance.myBag.itemList.Count);
+    //Debug.Log(instance.myBag.itemList.Count);
      // 保持格子數量為7
     int targetSlotCount = 14; // 兩排，每排7個格子
 

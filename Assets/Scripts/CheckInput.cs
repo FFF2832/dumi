@@ -117,6 +117,7 @@ public class CheckInput : MonoBehaviour
     public static bool ChangeScene ;
     private Enlarge enlargeScript; // 引用Enlarge脚本的变量
     private tire1change tire1Change;
+    
   
      private void Awake()
      {
@@ -310,6 +311,7 @@ public class CheckInput : MonoBehaviour
         if(changeSceneFlag==1) {
         spriteChange.sprite = sprite3; // 切換好車
         Application.LoadLevel(3);
+       
         }
 
    } 
@@ -320,5 +322,6 @@ public class CheckInput : MonoBehaviour
        
         return changeSceneFlag;
    }
+  
   
 }

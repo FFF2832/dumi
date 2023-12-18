@@ -15,10 +15,13 @@ public class click : MonoBehaviour
      private bool UIstate2;
      private CheckInput checkInputInstance;
     private glow glowInstance; // 假設你有一個 glow 實例的引用
-     
+    private static bool clickCar;
+    // public static bool clickCar2;
     void Start(){
          checkInputInstance = new CheckInput();
         glowInstance = GetComponent<glow>(); 
+        //clickCar2=false;
+        clickCar=false;
     }
     void Update()
     {
@@ -26,6 +29,8 @@ public class click : MonoBehaviour
         UIstate2=Look.UpdateifUI();
       //  Debug.Log("UIstate"+UIstate);
         check2DObjectClicked();
+        Debug.Log("clickCar"+clickCar);
+       // Debug.Log("clickCar2"+clickCar2);
        // checkclick();
         
     }
@@ -140,13 +145,17 @@ public class click : MonoBehaviour
                 string currentSceneName = SceneManager.GetActiveScene().name;
                 if(checkInputInstance.UpdatechangeSceneFlag()==1){
                     //checkInputInstance.ChangeTonight();
-                    Application.LoadLevel(3);
+                     clickCar=true;
+                    Debug.Log("clickCar"+clickCar);
+                    // clickCar2 = false;
                    
                     }
                 else if(CheckInput.UpdateChangeScene())Application.LoadLevel(3);
                 else if(!CheckInput.UpdateChangeScene()&&currentSceneName == "Scene night"){
-                    Application.LoadLevel(1);
-                Debug.Log("切換場景 " );
+                    //  clickCar=true;
+                    //   Debug.Log("clickCar"+clickCar);
+                    //Application.LoadLevel(1);
+               // Debug.Log("切換場景 " );
                 }
              
             }
@@ -158,7 +167,9 @@ public class click : MonoBehaviour
             //      Application.LoadLevel(3);
             // }
             else if(hit.collider.name=="car"){
+                // clickCar2=true;
                  Application.LoadLevel(1);
+                 //  clickCar=false;
             }
             else if(hit.collider.name=="paint_room"){
              
@@ -186,6 +197,10 @@ public class click : MonoBehaviour
                 SceneManager.LoadScene("Scene nightmare");
               
             }
+            else {
+                // clickCar=false;
+               //   clickCar2 = false;
+            }
 
         }
     } 
@@ -196,6 +211,8 @@ public void OnBtnShowClick1(){
     Debug.Log("切換場景 " );
    } 
    public void OnBtnShowClick2(){
+    // 重置 clickCar 和 clickCar2
+     
     //  Application.LoadLevel(1);
     // Debug.Log("切換場景 " );
 int previousScene = PlayerPrefs.GetInt("PreviousScene");
@@ -252,5 +269,10 @@ int previousScene = PlayerPrefs.GetInt("PreviousScene");
         // Pass 'null' to the texture parameter to use the default system cursor.
         Cursor.SetCursor(null, Vector2.zero, cursorMode);
     }
-   
+     public static bool UpdateclickCar(){
+        return clickCar;
+   }
+//     public static bool UpdateclickCar2(){
+//         return clickCar2;
+//    }
 }
