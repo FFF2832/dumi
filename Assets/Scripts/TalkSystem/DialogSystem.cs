@@ -40,6 +40,7 @@ public class DialogSystem : MonoBehaviour
     private static bool videoPlayed;
     private static bool changeScene;
     public  static bool changeScene2;
+    public  static bool changeScene3;
     
     bool isTyping;  //是否在逐字显示
 
@@ -179,6 +180,11 @@ public class DialogSystem : MonoBehaviour
                 changeScene=true;
                 index++;
                 break;
+            case "CS3":
+                textFinished = true; 
+                changeScene3=true;
+                index++;
+                break;
             case "学Unity！":
                 textFinished = true; 
                 videoPlayed=true;
@@ -294,6 +300,11 @@ public class DialogSystem : MonoBehaviour
                 changeScene2=true;
                 index++;
                 break;
+            case "CS3":
+                textFinished = true; 
+                changeScene3=true;
+                index++;
+                break;
         }
 
         //每按一次F键播放一行文字
@@ -322,6 +333,10 @@ public class DialogSystem : MonoBehaviour
     }
     public  static bool UpdatechangeScene2(){
             return changeScene2;
+    }
+     public  static bool UpdatechangeScene3(){
+        //Debug.Log("changeScene3"+changeScene3);
+            return changeScene3;
     }
     public static bool UpadateconversationUI(){
         return conversationUI;

@@ -14,7 +14,7 @@ public class CandleManager : MonoBehaviour
     private bool animationInitialized = false;
  private List<GameObject> clickedCandles = new List<GameObject>();
 
-
+ public GameObject talkUI; 
 
     private void Start()
     {
@@ -148,6 +148,8 @@ public void CandleClicked(GameObject clickedCandle)
         if (candleCorrect)
         {
             anim.SetInteger("CandleCorrect", 1);
+           float delayAnim = 3.0f;
+           Invoke("showAnim", delayAnim);
         }
         else
         {
@@ -159,5 +161,11 @@ public void CandleClicked(GameObject clickedCandle)
     private void LoadNextScene()
 {
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+}
+private void showAnim(){
+      talkUI.SetActive(true); 
+}
+public bool UpdatecandleCorrect(){
+        return candleCorrect;
 }
 }

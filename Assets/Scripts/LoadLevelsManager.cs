@@ -11,15 +11,16 @@ public class LoadLevelsManager : MonoBehaviour
 
     private bool UIstate;
   private static bool scene1Loaded = false;
-
+ private static bool scene2Loaded = false;
     private void Awake()
     {
         //轉場
-        animator = GameObject.Find("Crossfade").GetComponent<Animator>();
+       // animator = GameObject.Find("Crossfade").GetComponent<Animator>();
       
     }
     private void Update(){
-        Debug.Log(scene1Loaded);
+        //Debug.Log(scene1Loaded);
+       
          UIstate=Enlarge.UpdateisMouseOverobj();
          if(DialogSystem.UpdatechangeScene()&& !scene1Loaded){
             scene1Loaded = true;
@@ -27,6 +28,11 @@ public class LoadLevelsManager : MonoBehaviour
             Debug.Log("切到第一關"+scene1Loaded);
          }
          if(DialogSystem.UpdatechangeScene2()){
+             scene2Loaded = true;
+            SceneManager.LoadScene("Scene Disease");
+            Debug.Log("切到第二關");
+         }
+        if(DialogSystem.UpdatechangeScene3()&& !scene2Loaded){
             SceneManager.LoadScene("Scene Disease");
             Debug.Log("切到第二關");
          }
@@ -35,6 +41,7 @@ public class LoadLevelsManager : MonoBehaviour
 {
     // 腳本啟用時重置標誌
     scene1Loaded = true;
+        scene2Loaded = true;
 }
 
     private void OnMouseDown()

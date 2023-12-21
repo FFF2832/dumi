@@ -29,7 +29,7 @@ public class click : MonoBehaviour
         UIstate2=Look.UpdateifUI();
       //  Debug.Log("UIstate"+UIstate);
         check2DObjectClicked();
-        Debug.Log("clickCar"+clickCar);
+      //  Debug.Log("clickCar"+clickCar);
        // Debug.Log("clickCar2"+clickCar2);
        // checkclick();
         
@@ -146,7 +146,7 @@ public class click : MonoBehaviour
                 if(checkInputInstance.UpdatechangeSceneFlag()==1){
                     //checkInputInstance.ChangeTonight();
                      clickCar=true;
-                    Debug.Log("clickCar"+clickCar);
+                 //   Debug.Log("clickCar"+clickCar);
                     // clickCar2 = false;
                    
                     }

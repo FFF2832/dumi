@@ -33,11 +33,13 @@ public class Bamboo : MonoBehaviour
         //     PlayVideo();
         //     Debug.Log("Video played");
         // }
+        
         if (bambooTalk.UpdatefinishTalk() && !videoPlaying)
         {
             PlayVideo();
             Debug.Log("Video played");
         }
+       
         // if(EnterKey.UpdatepasswordCorrect()&& !videoPlaying){
         //     PlayVideo();
         //     Debug.Log("Video played");
