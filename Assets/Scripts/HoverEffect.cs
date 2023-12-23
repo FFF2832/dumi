@@ -1,42 +1,46 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
-{
-    public Image normalImage;
-    public Image hoverImage;
-    public float hoverSpeed = 5f; // 悬停颜色渐变的速度
-
-    private Color normalColor;
-    private Color hoverColor;
-    private float lerpFactor = 0f;
+public class HoverEffect : MonoBehaviour{private Image image;
+    private RectTransform rectTransform;
+    private bool isMouseOver = false;
+    private float targetAlpha = 0.0f;
+    private float currentAlpha = 0.0f;
+    private float fadeSpeed = 2.0f;
 
     void Start()
     {
-        normalColor = normalImage.color;
-        hoverColor = hoverImage.color;
-
-        normalImage.gameObject.SetActive(true);
-        hoverImage.gameObject.SetActive(false);
-    }
-    // 当鼠标进入UI元素时调用
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        // 在这里添加悬停时的效果，例如改变颜色或触发其他事件
-        Debug.Log("Mouse entered UI!");
-        normalImage.gameObject.SetActive(false);
-        hoverImage.gameObject.SetActive(true);
-        
+        image = GetComponent<Image>();
+        rectTransform = GetComponent<RectTransform>();
+        SetAlpha(targetAlpha);
     }
 
-    // 当鼠标离开UI元素时调用
-    public void OnPointerExit(PointerEventData eventData)
+    void Update()
     {
-        // 在这里添加离开时的效果，例如恢复原始颜色或执行其他操作
-        Debug.Log("Mouse exited UI!");
-        normalImage.gameObject.SetActive(true);
-        hoverImage.gameObject.SetActive(false);
+        if (IsMouseOverRect())
+        {
+            targetAlpha = 1.0f;
+        }
+        else
+        {
+            targetAlpha = 0.0f;
+        }
+
+        currentAlpha = Mathf.Lerp(currentAlpha, targetAlpha, Time.deltaTime * fadeSpeed);
+        SetAlpha(currentAlpha);
     }
+
+    void SetAlpha(float alpha)
+    {
+        image.color = new Color(image.color.r, image.color.g, image.color.b, alpha);
+    }
+
+    bool IsMouseOverRect()
+    {
+        Vector2 mousePos = Input.mousePosition;
+        return RectTransformUtility.RectangleContainsScreenPoint(rectTransform, mousePos);
+    }
+}
 
     // void Update()
     // {
@@ -69,4 +73,3 @@ public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     //         }
     //     }
     // }
-}
