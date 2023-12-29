@@ -31,7 +31,7 @@ public class click : MonoBehaviour
         check2DObjectClicked();
       //  Debug.Log("clickCar"+clickCar);
        // Debug.Log("clickCar2"+clickCar2);
-       // checkclick();
+        checkclick();
         
     }
     
@@ -144,8 +144,9 @@ public class click : MonoBehaviour
                 // 獲取當前場景的名稱
                 string currentSceneName = SceneManager.GetActiveScene().name;
                 if(checkInputInstance.UpdatechangeSceneFlag()==1){
+                     Application.LoadLevel(3);
                     //checkInputInstance.ChangeTonight();
-                     clickCar=true;
+                     //clickCar=true;
                  //   Debug.Log("clickCar"+clickCar);
                     // clickCar2 = false;
                    
@@ -154,7 +155,7 @@ public class click : MonoBehaviour
                 else if(!CheckInput.UpdateChangeScene()&&currentSceneName == "Scene night"){
                     //  clickCar=true;
                     //   Debug.Log("clickCar"+clickCar);
-                    //Application.LoadLevel(1);
+                    Application.LoadLevel(1);
                // Debug.Log("切換場景 " );
                 }
              

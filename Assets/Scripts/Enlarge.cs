@@ -37,9 +37,9 @@ public class Enlarge : MonoBehaviour
             // 获取被点击的物体的位置
             Vector2 objPos = transform.position;
 
-          
-            if (mousePos.x >= objPos.x - 0.8f && mousePos.x <= objPos.x + 0.8f
-                && mousePos.y >= objPos.y - 0.8f && mousePos.y <= objPos.y + 0.8f&&!isMouseOverobj)
+          float clickRange = 1.5f;
+            if (mousePos.x >= objPos.x -clickRange && mousePos.x <= objPos.x +clickRange
+                && mousePos.y >= objPos.y - clickRange && mousePos.y <= objPos.y + clickRange&&!isMouseOverobj)
             {
                 // 显示 Canvas
                 canvas.SetActive(true);
@@ -61,32 +61,10 @@ public class Enlarge : MonoBehaviour
     
     
 
-// void Update()
-// {
-//     if (Input.GetMouseButtonDown(0))
-//     {
-//         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-//         Collider2D hitCollider = Physics2D.OverlapPoint(mousePos);
 
-//         if (hitCollider != null && hitCollider.gameObject == gameObject && !EventSystem.current.IsPointerOverGameObject())
-//         {
-//             if (!isCanvasVisible)
-//             {
-//                 canvas.SetActive(true);
-//                 isCanvasVisible = true;
-//             }
-//         }
-//     }
-// }
 
-// public void closebtnOnclick()
-// {
-//     if (isCanvasVisible)
-//     {
-//         canvas.SetActive(false);
-//         isCanvasVisible = false;
-//     }
-// }
+
+
 
     public void closebtnOnclick()
 {
@@ -139,57 +117,4 @@ public class Enlarge : MonoBehaviour
         }
     }
 
-
-
-     void check2DObjectClicked()
-{
-    if (Input.GetMouseButtonDown(0))
-    {
-       
-       // Debug.Log("Mouse is pressed down");
-        Camera cam = Camera.main;
-
-        //Raycast depends on camera projection mode
-        Vector2 origin = Vector2.zero;
-        Vector2 dir = Vector2.zero;
-
-        if (cam.orthographic)
-        {
-            origin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        }
-        else
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            origin = ray.origin;
-            dir = ray.direction;
-        }
-
-        RaycastHit2D hit = Physics2D.Raycast(origin, dir);
-
-        //Check if we hit anything
-        // if (hit&&!(Enlarge.UpdateifUI())||!(DialogSystem.UpadateconversationUI()))
-        if (hit)
-        {
-           
-            if(hit.collider.name=="cabinet"){
-          
-                canvas.SetActive(true);
-                Debug.Log("打到了");
-                
-            }
-            if(hit.collider.name=="chair"){
-          
-                canvas.SetActive(true);
-              
-                
-            }
-            else if(hit.collider.name=="back"){
-         
-            }
-            
-
-        }
-    } 
-    
-}
 }

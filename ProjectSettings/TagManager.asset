@@ -17,6 +17,7 @@ TagManager:
   - PotionBottle
   - Material
   - Msbamboo
+  - Enlarge
   layers:
   - Default
   - TransparentFX
