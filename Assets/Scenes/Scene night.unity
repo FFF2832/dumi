@@ -12761,7 +12761,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916116504}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -22982,7 +22982,7 @@ MonoBehaviour:
   layer2: {fileID: 1147976879}
   layer3: {fileID: 1251143463}
   layer4: {fileID: 502618533}
-  itemToRemove1: {fileID: 11400000, guid: b0365ba04a0860a41a47c1c290504016, type: 2}
+  itemToRemove1: {fileID: 11400000, guid: cc9bce03b239c8f4da804bacc84a9664, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
 --- !u!50 &1390839538
 Rigidbody2D:

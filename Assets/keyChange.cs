@@ -42,11 +42,11 @@ public class keyChange : MonoBehaviour
         {
             Debug.Log("checkkeyCorrect"+ItemOndrag.checkkeyCorrect());
        
-         RemoveItem(itemToRemove1);
-         RemoveItem(itemToRemove2);
-         RemoveItem(itemToRemove3);
+        //  RemoveItem(itemToRemove1);
+        //  RemoveItem(itemToRemove2);
+        //  RemoveItem(itemToRemove3);
          RemoveItem(itemToRemove4);
-         RemoveItem(itemToRemove5);
+        //  RemoveItem(itemToRemove5);
          Destroy(layer1);
           Destroy(layer2);
           changekey_1=true;

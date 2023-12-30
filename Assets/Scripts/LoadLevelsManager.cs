@@ -32,10 +32,10 @@ public class LoadLevelsManager : MonoBehaviour
             SceneManager.LoadScene("Scene Disease");
             Debug.Log("切到第二關");
          }
-        if(DialogSystem.UpdatechangeScene3()&& !scene2Loaded){
-            SceneManager.LoadScene("Scene Disease");
-            Debug.Log("切到第二關");
-         }
+        // if(DialogSystem.UpdatechangeScene3()&& !scene2Loaded){
+        //     SceneManager.LoadScene("Scene Disease");
+        //     Debug.Log("切到第二關");
+        //  }
     }
     private void OnDisable()
 {
