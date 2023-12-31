@@ -8169,7 +8169,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 841773be5b2596747800ac2210367685, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f84e5f2b5aaddce4a84a5aff2bbfe6f0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11073,7 +11073,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c8efc032c9b7ca045996eea9d0ae93d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a3fed10e598407438a2514ebc23634d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11933,7 +11933,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fadb37ae5a681d74a98ae071d3113989, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d59c707483822b04c9b9e8dfcb861c7c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11958,7 +11958,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663896236}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ada42ba1e3f58dc48983811f3167f71d, type: 3}
   m_Name: 
