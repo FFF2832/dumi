@@ -18,7 +18,7 @@ public class CheckInputimage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PassWord.checkInput()&&ItemOndrag.checktire1()&&ItemOndrag.checktire2()) // 呼叫 PassWord 的 checkInput 方法，回傳 bool 值
+        if (PlayerPrefs.GetInt("ChangeSceneFlag")==1) // 呼叫 PassWord 的 checkInput 方法，回傳 bool 值
         {
            
               imageChange.sprite = sprite2; // 切換成第一個圖片
