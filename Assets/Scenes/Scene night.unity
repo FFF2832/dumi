@@ -11426,11 +11426,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878838065354585153, guid: 3c356c89676a63549a9a66be1c6501d4, type: 3}
       propertyPath: m_Size.x
-      value: 9.574093
+      value: 5.813919
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878838065354585153, guid: 3c356c89676a63549a9a66be1c6501d4, type: 3}
+      propertyPath: m_Size.y
+      value: 8.173932
       objectReference: {fileID: 0}
     - target: {fileID: 7878838065354585153, guid: 3c356c89676a63549a9a66be1c6501d4, type: 3}
       propertyPath: m_Offset.x
-      value: 0.93301964
+      value: 0.05564499
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878838065354585153, guid: 3c356c89676a63549a9a66be1c6501d4, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.81696665
       objectReference: {fileID: 0}
     - target: {fileID: 7878838065354585154, guid: 3c356c89676a63549a9a66be1c6501d4, type: 3}
       propertyPath: m_Sprite
@@ -29101,7 +29109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eba3bac10cb4eb48bbae9969b9a8b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
   myBag: {fileID: 0}
 --- !u!212 &1922059529
 SpriteRenderer:
