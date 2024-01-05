@@ -116,7 +116,7 @@ public class click : MonoBehaviour
             else if((hit.collider.name=="btn-paint")&&glowInstance.Updateinside()){
                 OnBtnShowClick3(); 
             }
-            else if(hit.collider.name=="paint"||hit.collider.name=="glowobj"){
+            else if(hit.collider.name=="paint"||hit.collider.name=="glowobj"||hit.collider.name=="glowobj_branch"){
                 OnBtnShowClick3();
               
             }
@@ -172,14 +172,14 @@ public class click : MonoBehaviour
                  Application.LoadLevel(1);
                  //  clickCar=false;
             }
-            else if(hit.collider.name=="paint_room"){
+            else if(hit.collider.name=="paint_room"||hit.collider.name=="glowobj (1)"){
              
                      Application.LoadLevel(5);
                       Debug.Log("切換場景 " );
                
             }
            // else if((hit.collider.name=="magic_room"||hit.collider.name=="light4"))
-             else if((hit.collider.name=="magic_room"||hit.collider.name=="light4")){
+             else if((hit.collider.name=="magic_room"||hit.collider.name=="glowobj (2)")){
              
                      Application.LoadLevel(4);
                
