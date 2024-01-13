@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 14370767}
   - component: {fileID: 14370766}
   m_Layer: 5
-  m_Name: sleep_unicorn
+  m_Name: sleep_unicornTalk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10540,6 +10540,7 @@ GameObject:
   - component: {fileID: 297340273}
   - component: {fileID: 297340274}
   - component: {fileID: 297340275}
+  - component: {fileID: 297340276}
   m_Layer: 0
   m_Name: cry_unicorn
   m_TagString: Untagged
@@ -10607,7 +10608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297340269}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.2, y: 9, z: 0}
+  m_LocalPosition: {x: 11.8, y: 9, z: 0}
   m_LocalScale: {x: 4.083434, y: 4.083434, z: 4.083434}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10689,6 +10690,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.7085376, y: 5.4724503}
   m_EdgeRadius: 0
+--- !u!114 &297340276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297340269}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770ce51f93675d5449eeca5a903b63ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talkUI: {fileID: 297340269}
+  talkUI2: {fileID: 1766206913}
 --- !u!1 &311523408
 GameObject:
   m_ObjectHideFlags: 0
@@ -30298,7 +30313,7 @@ GameObject:
   - component: {fileID: 1610240143}
   - component: {fileID: 1610240142}
   m_Layer: 5
-  m_Name: cry_unicorn
+  m_Name: cry_unicornTalk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32621,6 +32636,7 @@ GameObject:
   - component: {fileID: 1766206917}
   - component: {fileID: 1766206916}
   - component: {fileID: 1766206915}
+  - component: {fileID: 1766206920}
   m_Layer: 0
   m_Name: sleep_unicorn
   m_TagString: Untagged
@@ -32636,7 +32652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766206913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29, y: 9, z: 0}
+  m_LocalPosition: {x: 11.7, y: 9, z: 0}
   m_LocalScale: {x: 4.083434, y: 4.083434, z: 4.083434}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32770,6 +32786,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1766206920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766206913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770ce51f93675d5449eeca5a903b63ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talkUI: {fileID: 1766206913}
+  talkUI2: {fileID: 297340269}
 --- !u!1 &1772262369
 GameObject:
   m_ObjectHideFlags: 0

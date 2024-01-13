@@ -97,6 +97,7 @@ public class LoadLevelsManager : MonoBehaviour
     }
     private void Update(){
        // Debug.Log(scene1Loaded);
+       Debug.Log("UpdatechangeScene3"+DialogSystem.UpdatechangeScene3());
          UIstate=Enlarge.UpdateisMouseOverobj();
          if(DialogSystem.UpdatechangeScene()&& !scene1Loaded){
             scene1Loaded = true;
@@ -105,8 +106,12 @@ public class LoadLevelsManager : MonoBehaviour
          }
          if(DialogSystem.UpdatechangeScene2()){
             SceneManager.LoadScene("Scene Disease");
-//Debug.Log("切到第二關");
+
          }
+        //   if(DialogSystem.UpdatechangeScene3()){
+        //     SceneManager.LoadScene("Scene Disease");
+
+        //  }
     }
     private void OnDisable()
 {

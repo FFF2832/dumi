@@ -184,6 +184,7 @@ public class DialogSystem : MonoBehaviour
                 textFinished = true; 
                 changeScene3=true;
                 index++;
+                SceneManager.LoadScene("Scene Disease");
                 break;
             case "学Unity！":
                 textFinished = true; 
@@ -304,6 +305,7 @@ public class DialogSystem : MonoBehaviour
                 textFinished = true; 
                 changeScene3=true;
                 index++;
+                SceneManager.LoadScene("Scene Disease");
                 break;
         }
 

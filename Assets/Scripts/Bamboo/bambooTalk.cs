@@ -8,12 +8,15 @@ public class bambooTalk : MonoBehaviour
     public GameObject talkUI2; 
     //private bool isinside;
     // Start is called before the first frame update
-    private static bool finishTalk;
+    private static bool finishTalk;  
+    // private bool isCandleCorrect;
+ 
     void Start()
     {
        // isinside=false;
         talkUI.SetActive(false);
          talkUI2.SetActive(false);
+           
     }
 
     // Update is called once per frame
@@ -45,6 +48,13 @@ public class bambooTalk : MonoBehaviour
                     talkUI.SetActive(true);
                     talkUI2.SetActive(false);
                 }
+                
+
+                // if (CandleManager.UpdatecandleCorrect())
+                // {
+                //     talkUI.SetActive(true);
+                //     talkUI2.SetActive(false);
+                // }
             
                 else {
                     talkUI.SetActive(false);

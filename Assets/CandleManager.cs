@@ -9,7 +9,7 @@ public class CandleManager : MonoBehaviour
     private int currentIndex = 0;
     private Animator anim;
     private Animator animcandle1;
-    private bool candleCorrect;
+    private static bool candleCorrect;
     private int clickCount = 0;
     private bool animationInitialized = false;
  private List<GameObject> clickedCandles = new List<GameObject>();
@@ -164,8 +164,11 @@ public void CandleClicked(GameObject clickedCandle)
 }
 private void showAnim(){
       talkUI.SetActive(true); 
+       
+
 }
-public bool UpdatecandleCorrect(){
+public static bool UpdatecandleCorrect(){
         return candleCorrect;
 }
+
 }
