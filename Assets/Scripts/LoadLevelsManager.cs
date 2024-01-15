@@ -97,7 +97,7 @@ public class LoadLevelsManager : MonoBehaviour
     }
     private void Update(){
        // Debug.Log(scene1Loaded);
-       Debug.Log("UpdatechangeScene3"+DialogSystem.UpdatechangeScene3());
+      // Debug.Log("UpdatechangeScene3"+DialogSystem.UpdatechangeScene3());
          UIstate=Enlarge.UpdateisMouseOverobj();
          if(DialogSystem.UpdatechangeScene()&& !scene1Loaded){
             scene1Loaded = true;
