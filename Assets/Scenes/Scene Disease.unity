@@ -284,7 +284,7 @@ MonoBehaviour:
   headImage: {fileID: 1836133495}
   textLabel: {fileID: 1694964945}
   dialogImage: {fileID: 1359748765}
-  textFile: {fileID: 4900000, guid: 3cd412271314ea744b8eed880600b69b, type: 3}
+  textFile: {fileID: 4900000, guid: e96edab3759e1b648b729d5393a3b523, type: 3}
   index: 0
   textSpeed: 0.1
   headPlayer: {fileID: 21300000, guid: 845282e93f9aedb458456a0eb8ef812f, type: 3}
@@ -877,7 +877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61947790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: 1.01, z: 0.00594771}
+  m_LocalPosition: {x: 24.02, y: 1.01, z: 0.00594771}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10696,7 +10696,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297340269}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 770ce51f93675d5449eeca5a903b63ed, type: 3}
   m_Name: 
@@ -19777,7 +19777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &898441582
 Transform:
   m_ObjectHideFlags: 0
@@ -19786,7 +19786,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898441581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 63.59, y: -1.96, z: 0.00594771}
+  m_LocalPosition: {x: 9.72, y: -1.96, z: 0.00594771}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19831,10 +19831,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1513729307
-  m_SortingLayer: 2
+  m_SortingLayerID: 754000281
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d3891a3e6bb087f4db8c462828d67eea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73cf340ca38455343ae0a362f13c2d89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19862,7 +19862,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.08, y: 2.38}
+    oldSize: {x: 5.08, y: 2.36}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -30073,7 +30073,7 @@ MonoBehaviour:
   textSpeed: 0.1
   headPlayer: {fileID: 21300000, guid: 845282e93f9aedb458456a0eb8ef812f, type: 3}
   headNPC: {fileID: 21300000, guid: 845282e93f9aedb458456a0eb8ef812f, type: 3}
-  dialogPlayer: {fileID: 0}
+  dialogPlayer: {fileID: 21300000, guid: 95ea1d25579574b4b99f7f247b304a6b, type: 3}
   dialogPlayer2: {fileID: 0}
   dialogPlayer3: {fileID: 0}
   dialogNpc: {fileID: 21300000, guid: 3e418094d5e417d40b8bb81c42339a0d, type: 3}
