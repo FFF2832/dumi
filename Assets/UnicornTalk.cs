@@ -17,13 +17,24 @@ public class UnicornTalk : MonoBehaviour
        // isinside=false;
         talkUI.SetActive(false);
        //  talkUI2.SetActive(false);
+       
+         if (CandleManager.UpdatecandleCorrect())
+            {
+                    talkUI.SetActive(true);
+                    talkUI2.SetActive(false);
+                }
+            
+                else {
+                    talkUI.SetActive(false);
+                    talkUI2.SetActive(true);
+                }
            
     }
 
     // Update is called once per frame
     void Update()
     {
-       // Debug.Log("update"+PotionBottle.UpdatemagicDone());
+        Debug.Log("update"+CandleManager.UpdatecandleCorrect());
 
             // 如果点击了鼠标左键
         if (Input.GetMouseButtonDown(0))
