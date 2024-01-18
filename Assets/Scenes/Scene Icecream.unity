@@ -19446,6 +19446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExpectedIceCreamName: bee
+  IceCreamName_50: butterfly
   scoreText: {fileID: 1760502148}
 --- !u!50 &1207827875
 Rigidbody2D:
@@ -24565,7 +24566,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 0
 --- !u!222 &1760502149
 CanvasRenderer:
   m_ObjectHideFlags: 0
