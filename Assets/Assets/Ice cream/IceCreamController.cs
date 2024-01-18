@@ -19,6 +19,7 @@ public class IceCreamController : MonoBehaviour
         {
             ReleaseIceCream();
         }
+       
     }
 
     void TryPickUpIceCream()
@@ -53,6 +54,8 @@ public class IceCreamController : MonoBehaviour
         foreach (IceCream iceCream in iceCreams)
         {
             iceCream.ReleaseIceCream();
+              //iceCream.ResetIceCreamPosition(); 
         }
     }
+   
 }

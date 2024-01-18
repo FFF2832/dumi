@@ -3,9 +3,11 @@ using UnityEngine.UI;
 public class Customer : MonoBehaviour
 {
     public string ExpectedIceCreamName;
+    public string IceCreamName_50;
     private IceCreamController iceCreamController; // 新增這個欄位
     private int score = 0;
     public Text scoreText;
+   // private Vector3 originalPosition; // 记录冰淇淋原始位置
     void Start()
     {
         iceCreamController = FindObjectOfType<IceCreamController>(); // 在 Start 函數中設置它
@@ -30,9 +32,15 @@ public class Customer : MonoBehaviour
     {
         OnCorrectIceCreamDelivered();
     }
+    else if (IceCreamName_50 == deliveredIceCream.iceCreamName)
+    {
+        IceCreamDelivered50();
+    }
+
+    
     else
     {
-        OnWrongIceCreamDelivered();
+        OnWrongIceCreamDelivered(deliveredIceCream);
     }
 }
 
@@ -55,10 +63,27 @@ public class Customer : MonoBehaviour
         // 在這裡可以添加得分、播放正確冰淇淋的動畫等遊戲邏輯
         Debug.Log("成功拖到了正確的顧客所想要的冰淇淋！");
     }
-
-    private void OnWrongIceCreamDelivered()
+      private void IceCreamDelivered50()
     {
-        // 在這裡可以添加錯誤提示、扣分等遊戲邏輯
-        Debug.Log("拖到的冰淇淋不是顧客所想要的！");
+        // 增加得分
+        score += 50; // 你可以根據實際情況調整得分值
+
+        // 更新UI介面顯示分數
+        UpdateScoreUI();
+        // 在這裡可以添加得分、播放正確冰淇淋的動畫等遊戲邏輯
+        Debug.Log("只對一半！");
     }
+
+   private void OnWrongIceCreamDelivered(IceCream deliveredIceCream)
+{
+    score += 0;
+    Debug.Log("拖到的冰淇淋不是顧客所想要的！");
+
+    // 调用冰淇淋的 ResetIceCreamPosition 方法，将其飞回原始位置
+    if (deliveredIceCream != null)
+    {
+        deliveredIceCream.ResetIceCreamPosition();
+    }
+}
+
 }
