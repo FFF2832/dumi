@@ -1,10 +1,11 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Customer : MonoBehaviour
 {
     public string ExpectedIceCreamName;
     private IceCreamController iceCreamController; // 新增這個欄位
-
+    private int score = 0;
+    public Text scoreText;
     void Start()
     {
         iceCreamController = FindObjectOfType<IceCreamController>(); // 在 Start 函數中設置它
@@ -35,9 +36,22 @@ public class Customer : MonoBehaviour
     }
 }
 
+    private void UpdateScoreUI()
+{
+    // 假設你有一個Text元件用來顯示分數，請替換成實際的UI元件
+    // 例如，如果有一個名為scoreText的Text元件：
+    scoreText.text = score.ToString();
+
+    // 如果你的UI元件有特定的名稱或位於特定的物件上，請根據實際情況調整
+}
 
     private void OnCorrectIceCreamDelivered()
     {
+        // 增加得分
+        score += 100; // 你可以根據實際情況調整得分值
+
+        // 更新UI介面顯示分數
+        UpdateScoreUI();
         // 在這裡可以添加得分、播放正確冰淇淋的動畫等遊戲邏輯
         Debug.Log("成功拖到了正確的顧客所想要的冰淇淋！");
     }
