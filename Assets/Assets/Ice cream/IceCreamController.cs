@@ -54,7 +54,7 @@ public class IceCreamController : MonoBehaviour
         foreach (IceCream iceCream in iceCreams)
         {
             iceCream.ReleaseIceCream();
-              //iceCream.ResetIceCreamPosition(); 
+              iceCream.ResetIceCreamPosition(); 
         }
     }
    

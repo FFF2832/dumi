@@ -8,9 +8,12 @@ public class Customer : MonoBehaviour
     private int score = 0;
     public Text scoreText;
    // private Vector3 originalPosition; // 记录冰淇淋原始位置
+    private Animator customerAnimator;
+
     void Start()
     {
-        iceCreamController = FindObjectOfType<IceCreamController>(); // 在 Start 函數中設置它
+        iceCreamController = FindObjectOfType<IceCreamController>();
+        customerAnimator = GetComponent<Animator>(); // 获取Animator组件
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -62,6 +65,7 @@ public class Customer : MonoBehaviour
         UpdateScoreUI();
         // 在這裡可以添加得分、播放正確冰淇淋的動畫等遊戲邏輯
         Debug.Log("成功拖到了正確的顧客所想要的冰淇淋！");
+        customerAnimator.SetTrigger("out");
     }
       private void IceCreamDelivered50()
     {
@@ -72,12 +76,14 @@ public class Customer : MonoBehaviour
         UpdateScoreUI();
         // 在這裡可以添加得分、播放正確冰淇淋的動畫等遊戲邏輯
         Debug.Log("只對一半！");
+        customerAnimator.SetTrigger("out");
     }
 
    private void OnWrongIceCreamDelivered(IceCream deliveredIceCream)
 {
     score += 0;
     Debug.Log("拖到的冰淇淋不是顧客所想要的！");
+    customerAnimator.SetTrigger("out");
 
     // 调用冰淇淋的 ResetIceCreamPosition 方法，将其飞回原始位置
     if (deliveredIceCream != null)
