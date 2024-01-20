@@ -5,6 +5,8 @@ public class IceCreamController : MonoBehaviour
 {
     private List<IceCream> iceCreams = new List<IceCream>(); // 用於管理所有冰淇淋的列表
 
+    
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
