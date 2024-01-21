@@ -8,12 +8,15 @@ public class CustomerController : MonoBehaviour
     private Customer currentCustomer; // 当前正在服务的顾客
     private int score = 0;
      public Text scoreText;
+    public item thisItem;
+      public Inventory playerInventory;
     void Start()
     {
         SetActiveCustomers();
     }
     void Update(){
          UpdateScoreUI();
+         Checkscore();
     }
 
     void SetActiveCustomers()
@@ -57,6 +60,15 @@ public class CustomerController : MonoBehaviour
       public void AddScore(int points)
     {
         score += points;
+        
+
+    }
+    public void Checkscore(){
+
+        if(score==300){
+            AddNewItem(thisItem);
+            Debug.Log("恭喜獲得勝利");
+        }
     }
     
     private void UpdateScoreUI()
@@ -67,4 +79,21 @@ public class CustomerController : MonoBehaviour
 
     // 如果你的UI元件有特定的名稱或位於特定的物件上，請根據實際情況調整
 }
+ public void AddNewItem(item thisItem){
+    if(!playerInventory.itemList.Contains(thisItem)){
+         //playerInventory.itemList.Add(thisItem);
+          //未刪CreateNewItem
+         //InventoryManager.CreateNewItem(thisItem);
+         for(int i=0;i<playerInventory.itemList.Count;i++){
+                if(playerInventory.itemList[i]==null){
+                        playerInventory.itemList[i]=thisItem;
+                        break;
+                }
+         }
+    }
+    else {
+        thisItem.itemHeild += 1;
+    }
+    InventoryManager.RefreshItem(); 
+   }
 }
