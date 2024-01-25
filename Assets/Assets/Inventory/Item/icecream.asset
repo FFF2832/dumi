@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: icecream
   m_EditorClassIdentifier: 
   itemName: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: 967c13a38411f5346ab5a366508372c9, type: 3}
   detailedItemImage: {fileID: 0}
   itemHeild: 0
   itemInfo: 
