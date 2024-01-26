@@ -7,7 +7,9 @@ public class CustomerController : MonoBehaviour
     private int currentCustomerIndex = 0; // 当前顾客的索引
     private Customer currentCustomer; // 当前正在服务的顾客
     private int score = 0;
+    private int score_noTotal = 0;
      public Text scoreText;
+     public Text scoreText_noTotal;
     public item thisItem;
       public Inventory playerInventory;
     void Start()
@@ -60,7 +62,7 @@ public class CustomerController : MonoBehaviour
       public void AddScore(int points)
     {
         score += points;
-        
+        score_noTotal= points;
 
     }
     public void Checkscore(){
@@ -76,6 +78,7 @@ public class CustomerController : MonoBehaviour
     // 假設你有一個Text元件用來顯示分數，請替換成實際的UI元件
     // 例如，如果有一個名為scoreText的Text元件：
     scoreText.text = score.ToString();
+    scoreText_noTotal.text = score_noTotal.ToString();
 
     // 如果你的UI元件有特定的名稱或位於特定的物件上，請根據實際情況調整
 }
