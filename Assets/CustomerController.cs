@@ -12,9 +12,11 @@ public class CustomerController : MonoBehaviour
      public Text scoreText_noTotal;
     public item thisItem;
       public Inventory playerInventory;
+       private Animator icecreamAnim;
     void Start()
     {
         SetActiveCustomers();
+          icecreamAnim = GetComponent<Animator>(); 
     }
     void Update(){
          UpdateScoreUI();
@@ -70,6 +72,11 @@ public class CustomerController : MonoBehaviour
         if(score==300){
             AddNewItem(thisItem);
             Debug.Log("恭喜獲得勝利");
+             icecreamAnim.SetBool("icecream_sucess",true);
+        }
+        else {
+            Debug.Log("你失敗了!");
+            icecreamAnim.SetBool("icecream_sucess",false);
         }
     }
     
