@@ -38,7 +38,7 @@ public class IceCream : MonoBehaviour
 
     public void ResetIceCreamPosition()
     {
-         Debug.Log("Resetting ice cream position to: " + originalPosition);
+        // Debug.Log("Resetting ice cream position to: " + originalPosition);
         // 将冰淇淋位置设置回原始位置
         transform.position = originalPosition;
     }

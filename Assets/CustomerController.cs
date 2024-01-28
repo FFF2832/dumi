@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class CustomerController : MonoBehaviour
 {
     public List<Customer> customers = new List<Customer>(); // 顾客列表
@@ -13,14 +14,17 @@ public class CustomerController : MonoBehaviour
     public item thisItem;
       public Inventory playerInventory;
        private Animator icecreamAnim;
+         public GameObject icecreamSuccessObject;
+         private static bool iceCreamok;
     void Start()
     {
         SetActiveCustomers();
           icecreamAnim = GetComponent<Animator>(); 
+          icecreamSuccessObject.GetComponent<Animator>().SetInteger("icecream_sucess", 0);
     }
     void Update(){
          UpdateScoreUI();
-         Checkscore();
+        
     }
 
     void SetActiveCustomers()
@@ -58,8 +62,13 @@ public class CustomerController : MonoBehaviour
         }
         else
         {
+             Checkscore();
             Debug.Log("所有顾客都已服务完毕！");
         }
+        //  if (icecreamSuccessObject != null)
+        // {
+        //     icecreamSuccessObject.GetComponent<Animator>().SetInteger("icecream_sucess", 0);
+        // }
     }
       public void AddScore(int points)
     {
@@ -72,11 +81,14 @@ public class CustomerController : MonoBehaviour
         if(score==300){
             AddNewItem(thisItem);
             Debug.Log("恭喜獲得勝利");
-             icecreamAnim.SetBool("icecream_sucess",true);
+            icecreamSuccessObject.GetComponent<Animator>().SetInteger("icecream_sucess", 1);
+            iceCreamok=true;
         }
         else {
             Debug.Log("你失敗了!");
-            icecreamAnim.SetBool("icecream_sucess",false);
+            icecreamSuccessObject.GetComponent<Animator>().SetInteger("icecream_sucess", 2);
+              Invoke("ResetScene", 3.0f); // 過2秒後調用 ResetScene 方法
+              iceCreamok=false;
         }
     }
     
@@ -106,4 +118,14 @@ public class CustomerController : MonoBehaviour
     }
     InventoryManager.RefreshItem(); 
    }
+
+       private void ResetScene()
+    {
+        // 使用 SceneManager 重新載入當前場景
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public static bool UpdateiceCreamok(){
+        return iceCreamok;
+    }
+
 }

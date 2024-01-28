@@ -31,7 +31,7 @@ public class click : MonoBehaviour
         check2DObjectClicked();
       //  Debug.Log("clickCar"+clickCar);
        // Debug.Log("clickCar2"+clickCar2);
-        //checkclick();
+       // checkclick();
         
     }
     
@@ -196,6 +196,11 @@ public class click : MonoBehaviour
             }
              else if(hit.collider.name=="paintyell"||hit.collider.name=="glowobj_pain"){
                 SceneManager.LoadScene("Scene nightmare");
+              
+            }
+             else if(hit.collider.name=="paint_vangogh"){
+                SceneManager.LoadScene("Scene Icecream");
+                Debug.Log("icecream");
               
             }
             else {

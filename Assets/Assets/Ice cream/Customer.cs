@@ -66,7 +66,7 @@ public class Customer : MonoBehaviour
         // 更新UI介面顯示分數
        // UpdateScoreUI();
         // 在這裡可以添加得分、播放正確冰淇淋的動畫等遊戲邏輯
-        Debug.Log("成功拖到了正確的顧客所想要的冰淇淋！");
+      //  Debug.Log("成功拖到了正確的顧客所想要的冰淇淋！");
         customerAnimator.SetTrigger("out");
           Invoke("MoveToNextCustomerWithDelay", 3f);
     }
@@ -78,7 +78,7 @@ public class Customer : MonoBehaviour
         // 更新UI介面顯示分數
        // UpdateScoreUI();
         // 在這裡可以添加得分、播放正確冰淇淋的動畫等遊戲邏輯
-        Debug.Log("只對一半！");
+       // Debug.Log("只對一半！");
         customerAnimator.SetTrigger("out");
          Invoke("MoveToNextCustomerWithDelay", 3f);
     }
@@ -87,7 +87,7 @@ public class Customer : MonoBehaviour
 {
     // score += 0;
      customerController.AddScore(0); // 100 是你的得分值
-    Debug.Log("拖到的冰淇淋不是顧客所想要的！");
+  //  Debug.Log("拖到的冰淇淋不是顧客所想要的！");
     customerAnimator.SetTrigger("out");
       Invoke("MoveToNextCustomerWithDelay", 3f);
 
