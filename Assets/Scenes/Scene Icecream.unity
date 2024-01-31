@@ -1016,9 +1016,9 @@ MonoBehaviour:
   dialogPlayer: {fileID: 21300000, guid: 95ea1d25579574b4b99f7f247b304a6b, type: 3}
   dialogPlayer2: {fileID: 0}
   dialogPlayer3: {fileID: 0}
-  dialogNpc: {fileID: 21300000, guid: 200efb48b3252ba4cadd1a62fd2e1ed4, type: 3}
-  dialogNpc2: {fileID: 0}
-  dialogNpc3: {fileID: 0}
+  dialogNpc: {fileID: 21300000, guid: 9582ee03b2f2b5b4a8b37f95b3f86108, type: 3}
+  dialogNpc2: {fileID: 21300000, guid: 928dc2b09b70b2b4ebf9fe399a1616ac, type: 3}
+  dialogNpc3: {fileID: 21300000, guid: 2bca45d0f167dcb488e0d023e38b3023, type: 3}
   dialogNpc4: {fileID: 0}
   dialogIllustrate1: {fileID: 0}
   dialogIllustrate2: {fileID: 0}
@@ -11017,7 +11017,7 @@ MonoBehaviour:
   dialogPlayer: {fileID: 21300000, guid: 95ea1d25579574b4b99f7f247b304a6b, type: 3}
   dialogPlayer2: {fileID: 0}
   dialogPlayer3: {fileID: 0}
-  dialogNpc: {fileID: 21300000, guid: 200efb48b3252ba4cadd1a62fd2e1ed4, type: 3}
+  dialogNpc: {fileID: 21300000, guid: 9582ee03b2f2b5b4a8b37f95b3f86108, type: 3}
   dialogNpc2: {fileID: 0}
   dialogNpc3: {fileID: 0}
   dialogNpc4: {fileID: 0}
