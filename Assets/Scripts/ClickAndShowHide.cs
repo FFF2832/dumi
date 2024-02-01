@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class ClickAndShowHide : MonoBehaviour
 {
     public GameObject targetObject; // 要显示和隐藏的GameObject
@@ -12,7 +12,7 @@ public class ClickAndShowHide : MonoBehaviour
     }
     private void Update()
     {
-        // 监听鼠标点击事件
+       // 监听鼠标点击事件
         if (Input.GetMouseButtonDown(0))
         {
             // 通过射线检测点击位置是否在目标GameObject上
@@ -32,8 +32,11 @@ public class ClickAndShowHide : MonoBehaviour
 
     private void ShowAndHideTargetObject()
     {
-        // 显示目标GameObject
+        // 显示目标GameObject，使用DOTween实现缩放效果
+        targetObject.transform.localScale = Vector3.zero;
         targetObject.SetActive(true);
+
+        targetObject.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
 
         // 在两秒后调用自动隐藏的方法
         Invoke("HideTargetObject", 2f);
@@ -44,8 +47,11 @@ public class ClickAndShowHide : MonoBehaviour
 
     private void HideTargetObject()
     {
-        // 隐藏目标GameObject
-        targetObject.SetActive(false);
+        // 隐藏目标GameObject，使用DOTween实现缩放效果
+        targetObject.transform.DOScale(Vector3.zero, 0.5f).OnComplete(() =>
+        {
+            targetObject.SetActive(false);
+        });
 
         // 重置点击状态
         isClicked = false;
