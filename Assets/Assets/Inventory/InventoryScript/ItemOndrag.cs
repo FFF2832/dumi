@@ -42,7 +42,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public static bool keyCorrect;
     public static bool key_F3correct;
     public static bool key_F4correct;
-
+     public static bool unicornHorn;
     public bool ispuzzle1ok;
 
 
@@ -151,6 +151,11 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "紙條_F右"){
             transform.localScale = originalScale * 7.8f; // 可以調整放大倍數
             Debug.Log("(3): " + targetTransform.name + ", position: " + eventData.position);
+         }
+
+          else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "mb0016"){
+            transform.localScale = originalScale * 7.8f; // 可以調整放大倍數
+            Debug.Log(targetTransform.name + ", position: " + eventData.position);
          }
         
         // // 放大物品
@@ -372,6 +377,22 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             
         
       }
+
+        else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "mb0016")){
+             itemCorrect[11]=true;
+              itemcorrect=11;
+            if(  positionCorrect[11]){
+              
+             }  
+             else {
+                correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+            } 
+            
+        
+      }
       else  {
         correct=false;
             // 如果沒有碰撞到目標，將物體放回原來的位置
@@ -453,6 +474,10 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         }
         else if(targetTransform.name =="heartkeyspcae"){
               positionCorrect[10]=true;
+           
+        }
+        else if(targetTransform.name =="bottleAnim"){
+              positionCorrect[11]=true;
            
         }
     }
@@ -700,4 +725,19 @@ public static bool checkkey_F4correct()
    // Debug.Log("checktire1: " + tire1ok);
     return key_F4correct;
 }
+public static bool checkunicornHorn()
+{
+    // 檢查對應索引位置的值是否相等且不為 0
+    if (positionCorrect[11]&& itemCorrect[11])
+    {
+        unicornHorn = true;
+    }
+    else
+    {
+        unicornHorn = false;
+    }
+  
+    return unicornHorn;
+}
+
 }

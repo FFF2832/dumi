@@ -31,7 +31,7 @@ public class click : MonoBehaviour
         check2DObjectClicked();
       //  Debug.Log("clickCar"+clickCar);
        // Debug.Log("clickCar2"+clickCar2);
-       // checkclick();
+        checkclick();
         
     }
     

@@ -37,7 +37,7 @@ public class UnicornTalk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("update"+CustomerController.UpdateiceCreamok());
+       // Debug.Log("update"+CustomerController.UpdateiceCreamok());
         if(CustomerController.UpdateiceCreamok()){ 
                         talkUI3.SetActive(true);
                         talkUI2.SetActive(false);
