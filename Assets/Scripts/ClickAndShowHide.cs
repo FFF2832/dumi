@@ -35,7 +35,7 @@ public class ClickAndShowHide : MonoBehaviour
         // 显示目标GameObject，使用DOTween实现缩放效果
         targetObject.transform.localScale = Vector3.zero;
         targetObject.SetActive(true);
-
+ targetObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         targetObject.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
 
         // 在两秒后调用自动隐藏的方法
@@ -47,11 +47,17 @@ public class ClickAndShowHide : MonoBehaviour
 
     private void HideTargetObject()
     {
-        // 隐藏目标GameObject，使用DOTween实现缩放效果
-        targetObject.transform.DOScale(Vector3.zero, 0.5f).OnComplete(() =>
+        // // 隐藏目标GameObject，使用DOTween实现缩放效果
+        // targetObject.transform.DOScale(Vector3.zero, 0.5f).OnComplete(() =>
+        // {
+        //     targetObject.SetActive(false);
+        // });
+              // 隐藏目标GameObject，使用DOTween实现透明度效果
+        targetObject.GetComponent<SpriteRenderer>().DOFade(0f, 0.5f).OnComplete(() =>
         {
             targetObject.SetActive(false);
         });
+        //  targetObject.SetActive(false);
 
         // 重置点击状态
         isClicked = false;
