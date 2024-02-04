@@ -203,6 +203,11 @@ public class click : MonoBehaviour
                 Debug.Log("icecream");
               
             }
+            //  else if(hit.collider.name=="gecko"){
+            //     // clickCar2=true;
+               
+            //      //  clickCar=false;
+            // }
             else {
                 // clickCar=false;
                //   clickCar2 = false;

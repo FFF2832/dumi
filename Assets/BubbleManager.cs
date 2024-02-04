@@ -13,7 +13,8 @@ public class BubbleManager : MonoBehaviour
     private List<GameObject> clickedBubbles = new List<GameObject>();
 
     public GameObject talkUI;
-
+  public item thisItem;
+   public Inventory playerInventory;
     private void Start()
     {
         SetNextBubble();
@@ -40,6 +41,7 @@ public void BubbleClicked(GameObject clickedBubble)
             Debug.Log("所有泡泡都已被点击！");
             float delayAnim = 3.0f;
            Invoke("showAnim", delayAnim);
+           AddNewItem();
         }
     }
     else
@@ -107,4 +109,22 @@ public void BubbleClicked(GameObject clickedBubble)
     {
         return bubbleCorrect;
     }
+      public void AddNewItem(){
+    if(!playerInventory.itemList.Contains(thisItem)){
+         //playerInventory.itemList.Add(thisItem);
+          //未刪CreateNewItem
+         //InventoryManager.CreateNewItem(thisItem);
+         for(int i=0;i<playerInventory.itemList.Count;i++){
+                if(playerInventory.itemList[i]==null){
+                        playerInventory.itemList[i]=thisItem;
+                        break;
+                }
+         }
+    }
+    else {
+        thisItem.itemHeild += 1;
+    }
+    InventoryManager.RefreshItem(); 
+    
+   }
 }

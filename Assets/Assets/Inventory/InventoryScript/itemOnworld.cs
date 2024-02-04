@@ -290,6 +290,14 @@ public class itemOnworld : MonoBehaviour
               
     
             }
+               else  if(hit.collider.name=="gecko"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+                AddNewItem(thisItem);
+                 isMoving = true;
+              
+    
+            }
              else  if(hit.collider.name=="key_f1"){
              
                 Debug.Log("We hit " + hit.collider.name);
