@@ -293,9 +293,11 @@ public class itemOnworld : MonoBehaviour
                else  if(hit.collider.name=="gecko"){
              
                 Debug.Log("We hit " + hit.collider.name);
+               SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = moveSprite;
+                // animator.enabled = false;
                 AddNewItem(thisItem);
                  isMoving = true;
-              
     
             }
              else  if(hit.collider.name=="key_f1"){
