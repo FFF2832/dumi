@@ -48,14 +48,10 @@ public class bambooTalk : MonoBehaviour
                     talkUI.SetActive(true);
                     talkUI2.SetActive(false);
                 }
+
                 
 
-                // if (CandleManager.UpdatecandleCorrect())
-                // {
-                //     talkUI.SetActive(true);
-                //     talkUI2.SetActive(false);
-                // }
-            
+               
                 else {
                     talkUI.SetActive(false);
                     talkUI2.SetActive(true);

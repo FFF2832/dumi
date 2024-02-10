@@ -23,21 +23,35 @@ public class UnicornTalk : MonoBehaviour
         talkUI3.SetActive(false);
          if (CandleManager.UpdatecandleCorrect())
             {
-                    talkUI.SetActive(true);
-                    talkUI2.SetActive(false);
-                    talkUI3.SetActive(false);
-                }
-        else  if(CustomerController.UpdateiceCreamok()){ 
+                talkUI.SetActive(true);
+                talkUI2.SetActive(false);
+                
+                    
+                    if(CustomerController.UpdateiceCreamok()){ 
                         talkUI3.SetActive(true);
                         talkUI2.SetActive(false);
                         talkUI.SetActive(false);
                          talkUI4.SetActive(true);
                    
-                    }   
+                    }  
+                    else{
+                    talkUI.SetActive(true);
+                    talkUI2.SetActive(false);
+                    talkUI3.SetActive(false);
+                    }
+                }
+         else if(CandleManager.UpdatecandleCorrect()&&CustomerController.UpdateiceCreamok()){
+                  talkUI3.SetActive(true);
+                        talkUI2.SetActive(false);
+                        talkUI.SetActive(false);
+                         talkUI4.SetActive(true);
+         }
             
                 else {
                     talkUI.SetActive(false);
                     talkUI2.SetActive(true);
+                     talkUI3.SetActive(false);
+                       talkUI4.SetActive(false);
                 }
            
     }
@@ -77,15 +91,20 @@ public class UnicornTalk : MonoBehaviour
                     talkUI.SetActive(true);
                     talkUI2.SetActive(false);
                      talkUI3.SetActive(false);
-                    
+                    //   if(CustomerController.UpdateiceCreamok()){ 
+                    //     talkUI3.SetActive(true);
+                    //     talkUI2.SetActive(false);
+                    //     talkUI.SetActive(false);
+                   
+                    // }   
                 }
-              
-                  if(CustomerController.UpdateiceCreamok()){ 
-                        talkUI3.SetActive(true);
+               else if(CandleManager.UpdatecandleCorrect()&&CustomerController.UpdateiceCreamok()){
+                  talkUI3.SetActive(true);
                         talkUI2.SetActive(false);
                         talkUI.SetActive(false);
-                   
-                    }   
+                         talkUI4.SetActive(true);
+         }
+                
             
                 else {
                      talkUI3.SetActive(false);
