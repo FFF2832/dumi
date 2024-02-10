@@ -154,7 +154,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
          }
 
           else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "mb0016"){
-            transform.localScale = originalScale * 7.8f; // 可以調整放大倍數
+            transform.localScale = originalScale * 1.5f; // 可以調整放大倍數
             Debug.Log(targetTransform.name + ", position: " + eventData.position);
          }
         
