@@ -7,6 +7,7 @@ public class UnicornTalk : MonoBehaviour
     public GameObject talkUI;   //对话框
     public GameObject talkUI2; 
      public GameObject talkUI3; 
+    public GameObject talkUI4; 
     //private bool isinside;
     // Start is called before the first frame update
     private static bool finishTalk;  
@@ -26,6 +27,13 @@ public class UnicornTalk : MonoBehaviour
                     talkUI2.SetActive(false);
                     talkUI3.SetActive(false);
                 }
+        else  if(CustomerController.UpdateiceCreamok()){ 
+                        talkUI3.SetActive(true);
+                        talkUI2.SetActive(false);
+                        talkUI.SetActive(false);
+                         talkUI4.SetActive(true);
+                   
+                    }   
             
                 else {
                     talkUI.SetActive(false);
@@ -38,12 +46,7 @@ public class UnicornTalk : MonoBehaviour
     void Update()
     {
        // Debug.Log("update"+CustomerController.UpdateiceCreamok());
-        if(CustomerController.UpdateiceCreamok()){ 
-                        talkUI3.SetActive(true);
-                        talkUI2.SetActive(false);
-                        talkUI.SetActive(false);
-                   
-                    }
+      
                     
             // 如果点击了鼠标左键
         if (Input.GetMouseButtonDown(0))
@@ -77,7 +80,12 @@ public class UnicornTalk : MonoBehaviour
                     
                 }
               
+                  if(CustomerController.UpdateiceCreamok()){ 
+                        talkUI3.SetActive(true);
+                        talkUI2.SetActive(false);
+                        talkUI.SetActive(false);
                    
+                    }   
             
                 else {
                      talkUI3.SetActive(false);
