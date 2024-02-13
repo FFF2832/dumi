@@ -7,7 +7,7 @@ public class MusicManager : MonoBehaviour
     public GameObject[] musics;
     private int currentIndex = 0;
     private Animator anim;
-    private Animator animMusic1;
+    //private Animator animMusic1;
     private static bool musicCorrect;
     private int clickCount = 0;
     private bool animationInitialized = false;
@@ -19,13 +19,15 @@ public class MusicManager : MonoBehaviour
     {
         SetNextMusic();
         anim = GetComponent<Animator>();
-        animMusic1 = GetComponent<Animator>();
-        anim.SetInteger("CandleCorrect", 0);
+      //  animMusic1 = GetComponent<Animator>();
+        //anim.SetInteger("CandleCorrect", 0);
+           anim.SetInteger("snakeSucess", 0);
     }
 
     void Update()
     {
         // 如果你希望每帧都更新动画状态，可以在这里调用 UpdateAnimationState()
+  
     }
 
     public void MusicClicked(GameObject clickedMusic)
@@ -44,9 +46,12 @@ public class MusicManager : MonoBehaviour
                 if (currentIndex == musics.Length)
                 {
                     // 完成整個順序
+                    // anim.SetInteger("snakeSucess", 1);
                     Debug.Log("完成順序！");
-                    ResetMusicSequence();
                     musicCorrect = true;
+                    ResetMusicSequence();
+                  
+                   
                 }
                 else
                 {
@@ -56,11 +61,13 @@ public class MusicManager : MonoBehaviour
             }
             else
             {
+                // anim.SetInteger("snakeSucess", 2);
                 // 錯誤的音樂，可以在這裡添加錯誤處理邏輯
                 Debug.Log("錯誤的順序！");
                 musicCorrect = false;
                 ResetMusicSequence();
                 clickCount++;
+                 
             }
 
             // 更新動畫狀態
@@ -79,9 +86,9 @@ public class MusicManager : MonoBehaviour
         switch (index)
         {
             case 0:
-                Debug.Log("點到音樂1");
+              //  Debug.Log("點到音樂1");
                 // 播放第一个音樂的动画
-                animMusic1.SetInteger("music1Anim", 1);
+              //  animMusic1.SetInteger("music1Anim", 1);
                 break;
             case 1:
                 // 播放第二个音樂的动画
@@ -106,16 +113,19 @@ public class MusicManager : MonoBehaviour
         // 根據musicCorrect狀態設置動畫
         if (musicCorrect)
         {
-            anim.SetInteger("CandleCorrect", 1);
+              anim.SetInteger("snakeSucess", 1);
+           // anim.SetInteger("CandleCorrect", 1);
             float delayAnim = 3.0f;
-            Invoke("showAnim", delayAnim);
-             Debug.Log("成功到一");
+           // Invoke("showAnim", delayAnim);
+            Debug.Log("成功到一");
+          
         }
         else
         {
-            anim.SetInteger("CandleCorrect", 2);
+              anim.SetInteger("snakeSucess", 2);
+            //anim.SetInteger("CandleCorrect", 2);
             float delayInSeconds = 4.0f;
-            Invoke("LoadNextScene", delayInSeconds);
+          //  Invoke("LoadNextScene", delayInSeconds);
         }
     }
 

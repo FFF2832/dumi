@@ -14,15 +14,15 @@ public class Musicbtn : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("OnPointerDown called");
+        Debug.Log("musicNumber"+musicNumber);
         Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(GetComponent<RectTransform>(), eventData.position, eventData.pressEventCamera, out localPoint);
 
         if (musicNumber == 1)
         {
             animMusic.SetInteger("music1Anim", 1);
-            Debug.Log("Animator component: " + animMusic); // 检查获取到的 Animator 组件
-            Debug.Log("设置 music1Anim 为 1");
+            // Debug.Log("Animator component: " + animMusic); // 检查获取到的 Animator 组件
+            // Debug.Log("设置 music1Anim 为 1");
         }
 
         if (musicNumber == 2)
