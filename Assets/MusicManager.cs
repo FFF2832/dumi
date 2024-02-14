@@ -115,7 +115,7 @@ public class MusicManager : MonoBehaviour
         {
               anim.SetInteger("snakeSucess", 1);
            // anim.SetInteger("CandleCorrect", 1);
-            float delayAnim = 3.0f;
+            // float delayAnim = 3.0f;
            // Invoke("showAnim", delayAnim);
             Debug.Log("成功到一");
           

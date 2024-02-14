@@ -24573,7 +24573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ab49bd2e7b86a48af8ed928b4c0311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicManager: {fileID: 1641347086}
+  musicManager: {fileID: 1035097221}
   musicNumber: 1
 --- !u!114 &986534837
 MonoBehaviour:
@@ -25054,6 +25054,7 @@ GameObject:
   - component: {fileID: 1035097217}
   - component: {fileID: 1035097218}
   - component: {fileID: 1035097219}
+  - component: {fileID: 1035097221}
   m_Layer: 0
   m_Name: snakeAnim
   m_TagString: Untagged
@@ -25191,6 +25192,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1035097221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035097215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f28717c92ece654382e59efdd2f8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musics:
+  - {fileID: 986534828}
+  - {fileID: 1536812707}
+  - {fileID: 1867464839}
+  talkUI: {fileID: 0}
 --- !u!1 &1036045879
 GameObject:
   m_ObjectHideFlags: 0
@@ -35102,7 +35120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ab49bd2e7b86a48af8ed928b4c0311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicManager: {fileID: 1641347086}
+  musicManager: {fileID: 1035097221}
   musicNumber: 2
 --- !u!114 &1536812715
 MonoBehaviour:
@@ -36384,7 +36402,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641347076}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 45a8fb286c8720e4d8a60fe5b51be578, type: 2}
   m_CullingMode: 0
@@ -36455,7 +36473,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641347076}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f28717c92ece654382e59efdd2f8a50, type: 3}
   m_Name: 
@@ -41254,7 +41272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ab49bd2e7b86a48af8ed928b4c0311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicManager: {fileID: 1641347086}
+  musicManager: {fileID: 1035097221}
   musicNumber: 3
 --- !u!114 &1867464847
 MonoBehaviour:
