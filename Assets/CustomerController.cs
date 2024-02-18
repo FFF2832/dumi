@@ -16,11 +16,20 @@ public class CustomerController : MonoBehaviour
        private Animator icecreamAnim;
          public GameObject icecreamSuccessObject;
          private static bool iceCreamok;
+         public GameObject boss_talkUI;
+         public GameObject talkUI; 
+         private static bool bossTalkUIShown = false; // 添加一个静态布尔变量来跟踪 boss_talkUI 的状态
+
     void Start()
     {
         SetActiveCustomers();
           icecreamAnim = GetComponent<Animator>(); 
           icecreamSuccessObject.GetComponent<Animator>().SetInteger("icecream_sucess", 0);
+           if (!bossTalkUIShown) // 只有在 bossTalkUIShown 为 false 时才显示 boss_talkUI
+        {
+            boss_talkUI.SetActive(true); 
+            bossTalkUIShown = true; // 将 bossTalkUIShown 设置为 true，表示已经显示了 boss_talkUI
+        }
     }
     void Update(){
          UpdateScoreUI();
@@ -82,13 +91,17 @@ public class CustomerController : MonoBehaviour
             AddNewItem(thisItem);
             Debug.Log("恭喜獲得勝利");
             icecreamSuccessObject.GetComponent<Animator>().SetInteger("icecream_sucess", 1);
+             float delayAnim = 3.0f;
+           Invoke("showAnim", delayAnim);
             iceCreamok=true;
+            bossTalkUIShown = true;
         }
         else {
             Debug.Log("你失敗了!");
             icecreamSuccessObject.GetComponent<Animator>().SetInteger("icecream_sucess", 2);
               Invoke("ResetScene", 3.0f); // 過2秒後調用 ResetScene 方法
               iceCreamok=false;
+              bossTalkUIShown = true;
         }
     }
     
@@ -100,6 +113,9 @@ public class CustomerController : MonoBehaviour
     scoreText_noTotal.text = score_noTotal.ToString();
 
     // 如果你的UI元件有特定的名稱或位於特定的物件上，請根據實際情況調整
+}
+private void showAnim(){
+      talkUI.SetActive(true); 
 }
  public void AddNewItem(item thisItem){
     if(!playerInventory.itemList.Contains(thisItem)){
@@ -123,6 +139,7 @@ public class CustomerController : MonoBehaviour
     {
         // 使用 SceneManager 重新載入當前場景
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        bossTalkUIShown = true;
     }
     public static bool UpdateiceCreamok(){
         return iceCreamok;

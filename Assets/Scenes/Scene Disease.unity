@@ -14287,7 +14287,7 @@ Animator:
   m_GameObject: {fileID: 455918565}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 41fee4f5064653e41a531155ea5a944e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6319f0c34bbbd55429910cbeabe927b5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -24574,7 +24574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicManager: {fileID: 1035097221}
-  musicNumber: 1
+  musicNumber: 3
 --- !u!114 &986534837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24590,7 +24590,7 @@ MonoBehaviour:
   _downScale: 0.85
   _downDuration: 0.2
   _upDuration: 0.15
-  buttonPressSound: {fileID: 8300000, guid: 1bcb2912fae89934ba43c9756aa7d255, type: 3}
+  buttonPressSound: {fileID: 8300000, guid: 10b8ae5df2dc89f4ca8f61b5c2759bb7, type: 3}
 --- !u!82 &986534838
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24601,7 +24601,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 41fe389abc552ae4ea67e78dcfbfa9fb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 10b8ae5df2dc89f4ca8f61b5c2759bb7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -25205,9 +25205,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musics:
-  - {fileID: 986534828}
   - {fileID: 1536812707}
   - {fileID: 1867464839}
+  - {fileID: 986534828}
   talkUI: {fileID: 0}
 --- !u!1 &1036045879
 GameObject:
@@ -30774,6 +30774,7 @@ GameObject:
   - component: {fileID: 1368260608}
   - component: {fileID: 1368260609}
   - component: {fileID: 1368260610}
+  - component: {fileID: 1368260611}
   m_Layer: 0
   m_Name: happy_unicorn
   m_TagString: Untagged
@@ -30862,6 +30863,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talkUI: {fileID: 0}
   talkUI2: {fileID: 0}
+--- !u!95 &1368260611
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368260607}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6319f0c34bbbd55429910cbeabe927b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1368579070
 GameObject:
   m_ObjectHideFlags: 0
@@ -35121,7 +35142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicManager: {fileID: 1035097221}
-  musicNumber: 2
+  musicNumber: 1
 --- !u!114 &1536812715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35137,7 +35158,7 @@ MonoBehaviour:
   _downScale: 0.85
   _downDuration: 0.2
   _upDuration: 0.15
-  buttonPressSound: {fileID: 8300000, guid: 41fe389abc552ae4ea67e78dcfbfa9fb, type: 3}
+  buttonPressSound: {fileID: 8300000, guid: 91d1aabecc3170e47a02584ccc89e0a2, type: 3}
 --- !u!82 &1536812716
 AudioSource:
   m_ObjectHideFlags: 0
@@ -35148,7 +35169,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 41fe389abc552ae4ea67e78dcfbfa9fb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 91d1aabecc3170e47a02584ccc89e0a2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -39269,7 +39290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f883a9b52840f6489967fbe00612857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicClip: {fileID: 8300000, guid: d560a32cca772ef479c5639641f993d3, type: 3}
+  musicClip: {fileID: 8300000, guid: 3ab85bc2c9aaa4a4198d6d8ad1cf790a, type: 3}
 --- !u!82 &1813138452
 AudioSource:
   m_ObjectHideFlags: 0
@@ -39280,7 +39301,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d560a32cca772ef479c5639641f993d3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3ab85bc2c9aaa4a4198d6d8ad1cf790a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -39437,7 +39458,7 @@ MonoBehaviour:
   _downScale: 0.85
   _downDuration: 0.2
   _upDuration: 0.15
-  buttonPressSound: {fileID: 8300000, guid: 41fe389abc552ae4ea67e78dcfbfa9fb, type: 3}
+  buttonPressSound: {fileID: 8300000, guid: 3ab85bc2c9aaa4a4198d6d8ad1cf790a, type: 3}
 --- !u!114 &1813138457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41273,7 +41294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicManager: {fileID: 1035097221}
-  musicNumber: 3
+  musicNumber: 2
 --- !u!114 &1867464847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41289,7 +41310,7 @@ MonoBehaviour:
   _downScale: 0.85
   _downDuration: 0.2
   _upDuration: 0.15
-  buttonPressSound: {fileID: 8300000, guid: b0a135c19dbc2cc49909a2a583d55719, type: 3}
+  buttonPressSound: {fileID: 8300000, guid: be167d50f1773b7408f5d2b909625c55, type: 3}
 --- !u!82 &1867464848
 AudioSource:
   m_ObjectHideFlags: 0
@@ -41300,7 +41321,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 41fe389abc552ae4ea67e78dcfbfa9fb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: be167d50f1773b7408f5d2b909625c55, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

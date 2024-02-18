@@ -21103,6 +21103,8 @@ MonoBehaviour:
   thisItem: {fileID: 11400000, guid: ab894892237bf5f4a9fb204067e7985f, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
   icecreamSuccessObject: {fileID: 1313368447}
+  boss_talkUI: {fileID: 422091075}
+  talkUI: {fileID: 54916623}
 --- !u!1 &1271368438
 GameObject:
   m_ObjectHideFlags: 0
@@ -30831,7 +30833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2135942391
 Transform:
   m_ObjectHideFlags: 0
@@ -30906,7 +30908,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135942390}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffd0ed019bc9819459c3ea7ef0986484, type: 3}
   m_Name: 
@@ -30923,7 +30925,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135942390}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf031672ba85e2243a299af306df7b85, type: 3}
   m_Name: 
