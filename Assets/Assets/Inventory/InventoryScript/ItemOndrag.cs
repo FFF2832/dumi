@@ -43,6 +43,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public static bool key_F3correct;
     public static bool key_F4correct;
      public static bool unicornHorn;
+     public static bool[] posionitem;
     public bool ispuzzle1ok;
 
 
@@ -102,15 +103,13 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     
          if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "1"){
             transform.localScale = originalScale * 7.8f; // 可以調整放大倍數
-            Debug.Log("(1): " + targetTransform.name + ", position: " + eventData.position);
          }
          else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "2"){
             transform.localScale = originalScale * 8.3f; // 可以調整放大倍數
-            Debug.Log("(2): " + targetTransform.name + ", position: " + eventData.position);
+           
          }
          else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "3"){
             transform.localScale = originalScale * 9f; // 可以調整放大倍數
-            Debug.Log("(3): " + targetTransform.name + ", position: " + eventData.position);
          }
         else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "樹枝本人"){
             transform.localScale = originalScale * 7f; // 可以調整放大倍數
@@ -157,7 +156,15 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             transform.localScale = originalScale * 1.5f; // 可以調整放大倍數
             Debug.Log(targetTransform.name + ", position: " + eventData.position);
          }
-        
+          else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "gecko"){
+            transform.localScale = originalScale * 1.5f; // 可以調整放大倍數
+            Debug.Log(targetTransform.name + ", position: " + eventData.position);
+         }
+           else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "images"){
+            transform.localScale = originalScale * 1.5f; // 可以調整放大倍數
+           
+         }
+          Debug.Log(targetTransform.name + ", position: " + eventData.position);
         // // 放大物品
         // transform.localScale = originalScale * 3f; // 可以調整放大倍數
       
@@ -317,19 +324,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
       }
       
         else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "correctKey")){
-            //  itemCorrect[8]=true;
-            //   itemcorrect=8;
-            // if(  positionCorrect[8]){
-            //     Destroy(gameObject);
-            //  }   
         
-            // else {
-            //     correct=false;
-            // // 如果沒有碰撞到目標，將物體放回原來的位置
-            // transform.SetParent(originalParent);
-            // transform.position = originalParent.position;
-        
-            // }
 
             itemCorrect[8]=true;
               itemcorrect=8;
@@ -390,16 +385,21 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             transform.SetParent(originalParent);
             transform.position = originalParent.position;
             } 
-            
-        
+      }
+       else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "gecko")){
+             itemCorrect[12]=true;
+              itemcorrect=12;
+      }
+       else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "images")){
+             itemCorrect[13]=true;
+              itemcorrect=13;
       }
       else  {
         correct=false;
             // 如果沒有碰撞到目標，將物體放回原來的位置
             transform.SetParent(originalParent);
             transform.position = originalParent.position;
-            // Debug.Log("not on target");
-            //  Debug.Log("correct"+correct);
+          
 
       }
    
@@ -479,6 +479,12 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         else if(targetTransform.name =="bottleAnim"){
               positionCorrect[11]=true;
            
+        }
+         else if(targetTransform.name =="item1"){
+              positionCorrect[12]=true;
+        }
+          else if(targetTransform.name =="item2"){
+              positionCorrect[13]=true;
         }
     }
     else if (collision.tag == "TargetObject")
@@ -739,5 +745,25 @@ public static bool checkunicornHorn()
   
     return unicornHorn;
 }
+public static bool[] CheckPosionItem()
+{
+    bool[] posionitem = new bool[5];
+
+   
+    for (int i = 0; i < 5; i++)
+    {
+        if (positionCorrect[12]&& itemCorrect[12])
+        {
+         posionitem[i] = true;
+        }
+    else
+    {
+         posionitem[i] = false;
+    }
+    }
+
+    return posionitem;
+}
+
 
 }
