@@ -59,6 +59,7 @@ public class Bamboo : MonoBehaviour
         // 视频播放结束时的处理
           videoCanvas.enabled = false; 
             if (bambooTalk.UpdatefinishTalk() )SceneManager.LoadScene("Scene Clear_1");
+            Debug.Log("確定有喔");
     }
 
     // 添加您的条件检查函数
