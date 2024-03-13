@@ -308,6 +308,14 @@ public class itemOnworld : MonoBehaviour
                 
     
             }
+              else  if(hit.collider.name=="spider_T"){
+             
+                Debug.Log("We hit " + hit.collider.name);
+                AddNewItem(thisItem);
+                 isMoving = true;
+                
+    
+            }
             // if(hit.collider.name=="fullpiece"){
              
             //     Debug.Log("We hit " + hit.collider.name);

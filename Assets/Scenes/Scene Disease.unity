@@ -16753,10 +16753,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84e30ffa2546f94499f1881dd147928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite1: {fileID: 21300000, guid: c061e316ca5ea184aac6482e5e153768, type: 3}
-  sprite2: {fileID: 21300000, guid: ffe22a325bc8e144081be84943e2eab7, type: 3}
-  itemToRemove: {fileID: 11400000, guid: a315abd1168452a4c84c6b230df2d407, type: 2}
-  playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
+  sprite1: {fileID: 0}
+  sprite2: {fileID: 0}
+  sprite3: {fileID: 0}
+  sprite4: {fileID: 0}
+  itemsToRemove: []
+  playerInventory: {fileID: 0}
 --- !u!50 &530240369
 Rigidbody2D:
   serializedVersion: 4
@@ -18487,6 +18489,153 @@ MonoBehaviour:
   _downDuration: 0.2
   _upDuration: 0.15
   buttonPressSound: {fileID: 0}
+--- !u!1 &616260863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 616260864}
+  - component: {fileID: 616260869}
+  - component: {fileID: 616260868}
+  - component: {fileID: 616260867}
+  - component: {fileID: 616260866}
+  - component: {fileID: 616260870}
+  m_Layer: 3
+  m_Name: item3
+  m_TagString: Target
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &616260864
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616260863}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2026522606}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.119562514, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 389, y: -200}
+  m_SizeDelta: {x: -513.3193, y: 218.3434}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!61 &616260866
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616260863}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.351593, y: -9.188614}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 243.94843, y: 202.77078}
+  m_EdgeRadius: 0
+--- !u!50 &616260867
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616260863}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &616260868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616260863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a280ed62954c7ff4c8ada83b59001405, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &616260869
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616260863}
+  m_CullTransparentMesh: 1
+--- !u!114 &616260870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616260863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84e30ffa2546f94499f1881dd147928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite1: {fileID: 21300000, guid: a280ed62954c7ff4c8ada83b59001405, type: 3}
+  sprite2: {fileID: 21300000, guid: 591043cac8994114d9e84084f378da60, type: 3}
+  sprite3: {fileID: 21300000, guid: 78736432952944347803c1c2da00d1c4, type: 3}
+  sprite4: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
+  itemsToRemove:
+  - {fileID: 11400000, guid: a315abd1168452a4c84c6b230df2d407, type: 2}
+  - {fileID: 11400000, guid: dab106cc0db9fa24ba5958f96f91fbde, type: 2}
+  - {fileID: 11400000, guid: 237c1e46be932d348b611cf8c3c652f9, type: 2}
+  playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
 --- !u!1 &624240338 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2932236854678246731, guid: dfb9a610c87eeba4f9bf1a78c27f4916, type: 3}
@@ -19243,7 +19392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &669960167
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27859,6 +28008,7 @@ Transform:
   - {fileID: 1946267735}
   - {fileID: 1403621260}
   - {fileID: 201779660}
+  - {fileID: 669960167}
   - {fileID: 2026522606}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -29436,14 +29586,14 @@ GameObject:
   - component: {fileID: 1181482176}
   - component: {fileID: 1181482175}
   - component: {fileID: 1181482174}
-  - component: {fileID: 1181482173}
+  - component: {fileID: 1181482178}
   m_Layer: 3
   m_Name: item2
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1181482172
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29464,22 +29614,6 @@ RectTransform:
   m_AnchoredPosition: {x: 41, y: -231}
   m_SizeDelta: {x: -513.3193, y: 218.3434}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1181482173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181482171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b84e30ffa2546f94499f1881dd147928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite1: {fileID: 21300000, guid: a280ed62954c7ff4c8ada83b59001405, type: 3}
-  sprite2: {fileID: 21300000, guid: f838813865f6a8746886fa267b3272ad, type: 3}
-  itemToRemove: {fileID: 11400000, guid: dab106cc0db9fa24ba5958f96f91fbde, type: 2}
-  playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
 --- !u!61 &1181482174
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29565,6 +29699,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181482171}
   m_CullTransparentMesh: 1
+--- !u!114 &1181482178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181482171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84e30ffa2546f94499f1881dd147928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite1: {fileID: 21300000, guid: a280ed62954c7ff4c8ada83b59001405, type: 3}
+  sprite2: {fileID: 21300000, guid: 591043cac8994114d9e84084f378da60, type: 3}
+  sprite3: {fileID: 21300000, guid: 78736432952944347803c1c2da00d1c4, type: 3}
+  sprite4: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
+  itemsToRemove:
+  - {fileID: 11400000, guid: a315abd1168452a4c84c6b230df2d407, type: 2}
+  - {fileID: 11400000, guid: dab106cc0db9fa24ba5958f96f91fbde, type: 2}
+  - {fileID: 11400000, guid: 237c1e46be932d348b611cf8c3c652f9, type: 2}
+  playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
 --- !u!1 &1192527738
 GameObject:
   m_ObjectHideFlags: 0
@@ -40747,6 +40902,7 @@ GameObject:
   - component: {fileID: 1765945456}
   - component: {fileID: 1765945455}
   - component: {fileID: 1765945454}
+  - component: {fileID: 1765945460}
   m_Layer: 0
   m_Name: spider_T
   m_TagString: Target
@@ -40917,6 +41073,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1765945460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765945452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb493926b8cc9641a5e811eb7877cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisItem: {fileID: 11400000, guid: b398d2d99a3ef7f42b1f35f6f2f7a8ad, type: 2}
+  playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
+  itemToRemove: {fileID: 0}
+  initialPosition: {fileID: 1765945453}
+  targetPosition: {fileID: 473211485}
+  movementSpeed: 1
+  moveSprite: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
+  animator: {fileID: 1765945454}
+  Recttarget: {fileID: 0}
+  moveSpeed: 10
+  shrinkSpeed: 0.1
+  itemImage: {fileID: 0}
+  newSprite: {fileID: 0}
+  initialScaleFactor: 0.2
+  isCollected: 0
 --- !u!1 &1766206913
 GameObject:
   m_ObjectHideFlags: 0
@@ -43780,7 +43963,7 @@ GameObject:
   - component: {fileID: 1876303147}
   - component: {fileID: 1876303146}
   - component: {fileID: 1876303145}
-  - component: {fileID: 1876303144}
+  - component: {fileID: 1876303149}
   m_Layer: 3
   m_Name: item1
   m_TagString: Target
@@ -43808,22 +43991,6 @@ RectTransform:
   m_AnchoredPosition: {x: -310, y: -281}
   m_SizeDelta: {x: -513.3193, y: 218.3434}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1876303144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1876303142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b84e30ffa2546f94499f1881dd147928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite1: {fileID: 21300000, guid: a280ed62954c7ff4c8ada83b59001405, type: 3}
-  sprite2: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
-  itemToRemove: {fileID: 11400000, guid: a315abd1168452a4c84c6b230df2d407, type: 2}
-  playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
 --- !u!61 &1876303145
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43909,6 +44076,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876303142}
   m_CullTransparentMesh: 1
+--- !u!114 &1876303149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876303142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84e30ffa2546f94499f1881dd147928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite1: {fileID: 21300000, guid: a280ed62954c7ff4c8ada83b59001405, type: 3}
+  sprite2: {fileID: 21300000, guid: 591043cac8994114d9e84084f378da60, type: 3}
+  sprite3: {fileID: 21300000, guid: 78736432952944347803c1c2da00d1c4, type: 3}
+  sprite4: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
+  itemsToRemove:
+  - {fileID: 11400000, guid: a315abd1168452a4c84c6b230df2d407, type: 2}
+  - {fileID: 11400000, guid: dab106cc0db9fa24ba5958f96f91fbde, type: 2}
+  - {fileID: 11400000, guid: 237c1e46be932d348b611cf8c3c652f9, type: 2}
+  playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
 --- !u!1 &1887137396
 GameObject:
   m_ObjectHideFlags: 0
@@ -47058,6 +47246,7 @@ GameObject:
   - component: {fileID: 2026522609}
   - component: {fileID: 2026522608}
   - component: {fileID: 2026522607}
+  - component: {fileID: 2026522610}
   m_Layer: 3
   m_Name: posionPuzzle
   m_TagString: Untagged
@@ -47081,8 +47270,9 @@ RectTransform:
   - {fileID: 1876303143}
   - {fileID: 1181482172}
   - {fileID: 1192527739}
+  - {fileID: 616260864}
   m_Father: {fileID: 1094573103}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -47150,6 +47340,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2026522610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026522605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84e30ffa2546f94499f1881dd147928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite1: {fileID: 0}
+  sprite2: {fileID: 0}
+  sprite3: {fileID: 0}
+  sprite4: {fileID: 0}
+  itemsToRemove: []
+  playerInventory: {fileID: 0}
 --- !u!1 &2036533764
 GameObject:
   m_ObjectHideFlags: 0

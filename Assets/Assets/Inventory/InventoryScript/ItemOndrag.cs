@@ -164,7 +164,11 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             transform.localScale = originalScale * 1.5f; // 可以調整放大倍數
            
          }
-          Debug.Log(targetTransform.name + ", position: " + eventData.position);
+          else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "bamboo_00000"){
+            transform.localScale = originalScale * 1.5f; // 可以調整放大倍數
+           
+         }
+         // Debug.Log(targetTransform.name + ", position: " + eventData.position);
         // // 放大物品
         // transform.localScale = originalScale * 3f; // 可以調整放大倍數
       
@@ -389,10 +393,15 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
        else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "gecko")){
              itemCorrect[12]=true;
               itemcorrect=12;
+              
       }
        else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "images")){
              itemCorrect[13]=true;
               itemcorrect=13;
+      }
+       else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "bamboo_00000")){
+             itemCorrect[14]=true;
+              itemcorrect=14;
       }
       else  {
         correct=false;
@@ -485,6 +494,9 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         }
           else if(targetTransform.name =="item2"){
               positionCorrect[13]=true;
+        }
+         else if(targetTransform.name =="item3"){
+              positionCorrect[14]=true;
         }
     }
     else if (collision.tag == "TargetObject")
@@ -750,9 +762,9 @@ public static bool[] CheckPosionItem()
     bool[] posionitem = new bool[5];
 
    
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 3; i++)
     {
-        if (positionCorrect[12]&& itemCorrect[12])
+        if (positionCorrect[i+12]&& itemCorrect[i+12])
         {
          posionitem[i] = true;
         }
@@ -763,6 +775,11 @@ public static bool[] CheckPosionItem()
     }
 
     return posionitem;
+}
+public void CheckPosionItemdone(){
+    if(positionCorrect[12]&& itemCorrect[12])PlayerPrefs.SetInt("geckoOk", 1);
+     if(positionCorrect[13]&& itemCorrect[13])PlayerPrefs.SetInt("frogOk", 1);
+     if(positionCorrect[14]&& itemCorrect[14])PlayerPrefs.SetInt("centiOk", 1);
 }
 
 
