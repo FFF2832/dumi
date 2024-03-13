@@ -295,7 +295,7 @@ public class itemOnworld : MonoBehaviour
                 Debug.Log("We hit " + hit.collider.name);
                SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
                 spriteRenderer.sprite = moveSprite;
-                // animator.enabled = false;
+                animator.enabled = false;
                 AddNewItem(thisItem);
                  isMoving = true;
     
