@@ -1,80 +1,73 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class ButtonPress : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField, Header("按下时缩小至多少？"), Range(0, 1)]
-    private float _downScale = 0.85f;
-    [SerializeField, Header("缩放变化持续时间：按下过程")]
+    [SerializeField, Header("按下时移动的距离")]
+    private float _downDistance = 5f;
+    [SerializeField, Header("移动的持续时间：按下过程")]
     private float _downDuration = 0.2f;
-    [SerializeField, Header("缩放变化持续时间：抬起过程")]
+    [SerializeField, Header("移动的持续时间：抬起过程")]
     private float _upDuration = 0.15f;
-
 
     [SerializeField, Header("Audio Clip")]
     private AudioClip buttonPressSound;
     private AudioSource audioSource;
 
+    private RectTransform _rectTransform;
+    private Vector2 _originalPosition;
+
     private void Awake()
-{
-    audioSource = GetComponent<AudioSource>();
-    // Ensure the AudioSource is not null and set to play on awake
-    if (audioSource != null)
     {
-        audioSource.playOnAwake = false;
-    }
-}
-
-
-    private RectTransform RectTransform
-    {
-        get
+        _rectTransform = GetComponent<RectTransform>();
+        audioSource = GetComponent<AudioSource>();
+        // Ensure the AudioSource is not null and set to play on awake
+        if (audioSource != null)
         {
-            if (_rectTransform == null)
-            {
-                _rectTransform = GetComponent<RectTransform>();
-            }
-            return _rectTransform;
+            audioSource.playOnAwake = false;
+            Debug.Log("去看吧");
         }
     }
 
-    private RectTransform _rectTransform;
+    void Start()
+    {
+        _originalPosition = _rectTransform.anchoredPosition;
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         StopAllCoroutines();
-        StartCoroutine(ChangeScaleCoroutine(1, _downScale, _downDuration));
-
+        StartCoroutine(MoveButtonCoroutine(-_downDistance, _downDuration));
 
         if (audioSource != null && buttonPressSound != null)
         {
-        audioSource.PlayOneShot(buttonPressSound);
+            audioSource.PlayOneShot(buttonPressSound);
         }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         StopAllCoroutines();
-        StartCoroutine(ChangeScaleCoroutine(RectTransform.localScale.x, 1, _upDuration));
+        StartCoroutine(MoveButtonCoroutine(_downDistance, _upDuration));
     }
 
-    private IEnumerator ChangeScaleCoroutine(float beginScale, float endScale, float duration)
+    private IEnumerator MoveButtonCoroutine(float distance, float duration)
     {
         float timer = 0f;
+        Vector2 targetPosition = _originalPosition + new Vector2(0, distance);
         while (timer < duration)
         {
-            RectTransform.localScale = Vector3.one * Mathf.Lerp(beginScale, endScale, timer / duration);
-            timer += Time.fixedDeltaTime;
+            _rectTransform.anchoredPosition = Vector2.Lerp(_originalPosition, targetPosition, timer / duration);
+            timer += Time.deltaTime;
             yield return null;
         }
-        RectTransform.localScale = Vector3.one * endScale;
+        _rectTransform.anchoredPosition = targetPosition;
     }
 
-    private void OnDisable() 
+    private void OnDisable()
     {
-        RectTransform.localScale = Vector3.one;
+        _rectTransform.anchoredPosition = _originalPosition;
     }
 }
