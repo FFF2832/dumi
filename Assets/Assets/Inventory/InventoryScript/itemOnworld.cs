@@ -319,6 +319,17 @@ public class itemOnworld : MonoBehaviour
                 
     
             }
+            //   else  if((hit.collider.name=="snakeAnim")&&MusicManager.UpdateMusicCorrect()){
+             
+            //     Debug.Log("We hit " + hit.collider.name);
+            //    SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            //     spriteRenderer.sprite = moveSprite;
+            //     animator.enabled = false;
+            //     AddNewItem(thisItem);
+            //      isMoving = true;
+                
+    
+            // }
             // if(hit.collider.name=="fullpiece"){
              
             //     Debug.Log("We hit " + hit.collider.name);

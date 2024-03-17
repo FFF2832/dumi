@@ -26812,6 +26812,8 @@ GameObject:
   - component: {fileID: 1035097218}
   - component: {fileID: 1035097219}
   - component: {fileID: 1035097221}
+  - component: {fileID: 1035097224}
+  - component: {fileID: 1035097223}
   m_Layer: 0
   m_Name: snakeAnim
   m_TagString: Untagged
@@ -26966,6 +26968,55 @@ MonoBehaviour:
   - {fileID: 1867464839}
   - {fileID: 986534828}
   talkUI: {fileID: 0}
+  thisItem: {fileID: 11400000, guid: d206ab2d785812f4da2a1c896a98322e, type: 2}
+  playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
+--- !u!61 &1035097223
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035097215}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -5.2729187, y: 118.64181}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 442.92963, y: 216.19185}
+  m_EdgeRadius: 0
+--- !u!50 &1035097224
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035097215}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1036045879
 GameObject:
   m_ObjectHideFlags: 0
@@ -38531,7 +38582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1641347077
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38736,6 +38787,8 @@ MonoBehaviour:
   - {fileID: 1536812707}
   - {fileID: 1867464839}
   talkUI: {fileID: 0}
+  thisItem: {fileID: 0}
+  playerInventory: {fileID: 0}
 --- !u!114 &1641347087
 MonoBehaviour:
   m_ObjectHideFlags: 0

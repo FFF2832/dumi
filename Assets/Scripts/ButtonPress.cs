@@ -27,7 +27,7 @@ public class ButtonPress : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (audioSource != null)
         {
             audioSource.playOnAwake = false;
-            Debug.Log("去看吧");
+          //  Debug.Log("去看吧");
         }
     }
 

@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-
-public class MusicManager : MonoBehaviour
+using UnityEngine.EventSystems;
+using System.Collections; // 用于协程的命名空间
+using UnityEngine.UI;
+public class MusicManager : MonoBehaviour, IPointerClickHandler
 {
     public GameObject[] musics;
     private int currentIndex = 0;
@@ -14,7 +16,9 @@ public class MusicManager : MonoBehaviour
     private List<GameObject> clickedMusics = new List<GameObject>();
 
     public GameObject talkUI;
-
+    private bool musicFinished;
+      public item thisItem;
+   public Inventory playerInventory;
     private void Start()
     {
         SetNextMusic();
@@ -22,6 +26,7 @@ public class MusicManager : MonoBehaviour
       //  animMusic1 = GetComponent<Animator>();
         //anim.SetInteger("CandleCorrect", 0);
            anim.SetInteger("snakeSucess", 0);
+           musicCorrect=false;
     }
 
     void Update()
@@ -32,8 +37,8 @@ public class MusicManager : MonoBehaviour
 
     public void MusicClicked(GameObject clickedMusic)
     {
-        if (!clickedMusics.Contains(clickedMusic))
-        {
+        // if (!clickedMusics.Contains(clickedMusic))
+        // {
             clickedMusics.Add(clickedMusic);
 
             if (clickedMusic == musics[currentIndex])
@@ -63,21 +68,31 @@ public class MusicManager : MonoBehaviour
             {
                 // anim.SetInteger("snakeSucess", 2);
                 // 錯誤的音樂，可以在這裡添加錯誤處理邏輯
-                Debug.Log("錯誤的順序！");
+                
                 musicCorrect = false;
-                ResetMusicSequence();
+               // ResetMusicSequence();
                 clickCount++;
                  
             }
 
             // 更新動畫狀態
-            if (clickCount == 3) UpdateAnimationState();
-        }
-        else
-        {
-            // 已經點過這個音樂，你可以添加相應的處理邏輯，例如提示或其他操作
-            Debug.Log("這個音樂已經點過了！");
-        }
+            if (clickCount == 3) {
+                if(musicCorrect){
+                    UpdateAnimationState();
+                    musicFinished=true;
+                }
+                else  {
+                    currentIndex = 0;
+                    clickCount=0;
+                    Debug.Log("錯誤的順序！");
+                }
+                }
+        // }
+        // else
+        // {
+        //     // 已經點過這個音樂，你可以添加相應的處理邏輯，例如提示或其他操作
+        //     Debug.Log("這個音樂已經點過了！");
+        // }
     }
 
     private void PlayMusicAnimation(GameObject music, int index)
@@ -106,6 +121,7 @@ public class MusicManager : MonoBehaviour
     private void ResetMusicSequence()
     {
         currentIndex = 0;
+       
     }
 
     private void UpdateAnimationState()
@@ -118,7 +134,7 @@ public class MusicManager : MonoBehaviour
             // float delayAnim = 3.0f;
            // Invoke("showAnim", delayAnim);
             Debug.Log("成功到一");
-          
+         
         }
         else
         {
@@ -143,4 +159,33 @@ public class MusicManager : MonoBehaviour
     {
         return musicCorrect;
     }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("點擊了UI物品：" + name);
+        if (musicCorrect)
+        {
+        // 如果 musicCorrect 為 true，執行物品添加操作
+        AddNewItem();
+         Destroy(gameObject);
+        }
+       
+    }
+     public void AddNewItem(){
+    if(!playerInventory.itemList.Contains(thisItem)){
+         //playerInventory.itemList.Add(thisItem);
+          //未刪CreateNewItem
+         //InventoryManager.CreateNewItem(thisItem);
+         for(int i=0;i<playerInventory.itemList.Count;i++){
+                if(playerInventory.itemList[i]==null){
+                        playerInventory.itemList[i]=thisItem;
+                        break;
+                }
+         }
+    }
+    else {
+        // thisItem.itemHeild += 1;
+    }
+    InventoryManager.RefreshItem(); 
+    
+   }
 }

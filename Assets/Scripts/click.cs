@@ -31,7 +31,7 @@ public class click : MonoBehaviour
         check2DObjectClicked();
       //  Debug.Log("clickCar"+clickCar);
        // Debug.Log("clickCar2"+clickCar2);
-        checkclick();
+       // checkclick();
         
     }
     
@@ -270,7 +270,7 @@ int previousScene = PlayerPrefs.GetInt("PreviousScene");
    } 
    void OnMouseEnter()
     {
-        Debug.Log("HOVER");
+       // Debug.Log("HOVER");
         Cursor.SetCursor(fingerCursorTexture, hotSpot, cursorMode); // 使用手指指针纹理
     
     }
