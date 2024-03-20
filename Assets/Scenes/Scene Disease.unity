@@ -26176,8 +26176,8 @@ GameObject:
   - component: {fileID: 986534829}
   - component: {fileID: 986534835}
   - component: {fileID: 986534836}
-  - component: {fileID: 986534837}
   - component: {fileID: 986534838}
+  - component: {fileID: 986534839}
   m_Layer: 0
   m_Name: button1
   m_TagString: Untagged
@@ -26332,22 +26332,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicManager: {fileID: 1035097221}
   musicNumber: 3
---- !u!114 &986534837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986534828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665d4c5d5ee69574da0d46ce62201a84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _downDistance: 5
-  _downDuration: 0.2
-  _upDuration: 0.15
-  buttonPressSound: {fileID: 8300000, guid: 10b8ae5df2dc89f4ca8f61b5c2759bb7, type: 3}
 --- !u!82 &986534838
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26444,6 +26428,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &986534839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986534828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4397258efba1c48994f17855f2d526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _downDistance: -5
+  _downDuration: 0.2
+  _upDuration: 0.15
+  buttonPressSound: {fileID: 8300000, guid: 10b8ae5df2dc89f4ca8f61b5c2759bb7, type: 3}
 --- !u!1 &993128421
 GameObject:
   m_ObjectHideFlags: 0
@@ -37273,8 +37273,8 @@ GameObject:
   - component: {fileID: 1536812709}
   - component: {fileID: 1536812708}
   - component: {fileID: 1536812714}
-  - component: {fileID: 1536812715}
   - component: {fileID: 1536812716}
+  - component: {fileID: 1536812717}
   m_Layer: 0
   m_Name: button2
   m_TagString: Untagged
@@ -37414,22 +37414,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicManager: {fileID: 1035097221}
   musicNumber: 1
---- !u!114 &1536812715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1536812707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665d4c5d5ee69574da0d46ce62201a84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _downDistance: 5
-  _downDuration: 0.2
-  _upDuration: 0.15
-  buttonPressSound: {fileID: 8300000, guid: 91d1aabecc3170e47a02584ccc89e0a2, type: 3}
 --- !u!82 &1536812716
 AudioSource:
   m_ObjectHideFlags: 0
@@ -37526,6 +37510,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1536812717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536812707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4397258efba1c48994f17855f2d526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _downDistance: -5
+  _downDuration: 0.2
+  _upDuration: 0.15
+  buttonPressSound: {fileID: 8300000, guid: 91d1aabecc3170e47a02584ccc89e0a2, type: 3}
 --- !u!1 &1538949638
 GameObject:
   m_ObjectHideFlags: 0
@@ -42077,9 +42077,9 @@ GameObject:
   - component: {fileID: 1813138453}
   - component: {fileID: 1813138452}
   - component: {fileID: 1813138451}
-  - component: {fileID: 1813138456}
   - component: {fileID: 1813138458}
   - component: {fileID: 1813138457}
+  - component: {fileID: 1813138459}
   m_Layer: 0
   m_Name: music button
   m_TagString: Untagged
@@ -42272,22 +42272,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1813138456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813138449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665d4c5d5ee69574da0d46ce62201a84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _downDistance: 5
-  _downDuration: 0.2
-  _upDuration: 0.15
-  buttonPressSound: {fileID: 8300000, guid: 3ab85bc2c9aaa4a4198d6d8ad1cf790a, type: 3}
 --- !u!114 &1813138457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42326,6 +42310,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813138449}
   m_CullTransparentMesh: 1
+--- !u!114 &1813138459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813138449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4397258efba1c48994f17855f2d526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _downDistance: -5
+  _downDuration: 0.2
+  _upDuration: 0.15
+  buttonPressSound: {fileID: 8300000, guid: 3ab85bc2c9aaa4a4198d6d8ad1cf790a, type: 3}
 --- !u!1 &1813991324
 GameObject:
   m_ObjectHideFlags: 0
@@ -43983,8 +43983,8 @@ GameObject:
   - component: {fileID: 1867464842}
   - component: {fileID: 1867464841}
   - component: {fileID: 1867464846}
-  - component: {fileID: 1867464847}
   - component: {fileID: 1867464848}
+  - component: {fileID: 1867464849}
   m_Layer: 0
   m_Name: button3
   m_TagString: Untagged
@@ -44124,22 +44124,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicManager: {fileID: 1035097221}
   musicNumber: 2
---- !u!114 &1867464847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867464839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665d4c5d5ee69574da0d46ce62201a84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _downDistance: 5
-  _downDuration: 0.2
-  _upDuration: 0.15
-  buttonPressSound: {fileID: 8300000, guid: be167d50f1773b7408f5d2b909625c55, type: 3}
 --- !u!82 &1867464848
 AudioSource:
   m_ObjectHideFlags: 0
@@ -44236,6 +44220,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1867464849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867464839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4397258efba1c48994f17855f2d526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _downDistance: -5
+  _downDuration: 0.2
+  _upDuration: 0.15
+  buttonPressSound: {fileID: 8300000, guid: be167d50f1773b7408f5d2b909625c55, type: 3}
 --- !u!1 &1869551392
 GameObject:
   m_ObjectHideFlags: 0
