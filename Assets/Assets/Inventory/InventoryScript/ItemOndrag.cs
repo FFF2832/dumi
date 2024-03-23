@@ -764,6 +764,7 @@ public static bool[] CheckPosionItem()
    
     for (int i = 0; i < 3; i++)
     {
+        CheckPosionItemdone();
         if (positionCorrect[i+12]&& itemCorrect[i+12])
         {
          posionitem[i] = true;
@@ -776,7 +777,7 @@ public static bool[] CheckPosionItem()
 
     return posionitem;
 }
-public void CheckPosionItemdone(){
+public static void CheckPosionItemdone(){
     if(positionCorrect[12]&& itemCorrect[12])PlayerPrefs.SetInt("geckoOk", 1);
      if(positionCorrect[13]&& itemCorrect[13])PlayerPrefs.SetInt("frogOk", 1);
      if(positionCorrect[14]&& itemCorrect[14])PlayerPrefs.SetInt("centiOk", 1);
