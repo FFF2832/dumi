@@ -43,6 +43,8 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public static bool key_F3correct;
     public static bool key_F4correct;
      public static bool unicornHorn;
+      public static bool unicornHorn_2;
+       public static bool unicornHorn_3;
      public static bool geckoOOk;
      public static bool frogOOk;
      public static bool centiOOk;
@@ -56,6 +58,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 //放大
       private Vector3 originalScale; // 儲存原始尺寸
     private RectTransform rectTransform;
+    
 
      private void Awake()
     {
@@ -154,7 +157,7 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             transform.localScale = originalScale * 7.8f; // 可以調整放大倍數
             Debug.Log("(3): " + targetTransform.name + ", position: " + eventData.position);
          }
-
+        
           else if(eventData.pointerDrag.GetComponent<Image>().sprite.name == "mb0016"){
             transform.localScale = originalScale * 1.5f; // 可以調整放大倍數
             Debug.Log(targetTransform.name + ", position: " + eventData.position);
@@ -532,6 +535,14 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             Debug.Log("inItem3");
               positionCorrect[14]=true;
         }
+         else if(targetTransform.name =="bottleAnim2"){
+              positionCorrect[15]=true;
+           
+        }
+         else if(targetTransform.name =="bottleAnim3"){
+              positionCorrect[16]=true;
+           
+        }
     }
     else if (collision.tag == "TargetObject")
     {
@@ -791,6 +802,35 @@ public static bool checkunicornHorn()
   
     return unicornHorn;
 }
+
+public static bool checkunicornHorn_2()
+{
+    // 檢查對應索引位置的值是否相等且不為 0
+    if (positionCorrect[15]&& itemCorrect[11])
+    {
+        unicornHorn_2 = true;
+    }
+    else
+    {
+        unicornHorn_2 = false;
+    }
+  
+    return unicornHorn_2;
+}
+public static bool checkunicornHorn_3()
+{
+    // 檢查對應索引位置的值是否相等且不為 0
+    if (positionCorrect[16]&& itemCorrect[11])
+    {
+        unicornHorn_3 = true;
+    }
+    else
+    {
+        unicornHorn_3 = false;
+    }
+  
+    return unicornHorn_3;
+}
 // public static bool[] CheckPosionItem()
 // {
 //     bool[] posionitem = new bool[5];
@@ -861,6 +901,7 @@ public static bool CheckPosionItemdone3(){
   
     return centiOOk;
 }
+
 
 
 }
