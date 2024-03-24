@@ -16905,12 +16905,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84e30ffa2546f94499f1881dd147928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite1: {fileID: 0}
-  sprite2: {fileID: 0}
-  sprite3: {fileID: 0}
-  sprite4: {fileID: 0}
   itemsToRemove: []
   playerInventory: {fileID: 0}
+  layer1: {fileID: 0}
+  layer2: {fileID: 0}
+  layer3: {fileID: 0}
+  itemToRemove1: {fileID: 0}
+  itemToRemove2: {fileID: 0}
+  itemToRemove3: {fileID: 0}
 --- !u!50 &530240369
 Rigidbody2D:
   serializedVersion: 4
@@ -18771,7 +18773,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.351593, y: -9.188614}
+  m_Offset: {x: -4.581482, y: 27.832932}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -18782,7 +18784,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 243.94843, y: 202.77078}
+  m_Size: {x: 90.57349, y: 59.97342}
   m_EdgeRadius: 0
 --- !u!50 &616260867
 Rigidbody2D:
@@ -18855,15 +18857,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84e30ffa2546f94499f1881dd147928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite1: {fileID: 21300000, guid: a280ed62954c7ff4c8ada83b59001405, type: 3}
-  sprite2: {fileID: 21300000, guid: 591043cac8994114d9e84084f378da60, type: 3}
-  sprite3: {fileID: 21300000, guid: 78736432952944347803c1c2da00d1c4, type: 3}
-  sprite4: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
   itemsToRemove:
   - {fileID: 11400000, guid: a315abd1168452a4c84c6b230df2d407, type: 2}
   - {fileID: 11400000, guid: dab106cc0db9fa24ba5958f96f91fbde, type: 2}
   - {fileID: 11400000, guid: 237c1e46be932d348b611cf8c3c652f9, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
+  layer1: {fileID: 1876303142}
+  layer2: {fileID: 1181482171}
+  layer3: {fileID: 616260863}
+  itemToRemove1: {fileID: 11400000, guid: a315abd1168452a4c84c6b230df2d407, type: 2}
+  itemToRemove2: {fileID: 11400000, guid: dab106cc0db9fa24ba5958f96f91fbde, type: 2}
+  itemToRemove3: {fileID: 11400000, guid: 237c1e46be932d348b611cf8c3c652f9, type: 2}
 --- !u!1 &624240338 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2932236854678246731, guid: dfb9a610c87eeba4f9bf1a78c27f4916, type: 3}
@@ -30065,7 +30069,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.351593, y: -9.188614}
+  m_Offset: {x: -23.092377, y: 2.7111816}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -30076,7 +30080,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 243.94843, y: 202.77078}
+  m_Size: {x: 85.28461, y: 94.350525}
   m_EdgeRadius: 0
 --- !u!50 &1181482175
 Rigidbody2D:
@@ -30149,15 +30153,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84e30ffa2546f94499f1881dd147928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite1: {fileID: 21300000, guid: a280ed62954c7ff4c8ada83b59001405, type: 3}
-  sprite2: {fileID: 21300000, guid: 591043cac8994114d9e84084f378da60, type: 3}
-  sprite3: {fileID: 21300000, guid: 78736432952944347803c1c2da00d1c4, type: 3}
-  sprite4: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
   itemsToRemove:
   - {fileID: 11400000, guid: a315abd1168452a4c84c6b230df2d407, type: 2}
   - {fileID: 11400000, guid: dab106cc0db9fa24ba5958f96f91fbde, type: 2}
   - {fileID: 11400000, guid: 237c1e46be932d348b611cf8c3c652f9, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
+  layer1: {fileID: 1876303142}
+  layer2: {fileID: 1181482171}
+  layer3: {fileID: 616260863}
+  itemToRemove1: {fileID: 11400000, guid: a315abd1168452a4c84c6b230df2d407, type: 2}
+  itemToRemove2: {fileID: 11400000, guid: dab106cc0db9fa24ba5958f96f91fbde, type: 2}
+  itemToRemove3: {fileID: 11400000, guid: 237c1e46be932d348b611cf8c3c652f9, type: 2}
 --- !u!1 &1193088258
 GameObject:
   m_ObjectHideFlags: 0
@@ -44456,10 +44462,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.351593, y: -9.188614}
+  m_Offset: {x: -3.2593842, y: 4.0333633}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -44470,7 +44476,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 243.94843, y: 202.77078}
+  m_Size: {x: 35.041107, y: 70.55095}
   m_EdgeRadius: 0
 --- !u!50 &1876303146
 Rigidbody2D:
@@ -44543,15 +44549,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84e30ffa2546f94499f1881dd147928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite1: {fileID: 21300000, guid: a280ed62954c7ff4c8ada83b59001405, type: 3}
-  sprite2: {fileID: 21300000, guid: 591043cac8994114d9e84084f378da60, type: 3}
-  sprite3: {fileID: 21300000, guid: 78736432952944347803c1c2da00d1c4, type: 3}
-  sprite4: {fileID: 21300000, guid: b1ac83a4404c0b443a3d348c15a0a611, type: 3}
   itemsToRemove:
   - {fileID: 11400000, guid: a315abd1168452a4c84c6b230df2d407, type: 2}
   - {fileID: 11400000, guid: dab106cc0db9fa24ba5958f96f91fbde, type: 2}
   - {fileID: 11400000, guid: 237c1e46be932d348b611cf8c3c652f9, type: 2}
   playerInventory: {fileID: 11400000, guid: 86835b492a08db840ba9bb2ecf461562, type: 2}
+  layer1: {fileID: 1876303142}
+  layer2: {fileID: 1181482171}
+  layer3: {fileID: 616260863}
+  itemToRemove1: {fileID: 11400000, guid: a315abd1168452a4c84c6b230df2d407, type: 2}
+  itemToRemove2: {fileID: 11400000, guid: dab106cc0db9fa24ba5958f96f91fbde, type: 2}
+  itemToRemove3: {fileID: 11400000, guid: 237c1e46be932d348b611cf8c3c652f9, type: 2}
 --- !u!1 &1887137396
 GameObject:
   m_ObjectHideFlags: 0
@@ -47954,17 +47962,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026522605}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b84e30ffa2546f94499f1881dd147928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite1: {fileID: 0}
-  sprite2: {fileID: 0}
-  sprite3: {fileID: 0}
-  sprite4: {fileID: 0}
   itemsToRemove: []
   playerInventory: {fileID: 0}
+  layer1: {fileID: 0}
+  layer2: {fileID: 0}
+  layer3: {fileID: 0}
+  itemToRemove1: {fileID: 0}
+  itemToRemove2: {fileID: 0}
+  itemToRemove3: {fileID: 0}
 --- !u!1 &2036533764
 GameObject:
   m_ObjectHideFlags: 0

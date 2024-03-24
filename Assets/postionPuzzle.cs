@@ -92,15 +92,21 @@ using UnityEngine.UI;
 
 public class postionPuzzle : MonoBehaviour
 {
-    public Sprite sprite1; // 第一個圖片
-    public Sprite sprite2; // 第二個圖片
-    public Sprite sprite3; // 第三個圖片
-       public Sprite sprite4; // 第三個圖片
+    // public Sprite sprite1; // 第一個圖片
+    // public Sprite sprite2; // 第二個圖片
+    // public Sprite sprite3; // 第三個圖片
+    //    public Sprite sprite4; // 第三個圖片
     private Image spriteChange;
 
     public item[] itemsToRemove;
     public Inventory playerInventory;
     private bool[] posionOk; // 初始化数组
+    public GameObject layer1;
+    public GameObject layer2;
+    public GameObject layer3;
+    public item itemToRemove1;
+    public item itemToRemove2;
+    public item itemToRemove3;
 
     void Start()
     {
@@ -121,7 +127,7 @@ public class postionPuzzle : MonoBehaviour
     void Update()
     {
         // 檢查ItemOndrag腳本中的布林陣列值
-        bool[] checkPosionItemResult = ItemOndrag.CheckPosionItem();
+        // bool[] checkPosionItemResult = ItemOndrag.CheckPosionItem();
 //        Debug.Log("checkPosionItemResult"+checkPosionItemResult[1]);
         changeImage();
         // if (checkPosionItemResult != null && checkPosionItemResult.Length >= posionOk.Length)
@@ -172,26 +178,53 @@ public class postionPuzzle : MonoBehaviour
 
     public void changeImage()
     {
-        if (PlayerPrefs.GetInt("geckoOk")==1)
+        if (ItemOndrag.CheckPosionItemdone1())
         {
-            spriteChange.sprite = sprite2; // 更新圖片
-            RemoveItem(itemsToRemove[0]);
+            Debug.Log("有進壁虎" );
+            RemoveItem(itemToRemove1);
+            Destroy(layer1);
 
         }
-        else if (PlayerPrefs.GetInt("frogOk")==1)
+        else if (ItemOndrag.CheckPosionItemdone2())
         {
-            spriteChange.sprite = sprite3; // 更新圖片
-             RemoveItem(itemsToRemove[1]);
+            Debug.Log("有進蛙" );
+            RemoveItem(itemToRemove2);
+            Destroy(layer2);
         }
-        else if (PlayerPrefs.GetInt("centiOk")==1)
+        else if (ItemOndrag.CheckPosionItemdone3())
         {
-            spriteChange.sprite = sprite4; // 更新圖片
-             RemoveItem(itemsToRemove[2]);
+            Debug.Log("有進蜈蚣" );
+            RemoveItem(itemToRemove3);
+            Destroy(layer3);
         }
-        else
-        {
-            spriteChange.sprite = sprite1; // 更新圖片
-        }
+        // else
+        // {
+        //     Debug.Log("都沒進" );
+        // }
+        // if (PlayerPrefs.GetInt("geckoOk")==1)
+        // {
+        //     Debug.Log("有進壁虎" );
+        //     spriteChange.sprite = sprite2; // 更新圖片
+        //     RemoveItem(itemsToRemove[0]);
+
+        // }
+        // else if (PlayerPrefs.GetInt("frogOk")==1)
+        // {
+        //     Debug.Log("有進蛙" );
+        //     spriteChange.sprite = sprite3; // 更新圖片
+        //      RemoveItem(itemsToRemove[1]);
+        // }
+        // else if (PlayerPrefs.GetInt("centiOk")==1)
+        // {
+        //     Debug.Log("有進蜈蚣" );
+        //     spriteChange.sprite = sprite4; // 更新圖片
+        //      RemoveItem(itemsToRemove[2]);
+        // }
+        // else
+        // {
+        //     Debug.Log("都沒進" );
+        //     spriteChange.sprite = sprite1; // 更新圖片
+        // }
     }
 
     public bool[] GetPosionOk()

@@ -43,6 +43,9 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public static bool key_F3correct;
     public static bool key_F4correct;
      public static bool unicornHorn;
+     public static bool geckoOOk;
+     public static bool frogOOk;
+     public static bool centiOOk;
      public static bool[] posionitem;
     public bool ispuzzle1ok;
 
@@ -393,15 +396,43 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
        else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "gecko")){
              itemCorrect[12]=true;
               itemcorrect=12;
+                if(  positionCorrect[12]){
+              
+             }  
+             else {
+                correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+            } 
               
       }
-       else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "images")){
+       else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "frog")){
              itemCorrect[13]=true;
               itemcorrect=13;
+              if(  positionCorrect[13]){
+              
+             }  
+             else {
+                correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+            } 
+              
       }
        else if((eventData.pointerDrag.GetComponent<Image>().sprite.name == "bamboo_00000")){
              itemCorrect[14]=true;
               itemcorrect=14;
+              if(  positionCorrect[14]){
+              
+             }  
+             else {
+                correct=false;
+            // 如果沒有碰撞到目標，將物體放回原來的位置
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+            } 
       }
       else  {
         correct=false;
@@ -490,12 +521,15 @@ public class ItemOndrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
            
         }
          else if(targetTransform.name =="item1"){
+            Debug.Log("inItem1");
               positionCorrect[12]=true;
         }
           else if(targetTransform.name =="item2"){
+            Debug.Log("inItem2");
               positionCorrect[13]=true;
         }
          else if(targetTransform.name =="item3"){
+            Debug.Log("inItem3");
               positionCorrect[14]=true;
         }
     }
@@ -757,30 +791,75 @@ public static bool checkunicornHorn()
   
     return unicornHorn;
 }
-public static bool[] CheckPosionItem()
-{
-    bool[] posionitem = new bool[5];
+// public static bool[] CheckPosionItem()
+// {
+//     bool[] posionitem = new bool[5];
 
    
-    for (int i = 0; i < 3; i++)
+//     for (int i = 0; i < 3; i++)
+//     {
+//         CheckPosionItemdone();
+//         if (positionCorrect[i+12]&& itemCorrect[i+12])
+//         {
+//          posionitem[i] = true;
+//         }
+//     else
+//     {
+//          posionitem[i] = false;
+//     }
+//     }
+
+//     return posionitem;
+// }
+// public static void CheckPosionItemdone(){
+//     if(positionCorrect[12]&& itemCorrect[12])PlayerPrefs.SetInt("geckoOk", 1);
+//     else if(positionCorrect[13]&& itemCorrect[13])PlayerPrefs.SetInt("frogOk", 1);
+//     else if(positionCorrect[14]&& itemCorrect[14])PlayerPrefs.SetInt("centiOk", 1);
+// }
+public static bool CheckPosionItemdone1(){
+    // if(positionCorrect[12]&& itemCorrect[12])PlayerPrefs.SetInt("geckoOOk", 1);
+        // 檢查對應索引位置的值是否相等且不為 0
+    if (positionCorrect[12]&& itemCorrect[12])
     {
-        CheckPosionItemdone();
-        if (positionCorrect[i+12]&& itemCorrect[i+12])
-        {
-         posionitem[i] = true;
-        }
+        geckoOOk = true;
+        Debug.Log("positionCorrect[12]: "+positionCorrect[12] );
+         Debug.Log("itemCorrect[12]: "+itemCorrect[12] );
+    }
     else
     {
-         posionitem[i] = false;
+        geckoOOk = false;
     }
-    }
+  
+    return geckoOOk;
 
-    return posionitem;
 }
-public static void CheckPosionItemdone(){
-    if(positionCorrect[12]&& itemCorrect[12])PlayerPrefs.SetInt("geckoOk", 1);
-     if(positionCorrect[13]&& itemCorrect[13])PlayerPrefs.SetInt("frogOk", 1);
-     if(positionCorrect[14]&& itemCorrect[14])PlayerPrefs.SetInt("centiOk", 1);
+public static bool CheckPosionItemdone2(){
+    if (positionCorrect[13]&& itemCorrect[13])
+    {
+        frogOOk = true;
+        Debug.Log("positionCorrect[13]: "+positionCorrect[13] );
+         Debug.Log("itemCorrect[13]: "+itemCorrect[13] );
+    }
+    else
+    {
+        frogOOk = false;
+    }
+  
+    return frogOOk;
+}
+public static bool CheckPosionItemdone3(){
+    if (positionCorrect[14]&& itemCorrect[14])
+    {
+        centiOOk = true;
+        Debug.Log("positionCorrect[14]: "+positionCorrect[14] );
+         Debug.Log("itemCorrect[14]: "+itemCorrect[14] );
+    }
+    else
+    {
+        centiOOk = false;
+    }
+  
+    return centiOOk;
 }
 
 
