@@ -42,7 +42,7 @@ public class bottleContent : MonoBehaviour, IPointerClickHandler
         Debug.Log("點擊了UI物品：" + name);
         // 在這裡添加你想要的點擊功能邏輯
         originalScale = transform.localScale;
-        // animator.enabled = false;
+        animator.enabled = false;
         // 设置初始缩放
         transform.localScale = originalScale * initialScaleFactor;
         AddNewItem();

@@ -7,7 +7,7 @@ public class bottleAnim : MonoBehaviour
     // Start is called before the first frame update
     public GameObject item1;
     public GameObject item2;
-   // public GameObject item3;
+   public GameObject item3;
     public item thisItem;
     public Inventory playerInventory;
       private Animator anim; 
@@ -31,11 +31,11 @@ public class bottleAnim : MonoBehaviour
              Invoke("DestroyItem", 3f);
            //  
         }
-        //  else if(ItemOndrag.checkunicornHorn_3()){
-        //     anim.SetBool("dirt",true);
-        //     Debug.Log("checkunicornHorn_3"+ItemOndrag.checkunicornHorn_3());
-        //       Invoke("DeactivateAndHandleItem", 3f);
-        // }
+         else if(ItemOndrag.checkunicornHorn_3()){
+            anim.SetBool("dirt3",true);
+            Debug.Log("checkunicornHorn_3"+ItemOndrag.checkunicornHorn_3());
+              Invoke("DestroyItem3", 3f);
+        }
         else{
             
         }
@@ -53,6 +53,16 @@ public class bottleAnim : MonoBehaviour
     {
         // 將整個物件設為非啟用狀態
         Destroy(item2);
+        // Destroy(item3);
+
+        // 執行點裡面的物品的相關代碼
+        //HandleItemInside();
+    }
+         void DestroyItem3()
+    {
+        // 將整個物件設為非啟用狀態
+        Destroy(item3);
+        // Destroy(item3);
 
         // 執行點裡面的物品的相關代碼
         //HandleItemInside();
